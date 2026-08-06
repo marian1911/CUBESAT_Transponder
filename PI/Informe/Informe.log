@@ -1,0 +1,613 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.11)  5 AUG 2026 21:43
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Informe.tex
+(Informe.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(D:\Latex\Programa latex\tex/latex/base\report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(D:\Latex\Programa latex\tex/latex/base\size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(D:\Latex\Programa latex\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(D:\Latex\Programa latex\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(D:\Latex\Programa latex\tex/generic/babel\babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count196
+\U@D=\dimen141
+\l@unhyphenated=\language79
+
+(D:\Latex\Programa latex\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count197
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(D:\Latex\Programa latex\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks19
+\es@quotdepth=\count198
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+))
+(D:\Latex\Programa latex\tex/generic/babel/locale/es\babel-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(D:\Latex\Programa latex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(D:\Latex\Programa latex\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(D:\Latex\Programa latex\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks21
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen150
+\ttl@minus=\dimen151
+\ttl@toksa=\toks22
+\titlewidth=\dimen152
+\titlewidthlast=\dimen153
+\titlewidthfirst=\dimen154
+)
+(D:\Latex\Programa latex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Latex\Programa latex\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Latex\Programa latex\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(D:\Latex\Programa latex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(D:\Latex\Programa latex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen157
+\captionmargin=\dimen158
+\caption@leftmargin=\dimen159
+\caption@rightmargin=\dimen160
+\caption@width=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count268
+\c@continuedfloat=\count269
+)
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/tocbibind\tocbibind.sty
+Package: tocbibind 2026/06/01 v1.5l extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count270
+\@cmidlb=\count271
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count272
+\@lastruleclass=\count273
+\@thisrulewidth=\dimen177
+)
+(D:\Latex\Programa latex\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+
+(D:\Latex\Programa latex\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen178
+\ar@mcellbox=\box52
+\extrarowheight=\dimen179
+\NC@list=\toks23
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box53
+)
+\TX@col@width=\dimen180
+\TX@old@table=\dimen181
+\TX@old@col=\dimen182
+\TX@target=\dimen183
+\TX@delta=\dimen184
+\TX@cols=\count274
+\TX@ftn=\toks24
+)
+(D:\Latex\Programa latex\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip54
+\RaggedLeftLeftskip=\skip55
+\RaggedRightLeftskip=\skip56
+\CenteringRightskip=\skip57
+\RaggedLeftRightskip=\skip58
+\RaggedRightRightskip=\skip59
+\CenteringParfillskip=\skip60
+\RaggedLeftParfillskip=\skip61
+\RaggedRightParfillskip=\skip62
+\JustifyingParfillskip=\skip63
+\CenteringParindent=\skip64
+\RaggedLeftParindent=\skip65
+\RaggedRightParindent=\skip66
+\JustifyingParindent=\skip67
+)
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 53
+.
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(D:\Latex\Programa latex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box54
+) (Informe.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+)
+\openout1 = `Informe.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\big@size=\dimen185
+(D:\Latex\Programa latex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count276
+\scratchdimen=\dimen186
+\scratchbox=\box55
+\nofMPsegments=\count277
+\nofMParguments=\count278
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count279
+\MPscratchDim=\dimen187
+\MPnumerator=\count280
+\makeMPintoPDFobject=\count281
+\everyMPtoPDFconversion=\toks26
+) (D:\Latex\Programa latex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\Latex\Programa latex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<unc.png, id=1, 401.5pt x 401.5pt>
+File: unc.png Graphic file (type png)
+<use unc.png>
+Package pdftex.def Info: unc.png  used on input line 65.
+(pdftex.def)             Requested size: 198.45662pt x 198.45822pt.
+ [1
+
+{C:/Users/maria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/Latex/Prog
+rama latex/fonts/enc/dvips/base/8r.enc} <./unc.png>]
+File: unc.png Graphic file (type png)
+<use unc.png>
+Package pdftex.def Info: unc.png  used on input line 98.
+(pdftex.def)             Requested size: 198.45662pt x 198.45822pt.
+ [2
+
+]
+File: unc.png Graphic file (type png)
+<use unc.png>
+Package pdftex.def Info: unc.png  used on input line 126.
+(pdftex.def)             Requested size: 198.45662pt x 198.45822pt.
+ [3
+
+] [4
+
+
+] [5
+
+
+] [6
+
+
+] [7
+
+
+] [8
+
+
+] (Informe.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
+ 7.
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
+ 7.
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
+ 7.
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
+ 7.
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 7
+.
+
+(C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+ [9
+
+
+])
+\tf@toc=\write3
+\openout3 = `Informe.toc'.
+
+
+[10] (Informe.lot
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lot=\write4
+\openout4 = `Informe.lot'.
+
+ [11
+
+
+] (Informe.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lof=\write5
+\openout5 = `Informe.lof'.
+
+ [12
+
+
+] [13
+
+
+]
+Cap\'{\i }tulo 1.
+[1
+
+
+
+]
+<imagenes/placa_kicad_3d.png, id=53, 1068.99374pt x 1011.78pt>
+File: imagenes/placa_kicad_3d.png Graphic file (type png)
+<use imagenes/placa_kicad_3d.png>
+Package pdftex.def Info: imagenes/placa_kicad_3d.png  used on input line 227.
+(pdftex.def)             Requested size: 352.81552pt x 333.93474pt.
+ [2 <./imagenes/placa_kicad_3d.png>] [3] [4] [5] [6
+
+
+]
+Cap\'{\i }tulo 2.
+[7
+
+]
+<imagenes/cubesat.png, id=75, 671.50874pt x 374.39874pt>
+File: imagenes/cubesat.png Graphic file (type png)
+<use imagenes/cubesat.png>
+Package pdftex.def Info: imagenes/cubesat.png  used on input line 322.
+(pdftex.def)             Requested size: 441.01773pt x 245.88708pt.
+ [8 <./imagenes/cubesat.png>]
+<imagenes/xyz_cubesat.png, id=80, 595.47469pt x 380.92313pt>
+File: imagenes/xyz_cubesat.png Graphic file (type png)
+<use imagenes/xyz_cubesat.png>
+Package pdftex.def Info: imagenes/xyz_cubesat.png  used on input line 366.
+(pdftex.def)             Requested size: 308.71106pt x 197.48247pt.
+ [9 <./imagenes/xyz_cubesat.png>]
+<imagenes/size_cubesat.png, id=86, 702.37407pt x 463.7325pt>
+File: imagenes/size_cubesat.png Graphic file (type png)
+<use imagenes/size_cubesat.png>
+Package pdftex.def Info: imagenes/size_cubesat.png  used on input line 418.
+(pdftex.def)             Requested size: 308.71106pt x 203.82356pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] [11 <./imagenes/size_cubesat.png>]
+Overfull \hbox (1.23679pt too wide) in paragraph at lines 464--465
+[]\T1/ptm/m/n/10.95 Nota: Las fun-cio-nes ali-men-ta-das del Cu-be-Sat in-clu-y
+en la va-rie-dad de sub-sis-te-mas co-mo C&DH,
+ []
+
+[12] [13] [14]
+<imagenes/mec_pc104p.png, id=104, 524.71031pt x 481.04718pt>
+File: imagenes/mec_pc104p.png Graphic file (type png)
+<use imagenes/mec_pc104p.png>
+Package pdftex.def Info: imagenes/mec_pc104p.png  used on input line 561.
+(pdftex.def)             Requested size: 396.91325pt x 363.89673pt.
+<imagenes/stack_pc104_p.png, id=105, 372.64218pt x 306.39468pt>
+File: imagenes/stack_pc104_p.png Graphic file (type png)
+<use imagenes/stack_pc104_p.png>
+Package pdftex.def Info: imagenes/stack_pc104_p.png  used on input line 568.
+(pdftex.def)             Requested size: 242.5611pt x 199.43936pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15 <./imagenes/mec_pc104p.png>] [16 <./imagenes/stack_pc104_p.png>]
+<imagenes/tranponder_1.png, id=114, 618.05907pt x 398.23781pt>
+File: imagenes/tranponder_1.png Graphic file (type png)
+<use imagenes/tranponder_1.png>
+Package pdftex.def Info: imagenes/tranponder_1.png  used on input line 585.
+(pdftex.def)             Requested size: 308.71106pt x 198.91788pt.
+<imagenes/transponder_2.png, id=115, 837.1275pt x 190.46156pt>
+File: imagenes/transponder_2.png Graphic file (type png)
+<use imagenes/transponder_2.png>
+Package pdftex.def Info: imagenes/transponder_2.png  used on input line 594.
+(pdftex.def)             Requested size: 441.01773pt x 100.33673pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./imagenes/tranponder_1.png> <./imagenes/transponder_2.png>]
+<imagenes/transponder_3.png, id=121, 671.50874pt x 481.04718pt>
+File: imagenes/transponder_3.png Graphic file (type png)
+<use imagenes/transponder_3.png>
+Package pdftex.def Info: imagenes/transponder_3.png  used on input line 604.
+(pdftex.def)             Requested size: 286.65883pt x 205.34886pt.
+
+Underfull \vbox (badness 3590) has occurred while \output is active []
+
+ [18 <./imagenes/transponder_3.png>]
+<imagenes/transponder_4.png, id=127, 517.935pt x 430.60875pt>
+File: imagenes/transponder_4.png Graphic file (type png)
+<use imagenes/transponder_4.png>
+Package pdftex.def Info: imagenes/transponder_4.png  used on input line 616.
+(pdftex.def)             Requested size: 308.71106pt x 256.67203pt.
+ [19 <./imagenes/transponder_4.png>] [20] [21]
+Overfull \hbox (1.7885pt too wide) in paragraph at lines 730--731
+[]\T1/ptm/b/n/10.95 Aislamiento en-tre Puer-tos (Port Iso-la-tion)\T1/ptm/m/n/1
+0.95 : Pér-di-da de in-ser-ción di-rec-ta en-tre puer-tos ($\OML/ztmcm/m/it/10.
+95 I[]$\T1/ptm/m/n/10.95 ,
+ []
+
+[22]
+<imagenes/mixer.png, id=144, 587.19376pt x 490.08093pt>
+File: imagenes/mixer.png Graphic file (type png)
+<use imagenes/mixer.png>
+Package pdftex.def Info: imagenes/mixer.png  used on input line 760.
+(pdftex.def)             Requested size: 396.91325pt x 331.26895pt.
+ [23 <./imagenes/mixer.png>] [24] [25
+
+]
+Cap\'{\i }tulo 3.
+[26
+
+]
+Cap\'{\i }tulo 4.
+[27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+
+] [32
+
+]
+Ap\'{e}ndice A.
+[33
+
+]
+Ap\'{e}ndice B.
+[34
+
+]
+Ap\'{e}ndice C.
+[35
+
+] (Informe.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6098 strings out of 474486
+ 103332 string characters out of 5753570
+ 1940542 words of memory out of 5000000
+ 28271 multiletter control sequences out of 15000+600000
+ 640015 words of font info for 137 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,12n,65p,1106b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Latex/Programa latex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Latex/
+Programa latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Latex/Programa lat
+ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Latex/Programa latex/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><D:/Latex/Programa latex/fonts/type1/urw/symbol
+/usyr.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmb8a.pfb><D:/Latex/P
+rograma latex/fonts/type1/urw/times/utmbi8a.pfb><D:/Latex/Programa latex/fonts/
+type1/urw/times/utmr8a.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on Informe.pdf (48 pages, 2136739 bytes).
+PDF statistics:
+ 228 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+

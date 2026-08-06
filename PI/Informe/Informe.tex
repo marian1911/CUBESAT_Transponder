@@ -1,0 +1,861 @@
+\documentclass[11pt,a4paper,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel} % es-tabla para que diga "Tabla" en lugar de "Cuadro"
+
+% Márgenes según manual: Superior, Inferior y Derecho 2.5 cm; Izquierdo 3 cm
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+
+% Tipo de letra: Times New Roman 11 (mathptmx es la versión libre de LaTeX)
+\usepackage{mathptmx} 
+
+% Interlineado 1.5 en el texto general
+\usepackage{setspace}
+\onehalfspacing
+
+% Configuración de Títulos según manual
+\usepackage{titlesec}
+% Capítulo: Negrita, tamaño 14
+\titleformat{\chapter}[display]
+{\normalfont\fontsize{14}{16}\bfseries}
+{\chaptertitlename\ \thechapter}{10pt}{\fontsize{14}{16}\bfseries}
+% Sección 1.1: Negrita, tamaño 12
+\titleformat{\section}
+{\normalfont\fontsize{12}{14}\bfseries}
+{\thesection}{1em}{}
+% Sub-sección 1.1.1: Normal, tamaño 12
+\titleformat{\subsection}
+{\normalfont\fontsize{12}{14}\selectfont}
+{\thesubsection}{1em}{}
+% Sub-sub-sección 1.1.1.1: Normal, tamaño 12 
+\titleformat{\subsubsection}
+{\normalfont\fontsize{12}{14}\selectfont}
+{\thesubsubsection}{1em}{}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Redacción del texto general ya es tamaño 11pt normal por \documentclass[11pt]
+
+\usepackage{graphicx}
+\usepackage{caption}
+% Espacio de 3 líneas después de imágenes y tablas (aprox 3em)
+\setlength{\intextsep}{3em}
+
+\usepackage{tocbibind} % Para que aparezcan los índices en la tabla de contenidos
+
+\usepackage[utf8]{inputenc} % Soporte para caracteres especiales (acentos, ñ)
+\usepackage{booktabs} % Bordes profesionales (\toprule, \midrule, \bottomrule, \addlinespace)
+\usepackage{tabularx} % Tablas ajustables al ancho de página (columna tipo X)
+\usepackage{array} % Modificadores de alineación en columnas (>{\raggedright\arraybackslash})
+\usepackage{ragged2e} % Permite auto-ajuste de texto con guiones dentro de tablas
+
+\begin{document}
+	
+	% Numeración romana para páginas preliminares
+	\pagenumbering{roman}
+	\setcounter{page}{1} % La portada es i, pero no se numera visiblemente
+	
+	% ==========================================
+	% PORTADA
+	% ==========================================
+	\thispagestyle{empty}
+	\begin{center}
+		
+		\includegraphics[width=0.45\textwidth]{unc.png} \\[0.5cm] % Logo
+		
+		{\large UNIVERSIDAD NACIONAL DE CÓRDOBA} \\[0.5cm]
+		{\large FACULTAD DE CIENCIAS EXACTAS, FÍSICAS Y NATURALES} \\[0.5cm]
+		{\large CARRERA INGENIERÍA ELECTRÓNICA} \\[0.5cm]
+		
+		{\large PROYECTO INTEGRADOR PARA LA OBTENCIÓN DEL TÍTULO DE GRADO INGENIERO ELECTRÓNICO} \\[1.5cm]
+		
+		{\Large \textbf{“DISEÑO E IMPLEMENTACION DE ETAPA RECEPTORA DE TRANSPONDER CUBESAT VHF-UHF”}} \\[2cm]
+		
+		\begin{flushleft}
+			\textbf{Alumno/s:} \\
+			Apellido, Nombre y Apellido, Nombre \\[1cm]
+			
+			\textbf{Director:} \\
+			Dr./Mgr./Esp./Ing. Apellido, Nombre \\[1cm]
+			
+			\textbf{Co-Director:} \\
+			Dr./Mgr./Esp./Ing. Apellido, Nombre \\[1cm]
+		\end{flushleft}
+		
+		\vfill
+		{\large Córdoba, República Argentina} \\
+		{\large Mes / Año}
+	\end{center}
+	\clearpage
+	
+	% ==========================================
+	% CONTRATAPA (TRIBUNAL EVALUADOR)
+	% ==========================================
+	\thispagestyle{empty}
+	\begin{center}
+		
+		\includegraphics[width=0.45\textwidth]{unc.png} \\[2cm] % Logo
+		
+		UNIVERSIDAD NACIONAL DE CÓRDOBA \\
+		Facultad de Ciencias Exactas, Físicas y Naturales \\
+		Escuela de Ingeniería Electrónica
+	\end{center}
+	\vspace{1cm}
+	El Tribunal Evaluador reunido en éste acto y luego de haber aprobado la Solicitud 
+	de Aprobación de Tema y efectuado las distintas instancias de correcciones del Informe 
+	del Proyecto Integrador para la obtención del Título de Grado “Ingeniero Electrónico” y 
+	cumpliendo con el Reglamento correspondiente, declaran el Informe Final de/l los 
+	estudiante/s: \textbf{COMPLETAR NOMBRE} 
+	como “aceptado sin correcciones” y la defensa oral Aprobada. Por lo tanto, luego de haber tenido en cuenta los aspectos de evaluación que 
+	indica el Reglamento, el Proyecto Integrador se considera Aprobado.
+	
+	Se firma el Acta de Examen correspondiente y se distribuyen los ejemplares impresos. 
+	
+	\vspace{1.5cm}
+	\noindent Firma y aclaración del Tribunal Evaluador: \dotfill \\
+	Fecha: \dotfill
+	\clearpage
+	
+	% ==========================================
+	% APROBACIÓN DEL DIRECTOR
+	% ==========================================
+	\thispagestyle{empty}
+	\begin{center}
+		
+		\includegraphics[width=0.45\textwidth]{unc.png} \\[2cm] % Logo
+		
+		UNIVERSIDAD NACIONAL DE CÓRDOBA \\
+		Facultad de Ciencias Exactas, Físicas y Naturales \\
+		Escuela de Ingeniería Electrónica
+	\end{center}
+	\vspace{1cm}
+	Quien suscribe el Profesor COMPLETAR TODOS LOS CAMPOS en su carácter de Director del 
+	Proyecto Integrador del Estudiante COMPLETAR, denominado: COMPLETAR
+	considera que el desarrollo del trabajo se ha completado según lo especificado en la 
+	Solicitud de Aprobación de Tema y se encuentra en condiciones de tramitar su defensa.
+	
+	A los efectos de quién corresponda, en fecha ...../...../..........
+	
+	\vspace{2cm}
+	\noindent Firma y aclaración del Director: \dotfill
+	\clearpage
+	
+	% ==========================================
+	% DEDICATORIA Y AGRADECIMIENTOS
+	% ==========================================
+	\chapter*{Dedicatoria}
+	Breve y directa.
+	\clearpage
+	
+	\chapter*{Agradecimientos}
+	Breve y directo.
+	\clearpage
+	
+	% ==========================================
+	% RESUMEN (Español, Inglés, Portugués)
+	% ==========================================
+	\chapter*{Resumen}
+	El trabajo se centra en el diseño e implementación de la etapa receptora de un transponder VHF-UHF con factor de forma PC-104, destinado a formar parte de la carga útil de un CubeSat. El funcionamiento de un CUBESAT se organiza en distintos subsistemas electrónicos interconectados mediante un bus  común, entre los cuales se encuentran: el sistema de energía, la computadora a bordo, el sistema de comunicaciones, etc. Dentro de este esquema, el módulo transponder VHF-UHF  representa el eje de las comunicaciones. En este marco, el transponder VHF-UHF, debe ser capaz de recibir señales entre estaciones terrestres y retransmitirlas, trabajando como un repetidor lineal de banda ancha. El desarrollo considerará tanto los requerimientos funcionales (ancho de banda, sensibilidad, frecuencia de trabajo, consumo de potencia, dimensiones) como las restricciones impuestas por las condiciones ambientales del entorno espacial.
+	
+	\vspace{1cm}
+	\noindent \textbf{Área Temática:} Comunicaciones, Electrónica analógica.. \\
+	\textbf{Asignaturas:} Electrónica analógica III, Teoría de las comunicaciones, Electrónica digital III. \\
+	\textbf{Palabras Claves:} CUBESAT, Transponder, PC-104, VHF-UHF, RF.
+	\clearpage
+	
+	\chapter*{Abstract}
+	This work focuses on the design and implementation of the receiver stage of a VHF-UHF transponder with a PC-104 form factor, intended to be part of a CubeSat payload. The operation of a CubeSat is organized into various electronic subsystems interconnected via a common bus, including: the power system, the on-board computer, the communication system, etc. Within this framework, the VHF-UHF transponder module represents the core of communications. In this context, the VHF-UHF transponder must be capable of receiving signals from ground stations and retransmitting them, operating as a broadband linear repeater. The development will consider both functional requirements (bandwidth, sensitivity, operating frequency, power consumption, dimensions) and the constraints imposed by the environmental conditions of the space environment.
+	
+	\vspace{1cm}
+	\noindent \textbf{Subject Area:} Communications, Analog Electronics. \\
+	\textbf{Subjects:} Analog Electronics III, Communication Theory, Digital Electronics III. \\
+	\textbf{Keywords:} CUBESAT, Transponder, PC-104, VHF-UHF, RF.
+	\clearpage
+	
+	\chapter*{Resumo}
+	O trabalho concentra-se no projeto e implementação da etapa receptora de um transponder VHF-UHF com fator de forma PC-104, destinado a fazer parte da carga útil de um CubeSat. O funcionamento de um CUBESAT organiza-se em diferentes subsistemas eletrônicos interconectados por meio de um barramento comum, entre os quais se encontram: o sistema de energia, o computador de bordo, o sistema de comunicações, etc. Dentro deste esquema, o módulo transponder VHF-UHF representa o eixo das comunicações. Neste contexto, o transponder VHF-UHF deve ser capaz de receber sinais de estações terrestres e retransmiti-los, operando como um repetidor linear de banda larga. O desenvolvimento considerará tanto os requisitos funcionais (largura de banda, sensibilidade, frequência de operação, consumo de potência, dimensões) quanto as restrições impostas pelas condições ambientais do meio espacial.
+	
+	\vspace{1cm}
+	\noindent \textbf{Área Temática:} Comunicações, Eletrônica Analógica. \\
+	\textbf{Disciplinas:} Eletrônica Analógica III, Teoria da Comunicação, Eletrônica Digital III. \\
+	\textbf{Palavras-chave:} CUBESAT, Transponder, PC-104, VHF-UHF, RF.
+	\clearpage
+	
+	% ==========================================
+	% ÍNDICES
+	% ==========================================
+	\tableofcontents
+	\clearpage
+	\listoftables
+	\clearpage
+	\listoffigures
+	\clearpage
+	\chapter*{Lista de Símbolos y Convenciones}
+	\addcontentsline{toc}{chapter}{Lista de Símbolos y Convenciones}
+	(Listado de símbolos aquí)
+	\clearpage
+	
+	% ==========================================
+	% INICIO DEL DOCUMENTO (Numeración Arábiga)
+	% ==========================================
+	\clearpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	\chapter{INTRODUCCIÓN}
+	
+	El presente trabajo tiene como objetivo el diseño e implementación de la etapa receptora y mezcladora de un transponder VHF-UHF destinado a integrarse en la carga útil de un CUBESAT, con el fin de constituir una plataforma experimental de comunicaciones de largo alcance en órbita baja terrestre (LEO). El alcance de la propuesta comprende el desarrollo del hardware y la realización de las pruebas necesarias para verificar su correcto desempeño y el cumplimiento de los requerimientos funcionales. Quedan fuera del alcance del proyecto tanto el diseño de la antena UHF —al emplearse una unidad provista por la cátedra— como la programación del software definitivo del módulo de comunicaciones. Asimismo, aunque no se ejecutarán la totalidad de los ensayos normativos, las exigencias de la norma aplicable se utilizarán como criterio rector durante el proceso de diseño.
+	
+	Desde el punto de vista de la arquitectura, la etapa receptora adopta una topología de tipo \textit{up-converter} (conversión ascendente de frecuencia), orientada a optimizar la sensibilidad, la selectividad y la respuesta ante señales espurias e interferencias. La cadena de procesamiento analógico integra los siguientes bloques funcionales clave:
+	\begin{itemize}
+		\item \textbf{Filtro sintonizador de entrada:} Encargado del filtrado suave previo de RF para delimitar la banda de interés y mitigar interferencias fuera de banda.
+		
+		\item \textbf{Amplificador de bajo ruido (LNA):} Destinado a amplificar las débiles señales captadas con una baja figura de ruido, que evita la degradación de la relación señal-ruido (SNR).
+		
+		\item \textbf{Etapa de amplificación en configuración \textit{cascode}:} Implementada para maximizar la ganancia de la etapa de RF, mejorar el aislamiento entre la entrada y la salida, y optimizar el ancho de banda.
+		
+		\item \textbf{Mezclador (\textit{Mixer}):} Bloque encargando de efectuar la conversión de frecuencia al combinar la señal de RF recibida con la señal del oscilador local.
+		
+		\item \textbf{Filtro pasa bajo:} Ubicado a la salida del mezclador para seleccionar el producto de mezcla deseado y atenuar componentes armónicas y espurias de alta frecuencia.
+		
+		\item \textbf{Oscilador local sintetizado con PLL:} Encargado de generar la señal de inyección de frecuencia intermedia (tono puro) con alta potencia y bajo ruido de fase.
+	\end{itemize}\newpage
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/placa_kicad_3d}
+		\caption[Diseño 3D en KICAD (Fuente: propia)]{Diseño 3D en KICAD (Fuente: propia)}
+		\label{fig:placa3dkicad}
+	\end{figure}
+	
+	\section{Antecedentes del problema}
+	En los últimos años, el estándar CUBESAT ha democratizado el acceso al espacio, permitiendo a universidades e instituciones de investigación desarrollar misiones satelitales a costos reducidos. Sin embargo, a nivel local, no  existen antecedentes orientados al desarrollo integral y propio de un modulo transponder diseñado bajo requerimientos aeroespaciales. Tradicionalmente, la implementación de estos subsistemas ha dependido de módulos comerciales prefabricados, o desarrollos fuera de norma, lo que limita la apropiación de conocimientos en este campo.
+	
+	\section{Relevancia del trabajo}
+	La relevancia de este trabajo radica en aportar al desarrollo tecnológico propio en el área de las comunicaciones aeroespaciales académicas. Al diseñar un hardware a nivel de componentes (etapa receptora y mezcladora), se genera un antecedente técnico y una base metodológica reutilizable para futuros desarrollos en la institución. Además, la compatibilidad con el factor de forma PC-104 garantiza la modularidad con otros subsistemas de la arquitectura satelital, mientras que la posibilidad de ser ensayado provee un medio de validación práctica.
+	
+	\section{Motivación para la elección del tema}
+	La motivación principal surge de la necesidad de contar con plataformas locales, económicas y accesibles para la formación e investigación aplicada en el área de ingeniería de radiofrecuencia y sistemas espaciales. Este desarrollo permite acortar la brecha entre la teoría de los sistemas de telecomunicaciones y su implementación práctica en hardware con rigurosidad técnica.
+	
+	Asimismo, contar con un módulo transponder funcional abre un amplio abanico de aplicaciones prácticas en misiones de globos estratosféricos. Al operar como un repetidor lineal de banda ancha en frecuencias VHF-UHF, el sistema posibilita:
+	
+	\begin{itemize}
+		\item \textbf{Retransmisión de comunicaciones entre estaciones terrenas:} Actuar como nodo de enlace para interconectar estaciones de radioaficionados o laboratorios universitarios distantes, aprovechando la amplia línea de vista que ofrece la estratosfera ($\sim$20--30 km) o una órbita LEO.
+		
+		\item \textbf{Comunicaciones de emergencia en zonas remotas:} Desplegar plataformas capaces de retransmitir señales de voz y datos en áreas afectadas por catástrofes naturales o sin cobertura de infraestructura terrestre.
+		
+		\item \textbf{Relevo de telemetría de sensores remotos (\textit{Data Relay}):} Recibir señales provenientes de estaciones de medición o sensores distribuidos en tierra y retransmitirlas hacia una estación terrestre para su procesamiento.
+		
+		\item \textbf{Validación de herencia de vuelo (\textit{Flight Heritage}):} Demostrar el correcto desempeño de la cadena de radiofrecuencia en condiciones operativas reales (baja presión, variaciones térmicas extremas y ambiente expuesto radiación ), elevando el nivel de madurez tecnológica (TRL, \textit{Technology Readiness Level}) del prototipo para futuras misiones espaciales institucionales.
+	\end{itemize}
+	
+	\section{Formulación del problema}
+	¿Cómo diseñar e implementar un módulo receptor y mezclador de RF en formato PC-104 que responda a los requerimientos de sensibilidad, frecuencia y ancho de banda para comunicaciones VHF-UHF en un CUBESAT, garantizando la integridad de señal y el cumplimiento de las restricciones electromecánicas a bajo costo?
+	
+	\section{Objetivo General y Objetivos Específicos}
+	El objetivo general es diseñar, construir y validar experimentalmente un prototipo funcional de las etapas receptora y mezcladora de un transponder VHF-UHF bajo los estándares PC-104 y CUBESAT, asentando las bases para el desarrollo futuro de un transponder satelital completo. Para alcanzar el objetivo general, se plantean los siguientes objetivos específicos:
+	\begin{itemize}
+		\item Revisar y documentar las normas aplicables que puedan tener incidencias en el diseño (estándares CUBESAT y PC-104).
+		
+		\item Definir la arquitectura de RF del receptor, identificar y describir los bloques funcionales principales del transponder y su rol en la cadena de comunicación.
+		
+		\item Seleccionar componentes electrónicos adecuados considerando costo, disponibilidad, vida útil, tolerancias y desempeño en RF. Buscar distribuidores con disponibilidad de componentes y fabricantes de PCB (nacionales o internacionales) con la capacidad de fabricar en 4 capas a un bajo costo.
+		
+		\item Diseñar el esquema eléctrico y la placa de circuito impreso (PCB) aplicando buenas prácticas de integridad de señal y criterios de diseño en RF.
+		
+		\item Realizar simulaciones sobre el circuito eléctrico y su desempeño en RF, verificar ganancias, adaptación de impedancias, frecuencias de corte, reflexiones directas e inversas, polarización, estabilidad incondicional,etc.
+		
+		\item Montar el prototipo físico y realizar mediciones experimentales de los parámetros clave (sensibilidad, potencia, ancho de banda, figura de ruido e intermodulación).
+		
+		\item Documentar los resultados obtenidos y demostrar la viabilidad del transponder como carga útil para globos estratosféricos de aplicación académica y experimental.
+	\end{itemize}
+	
+	\section{Metodología utilizada}
+	Para el desarrollo de este trabajo se adopta la siguiente metodología:
+	
+	\begin{enumerate}
+		\item \textbf{Fase de Análisis y Especificación:} Revisión bibliográfica de la normativa satelital (estándares CubeSat y PC-104), análisis de requerimientos y definición de las especificaciones teóricas de RF de la cadena receptora.
+		
+		\item \textbf{Fase de Diseño Teórico y Simulación:} Modelado circuital de los amplificadores y filtros utilizando herramientas SPICE, simulación de elementos de parámetros distribuidos y estimación teórica del desempeño de la cadena de recepción (ganancia, figura de ruido y selectividad).
+		
+		\item \textbf{Fase de Diseño de la PCB:} Layout de la placa de circuito impreso tomando como base una plantilla con factor de forma PC-104, aplicando reglas estrictas de integridad de señal y RF.
+		
+		\item \textbf{Fase de Implementación y Montaje:} Ensamble del prototipo físico mediante un proceso de reflujo de componentes SMD con horno infrarrojo.
+		
+		\item \textbf{Fase de Ensayos y Validación:} Caracterización y medición experimental utilizando instrumental especializado de RF (analizador de espectro, generador de señales de alta frecuencia), contrastando los resultados obtenidos frente a las simulaciones teóricas.
+	\end{enumerate}\newpage
+	
+	\section{Orientación al lector}
+	El presente documento se estructura en los siguientes capítulos:
+	\begin{itemize}
+		\item \textbf{Capítulo 2 - Marco Teórico:} Describe los fundamentos del estándar CUBESAT, la arquitectura superheterodina y cada uno de sus sub-bloques, el estándar PC-104.
+		\item \textbf{Capítulo 3 - Diseño del Sistema:} Expone el calculo y dimensionamiento de cada bloque del receptor, la selección de componentes y el diseño de la PCB.
+		\item \textbf{Capítulo 4 - Implementación y Pruebas:} Detalla el montaje del prototipo y describe la metodología de medición empleada en laboratorio.
+		\item \textbf{Capítulo 5 - Resultados y Discusión:} Presenta las curvas y parámetros obtenidos en las mediciones de RF, comparándolos con las especificaciones teóricas.
+		\item \textbf{Capítulo 6 - Conclusiones y Trabajos Futuros:} Resume los logros alcanzados, analiza la viabilidad del módulo y propone líneas de desarrollo para completar el transponder.
+	\end{itemize}
+	\clearpage
+	
+	% ==========================================
+	% MARCO TEÓRICO
+	% ==========================================
+	\part{MARCO TEÓRICO}
+	\chapter{Título del Marco Teórico}
+	\section{Estándar CUBESAT}
+	El CubeSat Design Specification (CDS) es el documento oficial de Cal Poly (versión vigente: Rev. 14.1, febrero 2022) que establece el conjunto de reglas que garantizan que cualquier CubeSat pueda ser lanzado de manera segura y compatible en un cohete comercial.
+	Los lanzadores son los vehículos espaciales (cohetes) que transportan los CubeSats al espacio. La gran mayoría de CubeSats no viajan como carga primaria, sino como carga secundaria (piggyback) junto con satélites grandes.
+	Para que esto sea posible, los CubeSats deben cumplir estrictamente con las dimensiones, masa y restricciones mecánicas/eléctricas definidas en el estándar, de modo que puedan ser integrados en un dispensador. El dispensador se instala en el lanzador y se encarga de guiar, contener y liberar a los CubeSats en la órbita asignada. Es importante discernir que, en el documento se utiliza tres \textbf{"Términos operativos"} diferentes a la hora de enumerar las distintas especificaciones:
+	
+	\begin{itemize}
+		\item \textbf{"Deberá"}: se utiliza para indicar requisitos que deben cumplirse y que requieren verificación formal.
+		
+		\item \textbf{"Debería"}: se utiliza para indicar una recomendación firme o una sugerencia para facilitar la verificación formal de otro requisito.En muchos casos, el incumplimiento limitará oportunidades de lanzamiento.
+		
+		\item \textbf{"Será"}: sirven para indicar eventos para los que los desarrolladores de naves espaciales deben estar preparados.
+		
+		\item \textbf{"Nota"}: se utiliza para indicar una recomendación o consejo destinado a ayudar al desarrollador del CubeSat.
+	\end{itemize}\newpage
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/cubesat}
+		\caption[Estándar CUBESAT (Fuente: medium.com)]{Estándar CUBESAT (Fuente: medium.com)}
+		\label{fig:cubesat}
+	\end{figure}
+	
+	
+	
+	\subsection{Especificaciones generales}
+	\begin{enumerate}
+		\item Todas las piezas deberán permanecer unidas a los CubeSats durante el lanzamiento, la eyección y el funcionamiento.
+		
+		\item Los artículos pirotécnicos deberán cumplir con AFSPCMAN 91-710(Volumen 3). 
+		
+		\item Todos los sistemas de propulsión deberán diseñarse, integrarse y probarse de acuerdo con AFSPCMAN 91-710(Volumen 3).
+		
+		\item Los sistemas de propulsión deberán tener al menos tres inhibidores de activación.
+		
+		\item Nota: Se recomienda tener en cuenta los requisitos de la Administración Federal de Aviación (FAA)  para las baterías transportadas por pasajeros de aerolíneas. La capacidad máxima permitida para baterías de iones de litio de tamaño estándar en el equipaje de mano es de 100 Wh por batería. 
+		
+		\item Los materiales peligrosos del CubeSat deberán cumplir con AFSPCMAN 91-710(Volumen 3).
+		
+		\item Los materiales de los CubeSats deberán cumplir con los criterios de baja desgasificación. Puede consultar una lista de materiales de baja desgasificación aprobados por la NASA 
+		
+		\subitem $\bullet$ Los materiales de los CubeSats deberán tener una pérdida de masa total (TML) inferior o igual al 1,0 \%.
+		\subitem $\bullet$ Los materiales de los CubeSats deberán tener un material condensable volátil recolectado (CVCM) inferior o igual al 0,1 \%.
+		
+		\item El campo magnético de cualquier imán pasivo se limitará a 0,5 Gauss por encima del campo magnético de la Tierra, fuera de la envoltura estática del CubeSat.
+		
+		\item El CubeSat deberá diseñarse para permitir ventilación durante el ascenso, de manera que la relación volumen ventilable/área de ventilación sea menor a 50,8 metros.
+		
+	\end{enumerate}
+		
+		
+	
+	\subsection{Especificaciones mecánicas}
+	Los planos donde se especifican las dimensiones y características del CubeSat se pueden encontrar en la siguiente sección CDSDrawings2022
+	
+	\begin{enumerate}
+		\item Nota: El Procedimiento de Inspección y Comprobación de Ajuste (CIFP) del CubeSat puede utilizarse para verificar que el CubeSat cumple con los requisitos dimensionales especificados.
+		
+		\item El origen del sistema de coordenadas del CubeSat se encuentra en el centro geométrico del CubeSat.
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagenes/xyz_cubesat}
+			\caption[Sistema de referencias CubeSat ejes coordenados (Fuente: CDSDrawings2022)]{Sistema de referencias CubeSat ejes coordenados (Fuente: CDSDrawings2022)}
+			\label{fig:xyzcubesat}
+		\end{figure}
+		
+		
+		\item La configuración y las dimensiones físicas del CubeSat deberán cumplir con la sección correspondiente especificado en el plano.
+		
+		\item Nota: La dimensión de la longitud del separador de $5.0$ a $7.0$ mm con tolerancia de $0.1$ mm en la cara $\pm$ Z, especificada en los planos, existe para evitar interferencia con posibles CubeSats vecinos y con las interfaces del dispensador.Las caras $\pm$ Z son las que se orientan en el eje de eyección dentro del dispensador, por tanto, son las más críticas para asegurar que nada sobresalga más allá de lo permitido.
+	
+		\item Nota: Puede haber volumen adicional disponible para CubeSats de 3U, 6U y 12U. Este volumen adicional a veces se denomina volumen de la "lata de atún". La disponibilidad y las dimensiones del volumen dependen del dispensador.
+		
+		\item La cara –Z del CubeSat se insertará primero en el dispensador.
+		
+		\item Ningún componente de los lados sombreados en amarillo (ver dibujos del CDS) no debe sobresalir más de 6,5 mm normal a la superficie desde el plano del riel.
+		
+		\item Nota: Consulte el CIFP (CubeSat Inspection and Fit-check Procedure) para conocer la técnica de medición de protuberancia recomendada. Este consiste en un procedimiento oficial para verificar que un CubeSat cumple con las especificaciones mecánicas establecidas en el CubeSat Design Specification (CDS).
+		
+		\item Los elementos desplegables (antenas, paneles solares, booms, etc.) deberán estar asegurados por el propio CubeSat, no por el dispensador. Este requisito proviene de las exigencias de la mayoría de los proveedores de lanzamiento. La norma exige que sea el propio CubeSat quien asegure esos elementos.
+		
+		\item Los rieles deberán tener un ancho mínimo de 8,5 mm medido desde el borde del riel hasta la primera protuberancia en cada cara.
+		
+		\item Los rieles deben tener una rugosidad superficial menor a 1,6 um.
+		
+		\item Los bordes de los rieles deben redondearse con un radio de al menos 1 mm.
+		
+		\item Los extremos de los rieles en la cara  $\pm$ Z deberán tener una superficie mínima de 6,5 mm x 6,5 mm de área de contacto con los rieles del CubeSat vecinos.
+		
+		\item Al menos el 75$\%$ del riel debe estar en contacto con los rieles del dispensador. El 25$\%$ restante del riel puede estar empotrado (retraído).
+		
+		\item El cuadro  muestra la masa máxima típica para cada configuración en U. Las masas aceptables pueden variar según las capacidades del dispensador. Las masas superiores a la presentada en la cuadro pueden evaluarse misión por misión.
+		
+		\begin{table}[h!]
+			\centering
+			\renewcommand{\arraystretch}{1}
+			\begin{tabular}{|c|c|}
+				\hline
+				Configuración U & Masa [Kg]   \\
+				\hline
+				1U   & 2.00  \\ \hline
+				1.5U & 3.00  \\ \hline
+				2U   & 4.00  \\ \hline
+				3U   & 6.00  \\ \hline
+				6U   & 12.00 \\ \hline
+				12U  & 24.00 \\ \hline
+			\end{tabular}
+			\caption{Masa máxima permitida según configuración CubeSat (Fuente: CDS Rev. 14.1).}
+			\label{tab:cubesat_mass}
+		\end{table}
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagenes/size_cubesat}
+			\caption[Configuraciones en U(Fuente: CDSDrawings2022)]{Configuraciones en U(Fuente: CDSDrawings2022)}
+			\label{fig:extravolcubesat}
+		\end{figure}
+		
+		\item El centro de gravedad del CubeSat deberá estar dentro de los rangos especificados en el cuadro.
+		
+		\begin{table}[h!]
+			\centering
+			\renewcommand{\arraystretch}{1} % más espacio entre renglones
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				Configuración U & Eje X & Eje Y & Eje Z \\
+				\hline
+				1U   & +2 cm / -2 cm & +2 cm / -2 cm & +2 cm / -2 cm \\ \hline
+				1.5U & +2 cm / -2 cm & +2 cm / -2 cm & +3 cm / -3 cm \\ \hline
+				2U   & +2 cm / -2 cm & +2 cm / -2 cm & +4.5 cm / -4.5 cm \\ \hline
+				3U   & +2 cm / -2 cm & +2 cm / -2 cm & +7 cm / -7 cm \\ \hline
+				6U   & +4.5 cm / -4.5 cm & +2 cm / -2 cm & +7 cm / -7 cm \\ \hline
+				12U  & +4.5 cm / -4.5 cm & +4.5 cm / -4.5 cm & +7 cm / -7 cm \\
+				\hline
+			\end{tabular}
+			\caption{Rangos aceptables de ubicación del centro de gravedad medidos desde el centro geométrico en cada eje principal (Fuente: CDS Rev. 14.1).}
+			\label{tab:centro_gravedad}
+		\end{table}
+		
+		\item La estructura del CubeSat debe estar hecha de aleación de aluminio. Normalmente, se utiliza aluminio 7075, 6061, 6082, 5005 o 5052 tanto para la estructura principal del CubeSat como para los rieles.
+		
+		\item Cualquier superficie externa de aluminio del CubeSat, como los rieles y separadores que estén en contacto con los rieles del dispensador, deberá estar anodizada en duro.
+		
+		\item Si un CubeSat comparte un dispensador con otro(s) CubeSat(s), cada CubeSat deberá emplear un mecanismo que favorezca la separación respecto de los CubeSats vecinos dentro del dispensador. Cualquier mecanismo que proporcione separación es aceptable, resortes, imanes, etc.
+		
+		\item El mecanismo de separación no deberá extenderse más allá del nivel del separador (standoff) en configuración almacenada (stowed configuration).
+		
+		\item Nota: La ubicación más común del mecanismo de separación del CubeSat es centrada en el extremo de los dos standoffs de la cara –Z del CubeSat.
+		
+		\item Nota: No se requiere un mecanismo de separación para CubeSats que no compartan un dispensador con otro(s) CubeSat(s).
+	\end{enumerate}
+	
+	
+	
+	\subsection{Especificaciones eléctricas}
+	Los sistemas electrónicos se diseñarán con las siguientes características de seguridad.
+	\begin{enumerate}
+		\item Para evitar que el CubeSat active cualquier función que requiera energía, el sistema de potencia del CubeSat deberá permanecer en estado apagado desde el momento de la entrega al vehículo de lanzamiento hasta el despliegue en órbita.
+		
+		\item Nota: Las funciones alimentadas del CubeSat incluyen la variedad de subsistemas como C\&DH, comunicación por RF,ADC, activación de mecanismos desplegables, etc. Los sistemas de potencia del CubeSat incluyen todos los conjuntos de baterías y celdas solares.
+		
+		\item Los CubeSats deberán incorporar protección de circuito de batería para la carga/descarga con el fin de evitar condiciones de celdas desbalanceadas. Se requerirá documentación adicional del fabricante y/o ensayos para celdas modificadas, personalizadas o que no estén certificadas bajo UL (Underwriters Laboratories), norma de seguridad internacional.
+		
+		\item El CubeSat deberá tener, como mínimo, un interruptor de despliegue (deployment switch), el cual se acciona mientras está integrado en el dispensador. Este mantiene el satélite apagado mientras esté dentro del dispensador. Solo al ser liberado en órbita este interruptor se desactiva, permitiendo encender el sistema de manera segura.
+		
+		\item En el estado activado, el interruptor de despliegue del CubeSat desconectará eléctricamente el sistema de energía de las funciones alimentadas.
+		
+		\item El interruptor de despliegue deberá estar en estado activado en todo momento mientras esté integrado en el dispensador.
+		
+		\item En estado activado, el interruptor de despliegue del CubeSat debe estar al nivel o por debajo de cualquier superficie externa que interactúe con el dispensador o el CubeSat adyacente. Esto garantiza que el interruptor no dañe ni interfiera con la superficie de contacto.
+		
+		\item Si el interruptor de despliegue del CubeSat cambia del estado activado al estado anterior al lanzamiento, el satélite se restablecerá a un estado previo al lanzamiento, lo que incluye el reinicio de la transmisión y los temporizadores.
+		
+		\item Se podrán permitir los relojes de tiempo real (RTC) si cumplen los requisitos:
+		
+		\subitem $\bullet$ Los circuitos RTC deberán estar aislados del sistema de alimentación principal.
+		\subitem $\bullet$ Las frecuencias RTC deberán ser inferiores a 320 kHz
+		\subitem $\bullet$ Los circuitos RTC deberán tener una corriente limitada a menos de 10 mA.
+		
+		\item El pin RBF (Remove Before Flight) y todos los conectores umbilicales del CubeSat deberán estar dentro de las ubicaciones de puertos de acceso designados, si estos están disponibles en el dispensador del CubeSat.
+		
+		\item Nota: Algunos dispensadores no tienen puertos de acceso, por lo que es necesario retirar el RBF antes de insertarlo en el dispensador. Se recomienda que el desarrollador del CubeSat tenga en cuenta esta posibilidad al diseñar la secuencia de encendido y arranque.
+		
+		\item El CubeSat incluirá un pin RBF, que corta toda la energía al satélite una vez que se inserta en él.
+		
+		\item El pin RBF deberá retirarse del CubeSat antes de la integración en el dispensador, si este no dispone de puertos de acceso.
+		
+		\item El CubeSat deberá tener al menos tres inhibidores de RF independientes para impedir la transmisión de RF involuntaria.
+		
+		\item Nota: Un inhibidor es un dispositivo físico entre una fuente de energía y un peligro.
+		
+		\item Nota: Un temporizador no se considera un inhibidor independiente.
+		
+		\item Nota: Algunos proveedores de vehículos de lanzamiento solo requerirán uno o dos inhibidores independientes, dependiendo de la potencia de RF del CubeSat. Sin embargo, se recomienda encarecidamente el uso de tres inhibidores independientes, lo que puede reducir la documentación y los análisis necesarios.
+		
+		\item El CubeSat tendrá al menos tres inhibidores independientes para impedir la liberación accidental de cualquier estructura desplegable, como antenas o paneles solares.
+	\end{enumerate}
+	
+	
+	
+	\subsection{Especificaciones operacionales}
+	Los CubeSats cumplirán ciertos requisitos de integración y funcionamiento para cumplir con las obligaciones legales y garantizar la seguridad de otros CubeSats.
+	\begin{enumerate}
+		\item Los operadores deberán obtener y proporcionar la documentación correspondiente de las licencias correspondientes para el uso de radiofrecuencias.
+		
+		\item Nota: Para el uso de frecuencias de radio-aficionado, se requiere un comprobante de coordinación de frecuencias emitido por la IARU.
+		
+		\item Los CubeSats deberán cumplir con los acuerdos y restricciones de licencia de radio de su país. (ver normas del ENACOM)
+		
+		\item Nota: El operador de CubeSat debe consultar a la Unión Internacional de Telecomunicaciones (UIT) para determinar qué licencias y aprobaciones necesita en su país.
+		
+		\item El diseño y el hardware de la misión CubeSat deberán cumplir con la norma NPR 8715.6  para limitar los desechos orbitales.
+		
+		\item Cualquier componente del CubeSat deberá reingresar con una energía inferior a 15 julios.
+		
+		\item Los desarrolladores deben estar preparados para proporcionar datos de mitigación de desechos orbitales si así lo solicita la agencia de licencias o el proveedor de lanzamiento.
+		
+		\item Nota: La Agencia Espacial Europea (ESA) ofrece un software de evaluación de residuos en ESA\_SDUP2025.
+		
+		\item Todos los elementos desplegables, como brazos, antenas y paneles solares, deberán esperar un mínimo de 30 minutos para desplegarse después de que se activen los interruptores de despliegue del CubeSat durante la eyección del dispensador.
+		
+		\item Los CubeSats no generarán ni transmitirán una señal antes de 45 minutos después de su despliegue en órbita.
+		
+		\item Nota: El CubeSat se puede encender inmediatamente después del despliegue desde el dispensador.
+		
+		\item Nota: Las entidades privadas (no pertenecientes al gobierno estadounidense) bajo la jurisdicción o control de Estados Unidos que se propongan operar un sistema espacial de teledetección (satélite), como un generador de imágenes visuales, podrían necesitar una licencia de teledetección, según lo exige la legislación estadounidense.
+		
+		\item El desarrollador del dispensador llevará a cabo al menos una prueba de ajuste (fit check), en la cual la unidad de vuelo del CubeSat será inspeccionada e integrada en el dispensador o en un dispensador de ingeniería (réplica) para verificar el encaje. Una prueba de ajuste final se realizará justo antes de la integración de la unidad de vuelo del CubeSat en el dispensador.
+	\end{enumerate}
+	
+	\subsection{Requerimientos de prueba}
+	Todos los niveles y requisitos de ensayo son específicos de cada misión y varían en cada lanzamiento. Los ejemplos proporcionados en este documento son, típicamente, los más estrictos, con el fin de abarcar los requisitos de la mayoría de las oportunidades de lanzamiento hasta la fecha. Los ensayos se realizarán para cumplir con los requisitos del proveedor de lanzamiento, así como con cualquier requisito adicional considerado necesario para garantizar la seguridad de los CubeSats, el dispensador y la carga útil primaria del vehículo de lanzamiento. Si el entorno del vehículo de lanzamiento es desconocido, se puede utilizar el General Environmental Verification Standard (GEVS, GSFC-STD-7000A) y el SMC-S-016 para definir los entornos y requisitos de ensayo. Cabe señalar que los niveles de ensayo definidos en GSFC-STD-7000A y SMC-S-016 no garantizan abarcar o satisfacer todos los entornos de ensayo de vehículos de lanzamiento. Normalmente, todos los CubeSats deberán someterse a los siguientes ensayos:
+	\begin{enumerate}
+		\item \textbf{Vibración aleatoria}: El ensayo de vibración aleatoria se realizará a los niveles y durante el tiempo definido por el proveedor de lanzamiento.
+		
+		\item \textbf{Horneado en vacío térmico (Thermal Vacuum Bakeout)}. Se realizará un horneado en vacío térmico para garantizar la desgasificación adecuada de los componentes. La especificación de este ensayo será definida por el proveedor de lanzamiento.
+		
+		\item \textbf{Ensayo de choque (Shock Testing)}: El ensayo de choque se realizará según lo definido por el proveedor de lanzamiento.Normalmente, los CubeSats no requieren ensayo de choque.
+		
+		\item \textbf{Inspección visual}: Se realizará una inspección visual del CubeSat y la medición de áreas críticas de acuerdo con el CIFP (cubesat.org) o según lo definido por el proveedor de lanzamiento.
+	\end{enumerate}\newpage
+	
+	
+	\section{Estándar PC-104}
+	En el documento (PC-104 Specification Version 2.6 October 13, 2008) proporciona las especificaciones mecánicas y eléctricas. En el ámbito de desarrollo de CubeSats es una práctica estándar adoptar únicamente la geometría mecánica del estándar PC-104 (dimensiones de placa, agujeros de montaje y formato de conector) mientras se define una asignación de pines (pinout) totalmente personalizada adaptada a microcontroladores ARM y a las necesidades del satélite. La especificación eléctrica original del bus ISA de 16 bits (así como PCI/PCIe en PC/104-Plus) no se aplica en arquitecturas de subsistemas espaciales modernos.
+	
+	\begin{enumerate}
+		\item Reducción del factor de forma 90 por 96 mm. 
+		
+		\item Eliminación de la necesidad de backplanes o racks de tarjetas, a través de su bus autoapilable. 	
+		
+		\item Minimización del número de componentes y del consumo de energía (típicamente de 1 a 2 vatios por módulo), al reducir la corriente de excitación del bus requerida en la mayoría de las señales a 4 mA.
+	\end{enumerate}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\linewidth]{imagenes/mec_pc104p}
+		\caption[Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)]{Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)}
+		\label{fig:dimpc104}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.55\linewidth]{imagenes/stack_pc104_p}
+		\caption[Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)]{Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)}
+		\label{fig:stackpc104}
+	\end{figure}\newpage
+	
+	
+	
+	\section{Transpondedor Satelital}
+	\subsection{Definición y principio de funcionamiento}
+	Un transpondedor (transponder, acrónimo de TRANSmitter + resPONDER) es el componente central de la carga útil (payload) de comunicaciones de un satélite. Su función principal es recibir la señal enviada desde una estación terrestre (enlace de subida o uplink), procesarla para acondicionarla y retransmitirla hacia la Tierra (enlace de bajada o downlink).Un transpondedor actúa como un puente de radiofrecuencia. Debido a que las señales sufren pérdidas extremas en su viaje por el espacio (pérdidas por trayectoria en espacio libre o Free Space Path Loss), la señal que llega al satélite es sumamente débil (del orden de los picowatts o nanowatts).
+	
+	La conversión de frecuencia entre el enlace de subida (uplink) y de bajada (downlink) es indispensable para desacoplar la entrada y la salida del repetidor, evitando que la señal de alta potencia retransmitida se filtre o realimente en el receptor. Sin embargo, realizar esta conversión directamente al inicio mediante un mezclador (front-end mixer) degradaría inaceptablemente la temperatura de ruido global del sistema debido a la elevada figura de ruido que poseen los mezcladores. El LNA establece la temperatura efectiva de ruido del sistema a la frecuencia de subida y aporta una ganancia elevada (típicamente entre $20dB$ y $40dB$), la cual enmascara y minimiza la contribución de ruido del mezclador que se ubica justo después. Posterior al LNA, el mezclador junto al oscilador local realiza el cambio de frecuencia, posicionándose en un punto estratégico de la cadena donde el nivel de la señal sea lo suficientemente alto respecto al ruido, pero controlado para no activar efectos no lineales en el componente.\newpage
+	
+	Tras la conversión de frecuencia, y teniendo en cuenta la ganancia del amplificador de bajo ruido y las pérdidas de conversión del mezclador, aún queda por proporcionar cierta cantidad de ganancia para obtener la ganancia total de potencia requerida. Dependiendo de las bandas de frecuencia involucradas, las consideraciones tecnológicas pueden dificultar la obtención de una alta ganancia de potencia a la frecuencia del enlace de bajada (downlink). En estos casos, se utiliza una doble conversión de frecuencia mediante una frecuencia intermedia (IF) de menor valor que la frecuencia de bajada. Las señales del enlace de subida (uplink) se convierten primero de forma descendente a la IF, donde se realiza la amplificación. Luego, un conversor ascendente traslada la frecuencia a la del enlace de bajada.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/tranponder_1}
+		\caption[Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M, Z.)]{Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
+		\label{fig:tranponder1}
+	\end{figure}
+	
+	Algunos sistemas incluyen demultiplexado e IMUX (Input Multiplexer), el ancho de banda total del satélite se divide mediante un banco de filtros en múltiples canales individuales, ademas de multiplexado de Salida (OMUX): Los canales ya amplificados se vuelven a combinar en un solo canal utilizando filtros de alta potencia.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/transponder_2}
+		\caption[Organizacion general de un transponder (Fuente: Maral, G., Bousquet, M., Z.)]{Organizacion general de un transponder (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
+		\label{fig:transponder2}
+	\end{figure}
+	
+	\subsection{Tipos de transpondedores: Regenerativos vs. Transparentes (Lineales)}
+	El repetidor transparente, conocido como de tipo bent-pipe o tubo curvado, opera mediante un procesamiento $100\%$ analógico en el que la señal de subida (uplink) es recibida, filtrada, convertida en frecuencia mediante un oscilador local para evitar la auto-interferencia y amplificada en potencia antes de ser retransmitida hacia la Tierra.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.65\linewidth]{imagenes/transponder_3}
+		\caption[Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z.)]{Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
+		\label{fig:transponder3}
+	\end{figure}
+	Su ventaja principal reside en su absoluta independencia o transparencia respecto al protocolo de comunicación, el tipo de modulación o la tasa de datos empleada, lo que permite actualizar libremente la tecnología de las estaciones terrenas durante la vida útil del satélite sin modificar el hardware, ofreciendo además una latencia casi nula, menor consumo energético y alta confiabilidad. Sin embargo, su mayor desventaja es la acumulación inevitable de ruido e interferencias: el transpondedor no distingue entre la señal útil y las degradaciones captadas en el trayecto, amplificando el ruido del enlace de subida de forma conjunta con la información. Asimismo, al manejar múltiples portadoras simultáneas, sufre distorsiones por intermodulación en sus amplificadores de potencia, obligando a operar el sistema con un margen de reducción de potencia (back-off) que disminuye la eficiencia energética global del satélite.
+	
+	Por su parte, el repetidor regenerativo integra procesamiento digital a bordo (On-Board Processing - OBP) para demodular la señal analógica entrante hasta recuperar la secuencia de bits original en banda base, aplicando algoritmos de corrección de errores hacia adelante (FEC) para regenerar y limpiar completamente los datos antes de volver a modularlos y amplificarlos para el enlace de bajada.
+	 
+	Su ventaja determinante es la interrupción de la cadena de acumulación de ruido, ya que desacopla totalmente el desempeño del uplink respecto al downlink, entregando una señal retransmitida limpia y permitiendo cambiar los esquemas de modulación entre tramos, así como realizar enrutamiento o conmutación inteligente de paquetes entre distintos haces (beam switching). No obstante, sus desventajas radican en un incremento sustancial en la masa, el costo, la complejidad del hardware y el consumo energético del satélite, sumado a una mayor latencia provocada por el tiempo de procesamiento digital y una rigidez tecnológica severa, puesto que la plataforma queda irrevocablemente limitada a los protocolos y estándares digitales para los cuales fue programada antes de su lanzamiento.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/transponder_4}
+		\caption[Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z.)]{Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
+		\label{fig:transponder4}
+	\end{figure}
+	
+	
+	\section{Bloques Funcionales de Radiofrecuencia}
+	\subsection{Amplificador de Bajo Ruido (LNA)}
+	Para entender la imperiosa necesidad de colocar un Amplificador de Bajo Ruido (LNA) como primer bloque activo —antes de cualquier mezclador o etapa de conversión— es necesario recurrir al análisis de la acumulación de ruido térmico en sistemas multietapa mediante la formulación de Friis.
+	Todo componente electrónico a una temperatura física $T$ genera ruido térmico. En telecomunicaciones satelitales, el ruido aportado por un bloque funcional se modela mediante su Temperatura Equivalente de Ruido ($T_e$) o su Factor de Ruido ($F$). La relación fundamental entre ambos parámetros está dada por:
+	
+	\begin{equation}
+		T_e = T_0 (F - 1)
+	\end{equation}
+	
+	donde $T_0 = 290K$ es la temperatura de referencia estándar.\newpage
+	
+	Cuando varios dispositivos (LNA, mezclador, amplificadores intermedios) se conectan en cascada, la temperatura equivalente de ruido total del receptor ($T_e$) vista desde la entrada de la antena no es la simple suma de los ruidos individuales, sino que se rige por la Ecuación de Friis para temperaturas de ruido:
+	
+	\begin{equation}
+		T_e = T_1 + \frac{T_2}{G_1} + \frac{T_3}{G_1 G_2} + \frac{T_4}{G_1 G_2 G_3} + \dots
+	\end{equation}
+	
+	En esta expresión, $T_i$ representa la temperatura equivalente de ruido del bloque $i$, y $G_i$ es la ganancia en potencia lineal (no en dB) del bloque $i$.
+	
+	Analizando la cadena de recepción típica de un repetidor satelital, la etapa de entrada está compuesta por: LNA con ganancia elevada $G_{LNA}$ y baja temperatura de ruido $T_{LNA}$, Mezclador (Mixer) con ganancia $G_{mix}$ (que en la práctica suele ser una pérdida, $G_{mix} < 1$) y una alta temperatura de ruido $T_{mix}$. Etapa de frecuencia intermedia o amplificación posterior con temperatura $T_{IF}$ y ganancia $G_{IF}$. Sustituyendo estos bloques en la fórmula de Friis para los dos primeros componentes críticos:
+	
+	\begin{equation}
+		T_e = T_{LNA} + \frac{T_{mix}}{G_{LNA}} + \frac{T_{IF}}{G_{LNA} \cdot G_{mix}}
+	\end{equation}
+	
+	Si se intentara realizar la conversión de frecuencia directamente a la entrada mediante un mezclador pasivo (front-end mixer) sin un LNA previo, la ganancia inicial sería menor a la unidad ($G_1 = G_{mix} < 1$). Esto provocaría que el ruido de todas las etapas posteriores se multiplicara en lugar de dividirse, disparando la temperatura total de ruido del receptor a niveles inaceptables.
+	
+	Al intercalar un LNA con una ganancia muy alta (típicamente $G_{LNA} = 20dB$ a $40dB$, equivalente a un factor lineal de $100$ a $10.000$), el término divisor $G_{LNA}$ reduce drásticamente el impacto de $T_{mix}$ y de las etapas subsecuentes. Matemáticamente:
+	
+	\begin{equation}
+		G_{LNA} \gg 1  \longrightarrow \frac{T_{mix}}{G_{LNA}} \approx 0
+	\end{equation}
+	
+	Por lo tanto, la temperatura equivalente de ruido de todo el receptor satelital queda enmascarada y reducida casi exclusivamente al ruido intrínseco del LNA:
+	
+	\begin{equation}
+		T_e \approx T_{LNA}
+	\end{equation}
+	
+	La calidad de la recepción de la carga útil no depende únicamente de la temperatura de la PCB o del receptor, sino de la Temperatura del Sistema ($T_{sys}$), la cual combina el ruido captado por la antena receptora del satélite ($T_{ant}$) y el ruido propio del receptor ($T_e$):
+	
+	\begin{equation}
+		T_{sys} = T_{ant} + T_e \approx T_{ant} + T_{LNA}
+	\end{equation}
+	
+	La potencia de ruido térmico total ($N$) presente en la entrada del repetidor en un ancho de banda de medida $B$ se calcula mediante la constante de Boltzmann ($k = 1.38 \times 10^{-23}J/K$):
+	
+	\begin{equation}
+		N = k \cdot T_{sys} \cdot B
+	\end{equation}
+	
+	De esta forma, minimizar $T_{LNA}$ minimiza directamente la potencia de ruido $N$ en el satélite.\newpage
+	
+	La capacidad del satélite para captar señales débiles se mide a través de su Figura de Mérito del Receptor ($G/T$), definida como la razón entre la ganancia de la antena receptora ($G_{rx}$) y la temperatura de ruido del sistema ($T_{sys}$):
+	
+	\begin{equation}
+		\left(\frac{G}{T}\right) = \frac{G_{rx}}{T_{sys}} \quad [dB/K]
+	\end{equation}
+	
+	Esta figura de mérito determina directamente la Relación Portadora-a-Ruido del enlace de subida $(C/N)_{up}$:
+	
+	\begin{equation}
+		\left(\frac{C}{N}\right)_{up} = \frac{EIRP_{earth} \cdot \left(\frac{G}{T}\right)}{k \cdot B \cdot FSPL_{up}}
+	\end{equation}
+	
+	donde $EIRP_{earth}$ es la potencia transmitida desde la Estación Terrena y $FSPL_{up}$ representa las pérdidas por trayectoria en espacio libre. Como se observa en la formulación, si el LNA no tuviera una figura de ruido ultra baja, $T_{sys}$ aumentaría, lo que degradaría el cociente $(C/N)_{up}$. Para compensar dicha degradación sin un LNA adecuado, las estaciones terrenas se verían obligadas a aumentar drásticamente su potencia de emisión ($EIRP_{earth}$) mediante transmisores más grandes y costosos.
+	
+	Intentar suministrar semejante ganancia en una sola etapa o a una sola frecuencia causaría realimentaciones electromagnéticas parasitarias, provocando que el amplificador auto-oscile y quede inoperativo. La arquitectura propuesta resuelve esto dividiendo la ganancia: el LNA entrega los primeros $20dB$ a la frecuencia de subida ($f_{up}$) garantizando un piso de ruido bajo, el mezclador desplaza la frecuencia a una frecuencia intermedia o de bajada ($f_{down}$), y las etapas posteriores suministran los $60dB$ de ganancia restantes en esa nueva frecuencia. De esta manera se logra estabilidad global en la cadena de RF sin comprometer la figura de ruido.
+	
+
+	\subsection{Mezclador (\textit{Mixer}) y productos de conversión}
+	Un mezclador de radiofrecuencia (RF) es un dispositivo no lineal o de parámetros variables en el tiempo que realiza la traslación espectral de una señal de entrada mediante la multiplicación con una señal de referencia suministrada por un Oscilador Local (LO).
+	
+	El principio del mezclador se fundamenta en la multiplicación en el dominio del tiempo de dos señales sinusoidales: la señal de entrada $v_{RF}(t) = A_{RF} \cos(\omega_{RF} t + \phi)$ y la señal del oscilador local $v_{LO}(t) = A_{LO} \cos(\omega_{LO} t)$.
+	
+	Por identidades trigonométricas, el producto de ambas señales genera dos componentes espectrales a la salida:
+	\begin{equation}
+		v_{out}(t) = k \cdot v_{RF}(t) \cdot v_{LO}(t) = \frac{k A_{RF} A_{LO}}{2} \left[ \cos((\omega_{RF} - \omega_{LO})t + \phi) + \cos((\omega_{RF} + \omega_{LO})t + \phi) \right]
+	\end{equation}\newpage
+	
+	Parámetros importantes para el desempeño del mixer:
+	\begin{itemize}
+		\item \textbf{Ganancia / Pérdida de Conversión ($G_c$ / $L_c$)}: Relación entre la potencia de la señal de salida a la Frecuencia Intermedia (IF) y la potencia de la señal de entrada (RF):
+		\begin{equation}
+			L_c[dB] = P_{IF}[dBm] - P_{RF}[dBm]
+		\end{equation}
+		La supresión de las bandas laterales. En una conversión se producen dos bandas
+		laterales. Los fabricantes especifican las pérdidas con una sola banda lateral. 
+		\begin{equation}
+			L_{cSSB}[dB] = L_{cDSB}[dB] +3[dB]
+		\end{equation}
+		
+		\item \textbf{Figura de Ruido ($NF$)}: Incremento en la relación señal a ruido ($SNR$) debido al ruido térmico y de parpadeo intrínseco del mezclador. En mezcladores pasivos, la figura de ruido de banda lateral única (SSB) se aproxima linealmente a sus pérdidas de conversión ($NF_{SSB} \approx L_c$).
+		
+		\item \textbf{Punto de Compresión a 1 dB ($P_{1dB}$)}: Indica el límite superior del régimen de linealidad, donde la potencia de salida cae 1 dB respecto a la respuesta ideal.Normalmente en los mezcladores se especica el punto en donde la compresión del nivel de entrada es de 1 dB o 3 dB (denotado como P1dB o P3dB, respectivamente)
+		
+		\item \textbf{Punto de Intersección de Tercer Orden ($IP3$)}: Parámetro de linealidad que cuantifica la generación de productos de intermodulación de tercer orden ($IMD_3$) producidos por dos tonos adyacentes ($2f_1 - f_2$ y $2f_2 - f_1$).
+		
+		\item \textbf{Rango Dinámico Libre de Espurias ($SFDR$)}: Margen de potencia entre la señal mínima detectable (piso de ruido) y el nivel donde los productos $IMD_3$ se igualan a dicho piso:
+		\begin{equation}
+			SFDR = \frac{2}{3} (IIP3 - SMD)
+		\end{equation}
+		
+		Donde:
+		\begin{equation}
+			SMD [dBm] = -174 + log (BHz) + NF
+		\end{equation}
+		
+		\item \textbf{Aislamiento entre Puertos (Port Isolation)}: Pérdida de inserción directa entre puertos ($I_{LO-RF}$, $I_{LO-IF}$, $I_{RF-IF}$). Valores típicos oscilan entre 30 dB y 60 dB. 
+	\end{itemize}
+	
+	La Distorsión por Intermodulación (IMD) ocurre al aplicar dos o más señales en el puerto de entrada de un mezclador (usualmente analizada con dos tonos cercanos $f_{RF1}$ y $f_{RF2}$), las cuales reaccionan con la característica no lineal del dispositivo y con el oscilador local ($f_{LO}$). Esto genera componentes espurias de frecuencia expresadas como:
+	
+	\begin{equation}
+		f_{espuria} = (\pm m f_{RF1} \pm n f_{RF2}) \pm f_{LO}
+	\end{equation}\newpage
+	
+	La potencia de salida total $P_o$ afectada por la no linealidad se modela mediante una serie de potencias, donde $P_{in}$ es la potencia de entrada, $G_c$ es la ganancia o pérdida de conversión y $n$ representa el orden de la intermodulación:
+	
+	\begin{equation}
+		P_o[W] = G_c (a_1 P_{in} + a_2 P_{in}^2 + a_3 P_{in}^3 + \dots + a_n P_{in}^n)
+	\end{equation}
+	
+	En escala logarítmica, la respuesta para un producto de orden $n$ se describe mediante la recta:
+	\begin{equation}
+		P_o[dBm] = K_n[dB] + n P_{in}[dBm]
+	\end{equation}
+	
+	Siendo $K_n = G[dB] + a_n$)
+	
+	Esta relación permite calcular la relación entre la potencia de entrada, el rango medio de intermodulación ($IMR$) y el punto de intersección mediante:
+	
+	\begin{equation}
+		IIP_3[dB] = \frac{IMR_{[dB}]}{n-1} + RF_{in}[dB]
+	\end{equation}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\linewidth]{imagenes/mixer}
+		\caption[Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)]{Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)}
+		\label{fig:mixer}
+	\end{figure}\newpage
+	
+	El Nivel de Mezclador ($Level N$) es la potencia en dBm requerida en el puerto del Oscilador Local (LO) especificada por el fabricante para garantizar la conmutación óptima de los diodos y lograr la mínima pérdida de conversión. 
+	
+	\begin{table}
+		\centering
+		\footnotesize % Tamaño ideal para tablas extensas con 5 columnas
+		\setlength{\tabcolsep}{3.5pt} % Margen lateral interno optimizado
+		\renewcommand{\arraystretch}{1.25} % Altura confortable entre filas
+		
+		% 5 columnas X con pesos proporcionales (Suma = 0.85 + 0.75 + 1.10 + 1.15 + 1.15 = 5.0)
+		\begin{tabularx}{\textwidth}{|
+				>{\hsize=0.85\hsize\RaggedRight\arraybackslash}X|
+				>{\hsize=0.75\hsize\RaggedRight\arraybackslash}X|
+				>{\hsize=1.10\hsize\RaggedRight\arraybackslash}X|
+				>{\hsize=1.15\hsize\RaggedRight\arraybackslash}X|
+				>{\hsize=1.15\hsize\RaggedRight\arraybackslash}X|}
+			\hline
+			\textbf{Topología} & \textbf{Configuración de Dispositivos} & \textbf{Ventajas Principales} & \textbf{Desventajas / Limitaciones} & \textbf{Aplicación Típica en Satélites / RF} \\
+			\hline
+			\textbf{Single-Ended} \newline (Terminación Única) & 1 elemento no lineal (diodo o transistor). & Máxima simplicidad circuital y muy bajo costo de fabricación. & Nulo aislamiento entre puertos; fuga directa de $f_{LO}$ a $f_{RF}$ e $f_{IF}$; alta generación de espurias. & Detectores de RF simples, receptores de bajo costo o etapas de muy baja frecuencia. \\
+			\hline
+			\textbf{Singly Balanced} \newline (Simplemente Balanceado) & 2 elementos no lineales acoplados mediante un híbrido de $90^\circ$ o $180^\circ$ (balun). & Cancela armónicos pares del $LO$ o $RF$; mejora el aislamiento $LO$-$RF$ o $LO$-$IF$ ($> 20$ dB). & Requiere transformador/balun que ocupa área de sustrato; exige mayor potencia $P_{LO}$. & Receptores de microondas de complejidad moderada y sistemas terrestres. \\
+			\hline
+			\textbf{Double Balanced} \newline (Doblemente Balanceado) & 4 diodos en Anillo/Estrella + 2 transformadores balun ($RF$ y $LO$). & Excelente aislamiento entre todos los puertos ($> 30$--$40$ dB); rechaza productos espurios de orden par ($m f_{RF} \pm n f_{LO}$). & Mayor pérdida de inserción en baluns; requiere alta potencia de oscilador local ($P_{LO} \ge +7$ dBm). & Cargas útiles satelitales (\textit{bent-pipe}), bloques LNB y convertidores de alta linealidad. \\
+			\hline
+			\textbf{Subharmó-} \newline \textbf{nicamente} \newline \textbf{Balanceado} & Múltiples diodos en configuración antiparalelo excitados a $f_{LO}/2$ o $f_{LO}/n$. & Permite operar a frecuencias milimétricas ($f_{RF} > 30$ GHz) utilizando un $LO$ de menor frecuencia. & Mayor pérdida de conversión y mayor complejidad en la red de acoplamiento de entrada. & Receptores satelitales de alta frecuencia (Bandas Ka, Q/V y EHF) y enlaces intersatelitales. \\
+			\hline
+			\textbf{Celda de Gilbert} \newline (Activo) & Cuadripolo diferencial de 6 transistores acoplados en fuente/emisor común. & Integración monolítica (MMIC/CMOS/SiGe); provee ganancia de conversión ($G_c > 0$ dB) con bajo $P_{LO}$. & Mayor figura de ruido ($NF$); menor linealidad ($IP3$ reducido); requiere alimentación constante en DC. & Cargas útiles regenerativas (procesamiento a bordo), módems satelitales e ICs integrados. \\
+			\hline
+		\end{tabularx}
+		
+		\vspace{6pt}
+		\caption{Cuadro Comparativo de Topologías de Mezcladores (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
+		\label{tab:topologias_mezcladores}
+	\end{table}
+	
+	\subsection{Oscilador local (LO) mediante PLL}
+	
+	
+	% ==========================================
+	% MARCO METODOLÓGICO
+	% ==========================================
+	\part{MARCO METODOLÓGICO}
+	\chapter{Título del Marco Metodológico}
+	Qué se hizo, cómo se hizo y con qué se hizo. 
+	
+	\chapter{Descripción del modelo experimental}
+	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	% ==========================================
+	% RESULTADOS Y CONCLUSIONES
+	% ==========================================
+	\part{RESULTADOS Y CONCLUSIONES}
+	\chapter*{Resultados}
+	\addcontentsline{toc}{chapter}{Resultados}
+	(Los Resultados no deben incluirse en un Capítulo numerado, es un apartado individual).
+	
+	\chapter*{Conclusiones}
+	\addcontentsline{toc}{chapter}{Conclusiones}
+	- Resultados obtenidos en relación a la SAT. \\
+	- Conclusión General. \\
+	- Aporte a la Ingeniería. \\
+	(Tampoco es un capítulo numerado).
+	
+	% ==========================================
+	% BIBLIOGRAFÍA Y REFERENCIAS
+	% ==========================================
+	\clearpage
+	\begin{spacing}{1} % Espacio simple para bibliografía
+		\chapter*{Bibliografía}
+		\addcontentsline{toc}{chapter}{Bibliografía}
+		Aquí van SOLO libros físicos o ebooks con ISBN.
+		\begin{enumerate}
+			\item \setlength{\itemsep}{0.5\baselineskip} Autor. (Año). Título. Editorial. ISBN.
+		\end{enumerate}
+		
+		\chapter*{Referencias}
+		\addcontentsline{toc}{chapter}{Referencias}
+		Todo lo que no son libros (Links, Inteligencia Artificial, apuntes). La numeración continúa desde la Bibliografía.
+		\begin{enumerate}
+			\setcounter{enumi}{1} % Continuar numeración
+			\item \setlength{\itemsep}{0.5\baselineskip} OpenAI. (2020). GPT-3. Recuperado de...
+		\end{enumerate}
+	\end{spacing}
+	
+	% ==========================================
+	% ANEXOS
+	% ==========================================
+	\appendix
+	\chapter{Título del Anexo I}
+	Material complementario.
+	\chapter{Título del Anexo II}
+	
+	\chapter{Anexo del Proyecto Integrador}
+	- Solicitud de Aprobación de Tema (SAT) SIN datos personales ni firmas. \\
+	- Informes de avances mensuales SIN datos personales ni firmas.
+	
+\end{document}

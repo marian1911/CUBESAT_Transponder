@@ -1,0 +1,40 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\'{I}ndice general}{\es@scroman {ix}}{}%
+\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xi}}{}%
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xii}}{}%
+\contentsline {chapter}{Lista de Símbolos y Convenciones}{\es@scroman {xiii}}{}%
+\contentsline {chapter}{\numberline {1}INTRODUCCIÓN}{1}{}%
+\contentsline {section}{\numberline {1.1}Antecedentes del problema}{2}{}%
+\contentsline {section}{\numberline {1.2}Relevancia del trabajo}{2}{}%
+\contentsline {section}{\numberline {1.3}Motivación para la elección del tema}{3}{}%
+\contentsline {section}{\numberline {1.4}Formulación del problema}{3}{}%
+\contentsline {section}{\numberline {1.5}Objetivo General y Objetivos Específicos}{3}{}%
+\contentsline {section}{\numberline {1.6}Metodología utilizada}{4}{}%
+\contentsline {section}{\numberline {1.7}Orientación al lector}{5}{}%
+\contentsline {part}{I\hspace {1em}MARCO TEÓRICO}{6}{}%
+\contentsline {chapter}{\numberline {2}Título del Marco Teórico}{7}{}%
+\contentsline {section}{\numberline {2.1}Estándar CUBESAT}{7}{}%
+\contentsline {subsection}{\numberline {2.1.1}Especificaciones generales}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}Especificaciones mecánicas}{9}{}%
+\contentsline {subsection}{\numberline {2.1.3}Especificaciones eléctricas}{11}{}%
+\contentsline {subsection}{\numberline {2.1.4}Especificaciones operacionales}{13}{}%
+\contentsline {subsection}{\numberline {2.1.5}Requerimientos de prueba}{14}{}%
+\contentsline {section}{\numberline {2.2}Estándar PC-104}{15}{}%
+\contentsline {section}{\numberline {2.3}Transpondedor Satelital}{16}{}%
+\contentsline {subsection}{\numberline {2.3.1}Definición y principio de funcionamiento}{16}{}%
+\contentsline {subsection}{\numberline {2.3.2}Tipos de transpondedores: Regenerativos vs. Transparentes (Lineales)}{18}{}%
+\contentsline {section}{\numberline {2.4}Bloques Funcionales de Radiofrecuencia}{19}{}%
+\contentsline {subsection}{\numberline {2.4.1}Amplificador de Bajo Ruido (LNA)}{19}{}%
+\contentsline {subsection}{\numberline {2.4.2}Mezclador (\textit {Mixer}) y productos de conversión}{21}{}%
+\contentsline {subsection}{\numberline {2.4.3}Oscilador local (LO) mediante PLL}{24}{}%
+\contentsline {part}{II\hspace {1em}MARCO METODOLÓGICO}{25}{}%
+\contentsline {chapter}{\numberline {3}Título del Marco Metodológico}{26}{}%
+\contentsline {chapter}{\numberline {4}Descripción del modelo experimental}{27}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{28}{}%
+\contentsline {chapter}{Resultados}{29}{}%
+\contentsline {chapter}{Conclusiones}{30}{}%
+\contentsline {chapter}{Bibliografía}{31}{}%
+\contentsline {chapter}{Referencias}{32}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{33}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{34}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{35}{}%
