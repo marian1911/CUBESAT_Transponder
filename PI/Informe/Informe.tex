@@ -798,6 +798,85 @@
 	\end{table}
 	
 	\subsection{Oscilador local (LO) mediante PLL}
+	Un Oscilador Local (LO) es un generador de una señal senoidal de radiofrecuencia de alta pureza espectral, cuyo propósito principal es servir como señal de referencia para la conversión de frecuencia (mezcla/heterodinaje) en transmisores y receptores de RF. En la literatura clásica de telecomunicaciones, las principales tecnologías para la implementación de un LO se clasifican según su arquitectura:
+	\begin{itemize}
+		\item \textbf{Osciladores LC y a Cristal Libres}: Ofrecen un bajo ruido de fase pero presentan una baja estabilidad en frecuencia ante variaciones de temperatura y envejecimiento. Además, su ajuste de frecuencia es limitado o nulo.
+		
+		\item \textbf{DDS (Direct Digital Synthesis)}: Genera señales mediante el procesamiento numérico de muestras en el dominio del tiempo y un conversor D/A. Posee un tiempo de conmutación extremadamente rápido y alta resolución, pero está limitado en frecuencia máxima de operación y presenta un nivel elevado de espurias distantes.\newpage
+		
+		\item \textbf{Osciladores Sintonizados por YIG (Yttrium Iron Garnet)}: Ofrecen rangos de sintonía ultra-amplios y un ruido de fase excepcionalmente bajo, pero son volumétricamente grandes, costosos y de consumo elevado.
+		
+		\item \textbf{Sintetizadores por Lazo de Enganche de Fase (PLL - Phase-Locked Loop)}: Combinan la estabilidad en frecuencia de una referencia cristalina de baja frecuencia con la capacidad de generar altas frecuencias mediante un Oscilador Controlado por Voltaje (VCO). Es el estándar de la industria moderna por su equilibrio entre integrabilidad, amplio rango de sintonía y costo.
+	\end{itemize}
+	
+	Un lazo de enganche de fase (PLL) es un sistema de realimentación que combina un oscilador controlado por voltaje (VCO) y un comparador de fase conectados de tal manera que el oscilador mantiene un ángulo de fase constante con respecto a una señal de referencia. Los lazos de enganche de fase se pueden utilizar, por ejemplo, para generar señales de salida estables de alta frecuencia a partir de una señal fija de baja frecuencia. El PLL se puede analizar como un sistema de realimentación negativa utilizando la teoría de la Transformada de Laplace con un término de ganancia directa, $G(s)$, y un término de realimentación, $H(s)$.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/pll_1}
+		\caption[Modelo basico de PLL (Fuente: MT\_086 Fundamentals PLL's)]{Modelo basico de PLL (Fuente: MT\_086 Fundamentals PLL's)}
+		\label{fig:pll1}
+	\end{figure}
+	
+	Los bloques básicos del PLL son el Detector de Error (compuesto por un detector de fase/frecuencia y una bomba de carga), el Filtro de Lazo, el VCO y un Divisor de Realimentación. La realimentación negativa fuerza a que la señal de error, $e(s)$, se aproxime a cero, punto en el cual la salida del divisor de realimentación y la frecuencia de referencia quedan enganchadas en fase y frecuencia:
+	
+	\begin{equation}
+		F_O = N F_{REF} 
+	\end{equation}
+	
+	En un sistema que utiliza un PLL para generar frecuencias más altas que la de entrada, el VCO oscila a una frecuencia angular $\omega_O$. Una porción de esta señal se realimenta hacia el detector de error a través de un divisor de frecuencia con una relación $1/N$. Esta frecuencia dividida se aplica a una de las entradas del detector de error. La otra entrada, en este ejemplo, es una señal de referencia fija. El detector de error compara las señales en ambas entradas. Cuando las dos señales de entrada son iguales en fase y frecuencia, el error será constante y se dice que el lazo está en condición de enganche (locked). 
+	
+	Una implementación habitual de un Detector de Fase/Frecuencia (PFD), que consiste básicamente en dos flip-flops tipo D. Una salida Q activa una fuente de corriente positiva y la otra salida Q activa una fuente de corriente negativa. Asumiendo que, en este diseño, los flip-flops tipo D se disparan por flanco de subida (positivo), los estados posibles se muestran en la tabla lógica.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/pll_2}
+		\caption[Implementación de PFD (Fuente: MT\_086 Fundamentals PLL's)]{Implementación de PFD (Fuente: MT\_086 Fundamentals PLL's)}
+		\label{fig:pll2}
+	\end{figure}
+	
+	Si el sistema está fuera de enganche y la frecuencia en +IN es mucho mayor que la frecuencia en –IN, como se muestra en la Figura A. Dado que la frecuencia en +IN es mucho mayor que en –IN, la salida UP pasa la mayor parte del tiempo en estado alto. El primer flanco de subida en +IN lleva la salida a nivel alto y esto se mantiene hasta que se produce el primer flanco de subida en –IN. En un sistema práctico, esto significa que la salida, y por lo tanto la entrada al VCO, se lleva a un nivel más alto, lo que resulta en un aumento de la frecuencia en –IN. Esto es exactamente lo que se desea. Si la frecuencia en +IN fuera mucho menor que en –IN, ocurriría el efecto opuesto. La salida en OUT pasaría la mayor parte del tiempo en estado bajo. Esto tendría el efecto de llevar al VCO en dirección negativa y, de nuevo, acercar mucho más la frecuencia en –IN a la de +IN, para aproximarse a la condición de enganche. La Figura B muestra las formas de onda cuando las entradas están enganchadas en frecuencia y cerca del enganche de fase. Dado que +IN está adelantada respecto a –IN, la salida es una serie de pulsos de corriente positiva. Estos pulsos tenderán a controlar el VCO de modo que la señal en –IN se alinee en fase con la de +IN. Cuando esto ocurre, si no hubiera un elemento de retardo entre U3 y las entradas CLR de U1 y U2, sería posible que la salida estuviera en modo de alta impedancia, sin producir pulsos de corriente ni positivos ni negativos.
+	
+	El VCO derivaría hasta que se desarrollara un error de fase significativo y comenzara a producir nuevamente pulsos de corriente positivos o negativos. A lo largo de un período de tiempo relativamente largo, el efecto de este ciclo sería que la salida de la bomba de carga quedaría modulada por una señal que es un subarmónico de la frecuencia de referencia de entrada del PFD. Al tratarse de una señal que puede ser de baja frecuencia, no sería atenuada por el filtro de lazo y daría lugar a espurias muy significativas en el espectro de salida del VCO, un fenómeno conocido como efecto de backlash (holgura) o "zona muerta".
+	
+	El elemento de retardo entre la salida de U3 y las entradas CLR de U1 y U2 garantiza que esto no suceda. Con el elemento de retardo, incluso cuando +IN y –IN están perfectamente alineadas en fase, se seguirá generando un pulso de corriente en la salida de la bomba de carga, como se muestra en la Figura C. La duración de este retardo es igual al retardo insertado en la salida de U3 y se conoce como el ancho de pulso anti-backlash.\newline
+	
+	El contador N, también conocido como divisor N, es el elemento programable que establece la relación entre las frecuencias de entrada y salida en el PLL. La complejidad del contador N ha aumentado con los años. Además de un contador N directo, ha evolucionado para incluir un prescaler (predivisor), el cual puede poseer un módulo doble (dual modulus). Esta estructura se desarrolló como solución a los problemas inherentes al uso de la estructura básica de división por N en el camino de realimentación hacia el detector de fase cuando se requieren frecuencias de salida muy altas. Para manejar este rango, resulta lógico anteponer al contador programable un elemento contador fijo para reducir la frecuencia de entrada alta a un rango en el que la tecnología CMOS estándar pueda trabajar. Este contador, denominado prescaler.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/pll_3}
+		\caption[Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)]{Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)}
+		\label{fig:pll3}
+	\end{figure}
+	
+	Sin embargo, note que el uso de un prescaler estándar reduce la resolución del sistema a $F_1 \times P$. Este problema se resuelve mediante el uso de un prescaler de doble módulo (dual-modulus prescaler), el cual ofrece las ventajas de un prescaler estándar pero sin pérdida de resolución. Un prescaler de doble módulo es un contador cuya relación de división se puede conmutar de un valor a otro mediante una señal de control externa.  Al utilizar el prescaler de doble módulo combinado con un contador A y un contador B, es posible mantener la resolución de salida en $F_1$. No obstante, se deben cumplir las siguientes condiciones:
+	
+	\begin{itemize}
+		\item Las señales de salida de ambos contadores permanecen en estado alto (High) mientras los contadores no hayan completado su conteo (timed out).  
+		\item Cuando el contador B completa su conteo, su salida pasa a estado bajo (Low) y recarga inmediatamente ambos contadores a sus valores preestablecidos.  
+		\item El valor cargado en el contador B siempre debe ser mayor que el cargado en el contador A. 
+	\end{itemize}
+	
+	Existen múltiples especificaciones a considerar al diseñar un PLL. El rango de frecuencia RF de entrada y el espaciado de canales determinan los valores de los contadores R y N, así como los parámetros del prescaler.  El ancho de banda del lazo determina el tiempo de enganche en frecuencia y fase. Dado que el PLL es un sistema de control con realimentación negativa, se deben analizar el margen de fase y los criterios de estabilidad.  La pureza espectral de la salida del PLL se especifica mediante el ruido de fase y el nivel de las espurias relacionadas con la frecuencia de referencia.  Muchos de estos parámetros están interrelacionados; por ejemplo, anchos de banda de lazo más estrechos conducen a menores niveles de ruido de fase y espurias de referencia, pero a expensas de tiempos de enganche más lentos y un menor margen de fase.
+	
+	Un PLL es un tipo de oscilador y, en el diseño de cualquier oscilador, la estabilidad de frecuencia es de importancia crítica. Nos interesan tanto la estabilidad a largo plazo como la estabilidad a corto plazo. La estabilidad de frecuencia a largo plazo se refiere a cómo varía la señal de salida durante un período prolongado (horas, días o meses). Por lo general, se especifica como la relación $\Delta f/f$ para un período de tiempo determinado, expresada como un porcentaje o en dB.Por otro lado, la estabilidad a corto plazo se enfoca en las variaciones que ocurren en un período de segundos o menos. Estas variaciones pueden ser aleatorias o periódicas. Se puede utilizar un analizador de espectro para examinar la estabilidad a corto plazo de una señal.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/pll_4}
+		\caption[Ruido de fase y componentes espurias (Fuente: Fuente: MT\_086 Fundamentals PLL's)]{Ruido de fase y componentes espurias(Fuente: Fuente: MT\_086 Fundamentals PLL's)}
+		\label{fig:pll4}
+	\end{figure}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	% ==========================================
