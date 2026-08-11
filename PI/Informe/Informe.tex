@@ -15,21 +15,25 @@
 
 % Configuración de Títulos según manual
 \usepackage{titlesec}
+
 % Capítulo: Negrita, tamaño 14
 \titleformat{\chapter}[display]
 {\normalfont\fontsize{14}{16}\bfseries}
 {\chaptertitlename\ \thechapter}{10pt}{\fontsize{14}{16}\bfseries}
+
 % Sección 1.1: Negrita, tamaño 12
 \titleformat{\section}
 {\normalfont\fontsize{12}{14}\bfseries}
 {\thesection}{1em}{}
-% Sub-sección 1.1.1: Normal, tamaño 12
+
+% Sub-sección 1.1.1: Negrita, tamaño 12
 \titleformat{\subsection}
-{\normalfont\fontsize{12}{14}\selectfont}
+{\normalfont\fontsize{12}{14}\bfseries}
 {\thesubsection}{1em}{}
-% Sub-sub-sección 1.1.1.1: Normal, tamaño 12 
+
+% Sub-sub-sección 1.1.1.1: Negrita, tamaño 12 
 \titleformat{\subsubsection}
-{\normalfont\fontsize{12}{14}\selectfont}
+{\normalfont\fontsize{12}{14}\bfseries}
 {\thesubsubsection}{1em}{}
 
 \setcounter{secnumdepth}{3}
@@ -219,7 +223,7 @@
 		
 		\item \textbf{Filtro pasa bajo:} Ubicado a la salida del mezclador para seleccionar el producto de mezcla deseado y atenuar componentes armónicas y espurias de alta frecuencia.
 		
-		\item \textbf{Oscilador local sintetizado con PLL:} Encargado de generar la señal de inyección de frecuencia intermedia (tono puro) con alta potencia y bajo ruido de fase.
+		\item \textbf{Oscilador local sintetizado con PLL:} Encargado de generar la señal de referencia (tono puro) con alta potencia y bajo ruido de fase, para su posterior mezcla.
 	\end{itemize}\newpage
 	
 	\begin{figure}[h!]
@@ -281,21 +285,10 @@
 		
 		\item \textbf{Fase de Diseño de la PCB:} Layout de la placa de circuito impreso tomando como base una plantilla con factor de forma PC-104, aplicando reglas estrictas de integridad de señal y RF.
 		
-		\item \textbf{Fase de Implementación y Montaje:} Ensamble del prototipo físico mediante un proceso de reflujo de componentes SMD con horno infrarrojo.
+		\item \textbf{Fase de Implementación y Montaje:} Ensamble del prototipo físico mediante soldadura de componentes SMD.
 		
 		\item \textbf{Fase de Ensayos y Validación:} Caracterización y medición experimental utilizando instrumental especializado de RF (analizador de espectro, generador de señales de alta frecuencia), contrastando los resultados obtenidos frente a las simulaciones teóricas.
 	\end{enumerate}\newpage
-	
-	\section{Orientación al lector}
-	El presente documento se estructura en los siguientes capítulos:
-	\begin{itemize}
-		\item \textbf{Capítulo 2 - Marco Teórico:} Describe los fundamentos del estándar CUBESAT, la arquitectura superheterodina y cada uno de sus sub-bloques, el estándar PC-104.
-		\item \textbf{Capítulo 3 - Diseño del Sistema:} Expone el calculo y dimensionamiento de cada bloque del receptor, la selección de componentes y el diseño de la PCB.
-		\item \textbf{Capítulo 4 - Implementación y Pruebas:} Detalla el montaje del prototipo y describe la metodología de medición empleada en laboratorio.
-		\item \textbf{Capítulo 5 - Resultados y Discusión:} Presenta las curvas y parámetros obtenidos en las mediciones de RF, comparándolos con las especificaciones teóricas.
-		\item \textbf{Capítulo 6 - Conclusiones y Trabajos Futuros:} Resume los logros alcanzados, analiza la viabilidad del módulo y propone líneas de desarrollo para completar el transponder.
-	\end{itemize}
-	\clearpage
 	
 	% ==========================================
 	% MARCO TEÓRICO
@@ -443,7 +436,7 @@
 		
 		\item La estructura del CubeSat debe estar hecha de aleación de aluminio. Normalmente, se utiliza aluminio 7075, 6061, 6082, 5005 o 5052 tanto para la estructura principal del CubeSat como para los rieles.
 		
-		\item Cualquier superficie externa de aluminio del CubeSat, como los rieles y separadores que estén en contacto con los rieles del dispensador, deberá estar anodizada en duro.
+		\item Cualquier superficie externa de aluminio del CubeSat, como los rieles y separadores que estén en contacto con los rieles del dispensador, deberá estar anodizada.
 		
 		\item Si un CubeSat comparte un dispensador con otro(s) CubeSat(s), cada CubeSat deberá emplear un mecanismo que favorezca la separación respecto de los CubeSats vecinos dentro del dispensador. Cualquier mecanismo que proporcione separación es aceptable, resortes, imanes, etc.
 		
@@ -605,7 +598,7 @@
 		\caption[Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z.)]{Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
 		\label{fig:transponder3}
 	\end{figure}
-	Su ventaja principal reside en su absoluta independencia o transparencia respecto al protocolo de comunicación, el tipo de modulación o la tasa de datos empleada, lo que permite actualizar libremente la tecnología de las estaciones terrenas durante la vida útil del satélite sin modificar el hardware, ofreciendo además una latencia casi nula, menor consumo energético y alta confiabilidad. Sin embargo, su mayor desventaja es la acumulación inevitable de ruido e interferencias: el transpondedor no distingue entre la señal útil y las degradaciones captadas en el trayecto, amplificando el ruido del enlace de subida de forma conjunta con la información. Asimismo, al manejar múltiples portadoras simultáneas, sufre distorsiones por intermodulación en sus amplificadores de potencia, obligando a operar el sistema con un margen de reducción de potencia (back-off) que disminuye la eficiencia energética global del satélite.
+	Su ventaja principal reside en su absoluta independencia o transparencia respecto al protocolo de comunicación, el tipo de modulación o la tasa de datos empleada, lo que permite actualizar libremente la tecnología de las estaciones terrestre durante la vida útil del satélite sin modificar el hardware, ofreciendo además una latencia casi nula, menor consumo energético y alta confiabilidad. Sin embargo, su mayor desventaja es la acumulación inevitable de ruido e interferencias: el transpondedor no distingue entre la señal útil y las degradaciones captadas en el trayecto, amplificando el ruido del enlace de subida de forma conjunta con la información. Asimismo, al manejar múltiples portadoras simultáneas, sufre distorsiones por intermodulación en sus amplificadores de potencia, obligando a operar el sistema con un margen de reducción de potencia (back-off) que disminuye la eficiencia energética global del satélite.
 	
 	Por su parte, el repetidor regenerativo integra procesamiento digital a bordo (On-Board Processing - OBP) para demodular la señal analógica entrante hasta recuperar la secuencia de bits original en banda base, aplicando algoritmos de corrección de errores hacia adelante (FEC) para regenerar y limpiar completamente los datos antes de volver a modularlos y amplificarlos para el enlace de bajada.
 	 
@@ -713,7 +706,7 @@
 		
 		\item \textbf{Figura de Ruido ($NF$)}: Incremento en la relación señal a ruido ($SNR$) debido al ruido térmico y de parpadeo intrínseco del mezclador. En mezcladores pasivos, la figura de ruido de banda lateral única (SSB) se aproxima linealmente a sus pérdidas de conversión ($NF_{SSB} \approx L_c$).
 		
-		\item \textbf{Punto de Compresión a 1 dB ($P_{1dB}$)}: Indica el límite superior del régimen de linealidad, donde la potencia de salida cae 1 dB respecto a la respuesta ideal.Normalmente en los mezcladores se especica el punto en donde la compresión del nivel de entrada es de 1 dB o 3 dB (denotado como P1dB o P3dB, respectivamente)
+		\item \textbf{Punto de Compresión a 1 dB ($P_{1dB}$)}: Indica el límite superior del régimen de linealidad, donde la potencia de salida cae 1 dB respecto a la respuesta ideal.Normalmente en los mezcladores se especifica el punto en donde la compresión del nivel de entrada es de 1 dB o 3 dB (denotado como P1dB o P3dB, respectivamente)
 		
 		\item \textbf{Punto de Intersección de Tercer Orden ($IP3$)}: Parámetro de linealidad que cuantifica la generación de productos de intermodulación de tercer orden ($IMD_3$) producidos por dos tonos adyacentes ($2f_1 - f_2$ y $2f_2 - f_1$).
 		
@@ -883,11 +876,49 @@
 	% MARCO METODOLÓGICO
 	% ==========================================
 	\part{MARCO METODOLÓGICO}
-	\chapter{Título del Marco Metodológico}
-	Qué se hizo, cómo se hizo y con qué se hizo. 
+	\chapter{Requerimientos funcionales y especificaciones}
+	La PCB debe responder estrictamente a las dimensiones de $90mm \times 96mm$, respetando la posición normalizada de los 4 orificios de montaje de las esquinas y la ubicación del conector de bus.
 	
-	\chapter{Descripción del modelo experimental}
+	En el apilamiento de módulos mediante espaciadores PC-104 (típicamente $15.24mm$ de separación entre placas), la altura de los componentes está restringida. Componentes voluminosos como conectores de radiofrecuencia (SMA), blindajes metálicos e inductores deben elegirse para no interferir con la placa adyacente.
+	
+    La ubicación de los componentes más pesados sobre la PCB (cajas de blindaje de RF, inductores de potencia, conectores) afecta directamente la posición final del centro de gravedad del CubeSat.
+    
+    El estándar exige un mínimo de tres inhibidores independientes para evitar cualquier emisión involuntaria de radiofrecuencia. En el diseño de la placa, esto requiere implementar físicamente tres cortes independientes en la cadena de transmisión/RF (por ejemplo, mediante switches MOSFET de potencia en las líneas de alimentación, pines de Enable en el síntesis PLL/LNA, y control lógico desde el bus). 
+    
+    La PCB debe rutear la alimentación desde las líneas del bus central e integrar la protección adecuada contra sobrecorrientes antes de alimentar los bloques analógicos y de RF.
+    
+    Afecta la selección de materiales de fabricación de la PCB, la máscara de soldadura, la serigrafía y los recubrimientos conformados. Todos deben cumplir con $TML \le 1.0\%$ y $CVCM \le 0.1\%$.
+    
+    En el entorno espacial no existe la convección de aire. El trazado de la PCB debe incluir planos de masa continuos y vías térmicas bajo el LNA, mezcladores y reguladores para disipar el calor por conducción hacia la estructura.
+    
+    Restringe la utilización de blindajes o inductores con núcleo ferromagnético a componentes que no excedan un campo de $0.5Gauss$ sobre el campo magnético terrestre.
+    
+    La placa debe contar con circuitería o integrar señales de control desde el microcontrolador que garanticen que la RF no transmita antes de transcurrir los 45 minutos posteriores al despliegue.
+    
+    Filtrado estricto en la etapa final de salida de RF (pasa-banda/pasa-bajo) para cumplir con las reglamentaciones de emisiones fuera de banda (ENACOM, IARU, FCC) y separación de planos de masa analógicos, digitales y de RF.
+	
+	\chapter{Selección de componentes, diseño y simulación| de los bloques funcionales} 
+	
+	\section{Amplificador de bajo ruido (LNA)}
 	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\section{Etapa de amplificación}
+	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\section{Oscilador local (LO):}
+	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\section{Etapa de mezclador (Mixer)}
+	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\section{Filtro de salida}
+	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\chapter{Diseño e implementación de la placa}
+	
+	\section{Consideraciones de la placa para el diseño en RF}
+	\section{Consideraciones de la placa para integridad de señal}
+	\section{Implementación del circuito}
 	
 	% ==========================================
 	% RESULTADOS Y CONCLUSIONES

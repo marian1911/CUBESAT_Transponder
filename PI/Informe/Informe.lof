@@ -2,20 +2,21 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Diseño 3D en KICAD (Fuente: propia)}}{2}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Estándar CUBESAT (Fuente: medium.com)}}{8}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Sistema de referencias CubeSat ejes coordenados (Fuente: CDSDrawings2022)}}{9}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Configuraciones en U(Fuente: CDSDrawings2022)}}{11}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)}}{15}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)}}{16}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M, Z.)}}{17}{}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Organizacion general de un transponder (Fuente: Maral, G., Bousquet, M., Z.)}}{17}{}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z.)}}{18}{}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z.)}}{19}{}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)}}{23}{}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Modelo basico de PLL (Fuente: MT\_086 Fundamentals PLL's)}}{25}{}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Implementación de PFD (Fuente: MT\_086 Fundamentals PLL's)}}{26}{}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)}}{27}{}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Ruido de fase y componentes espurias (Fuente: Fuente: MT\_086 Fundamentals PLL's)}}{28}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Estándar CUBESAT (Fuente: medium.com)}}{7}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sistema de referencias CubeSat ejes coordenados (Fuente: CDSDrawings2022)}}{8}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Configuraciones en U(Fuente: CDSDrawings2022)}}{10}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)}}{14}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)}}{15}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M, Z.)}}{16}{}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Organizacion general de un transponder (Fuente: Maral, G., Bousquet, M., Z.)}}{16}{}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z.)}}{17}{}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z.)}}{18}{}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)}}{22}{}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Modelo basico de PLL (Fuente: MT\_086 Fundamentals PLL's)}}{24}{}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Implementación de PFD (Fuente: MT\_086 Fundamentals PLL's)}}{25}{}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)}}{26}{}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Ruido de fase y componentes espurias (Fuente: Fuente: MT\_086 Fundamentals PLL's)}}{27}{}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

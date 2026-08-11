@@ -10,26 +10,34 @@
 \contentsline {section}{\numberline {1.4}Formulación del problema}{3}{}%
 \contentsline {section}{\numberline {1.5}Objetivo General y Objetivos Específicos}{3}{}%
 \contentsline {section}{\numberline {1.6}Metodología utilizada}{4}{}%
-\contentsline {section}{\numberline {1.7}Orientación al lector}{5}{}%
-\contentsline {part}{I\hspace {1em}MARCO TEÓRICO}{6}{}%
-\contentsline {chapter}{\numberline {2}Título del Marco Teórico}{7}{}%
-\contentsline {section}{\numberline {2.1}Estándar CUBESAT}{7}{}%
-\contentsline {subsection}{\numberline {2.1.1}Especificaciones generales}{8}{}%
-\contentsline {subsection}{\numberline {2.1.2}Especificaciones mecánicas}{9}{}%
-\contentsline {subsection}{\numberline {2.1.3}Especificaciones eléctricas}{11}{}%
-\contentsline {subsection}{\numberline {2.1.4}Especificaciones operacionales}{13}{}%
-\contentsline {subsection}{\numberline {2.1.5}Requerimientos de prueba}{14}{}%
-\contentsline {section}{\numberline {2.2}Estándar PC-104}{15}{}%
-\contentsline {section}{\numberline {2.3}Transpondedor Satelital}{16}{}%
-\contentsline {subsection}{\numberline {2.3.1}Definición y principio de funcionamiento}{16}{}%
-\contentsline {subsection}{\numberline {2.3.2}Tipos de transpondedores: Regenerativos vs. Transparentes (Lineales)}{18}{}%
-\contentsline {section}{\numberline {2.4}Bloques Funcionales de Radiofrecuencia}{19}{}%
-\contentsline {subsection}{\numberline {2.4.1}Amplificador de Bajo Ruido (LNA)}{19}{}%
-\contentsline {subsection}{\numberline {2.4.2}Mezclador (\textit {Mixer}) y productos de conversión}{21}{}%
-\contentsline {subsection}{\numberline {2.4.3}Oscilador local (LO) mediante PLL}{24}{}%
-\contentsline {part}{II\hspace {1em}MARCO METODOLÓGICO}{29}{}%
-\contentsline {chapter}{\numberline {3}Título del Marco Metodológico}{30}{}%
-\contentsline {chapter}{\numberline {4}Descripción del modelo experimental}{31}{}%
+\contentsline {part}{I\hspace {1em}MARCO TEÓRICO}{5}{}%
+\contentsline {chapter}{\numberline {2}Título del Marco Teórico}{6}{}%
+\contentsline {section}{\numberline {2.1}Estándar CUBESAT}{6}{}%
+\contentsline {subsection}{\numberline {2.1.1}Especificaciones generales}{7}{}%
+\contentsline {subsection}{\numberline {2.1.2}Especificaciones mecánicas}{8}{}%
+\contentsline {subsection}{\numberline {2.1.3}Especificaciones eléctricas}{10}{}%
+\contentsline {subsection}{\numberline {2.1.4}Especificaciones operacionales}{12}{}%
+\contentsline {subsection}{\numberline {2.1.5}Requerimientos de prueba}{13}{}%
+\contentsline {section}{\numberline {2.2}Estándar PC-104}{14}{}%
+\contentsline {section}{\numberline {2.3}Transpondedor Satelital}{15}{}%
+\contentsline {subsection}{\numberline {2.3.1}Definición y principio de funcionamiento}{15}{}%
+\contentsline {subsection}{\numberline {2.3.2}Tipos de transpondedores: Regenerativos vs. Transparentes (Lineales)}{17}{}%
+\contentsline {section}{\numberline {2.4}Bloques Funcionales de Radiofrecuencia}{18}{}%
+\contentsline {subsection}{\numberline {2.4.1}Amplificador de Bajo Ruido (LNA)}{18}{}%
+\contentsline {subsection}{\numberline {2.4.2}Mezclador (\textit {Mixer}) y productos de conversión}{20}{}%
+\contentsline {subsection}{\numberline {2.4.3}Oscilador local (LO) mediante PLL}{23}{}%
+\contentsline {part}{II\hspace {1em}MARCO METODOLÓGICO}{28}{}%
+\contentsline {chapter}{\numberline {3}Requerimientos funcionales y especificaciones}{29}{}%
+\contentsline {chapter}{\numberline {4}Selección de componentes, diseño y simulación| de los bloques funcionales}{30}{}%
+\contentsline {section}{\numberline {4.1}Amplificador de bajo ruido (LNA)}{30}{}%
+\contentsline {section}{\numberline {4.2}Etapa de amplificación}{30}{}%
+\contentsline {section}{\numberline {4.3}Oscilador local (LO):}{30}{}%
+\contentsline {section}{\numberline {4.4}Etapa de mezclador (Mixer)}{30}{}%
+\contentsline {section}{\numberline {4.5}Filtro de salida}{30}{}%
+\contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{31}{}%
+\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{31}{}%
+\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{31}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{31}{}%
 \contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{32}{}%
 \contentsline {chapter}{Resultados}{33}{}%
 \contentsline {chapter}{Conclusiones}{34}{}%
