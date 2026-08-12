@@ -24,27 +24,27 @@
 % Sección 1.1: Negrita, tamaño 12
 \titleformat{\section}
 {\normalfont\fontsize{12}{14}\bfseries}
-{\thesection}{1em}{}
+{\thesection}{0.5em}{}
 
 % Sub-sección 1.1.1: Negrita, tamaño 12
 \titleformat{\subsection}
 {\normalfont\fontsize{12}{14}\bfseries}
-{\thesubsection}{1em}{}
+{\thesubsection}{0.5em}{}
 
 % Sub-sub-sección 1.1.1.1: Negrita, tamaño 12 
 \titleformat{\subsubsection}
 {\normalfont\fontsize{12}{14}\bfseries}
-{\thesubsubsection}{1em}{}
+{\thesubsubsection}{0.5em}{}
 
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
 
 % Redacción del texto general ya es tamaño 11pt normal por \documentclass[11pt]
 
 \usepackage{graphicx}
 \usepackage{caption}
 % Espacio de 3 líneas después de imágenes y tablas (aprox 3em)
-\setlength{\intextsep}{3em}
+\setlength{\intextsep}{0.5em}
 
 \usepackage{tocbibind} % Para que aparezcan los índices en la tabla de contenidos
 
@@ -300,24 +300,12 @@
 	Los lanzadores son los vehículos espaciales (cohetes) que transportan los CubeSats al espacio. La gran mayoría de CubeSats no viajan como carga primaria, sino como carga secundaria (piggyback) junto con satélites grandes.
 	Para que esto sea posible, los CubeSats deben cumplir estrictamente con las dimensiones, masa y restricciones mecánicas/eléctricas definidas en el estándar, de modo que puedan ser integrados en un dispensador. El dispensador se instala en el lanzador y se encarga de guiar, contener y liberar a los CubeSats en la órbita asignada. Es importante discernir que, en el documento se utiliza tres \textbf{"Términos operativos"} diferentes a la hora de enumerar las distintas especificaciones:
 	
-	\begin{itemize}
-		\item \textbf{"Deberá"}: se utiliza para indicar requisitos que deben cumplirse y que requieren verificación formal.
-		
-		\item \textbf{"Debería"}: se utiliza para indicar una recomendación firme o una sugerencia para facilitar la verificación formal de otro requisito.En muchos casos, el incumplimiento limitará oportunidades de lanzamiento.
-		
-		\item \textbf{"Será"}: sirven para indicar eventos para los que los desarrolladores de naves espaciales deben estar preparados.
-		
-		\item \textbf{"Nota"}: se utiliza para indicar una recomendación o consejo destinado a ayudar al desarrollador del CubeSat.
-	\end{itemize}\newpage
-	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=1\linewidth]{imagenes/cubesat}
 		\caption[Estándar CUBESAT (Fuente: medium.com)]{Estándar CUBESAT (Fuente: medium.com)}
 		\label{fig:cubesat}
 	\end{figure}
-	
-	
 	
 	\subsection{Especificaciones generales}
 	\begin{enumerate}
@@ -335,17 +323,15 @@
 		
 		\item Los materiales de los CubeSats deberán cumplir con los criterios de baja desgasificación. Puede consultar una lista de materiales de baja desgasificación aprobados por la NASA 
 		
-		\subitem $\bullet$ Los materiales de los CubeSats deberán tener una pérdida de masa total (TML) inferior o igual al 1,0 \%.
-		\subitem $\bullet$ Los materiales de los CubeSats deberán tener un material condensable volátil recolectado (CVCM) inferior o igual al 0,1 \%.
+		\subitem  Los materiales de los CubeSats deberán tener una pérdida de masa total (TML) inferior o igual al 1,0 \%.
+		\subitem  Los materiales de los CubeSats deberán tener un material condensable volátil recolectado (CVCM) inferior o igual al 0,1 \%.
 		
-		\item El campo magnético de cualquier imán pasivo se limitará a 0,5 Gauss por encima del campo magnético de la Tierra, fuera de la envoltura estática del CubeSat.
+		\item El campo magnético de cualquier imán pasivo se limitará a $0,5$ Gauss por encima del campo magnético de la Tierra, fuera de la envoltura estática del CubeSat.
 		
 		\item El CubeSat deberá diseñarse para permitir ventilación durante el ascenso, de manera que la relación volumen ventilable/área de ventilación sea menor a 50,8 metros.
 		
 	\end{enumerate}
 		
-		
-	
 	\subsection{Especificaciones mecánicas}
 	Los planos donde se especifican las dimensiones y características del CubeSat se pueden encontrar en la siguiente sección CDSDrawings2022
 	
@@ -436,7 +422,7 @@
 		
 		\item La estructura del CubeSat debe estar hecha de aleación de aluminio. Normalmente, se utiliza aluminio 7075, 6061, 6082, 5005 o 5052 tanto para la estructura principal del CubeSat como para los rieles.
 		
-		\item Cualquier superficie externa de aluminio del CubeSat, como los rieles y separadores que estén en contacto con los rieles del dispensador, deberá estar anodizada.
+		\item Cualquier superficie externa de aluminio del CubeSat, como los rieles y separadores que estén en contacto con los rieles del dispensador, deberá estar anodizada.\newpage
 		
 		\item Si un CubeSat comparte un dispensador con otro(s) CubeSat(s), cada CubeSat deberá emplear un mecanismo que favorezca la separación respecto de los CubeSats vecinos dentro del dispensador. Cualquier mecanismo que proporcione separación es aceptable, resortes, imanes, etc.
 		
@@ -470,9 +456,9 @@
 		
 		\item Se podrán permitir los relojes de tiempo real (RTC) si cumplen los requisitos:
 		
-		\subitem $\bullet$ Los circuitos RTC deberán estar aislados del sistema de alimentación principal.
-		\subitem $\bullet$ Las frecuencias RTC deberán ser inferiores a 320 kHz
-		\subitem $\bullet$ Los circuitos RTC deberán tener una corriente limitada a menos de 10 mA.
+		\subitem  Los circuitos RTC deberán estar aislados del sistema de alimentación principal.
+		\subitem  Las frecuencias RTC deberán ser inferiores a 320 kHz
+		\subitem  Los circuitos RTC deberán tener una corriente limitada a menos de 10 mA.
 		
 		\item El pin RBF (Remove Before Flight) y todos los conectores umbilicales del CubeSat deberán estar dentro de las ubicaciones de puertos de acceso designados, si estos están disponibles en el dispensador del CubeSat.
 		
@@ -535,47 +521,37 @@
 		\item \textbf{Ensayo de choque (Shock Testing)}: El ensayo de choque se realizará según lo definido por el proveedor de lanzamiento.Normalmente, los CubeSats no requieren ensayo de choque.
 		
 		\item \textbf{Inspección visual}: Se realizará una inspección visual del CubeSat y la medición de áreas críticas de acuerdo con el CIFP (cubesat.org) o según lo definido por el proveedor de lanzamiento.
-	\end{enumerate}\newpage
-	
+	\end{enumerate}
 	
 	\section{Estándar PC-104}
 	En el documento (PC-104 Specification Version 2.6 October 13, 2008) proporciona las especificaciones mecánicas y eléctricas. En el ámbito de desarrollo de CubeSats es una práctica estándar adoptar únicamente la geometría mecánica del estándar PC-104 (dimensiones de placa, agujeros de montaje y formato de conector) mientras se define una asignación de pines (pinout) totalmente personalizada adaptada a microcontroladores ARM y a las necesidades del satélite. La especificación eléctrica original del bus ISA de 16 bits (así como PCI/PCIe en PC/104-Plus) no se aplica en arquitecturas de subsistemas espaciales modernos.
 	
-	\begin{enumerate}
-		\item Reducción del factor de forma 90 por 96 mm. 
-		
-		\item Eliminación de la necesidad de backplanes o racks de tarjetas, a través de su bus autoapilable. 	
-		
-		\item Minimización del número de componentes y del consumo de energía (típicamente de 1 a 2 vatios por módulo), al reducir la corriente de excitación del bus requerida en la mayoría de las señales a 4 mA.
-	\end{enumerate}
-	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.9\linewidth]{imagenes/mec_pc104p}
+		\includegraphics[width=0.8\linewidth]{imagenes/mec_pc104p}
 		\caption[Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)]{Dimensiones del modulo para bus de 8 bits (Fuente: PC-104 Specification)}
 		\label{fig:dimpc104}
-	\end{figure}
+	\end{figure}\newpage
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.55\linewidth]{imagenes/stack_pc104_p}
+		\includegraphics[width=0.75\linewidth]{imagenes/stack_pc104_p}
 		\caption[Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)]{Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)}
 		\label{fig:stackpc104}
-	\end{figure}\newpage
-	
+	\end{figure}
 	
 	
 	\section{Transpondedor Satelital}
 	\subsection{Definición y principio de funcionamiento}
-	Un transpondedor (transponder, acrónimo de TRANSmitter + resPONDER) es el componente central de la carga útil (payload) de comunicaciones de un satélite. Su función principal es recibir la señal enviada desde una estación terrestre (enlace de subida o uplink), procesarla para acondicionarla y retransmitirla hacia la Tierra (enlace de bajada o downlink).Un transpondedor actúa como un puente de radiofrecuencia. Debido a que las señales sufren pérdidas extremas en su viaje por el espacio (pérdidas por trayectoria en espacio libre o Free Space Path Loss), la señal que llega al satélite es sumamente débil (del orden de los picowatts o nanowatts).
+	Un transpondedor (transponder, acrónimo de TRANSmitter + resPONDER) es el componente central de la carga útil (payload) de comunicaciones de un satélite. Su función principal es recibir la señal enviada desde una estación terrestre (enlace de subida o uplink), procesarla para acondicionarla y retransmitirla hacia la Tierra (enlace de bajada o downlink).Un transpondedor actúa como un puente de radiofrecuencia. Debido a que las señales sufren pérdidas extremas en su viaje por el espacio (pérdidas por trayectoria en espacio libre o Free Space Path Loss), la señal que llega al satélite es sumamente débil (del orden de los picowatts o nanowatts).\newline
 	
-	La conversión de frecuencia entre el enlace de subida (uplink) y de bajada (downlink) es indispensable para desacoplar la entrada y la salida del repetidor, evitando que la señal de alta potencia retransmitida se filtre o realimente en el receptor. Sin embargo, realizar esta conversión directamente al inicio mediante un mezclador (front-end mixer) degradaría inaceptablemente la temperatura de ruido global del sistema debido a la elevada figura de ruido que poseen los mezcladores. El LNA establece la temperatura efectiva de ruido del sistema a la frecuencia de subida y aporta una ganancia elevada (típicamente entre $20dB$ y $40dB$), la cual enmascara y minimiza la contribución de ruido del mezclador que se ubica justo después. Posterior al LNA, el mezclador junto al oscilador local realiza el cambio de frecuencia, posicionándose en un punto estratégico de la cadena donde el nivel de la señal sea lo suficientemente alto respecto al ruido, pero controlado para no activar efectos no lineales en el componente.\newpage
+	La conversión de frecuencia entre el enlace de subida (uplink) y de bajada (downlink) es indispensable para desacoplar la entrada y la salida del repetidor, evitando que la señal de alta potencia retransmitida se filtre o realimente en el receptor. Sin embargo, realizar esta conversión directamente al inicio mediante un mezclador (front-end mixer) degradaría inaceptablemente la temperatura de ruido global del sistema debido a la elevada figura de ruido que poseen los mezcladores. El LNA establece la temperatura efectiva de ruido del sistema a la frecuencia de subida y aporta una ganancia elevada (típicamente entre $20dB$ y $40dB$), la cual enmascara y minimiza la contribución de ruido del mezclador que se ubica justo después. Posterior al LNA, el mezclador junto al oscilador local realiza el cambio de frecuencia, posicionándose en un punto estratégico de la cadena donde el nivel de la señal sea lo suficientemente alto respecto al ruido, pero controlado para no activar efectos no lineales en el componente.\newline
 	
 	Tras la conversión de frecuencia, y teniendo en cuenta la ganancia del amplificador de bajo ruido y las pérdidas de conversión del mezclador, aún queda por proporcionar cierta cantidad de ganancia para obtener la ganancia total de potencia requerida. Dependiendo de las bandas de frecuencia involucradas, las consideraciones tecnológicas pueden dificultar la obtención de una alta ganancia de potencia a la frecuencia del enlace de bajada (downlink). En estos casos, se utiliza una doble conversión de frecuencia mediante una frecuencia intermedia (IF) de menor valor que la frecuencia de bajada. Las señales del enlace de subida (uplink) se convierten primero de forma descendente a la IF, donde se realiza la amplificación. Luego, un conversor ascendente traslada la frecuencia a la del enlace de bajada.
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/tranponder_1}
+		\includegraphics[width=0.65\linewidth]{imagenes/tranponder_1}
 		\caption[Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M, Z.)]{Conversion simple vs conversion doble (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
 		\label{fig:tranponder1}
 	\end{figure}
@@ -598,7 +574,7 @@
 		\caption[Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z.)]{Enlaces up-link VHF y down-link UHF (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
 		\label{fig:transponder3}
 	\end{figure}
-	Su ventaja principal reside en su absoluta independencia o transparencia respecto al protocolo de comunicación, el tipo de modulación o la tasa de datos empleada, lo que permite actualizar libremente la tecnología de las estaciones terrestre durante la vida útil del satélite sin modificar el hardware, ofreciendo además una latencia casi nula, menor consumo energético y alta confiabilidad. Sin embargo, su mayor desventaja es la acumulación inevitable de ruido e interferencias: el transpondedor no distingue entre la señal útil y las degradaciones captadas en el trayecto, amplificando el ruido del enlace de subida de forma conjunta con la información. Asimismo, al manejar múltiples portadoras simultáneas, sufre distorsiones por intermodulación en sus amplificadores de potencia, obligando a operar el sistema con un margen de reducción de potencia (back-off) que disminuye la eficiencia energética global del satélite.
+	Su ventaja principal reside en su absoluta independencia o transparencia respecto al protocolo de comunicación, el tipo de modulación o la tasa de datos empleada, lo que permite actualizar libremente la tecnología de las estaciones terrestre durante la vida útil del satélite sin modificar el hardware, ofreciendo además una latencia casi nula, menor consumo energético y alta confiabilidad. Sin embargo, su mayor desventaja es la acumulación inevitable de ruido e interferencias: el transpondedor no distingue entre la señal útil y las degradaciones captadas en el trayecto, amplificando el ruido del enlace de subida de forma conjunta con la información. Asimismo, al manejar múltiples portadoras simultáneas, sufre distorsiones por intermodulación en sus amplificadores de potencia, obligando a operar el sistema con un margen de reducción de potencia (back-off) que disminuye la eficiencia energética global del satélite.\newline
 	
 	Por su parte, el repetidor regenerativo integra procesamiento digital a bordo (On-Board Processing - OBP) para demodular la señal analógica entrante hasta recuperar la secuencia de bits original en banda base, aplicando algoritmos de corrección de errores hacia adelante (FEC) para regenerar y limpiar completamente los datos antes de volver a modularlos y amplificarlos para el enlace de bajada.
 	 
@@ -609,7 +585,7 @@
 		\includegraphics[width=0.7\linewidth]{imagenes/transponder_4}
 		\caption[Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z.)]{Transponder transparente vs regenerativo (Fuente: Maral, G., Bousquet, M., Z. Satellite Communications Systems)}
 		\label{fig:transponder4}
-	\end{figure}
+	\end{figure}\newpage
 	
 	
 	\section{Bloques Funcionales de Radiofrecuencia}
@@ -621,7 +597,7 @@
 		T_e = T_0 (F - 1)
 	\end{equation}
 	
-	donde $T_0 = 290K$ es la temperatura de referencia estándar.\newpage
+	donde $T_0 = 290K$ es la temperatura de referencia estándar.
 	
 	Cuando varios dispositivos (LNA, mezclador, amplificadores intermedios) se conectan en cascada, la temperatura equivalente de ruido total del receptor ($T_e$) vista desde la entrada de la antena no es la simple suma de los ruidos individuales, sino que se rige por la Ecuación de Friis para temperaturas de ruido:
 	
@@ -629,7 +605,7 @@
 		T_e = T_1 + \frac{T_2}{G_1} + \frac{T_3}{G_1 G_2} + \frac{T_4}{G_1 G_2 G_3} + \dots
 	\end{equation}
 	
-	En esta expresión, $T_i$ representa la temperatura equivalente de ruido del bloque $i$, y $G_i$ es la ganancia en potencia lineal (no en dB) del bloque $i$.
+	En esta expresión, $T_i$ representa la temperatura equivalente de ruido del bloque $i$, y $G_i$ es la ganancia en potencia lineal (no en dB) del bloque $i$.\newpage
 	
 	Analizando la cadena de recepción típica de un repetidor satelital, la etapa de entrada está compuesta por: LNA con ganancia elevada $G_{LNA}$ y baja temperatura de ruido $T_{LNA}$, Mezclador (Mixer) con ganancia $G_{mix}$ (que en la práctica suele ser una pérdida, $G_{mix} < 1$) y una alta temperatura de ruido $T_{mix}$. Etapa de frecuencia intermedia o amplificación posterior con temperatura $T_{IF}$ y ganancia $G_{IF}$. Sustituyendo estos bloques en la fórmula de Friis para los dos primeros componentes críticos:
 	
@@ -663,7 +639,7 @@
 		N = k \cdot T_{sys} \cdot B
 	\end{equation}
 	
-	De esta forma, minimizar $T_{LNA}$ minimiza directamente la potencia de ruido $N$ en el satélite.\newpage
+	De esta forma, minimizar $T_{LNA}$ minimiza directamente la potencia de ruido $N$ en el satélite.
 	
 	La capacidad del satélite para captar señales débiles se mide a través de su Figura de Mérito del Receptor ($G/T$), definida como la razón entre la ganancia de la antena receptora ($G_{rx}$) y la temperatura de ruido del sistema ($T_{sys}$):
 	
@@ -677,7 +653,7 @@
 		\left(\frac{C}{N}\right)_{up} = \frac{EIRP_{earth} \cdot \left(\frac{G}{T}\right)}{k \cdot B \cdot FSPL_{up}}
 	\end{equation}
 	
-	donde $EIRP_{earth}$ es la potencia transmitida desde la Estación Terrena y $FSPL_{up}$ representa las pérdidas por trayectoria en espacio libre. Como se observa en la formulación, si el LNA no tuviera una figura de ruido ultra baja, $T_{sys}$ aumentaría, lo que degradaría el cociente $(C/N)_{up}$. Para compensar dicha degradación sin un LNA adecuado, las estaciones terrenas se verían obligadas a aumentar drásticamente su potencia de emisión ($EIRP_{earth}$) mediante transmisores más grandes y costosos.
+	Donde $EIRP_{earth}$ es la potencia transmitida desde la Estación Terrena y $FSPL_{up}$ representa las pérdidas por trayectoria en espacio libre. Como se observa en la formulación, si el LNA no tuviera una figura de ruido ultra baja, $T_{sys}$ aumentaría, lo que degradaría el cociente $(C/N)_{up}$. Para compensar dicha degradación sin un LNA adecuado, las estaciones terrenas se verían obligadas a aumentar drásticamente su potencia de emisión ($EIRP_{earth}$) mediante transmisores más grandes y costosos.
 	
 	Intentar suministrar semejante ganancia en una sola etapa o a una sola frecuencia causaría realimentaciones electromagnéticas parasitarias, provocando que el amplificador auto-oscile y quede inoperativo. La arquitectura propuesta resuelve esto dividiendo la ganancia: el LNA entrega los primeros $20dB$ a la frecuencia de subida ($f_{up}$) garantizando un piso de ruido bajo, el mezclador desplaza la frecuencia a una frecuencia intermedia o de bajada ($f_{down}$), y las etapas posteriores suministran los $60dB$ de ganancia restantes en esa nueva frecuencia. De esta manera se logra estabilidad global en la cadena de RF sin comprometer la figura de ruido.
 	
@@ -690,7 +666,7 @@
 	Por identidades trigonométricas, el producto de ambas señales genera dos componentes espectrales a la salida:
 	\begin{equation}
 		v_{out}(t) = k \cdot v_{RF}(t) \cdot v_{LO}(t) = \frac{k A_{RF} A_{LO}}{2} \left[ \cos((\omega_{RF} - \omega_{LO})t + \phi) + \cos((\omega_{RF} + \omega_{LO})t + \phi) \right]
-	\end{equation}\newpage
+	\end{equation}
 	
 	Parámetros importantes para el desempeño del mixer:
 	\begin{itemize}
@@ -704,7 +680,7 @@
 			L_{cSSB}[dB] = L_{cDSB}[dB] +3[dB]
 		\end{equation}
 		
-		\item \textbf{Figura de Ruido ($NF$)}: Incremento en la relación señal a ruido ($SNR$) debido al ruido térmico y de parpadeo intrínseco del mezclador. En mezcladores pasivos, la figura de ruido de banda lateral única (SSB) se aproxima linealmente a sus pérdidas de conversión ($NF_{SSB} \approx L_c$).
+		\item \textbf{Figura de Ruido ($NF$)}: Incremento en la relación señal a ruido ($SNR$) debido al ruido térmico y de parpadeo intrínseco del mezclador. En mezcladores pasivos, la figura de ruido de banda lateral única (SSB) se aproxima linealmente a sus pérdidas de conversión ($NF_{SSB} \approx L_c$).\newpage
 		
 		\item \textbf{Punto de Compresión a 1 dB ($P_{1dB}$)}: Indica el límite superior del régimen de linealidad, donde la potencia de salida cae 1 dB respecto a la respuesta ideal.Normalmente en los mezcladores se especifica el punto en donde la compresión del nivel de entrada es de 1 dB o 3 dB (denotado como P1dB o P3dB, respectivamente)
 		
@@ -727,7 +703,7 @@
 	
 	\begin{equation}
 		f_{espuria} = (\pm m f_{RF1} \pm n f_{RF2}) \pm f_{LO}
-	\end{equation}\newpage
+	\end{equation}
 	
 	La potencia de salida total $P_o$ afectada por la no linealidad se modela mediante una serie de potencias, donde $P_{in}$ es la potencia de entrada, $G_c$ es la ganancia o pérdida de conversión y $n$ representa el orden de la intermodulación:
 	
@@ -748,12 +724,12 @@
 		IIP_3[dB] = \frac{IMR_{[dB}]}{n-1} + RF_{in}[dB]
 	\end{equation}
 	
-	\begin{figure}[h!]
+	\begin{figure}
 		\centering
-		\includegraphics[width=0.9\linewidth]{imagenes/mixer}
+		\includegraphics[width=0.8\linewidth]{imagenes/mixer}
 		\caption[Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)]{Relación potencia de entrada vs salida (Fuente: EA3\_mixer2025)}
 		\label{fig:mixer}
-	\end{figure}\newpage
+	\end{figure}
 	
 	El Nivel de Mezclador ($Level N$) es la potencia en dBm requerida en el puerto del Oscilador Local (LO) especificada por el fabricante para garantizar la conmutación óptima de los diodos y lograr la mínima pérdida de conversión. 
 	
@@ -795,7 +771,7 @@
 	\begin{itemize}
 		\item \textbf{Osciladores LC y a Cristal Libres}: Ofrecen un bajo ruido de fase pero presentan una baja estabilidad en frecuencia ante variaciones de temperatura y envejecimiento. Además, su ajuste de frecuencia es limitado o nulo.
 		
-		\item \textbf{DDS (Direct Digital Synthesis)}: Genera señales mediante el procesamiento numérico de muestras en el dominio del tiempo y un conversor D/A. Posee un tiempo de conmutación extremadamente rápido y alta resolución, pero está limitado en frecuencia máxima de operación y presenta un nivel elevado de espurias distantes.\newpage
+		\item \textbf{DDS (Direct Digital Synthesis)}: Genera señales mediante el procesamiento numérico de muestras en el dominio del tiempo y un conversor D/A. Posee un tiempo de conmutación extremadamente rápido y alta resolución, pero está limitado en frecuencia máxima de operación y presenta un nivel elevado de espurias distantes.
 		
 		\item \textbf{Osciladores Sintonizados por YIG (Yttrium Iron Garnet)}: Ofrecen rangos de sintonía ultra-amplios y un ruido de fase excepcionalmente bajo, pero son volumétricamente grandes, costosos y de consumo elevado.
 		
@@ -828,82 +804,580 @@
 		\label{fig:pll2}
 	\end{figure}
 	
-	Si el sistema está fuera de enganche y la frecuencia en +IN es mucho mayor que la frecuencia en –IN, como se muestra en la Figura A. Dado que la frecuencia en +IN es mucho mayor que en –IN, la salida UP pasa la mayor parte del tiempo en estado alto. El primer flanco de subida en +IN lleva la salida a nivel alto y esto se mantiene hasta que se produce el primer flanco de subida en –IN. En un sistema práctico, esto significa que la salida, y por lo tanto la entrada al VCO, se lleva a un nivel más alto, lo que resulta en un aumento de la frecuencia en –IN. Esto es exactamente lo que se desea. Si la frecuencia en +IN fuera mucho menor que en –IN, ocurriría el efecto opuesto. La salida en OUT pasaría la mayor parte del tiempo en estado bajo. Esto tendría el efecto de llevar al VCO en dirección negativa y, de nuevo, acercar mucho más la frecuencia en –IN a la de +IN, para aproximarse a la condición de enganche. La Figura B muestra las formas de onda cuando las entradas están enganchadas en frecuencia y cerca del enganche de fase. Dado que +IN está adelantada respecto a –IN, la salida es una serie de pulsos de corriente positiva. Estos pulsos tenderán a controlar el VCO de modo que la señal en –IN se alinee en fase con la de +IN. Cuando esto ocurre, si no hubiera un elemento de retardo entre U3 y las entradas CLR de U1 y U2, sería posible que la salida estuviera en modo de alta impedancia, sin producir pulsos de corriente ni positivos ni negativos.
+	Si el sistema está fuera de enganche y la frecuencia en +IN es mucho mayor que la frecuencia en –IN, como se muestra en la Figura A. Dado que la frecuencia en +IN es mucho mayor que en –IN, la salida UP pasa la mayor parte del tiempo en estado alto. El primer flanco de subida en +IN lleva la salida a nivel alto y esto se mantiene hasta que se produce el primer flanco de subida en –IN. En un sistema práctico, esto significa que la salida, y por lo tanto la entrada al VCO, se lleva a un nivel más alto, lo que resulta en un aumento de la frecuencia en –IN. Esto es exactamente lo que se desea. Si la frecuencia en +IN fuera mucho menor que en –IN, ocurriría el efecto opuesto. La salida en OUT pasaría la mayor parte del tiempo en estado bajo. Esto tendría el efecto de llevar al VCO en dirección negativa y, de nuevo, acercar mucho más la frecuencia en –IN a la de +IN, para aproximarse a la condición de enganche. La Figura B muestra las formas de onda cuando las entradas están enganchadas en frecuencia y cerca del enganche de fase. Dado que +IN está adelantada respecto a –IN, la salida es una serie de pulsos de corriente positiva. Estos pulsos tenderán a controlar el VCO de modo que la señal en –IN se alinee en fase con la de +IN. Cuando esto ocurre, si no hubiera un elemento de retardo entre U3 y las entradas CLR de U1 y U2, sería posible que la salida estuviera en modo de alta impedancia, sin producir pulsos de corriente ni positivos ni negativos.\newline
 	
 	El VCO derivaría hasta que se desarrollara un error de fase significativo y comenzara a producir nuevamente pulsos de corriente positivos o negativos. A lo largo de un período de tiempo relativamente largo, el efecto de este ciclo sería que la salida de la bomba de carga quedaría modulada por una señal que es un subarmónico de la frecuencia de referencia de entrada del PFD. Al tratarse de una señal que puede ser de baja frecuencia, no sería atenuada por el filtro de lazo y daría lugar a espurias muy significativas en el espectro de salida del VCO, un fenómeno conocido como efecto de backlash (holgura) o "zona muerta".
 	
 	El elemento de retardo entre la salida de U3 y las entradas CLR de U1 y U2 garantiza que esto no suceda. Con el elemento de retardo, incluso cuando +IN y –IN están perfectamente alineadas en fase, se seguirá generando un pulso de corriente en la salida de la bomba de carga, como se muestra en la Figura C. La duración de este retardo es igual al retardo insertado en la salida de U3 y se conoce como el ancho de pulso anti-backlash.\newline
 	
-	El contador N, también conocido como divisor N, es el elemento programable que establece la relación entre las frecuencias de entrada y salida en el PLL. La complejidad del contador N ha aumentado con los años. Además de un contador N directo, ha evolucionado para incluir un prescaler (predivisor), el cual puede poseer un módulo doble (dual modulus). Esta estructura se desarrolló como solución a los problemas inherentes al uso de la estructura básica de división por N en el camino de realimentación hacia el detector de fase cuando se requieren frecuencias de salida muy altas. Para manejar este rango, resulta lógico anteponer al contador programable un elemento contador fijo para reducir la frecuencia de entrada alta a un rango en el que la tecnología CMOS estándar pueda trabajar. Este contador, denominado prescaler.
+	El contador N, también conocido como divisor N, es el elemento programable que establece la relación entre las frecuencias de entrada y salida en el PLL. La complejidad del contador N ha aumentado con los años. Además de un contador N directo, ha evolucionado para incluir un prescaler (predivisor), el cual puede poseer un módulo doble (dual modulus). Esta estructura se desarrolló como solución a los problemas inherentes al uso de la estructura básica de división por N en el camino de realimentación hacia el detector de fase cuando se requieren frecuencias de salida muy altas. Para manejar este rango, resulta lógico anteponer al contador programable un elemento contador fijo para reducir la frecuencia de entrada alta a un rango en el que la tecnología CMOS estándar pueda trabajar. Este contador, denominado prescaler.\newline
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/pll_3}
+		\includegraphics[width=0.75\linewidth]{imagenes/pll_3}
 		\caption[Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)]{Divisor entero N (Fuente: Fuente: MT\_086 Fundamentals PLL's)}
 		\label{fig:pll3}
 	\end{figure}
-	
-	Sin embargo, note que el uso de un prescaler estándar reduce la resolución del sistema a $F_1 \times P$. Este problema se resuelve mediante el uso de un prescaler de doble módulo (dual-modulus prescaler), el cual ofrece las ventajas de un prescaler estándar pero sin pérdida de resolución. Un prescaler de doble módulo es un contador cuya relación de división se puede conmutar de un valor a otro mediante una señal de control externa.  Al utilizar el prescaler de doble módulo combinado con un contador A y un contador B, es posible mantener la resolución de salida en $F_1$. No obstante, se deben cumplir las siguientes condiciones:
-	
-	\begin{itemize}
-		\item Las señales de salida de ambos contadores permanecen en estado alto (High) mientras los contadores no hayan completado su conteo (timed out).  
-		\item Cuando el contador B completa su conteo, su salida pasa a estado bajo (Low) y recarga inmediatamente ambos contadores a sus valores preestablecidos.  
-		\item El valor cargado en el contador B siempre debe ser mayor que el cargado en el contador A. 
-	\end{itemize}
 	
 	Existen múltiples especificaciones a considerar al diseñar un PLL. El rango de frecuencia RF de entrada y el espaciado de canales determinan los valores de los contadores R y N, así como los parámetros del prescaler.  El ancho de banda del lazo determina el tiempo de enganche en frecuencia y fase. Dado que el PLL es un sistema de control con realimentación negativa, se deben analizar el margen de fase y los criterios de estabilidad.  La pureza espectral de la salida del PLL se especifica mediante el ruido de fase y el nivel de las espurias relacionadas con la frecuencia de referencia.  Muchos de estos parámetros están interrelacionados; por ejemplo, anchos de banda de lazo más estrechos conducen a menores niveles de ruido de fase y espurias de referencia, pero a expensas de tiempos de enganche más lentos y un menor margen de fase.
 	
 	Un PLL es un tipo de oscilador y, en el diseño de cualquier oscilador, la estabilidad de frecuencia es de importancia crítica. Nos interesan tanto la estabilidad a largo plazo como la estabilidad a corto plazo. La estabilidad de frecuencia a largo plazo se refiere a cómo varía la señal de salida durante un período prolongado (horas, días o meses). Por lo general, se especifica como la relación $\Delta f/f$ para un período de tiempo determinado, expresada como un porcentaje o en dB.Por otro lado, la estabilidad a corto plazo se enfoca en las variaciones que ocurren en un período de segundos o menos. Estas variaciones pueden ser aleatorias o periódicas. Se puede utilizar un analizador de espectro para examinar la estabilidad a corto plazo de una señal.
 	
-	\begin{figure}[h!]
+	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=0.8\linewidth]{imagenes/pll_4}
 		\caption[Ruido de fase y componentes espurias (Fuente: Fuente: MT\_086 Fundamentals PLL's)]{Ruido de fase y componentes espurias(Fuente: Fuente: MT\_086 Fundamentals PLL's)}
 		\label{fig:pll4}
 	\end{figure}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	% ==========================================
 	% MARCO METODOLÓGICO
 	% ==========================================
 	\part{MARCO METODOLÓGICO}
 	\chapter{Requerimientos funcionales y especificaciones}
-	La PCB debe responder estrictamente a las dimensiones de $90mm \times 96mm$, respetando la posición normalizada de los 4 orificios de montaje de las esquinas y la ubicación del conector de bus.
+	Los requerimientos funcionales impuestos por la cátedra son los siguientes:
 	
-	En el apilamiento de módulos mediante espaciadores PC-104 (típicamente $15.24mm$ de separación entre placas), la altura de los componentes está restringida. Componentes voluminosos como conectores de radiofrecuencia (SMA), blindajes metálicos e inductores deben elegirse para no interferir con la placa adyacente.
+	\begin{table}[htbp]
+		\centering
+		\label{tab:requerimientos_rx}
+		\begin{tabular}{ll}
+			\toprule
+			\textbf{Parámetro} & \textbf{Requerimiento / Especificación} \\
+			\midrule
+			Banda de recepción & 144 -- 148 MHz \\
+			Ancho de banda & 80 a 100 kHz \\
+			Sensibilidad & $-110$ dBm a $-95$ dBm \\
+			Ganancia & $80$ dB \\
+			Potencia & $< 2$ W \\
+			Tensión de alimentación & 3.3 V o 5 V (a verificar conveniencia) \\
+			\bottomrule
+		\end{tabular}
+		\caption{Requerimientos de la etapa de recepción.}
+	\end{table}
 	
-    La ubicación de los componentes más pesados sobre la PCB (cajas de blindaje de RF, inductores de potencia, conectores) afecta directamente la posición final del centro de gravedad del CubeSat.
-    
-    El estándar exige un mínimo de tres inhibidores independientes para evitar cualquier emisión involuntaria de radiofrecuencia. En el diseño de la placa, esto requiere implementar físicamente tres cortes independientes en la cadena de transmisión/RF (por ejemplo, mediante switches MOSFET de potencia en las líneas de alimentación, pines de Enable en el síntesis PLL/LNA, y control lógico desde el bus). 
-    
-    La PCB debe rutear la alimentación desde las líneas del bus central e integrar la protección adecuada contra sobrecorrientes antes de alimentar los bloques analógicos y de RF.
-    
-    Afecta la selección de materiales de fabricación de la PCB, la máscara de soldadura, la serigrafía y los recubrimientos conformados. Todos deben cumplir con $TML \le 1.0\%$ y $CVCM \le 0.1\%$.
-    
-    En el entorno espacial no existe la convección de aire. El trazado de la PCB debe incluir planos de masa continuos y vías térmicas bajo el LNA, mezcladores y reguladores para disipar el calor por conducción hacia la estructura.
-    
-    Restringe la utilización de blindajes o inductores con núcleo ferromagnético a componentes que no excedan un campo de $0.5Gauss$ sobre el campo magnético terrestre.
-    
-    La placa debe contar con circuitería o integrar señales de control desde el microcontrolador que garanticen que la RF no transmita antes de transcurrir los 45 minutos posteriores al despliegue.
-    
-    Filtrado estricto en la etapa final de salida de RF (pasa-banda/pasa-bajo) para cumplir con las reglamentaciones de emisiones fuera de banda (ENACOM, IARU, FCC) y separación de planos de masa analógicos, digitales y de RF.
+	Adicionalmente, se impone una serie de restricciones dadas por los estándares CubeSat y PC-104. Es importante considerar que muchas de estas limitaciones no tienen una incidencia directa sobre el transpondedor, al tratarse de un subsistema específico del satélite. Asimismo, dado que la misión no está concebida para ser lanzada desde un dispensador, se omiten la mayoría de las exigencias mecánicas de despliegue. A continuación, se enumeran las especificaciones que sí resultan aplicables al diseño.
+	\begin{itemize}
+	\item La PCB debe responder estrictamente a las dimensiones de $90mm \times 96mm$, respetando la posición normalizada de los 4 orificios de montaje de las esquinas y la ubicación del conector de bus.
 	
-	\chapter{Selección de componentes, diseño y simulación| de los bloques funcionales} 
+	\item En el apilamiento de módulos mediante espaciadores PC-104 (típicamente $15.24mm$ de separación entre placas), la altura de los componentes está restringida. Componentes voluminosos como conectores de radiofrecuencia (SMA), blindajes metálicos e inductores deben elegirse para no interferir con la placa adyacente.
+	
+    \item La ubicación de los componentes más pesados sobre la PCB (cajas de blindaje de RF, inductores de potencia, conectores) afecta directamente la posición final del centro de gravedad del CubeSat.
+    
+    \item El estándar exige un mínimo de tres inhibidores independientes para evitar cualquier emisión involuntaria de radiofrecuencia. En el diseño de la placa, esto requiere implementar físicamente tres cortes independientes en la cadena de transmisión/RF. 
+    
+    \item La PCB debe rutear la alimentación desde las líneas del bus central e integrar la protección adecuada contra sobrecorrientes antes de alimentar los bloques analógicos y de RF.
+    
+    \item Afecta la selección de materiales de fabricación de la PCB, la máscara de soldadura, la serigrafía y los recubrimientos conformados. Todos deben cumplir con $TML \le 1.0\%$ y $CVCM \le 0.1\%$.
+    
+    \item En el entorno espacial no existe la convección de aire. El trazado de la PCB debe incluir planos de masa continuos y vías térmicas bajo el LNA, mezcladores y reguladores para disipar el calor por conducción hacia la estructura.
+    
+    \item Restringe la utilización de blindajes o inductores con núcleo ferromagnético a componentes que no excedan un campo de $0.5$ Gauss sobre el campo magnético terrestre.
+    
+    \item La placa debe contar con circuitería o integrar señales de control desde el microcontrolador que garanticen que la RF no transmita antes de transcurrir los 45 minutos posteriores al despliegue.
+    
+    \item Filtrado estricto en la etapa final de salida de RF (pasa-banda/pasa-bajo) para cumplir con las reglamentaciones de emisiones fuera de banda (ENACOM, IARU, FCC) y separación de planos de masa analógicos, digitales y de RF.
+	\end{itemize}
+	
+	Cabe destacar que, al tratarse de un proyecto con fines académicos, no resulta indispensable satisfacer al 100\% las normativas. Cumplir con todos los requerimientos impuestos por la norma maximiza la posibilidad de oportunidades de lanzamiento con los proveedores. No obstante, las especificaciones analizadas en el marco teórico representan las condiciones más restrictivas de los estándares vigentes.
+	
+	\chapter{Selección de componentes, diseño y simulación de los bloques funcionales} 
 	
 	\section{Amplificador de bajo ruido (LNA)}
-	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	Como se explico en el marco teórico, es necesario un amplificador de bajo ruido capaz de enmascarar la figura de ruido del transponder. Los criterios para seleccionar el componentes fueron: bajo consumo de corriente, baja figura de ruido, ancho de banda que comprenda las frecuencias VHF, amplitud térmica, costo, vida útil y disponibilidad. Con todo lo anteriormente mencionado, se selecciono en PSA-5454+ de minicircuit.
+	\begin{table}[htbp]
+		\centering
+		\label{tab:psa5454_caracteristicas}
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Características Principales / Desempeño (a 1 GHz)}} \\
+			\hline
+			Figura de ruido (\textit{Noise Figure}) & 0.8 dB (Típ.) \\
+			Punto de intercepción de 3.er orden de salida (OIP3) & +25.3 dBm (Típ.) \\
+			Ganancia & 18 dB (Típ.) \\
+			Potencia de salida a 1 dB de compresión (Output P1dB) & +15 dBm (Típ.) \\
+			Tensión de alimentación & +5 V (Alimentación única positiva) \\
+			Corriente de operación ($I_D$) & 20 mA \\
+			Encapsulado & SOT-363 (Tamaño microminiatura) \\
+			Lavable en agua (\textit{Aqueous Washable}) & Sí \\
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Valores Máximos Absolutos}} \\
+			\hline
+			Temperatura de operación & -45 °C a +85 °C \\
+			Temperatura de almacenamiento & -65 °C a +150 °C \\
+			Temperatura de canal & +150 °C \\
+			Tensión de CC (Pin 6) & +6 V \\
+			Disipación de potencia & 390 mW \\
+			Corriente de CC (Pin 6) & 60 mA \\
+			Corriente de polarización (Pin 4) & 10 mA \\
+			Potencia de entrada (CW) & +15 dBm \\
+			\hline
+		\end{tabular}
+		\caption{Especificaciones y valores máximos absolutos del amplificador PSA-5454+.}
+	\end{table}
+	
+	Nota en la hoja de datos: La combinación de bajo ruido y un alto valor de OIP3 hace que este amplificador MMIC sea ideal para etapas de entrada de receptor (RFE) de bajo ruido, ya que ofrece ventajas en ambos extremos del rango dinámico: sensibilidad y rango dinámico libre de espúreas ante señales de dos tonos.\newpage
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/p_lna_1}
+		\caption[Ganancia/Figura de ruido vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)]{Ganancia/Figura de ruido vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)}
+		\label{fig:plna1}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/p_lna_2}
+		\caption[IP3/Aislación inversa vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)]{IP3/Aislación inversa vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)]}
+		\label{fig:plna2}
+	\end{figure}
+	
+	Para el diseño se tuvo en cuenta el circuito recomendado por el fabricante, ya que cumple con los criterios antes mencionados y ademas se proporciona la caracterización en parámetros distribuidos (.s2p) útiles en la simulaciones.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_3}
+		\caption[Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC]{Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC}
+		\label{fig:plna3}
+	\end{figure}
+	
+	A continuación se muestran los resultados de la simulación, de los parámetros S a la frecuencia VHF deseada.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_4}
+		\caption[Ganancia f=146MHz]{Ganancia f=146MHz}
+		\label{fig:plna4}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_5}
+		\caption[Aislación inversa f=146MHz]{Aislación inversa f=146MHz}
+		\label{fig:plna5}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.85\linewidth]{imagenes/p_lna_7}
+		\caption[Reflexiones directa e inversa f=146MHz]{Reflexiones directa e inversa f=146MHz}
+		\label{fig:plna7}
+	\end{figure}\newpage
+	
+	En la hoja de datos, el fabricante expone que no hace falta redes de adaptación de impedancias externas y que se encuentran adaptadas a 50 ohm. Sin embargo esto no es valido para todo el ancho de banda del amplificador (0-4HGz), por lo que resulta conveniente colocar redes de adaptación tipo T o tipo PI para mejorar los parámetros de reflexión S11 y S22. En el caso de la red de entrada, adicionalmente se debe colocar un filtro sintonizado que permita el desacople entre la entrada y la salida. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_6}
+		\caption[Impedancia de entrada y salida]{Impedancia de entrada y salida}
+		\label{fig:plna6}
+	\end{figure}
+	
+	A partir de la gráfica, los parámetros S en formato polar son:
+	\begin{itemize}
+		\item $S_{11}$: $0.323 \angle 2.08^\circ$
+		\item $S_{22}$: $0.307 \angle -34.3^\circ$
+		\item $S_{21}$: $14.1 \angle 175^\circ$
+		\item $S_{12}$: $0.0356 \angle 27.9^\circ$
+	\end{itemize}
+	
+	Antes de intentar una adaptación simétrica conjugada, es obligatorio verificar si el dispositivo es incondicionalmente estable. Si no lo es, este método no se puede aplicar directamente porque ciertas impedancias harían oscilar el circuito. Calculamos el determinante ($\Delta$) y el factor de Rollett ($K$):
+	\begin{equation}
+		\Delta = S_{11}S_{22} - S_{12}S_{21}
+	\end{equation}
+	\begin{equation}
+		\Delta = (0.323 \angle 2.08^\circ)(0.307 \angle -34.3^\circ) - (0.0356 \angle 27.9^\circ)(14.1 \angle 175^\circ)
+	\end{equation}
+	\begin{equation}
+		\Delta \approx 0.546 + j0.143 = 0.565 \angle 14.6^\circ
+	\end{equation}
+	
+	Como $\vert{}\Delta\vert{} = 0.565 < 1$, el primer criterio se cumple. Ahora calculamos $K$:
+	
+	\begin{equation}
+		K = \frac{1 - \vert{}S_{11}\vert{}^2 - \vert{}S_{22}\vert{}^2 + \vert{}\Delta\vert{}^2}{2 \vert{}S_{12} S_{21}\vert{}}
+	\end{equation}
+	\begin{equation}
+		K = \frac{1 - 0.323^2 - 0.307^2 + 0.565^2}{2 (0.0356 \times 14.1)}
+	\end{equation}
+	\begin{equation}
+		K = \frac{1 - 0.104 - 0.094 + 0.319}{1.004} \approx 1.116
+	\end{equation}
+	
+	Como $K > 1$ y $\vert{}\Delta\vert{} < 1$, el dispositivo es incondicionalmente estable a 146 MHz. Podemos proceder con la adaptación simultánea. Para encontrar los coeficientes de reflexión, se necesita calcular las variables intermedias $B_1$, $B_2$, $C_1$ y $C_2$:
+	
+	\begin{equation}
+		B_1 = 1 + \vert{}S_{11}\vert{}^2 - \vert{}S_{22}\vert{}^2 - \vert{}\Delta\vert{}^2 = 1 + 0.104 - 0.094 - 0.319 = 0.691
+	\end{equation}
+	\begin{equation}
+		B_2 = 1 + \vert{}S_{22}\vert{}^2 - \vert{}S_{11}\vert{}^2 - \vert{}\Delta\vert{}^2 = 1 + 0.094 - 0.104 - 0.319 = 0.671
+	\end{equation}
+	\begin{equation}
+		C_1 = S_{11} - \Delta S_{22}^* \approx 0.209 - j0.119 = 0.241 \angle -29.7^\circ
+	\end{equation}
+	\begin{equation}
+		C_2 = S_{22} - \Delta S_{11}^* \approx 0.076 - j0.213 = 0.226 \angle -70.4^\circ
+	\end{equation}
+	
+	Finalmente, se aplica las fórmulas para los coeficientes de reflexión de fuente y carga. Se usa el signo negativo en el numerador para garantizar que la magnitud sea menor a 1 (lo que corresponde a impedancias pasivas reales):
+	
+	\begin{equation}
+		\Gamma_S = \frac{B_1 - \sqrt{B_1^2 - 4\vert{}C_1\vert{}^2}}{2C_1}
+	\end{equation}
+	\begin{equation}
+		\Gamma_S = \frac{0.691 - \sqrt{0.691^2 - 4(0.241)^2}}{2(0.241 \angle -29.7^\circ)} \approx \frac{0.195}{0.482 \angle -29.7^\circ}
+	\end{equation}
+	\begin{equation}
+		\Gamma_S = 0.405 \angle 29.7^\circ
+	\end{equation}
+	
+	\begin{equation}
+		\Gamma_L = \frac{B_2 - \sqrt{B_2^2 - 4\vert{}C_2\vert{}^2}}{2C_2}
+	\end{equation}
+	\begin{equation}
+		\Gamma_L = \frac{0.671 - \sqrt{0.671^2 - 4(0.226)^2}}{2(0.226 \angle -70.4^\circ)} \approx \frac{0.174}{0.452 \angle -70.4^\circ}
+	\end{equation}
+	\begin{equation}
+		\Gamma_L = 0.385 \angle 70.4^\circ
+	\end{equation}
+	
+	Primero, se debe convertir los coeficientes de reflexión óptimos que se calcularon previamente ($\Gamma_S$ y $\Gamma_L$) a las impedancias que el DUT necesita ver en sus terminales, utilizando la impedancia del sistema $Z_0 = 50\ \Omega$.
+	
+	\begin{equation}
+		Z_S = Z_0 \frac{1 + \Gamma_S}{1 - \Gamma_S} = 50 \frac{1 + (0.405 \angle 29.7^\circ)}{1 - (0.405 \angle 29.7^\circ)}
+	\end{equation}
+	\begin{equation}
+		Z_S \approx 90.75 + j43.58\ \Omega
+	\end{equation}
+	\begin{equation}
+		Z_L = Z_0 \frac{1 + \Gamma_L}{1 - \Gamma_L} = 50 \frac{1 + (0.385 \angle 70.4^\circ)}{1 - (0.385 \angle 70.4^\circ)}
+	\end{equation}
+	\begin{equation}
+		Z_L \approx 47.83 + j40.75\ \Omega
+	\end{equation}
+	
+	Para la adaptación a la entrada, se utilizó una red Pi (C-L-C) pasabajos a partir de una impedancia compleja,mediante el método de la resistencia virtual ($R_v$). Este método consiste en dividir conceptualmente la red Pi en dos secciones de tipo L acopladas. Para el filtro sintonizado usamos una resistencia virtual de $15 \Omega $, esto permite obtener un factor de calidad $ Q \approx 2.5$ que determina la selectividad del filtro. En primera sección adaptará los $50 \ \Omega$ de la fuente a los $15 \ \Omega$ de nuestra resistencia virtual mediante un capacitor en derivación ($C_{in}$) y un inductor en serie ($L_1$).
+	
+	\begin{equation}
+		Q_1 = \sqrt{\frac{R_S}{R_v} - 1} = \sqrt{\frac{50}{15} - 1} \approx 1.5275
+	\end{equation}
+	
+	El capacitor está en paralelo con el generador, por lo que su reactancia ($X_{Cin}$) se define por:
+	\begin{equation}
+		X_{Cin} = \frac{R_S}{Q_1} = \frac{50}{1.5275} \approx 32.73 \ \Omega
+	\end{equation}
+	\begin{equation}
+		C_{in} = \frac{1}{\omega \cdot X_{Cin}} = \frac{1}{(917.34 \times 10^6) \cdot 32.73} \approx 33.3 pF
+	\end{equation}
+	Para el inductor en serie tenemos:
+	\begin{equation}
+		X_{L1} = Q_1 \cdot R_v = 1.5275 \cdot 15 = 22.91 \ \Omega
+	\end{equation}
+	
+	La segunda sección debe adaptar la resistencia virtual de $15 \ \Omega$ a la impedancia objetivo compleja $Z_{out} = 90.75 + j43.58 \ \Omega$. Para facilitar el cálculo del capacitor en derivación ($C_{out}$), resulta indispensable convertir la impedancia objetivo en serie a su equivalente en paralelo (admitancia $Y_{out}$):
+	\begin{equation}
+		Y_{out} = \frac{1}{Z_{out}} = \frac{1}{90.75 + j43.58}
+	\end{equation}
+	\begin{equation}
+		Y_{out} = \frac{90.75 - j43.58}{90.75^2 + 43.58^2} = \frac{90.75 - j43.58}{10134.77}
+	\end{equation}
+	\begin{equation}
+		Y_{out} \approx 0.008955 - j0.004300 \ S
+	\end{equation}
+	
+	De este resultado se deduce que la impedancia objetivo equivale a una resistencia en paralelo de $R_p = \frac{1}{0.008955} \approx 111.68 \ \Omega$ y una susceptancia inductiva de $-0.004300 \ S$.
+	\begin{equation}
+		Q_2 = \sqrt{\frac{R_p}{R_v} - 1} = \sqrt{\frac{111.68}{15} - 1} \approx 2.5387
+	\end{equation}
+	\begin{equation}
+		X_{L2} = Q_2 \cdot R_v = 2.5387 \cdot 15 = 38.08 \ \Omega
+	\end{equation}
+	
+	El nodo final está compuesto por la admitancia resultante de la red ($Y_{L2}$) en paralelo con la susceptancia de $C_{out}$ ($j\omega C_{out}$). La red proveniente de $L_2$ nos entrega la siguiente admitancia:
+	\begin{equation}
+		Y_{L2} = \frac{1}{R_v + jX_{L2}} = \frac{1}{15 + j38.08} = 0.008955 - j0.02273 \ S
+	\end{equation}
+	
+	Para alcanzar el objetivo final $Y_{out}$, la suma de la susceptancia de $Y_{L2}$ y del capacitor $C_{out}$ debe ser igual a la susceptancia objetivo:
+	\begin{equation}
+		-j0.02273 + j\omega C_{out} = -j0.004300
+	\end{equation}
+	
+	Despejando la susceptancia del capacitor:
+	\begin{equation}
+		\omega C_{out} = 0.02273 - 0.004300 = 0.01843 \ S
+	\end{equation}
+	\begin{equation}
+		C_{out} = \frac{0.01843}{\omega} = \frac{0.01843}{917.34 \times 10^6} \approx 20.09 pF
+	\end{equation}
+	
+	Como las dos redes L están conectadas en serie a través de la resistencia virtual, los inductores $L_1$ y $L_2$ se suman para formar el componente físico único de la red Pi.
+	\begin{equation}
+		X_{L_{serie}} = X_{L1} + X_{L2} = 22.91 + 38.08 = 60.99 \ \Omega
+	\end{equation}
+	\begin{equation}
+		L_{serie} = \frac{X_{L_{serie}}}{\omega} = \frac{60.99}{917.34 \times 10^6} \approx 66.48 nH
+	\end{equation}
+	
+	Para la adaptación a la salida se tiene los $Z_S = 90.75 + j43.58\ \Omega$ (vista desde el DUT) a los $50\ \Omega$ de la carga. Calculando las reactancias necesarias para esta transformación: Reactancia del inductor $X_L = 50.94\ \Omega$, susceptancia del capacitor: $B_C = 0.00426\ S$
+	\begin{equation}
+		L_{out} = \frac{X_L}{2\pi f} = \frac{50.94}{2\pi (146 \times 10^6)} \approx 55.5nH
+	\end{equation}
+	\begin{equation}
+		C_{out} = \frac{B_C}{2\pi f} = \frac{0.00426}{2\pi (146 \times 10^6)} \approx 4.64pF
+	\end{equation}
+	
+	Lo siguiente es obtener los parámetros S del amplificador con las redes de adaptación para ver el resultado obtenido, ajustando el valor de los componentes pasivos a valores comercialmente disponibles.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/p_lna_12}
+		\caption[Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado]{Amplificador PSA-5454+ con redes de adaptacion y filtro sintonizado}
+		\label{fig:plna12}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_8}
+		\caption[Ganancia con filtro sintonizado]{Ganancia con filtro sintonizado}
+		\label{fig:plna8}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_9}
+		\caption[Aislación inversa f=146MHz]{Aislación inversa f=146MHz}
+		\label{fig:plna9}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_10}
+		\caption[Reflexiones directa e inversa a f=146MHz]{Reflexiones directa e inversa a f=146MHz}
+		\label{fig:plna10}
+	\end{figure}\newpage
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_11}
+		\caption[Adaptación de impedancia a f=146MHz]{Adaptación de impedancia a f=146MHz}
+		\label{fig:plna11}
+	\end{figure}
 	
 	\section{Etapa de amplificación}
-	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	Para cumplir con la ganancia requerida, es necesario añadir etapas de amplificación adicionales, ya que existe un limite de la cantidad de ganancia que se puede conseguir en una sola etapa. La ganancia requerida es de 80dB, teniendo en cuenta el factor de forma reducido de la PCB da como resultado una densidad de ganancia importante 17.77dB/cm aproximadamente. Bajo estas condiciones cualquier capacidad parásita existente ya sea en la PCB o en los componentes puede causar una realimentación en fase provocando la auto-oscilación del circuito volviéndolo inútil. Para mitigar estos problemas se tuvieron en cuenta las siguientes consideraciones:
+	
+	\begin{itemize}
+			\item En primer lugar para las etapas de amplificación se seleccionó una configuración Cascode. Esta topología tiene una serie de ventajas respecto a la configuración típica de emisor común. El primero es que cancela el efecto Miller y reduce la capacidad parásita colector-base, por otro lado aumenta la aislación inversa (S12) importante para que la señal en la ultima etapa presente mas dificultades para retornar a la primer etapa.
+			
+			\item Otro camino por el cual la señal amplificada se puede realimentar es por medio de VCC, por lo que cada etapa esta aislada entre si con atenuadores en la linea de alimentación.
+			
+			\item Finalmente el ultimo camino de realimentación es por medio del aire. Para solucionar esto se coloca un blindaje en forma tabicada separando cada una de las etapas amplificadoras.
+			
+			\item Si con todas las precauciones anteriormente mencionadas, existiera alguna capacidad parásita que haga oscilar el circuito se colocaron pads previstos para atenuadores entre etapas para bajar la ganancia hasta donde sea necesario para estabilizarlo, y no tener que descartar el diseño.
+	\end{itemize}
+	
+	Para el diseño se utilizo un transistor proporcionado por la cátedra (BJT 2SC3356) con las siguientes características:
+	\begin{table}[htbp]
+		\centering
+		\label{tab:transistor_caracteristicas}
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Características Eléctricas ($T_A = 25\ ^\circ C$)}} \\
+			\hline
+			Corriente de corte de colector ($I_{CBO}$) & 1.0 $\mu$A (Máx.) \\
+			Corriente de corte de emisor ($I_{EBO}$) & 1.0 $\mu$A (Máx.) \\
+			Ganancia de corriente en CC ($h_{FE}$) & 120 (Típ.) [Mín. 50, Máx. 300] \\
+			Producto ganancia-ancho de banda ($f_T$) & 7 GHz (Típ.) \\
+			Capacidad de realimentación ($C_{re}$) & 0.55 pF (Típ.) / 1.0 pF (Máx.) \\
+			Ganancia de potencia de inserción ($|S_{21e}|^2$) & 11.5 dB (Típ. a 1 GHz) \\
+			Figura de ruido (\textit{Noise Figure}, $NF$) & 1.1 dB (Típ.) / 2.0 dB (Máx. a 1 GHz) \\
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Valores Máximos Absolutos ($T_A = 25\ ^\circ C$)}} \\
+			\hline
+			Tensión colector-base ($V_{CBO}$) & 20 V \\
+			Tensión colector-emisor ($V_{CEO}$) & 12 V \\
+			Tensión emisor-base ($V_{EBO}$) & 3.0 V \\
+			Corriente de colector ($I_C$) & 100 mA \\
+			Disipación total de potencia ($P_T$) & 200 mW \\
+			Temperatura de juntura ($T_j$) & +150 °C \\
+			Temperatura de almacenamiento ($T_{stg}$) & -65 °C a +150 °C \\
+			\hline
+		\end{tabular}
+		\caption{Características eléctricas y valores máximos absolutos del transistor 2SC3356.}
+	\end{table}
+	
+	Para el diseño del amplificador se eligió una polarización en cadena (Ladder Biasing), ademas de un punto Q con una corriente $ICQ=10mA$ para minimizar la figura de ruido.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_1}
+		\caption[Propuesta para el amplificador Cascode]{Propuesta para el amplificador Cascode}
+		\label{fig:cascode1}
+	\end{figure}
+	
+	El primer paso en el diseño de cualquier amplificador polarizado por divisor de tensión es asegurar la estabilidad térmica. El criterio clásico de diseño establece que la tensión en la resistencia de emisor ($V_{E2}$) debe ser aproximadamente el 10\% de la tensión de alimentación ($V_{CC}$).
+	\begin{equation}
+		V_{E2} = 0.10 \cdot 5V = 0.5V
+	\end{equation}
+	Sabiendo que la corriente de emisor es prácticamente la corriente objetivo ($I_E \approx I_{CQ} = 10 mA$), calculamos $R_5$:
+	\begin{equation}
+		R_5 = \frac{V_{E2}}{I_{CQ}} = \frac{0.5V}{10mA} = 50 \ \Omega
+	\end{equation}
+	
+	Para que T2 conduzca, su base debe estar $0.7V$ por encima de su emisor:
+	\begin{equation}
+		V_{B2} = V_{E2} + V_{BE} = 0.5V + 0.7V = 1.20V
+	\end{equation}
+	
+	Para calcular la base de T3 ($V_{B3}$),se debe decidir cómo repartir la tensión restante para asegurar que ambos transistores operen cómodamente en la región activa lineal (evitando la saturación). Se asignó al transistor inferior (T2) una tensión colector-emisor de aproximadamente $V_{CE2} = 1.5V$ para darle un margen dinámico amplio. Sabiendo que el colector de T2 está conectado directamente al emisor de T3:
+	\begin{equation}
+		V_{E3} = V_{E2} + V_{CE2} = 0.5V + 1.5V = 2.0V
+	\end{equation}
+	
+	Con esto, se define la tensión necesaria en la base del transistor superior:
+	\begin{equation}
+		V_{B3} = V_{E3} + V_{BE} = 2.0V + 0.7V = 2.7V
+	\end{equation}
+	
+	Para calcular las resistencias, primero se determina la corriente de base nominal que consumirán los transistores:
+	\begin{equation}
+		I_B = \frac{I_{CQ}}{\beta} = \frac{10 mA}{120} \approx 83.3 \ \mu A
+	\end{equation}
+	
+	La corriente que circula de arriba a abajo por el divisor ($I_{div}$) debe ser mucho mayor que las corrientes de base. Una regla es hacer $I_{div}$ entre 10 y 20 veces $I_B$. Se fija una corriente de divisor de $I_{div} = 2 mA$.Esta corriente $I_{div}$ es la que circulará íntegramente por la resistencia inferior ($R_3$):
+	\begin{equation}
+		R_3 = \frac{V_{B2}}{I_{div}} = \frac{1.2V}{2mA} = 600 \ \Omega
+	\end{equation}
+	
+	La corriente que pasa por $R_2$ es la corriente del divisor más la corriente que se "fuga" hacia la base de T2:
+	\begin{equation}
+		I_{R2} = I_{div} + I_{B2} = 2.0mA + 0.083mA = 2.083mA
+	\end{equation}
+	
+	La caída de tensión en $R_2$ es la diferencia entre ambas bases:
+	\begin{equation}
+		V_{R2} = V_{B3} - V_{B2} = 2.7V - 1.2V = 1.50V
+	\end{equation}
+	\begin{equation}
+		R_2 = \frac{V_{R2}}{I_{R2}} = \frac{1.50V}{2.083 mA} = 720 \ \Omega
+	\end{equation}
+	
+	Finalmente,el último escalón ($R_1$). La corriente que la atraviesa debe alimentar al divisor, a la base de T2 y a la base de T3:
+	\begin{equation}
+		I_{R1} = I_{R2} + I_{B3} = 2.083mA + 0.083mA = 2.166mA
+	\end{equation}
+	
+	La caída de tensión en $R_1$ es la diferencia entre la fuente y la base superior:
+	\begin{equation}
+		V_{R1} = V_{CC} - V_{B3} = 5.0V - 2.7V = 2.3V
+	\end{equation}
+	\begin{equation}
+		R_1 = \frac{V_{R1}}{I_{R1}} = \frac{2.3 V}{2.166 mA} \approx 1061 \ \Omega
+	\end{equation}
+	
+	Con el diseño de la polarización, lo restante es adaptar la impedancia del amplificador a 50 $\Omega$. El resultado de las simulaciones son los siguientes.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_7}
+		\caption[Impedancias de entrada y salida con ICQ=10mA.]{Impedancias de entrada y salida con ICQ=10mA.}
+		\label{fig:cascode7}
+	\end{figure}
+	
+	Según la simulación, la impedancia de entrada bruta del amplificador (vista desde $C_2$) es $Z_{in} = 264 \angle -28.6^\circ \ \Omega$.Para diseñar una red L, se debe pasar esta impedancia a su equivalente en paralelo (una resistencia en paralelo con un capacitor).Pasando a forma rectangular:
+	\begin{equation}
+		Z_{in} = 264 \cos(-28.6^\circ) + j 264 \sin(-28.6^\circ) \approx 231.8 - j126.3 \ \Omega
+	\end{equation}
+	
+	Calculamos la admitancia ($Y_{in}$):
+	\begin{equation}
+		Y_{in} = \frac{1}{231.8 - j126.3} = 3.32mS + j1.81mS
+	\end{equation}
+	
+	De aquí extraemos que el amplificador se comporta a la entrada como una resistencia $R_p$ en paralelo con un capacitor parásito $C_p$:
+	\begin{equation}
+		R_p = \frac{1}{3.32mS} \approx 301 \ \Omega
+	\end{equation}
+	\begin{equation}
+		C_p = \frac{1.81mS}{2 \pi \cdot 146 MHz} \approx 1.97 pF
+	\end{equation}
+	
+	Usamos una red "L" con un elemento paralelo del lado de alta impedancia (el transistor) y un elemento serie del lado de $50 \ \Omega$.
+	\begin{equation}
+		Q = \sqrt{\frac{R_p}{R_s} - 1} = \sqrt{\frac{301}{50} - 1} = \sqrt{5.02} \approx 2.24
+	\end{equation}
+	
+	La red requiere una susceptancia inductiva para lograr la adaptación, pero además debe cancelar la susceptancia del capacitor parásito intrínseco ($1.81 mS$).
+	\begin{equation}
+		B_{red} = \frac{Q}{R_p} = \frac{2.24}{301} = 7.44 mS
+	\end{equation}
+	\begin{equation}
+		B_{total} = B_{red} + B_{parásito} = 7.44mS + 1.81 mS = 9.25mS
+	\end{equation}
+	\begin{equation}
+		X_L = \frac{1}{9.25 mS} = 108.1 \ \Omega
+	\end{equation}
+	\begin{equation}
+		L2 = \frac{X_L}{2 \pi \cdot 146MHz} = \frac{108.1}{917 \times 10^6} \approx 117.8 nH
+	\end{equation}
+	
+	Cálculo del capacitor serie (C3):
+	\begin{equation}
+		X_C = Q \cdot R_s = 2.24 \cdot 50 = 112 \ \Omega
+	\end{equation}
+	\begin{equation}
+		C3 = \frac{1}{2 \pi \cdot 146MHz \cdot 112 \ \Omega} \approx 9.7 pF
+	\end{equation}
+	
+	En el circuito sin adaptar, la Carta de Smith te arrojó $Z_{out} = 221 \angle 89.9^\circ \ \Omega$. Un ángulo de casi $90^\circ$ significa que el Cascode tiene una resistencia de salida colosal (decenas de kilo-ohms).Si se intentara adaptar una impedancia tan alta directamente a $50 \ \Omega$, el $Q$ sería altísimo, el ancho de banda sería microscópico y el amplificador sería inestable. Por esto el diseño adaptado añadiste $R_4 = 1k\Omega$ en paralelo. Esta resistencia es la clave: domina la impedancia de salida fijando intencionalmente $R_p = 1000 \ \Omega$ para controlar la ganancia y el ancho de banda.
+	Cálculo del factor de calidad (Q) de la red:
+	\begin{equation}
+		Q = \sqrt{\frac{1000}{50} - 1} = \sqrt{19} \approx 4.36
+	\end{equation}
+	
+	Cálculo del inductor de sintonía (L1):
+	\begin{equation}
+		X_L = \frac{R_p}{Q} = \frac{1000}{4.36} = 229.4 \ \Omega
+	\end{equation}
+	\begin{equation}
+		L1 = \frac{229.4}{2 \pi \cdot 146MHz} \approx 250 nH
+	\end{equation}
+	
+	Cálculo del capacitor serie (C4):
+	\begin{equation}
+		X_C = Q \cdot R_s = 4.36 \cdot 50 = 218 \ \Omega
+	\end{equation}
+	\begin{equation}
+		C4 = \frac{1}{2 \pi \cdot 146MHz \cdot 218 \ \Omega} \approx 5.0pF
+	\end{equation}
+	
+	En las siguientes simulaciones se observa que tanto los puertos de entrada como de salida están perfectamente adaptados a $50 \Omega $ ademas de proporcionar una ganancia de 19dB, junto con una aislación inversa excelente de -64dB tal como se anticipo en un principio. Resta por concatenar tres etapas Cascode junto con los atenuadores en VCC y en la red de señal, para obtener la respuesta total de la cadena de RF.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_2}
+		\caption[Circuito Cascode con redes de adaptación]{Circuito Cascode con redes de adaptación}
+		\label{fig:cascode2}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.75\linewidth]{imagenes/cascode_6}
+		\caption[Impedancias de entrada y salida]{Impedancias de entrada y salida}
+		\label{fig:cascode6}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/cascode_4}
+		\caption[Ganancia de la etapa Cascode adaptada a 50 ohm]{Ganancia de la etapa Cascode adaptada a 50 ohm}
+		\label{fig:cascode4}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/cascode_5}
+		\caption[Aislación inversa de la etapa Cascode adaptada a 50 ohm]{Aislación inversa de la etapa Cascode adaptada a 50 ohm}
+		\label{fig:cascode5}
+	\end{figure}
+	
+	
+	
 	
 	\section{Oscilador local (LO):}
 	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.

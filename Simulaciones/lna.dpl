@@ -1,0 +1,47 @@
+<QucsStudio Schematic 5.8>
+<Properties>
+View=-355.096,219.716,1194.91,1295.26,0.822513,0,0
+Grid=10,10,0
+DataSet=*.dat
+DataDisplay=*.sch
+OpenDisplay=1
+showFrame=0
+FrameText0=Title \n @PATH@@FILE@
+FrameText1=Drawn By:
+FrameText2=Date: @DATE@
+FrameText3=Revision:
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+<Rect -140 664 595 286 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -46.2882 20 30.2536 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 20 -60 1>
+	<"dB(S[2,1])" "" #0000ff 2 3 0 0 0 1 "Gain(Power Gain)">
+	  <Mkr 1.46e+08 150 -264 3 1 0 0 0 50>
+</Rect>
+<Rect -142 1024 595 286 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -88.8392 20 -20 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 20 -80 1>
+	<"dB(S[1,2])" "" #0000ff 2 3 0 0 0 1 "Reverse Isolation">
+	  <Mkr 1.46e+08 162 -244 3 1 0 0 0 50>
+</Rect>
+<Rect 549 665 598 285 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -46.5037 10 4.22754 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 390 -60 1>
+	<"dB(S[1,1])" "" #0000ff 2 3 0 0 0 1 "Input Return Loss">
+	  <Mkr 1.46e+08 151 -185 3 1 0 0 0 50>
+	<"dB(S[2,2])" "" #ff0000 2 3 0 0 0 1 "Output Return Loss">
+	  <Mkr 1.46e+08 151 -135 3 1 0 0 0 50>
+</Rect>
+<Smith 599 1215 476 476 31 #c0c0c0 1 00 1 0 1 1 1 0 4 320.912 1 0 4 1 -1 -1 -1 "" "" "">
+	<Legend 80 -120 0>
+	<"S[1,1]" "" #0000ff 2 3 0 0 0 1 "">
+	  <Mkr 1.46e+08 51 -315 3 1 0 0 1 50>
+	<"S[2,2]" "" #ff0000 2 3 0 0 0 1 "">
+	  <Mkr 1.46e+08 101 -395 3 1 0 0 1 50>
+</Smith>
+</Diagrams>
+<Paintings>
+</Paintings>
