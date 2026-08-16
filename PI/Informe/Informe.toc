@@ -31,18 +31,19 @@
 \contentsline {chapter}{\numberline {4}Selección de componentes, diseño y simulación de los bloques funcionales}{29}{}%
 \contentsline {section}{\numberline {4.1}Amplificador de bajo ruido (LNA)}{29}{}%
 \contentsline {section}{\numberline {4.2}Etapa de amplificación}{37}{}%
-\contentsline {section}{\numberline {4.3}Oscilador local (LO):}{42}{}%
-\contentsline {section}{\numberline {4.4}Etapa de mezclador (Mixer)}{42}{}%
-\contentsline {section}{\numberline {4.5}Filtro de salida}{43}{}%
-\contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{44}{}%
-\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{44}{}%
-\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{44}{}%
-\contentsline {section}{\numberline {5.3}Implementación del circuito}{44}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{45}{}%
-\contentsline {chapter}{Resultados}{46}{}%
-\contentsline {chapter}{Conclusiones}{47}{}%
-\contentsline {chapter}{Bibliografía}{48}{}%
-\contentsline {chapter}{Referencias}{49}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{50}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{51}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{52}{}%
+\contentsline {section}{\numberline {4.3}Etapa de mezclador (Mixer)}{47}{}%
+\contentsline {section}{\numberline {4.4}Oscilador local (LO):}{51}{}%
+\contentsline {section}{\numberline {4.5}Filtro de salida}{57}{}%
+\contentsline {section}{\numberline {4.6}Microcontrolador y reguladores de voltaje LDO}{57}{}%
+\contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{58}{}%
+\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{58}{}%
+\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{58}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{58}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{59}{}%
+\contentsline {chapter}{Resultados}{60}{}%
+\contentsline {chapter}{Conclusiones}{61}{}%
+\contentsline {chapter}{Bibliografía}{62}{}%
+\contentsline {chapter}{Referencias}{63}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{64}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{65}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{66}{}%

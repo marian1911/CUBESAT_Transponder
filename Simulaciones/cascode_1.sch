@@ -1,6 +1,6 @@
 <QucsStudio Schematic 5.8>
 <Properties>
-View=-1315.2,-1409.7,2221.37,660.422,0.691168,846,239
+View=-1358.27,-1239.08,2125.89,556.292,0.507797,296,141
 Grid=10,10,1
 DataSet=*.dat
 DataDisplay=*.dpl
@@ -110,8 +110,6 @@ L L7 1 1450 100 -81 -26 3 "220nH"1"0"0""0"inductor_1mH"0
 R R26 1 1120 170 -103 -15 0 "10M"1"26.85"0"US"0"SMD0603"0
 R R27 1 1120 250 -104 -33 0 "10M"1"26.85"0"US"0"SMD0603"0
 R R28 1 1090 210 19 -18 3 "0"1"26.85"0"US"0"SMD0603"0
-.SP SP1 1 -210 40 0 9 0 "lin"1"0.01 GHz"1"1 GHz"1"1000"1"no"0"1"0"2"0"none"0
-Eqn Eqn1 1 -360 570 0 8 0 "k=(1 - mag(S[1,1])^2 - mag(S[2,2])^2 + mag(S[1,1]*S[2,2] - S[1,2]*S[2,1])^2) / (2 * mag(S[1,2] * S[2,1]))=Coeficiente de Rollet"1"delta=mag(S[1,1]*S[2,2] - S[1,2]*S[2,1])=Determinante delta"1"yes"0
 SPfile X1 1 -140 340 -26 -40 0 "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/mini-circuit/PSA-5454+/PSA-5454+_S2P/PSA-5454+_S-PAR_5V_20mA_25C_UNIT1.S2P"0"2"0"polar"0"linear"0"open"0"none"0"block"0"SOT23"0
 C C7 1 -420 410 18 1 3 "33 pF"1"0"0""0"neutral"0"SMD0603"0
 C C6 1 -250 410 25 5 3 "20 pF"1"0"0""0"neutral"0"SMD0603"0
@@ -123,6 +121,8 @@ GND * 1 -550 450 0 0 0
 R R25 1 560 220 19 -18 3 "0"1"26.85"0"US"0"SMD0603"0
 R R24 1 590 260 -104 -33 0 "10M"1"26.85"0"US"0"SMD0603"0
 R R23 1 590 180 -103 -15 0 "10M"1"26.85"0"US"0"SMD0603"0
+Eqn Eqn1 1 -1350 -230 0 8 0 "k=(1 - mag(S[1,1])^2 - mag(S[2,2])^2 + mag(S[1,1]*S[2,2] - S[1,2]*S[2,1])^2) / (2 * mag(S[1,2] * S[2,1]))=Coeficiente de Rollet"1"delta=mag(S[1,1]*S[2,2] - S[1,2]*S[2,1])=Determinante delta"1"yes"0
+.SP SP1 1 -110 130 0 9 0 "lin"1"0.01 GHz"1"1 GHz"1"1000"1"no"0"1"0"2"0"none"0
 </Components>
 <Wires>
 250 340 270 340
@@ -267,13 +267,6 @@ R R23 1 590 180 -103 -15 0 "10M"1"26.85"0"US"0"SMD0603"0
 	<"dB(S[2,2])" "" #00dc00 2 3 0 0 0 1 "">
 	  <Mkr 1.45766e+08 270 -231 3 1 0 0 0 50>
 </Rect>
-<Rect -422 -771 930 427 31 #c0c0c0 1 01 1 0 1e+08 1e+09 1 -4.24953 2 12.4378 1 -1 0.2 1 -1 -1 -1 "" "" "">
-	<Legend 10 -100 0>
-	<"delta" "" #0000ff 2 3 0 0 0 1 "">
-	  <Mkr 1.45766e+08 172 -159 3 1 0 0 0 50>
-	<"k" "" #ff0000 2 3 0 0 0 1 "">
-	  <Mkr 1.45766e+08 172 -209 3 1 0 0 0 50>
-</Rect>
 <Rect 609 -249 604 465 31 #c0c0c0 1 00 1 0 2e+08 1e+09 1 -40 10 3.47324 1 -1 0.5 1 -1 -1 -1 "" "" "">
 	<Legend 10 -100 0>
 	<"dB(S[1,1])" "" #0000ff 2 3 0 0 0 0 "">
@@ -294,8 +287,15 @@ R R23 1 590 180 -103 -15 0 "10M"1"26.85"0"US"0"SMD0603"0
 	<"S[2,2]" "" #ff0000 2 3 0 0 0 0 "">
 	  <Mkr 1.45766e+08 145 -496 3 1 0 0 1 50>
 </Smith>
+<Rect -412 -771 930 427 31 #c0c0c0 1 01 1 0 1e+08 1e+09 1 -4.24953 2 12.4378 1 -1 0.2 1 -1 -1 -1 "" "" "">
+	<Legend 10 -100 0>
+	<"delta" "" #0000ff 2 3 0 0 0 1 "">
+	  <Mkr 1.45766e+08 172 -159 3 1 0 0 0 50>
+	<"k" "" #ff0000 2 3 0 0 0 1 "">
+	  <Mkr 1.45766e+08 172 -209 3 1 0 0 0 50>
+</Rect>
 </Diagrams>
 <Paintings>
-Text -646 31 16 #000000 0 Atenuador de 3 dB \n Resistencias a masa (Shunt): 300 ohmios \n Resistencia en serie (Series): 18 ohmios \n  \n Atenuador de 6 dB \n Resistencias a masa (Shunt): 150 ohmios \n Resistencia en serie (Series): 39 ohmios \n  \n Atenuador de 12 dB \n Resistencias a masa (Shunt): 82 ohmios \n Resistencia en serie (Series): 91 ohmios
-Text -1275 -509 16 #000000 0 ========================================= \n CALCULO DE ADAPTACION DE ENTRADA (146 MHz) \n ========================================= \n Objetivo: Adaptar fuente de 50 ohms a la entrada del primer cascode. \n  \n 1. Parametros Iniciales: \n - Impedancia medida (S11): 196 / -43.9 grados \n - Equivalente rectangular: Zin = 141.2 - j135.9 ohms \n - Equivalente paralelo: R_paralelo = 272 ohms, X_paralelo = -283 ohms (Capacitancia parásita) \n  \n 2. Diseño de Red Tipo L: \n - Factor de Calidad (Q) = raiz(272 / 50 - 1) = 2.1 \n  \n 3. Componentes Finales: \n - Inductor Paralelo (Base a Masa): Debe cancelar la reactancia parásita y adaptar. \n   Valor L = 96.5 nH \n - Capacitor Serie (Fuente a Base): Bloquea DC y completa adaptación. Xc = 105 ohms. \n   Valor C = 10.4 pF \n  \n ========================================= \n CALCULO DE ADAPTACION DE SALIDA (146 MHz) \n ========================================= \n Objetivo: Adaptar la salida de alta impedancia a 50 ohms. \n  \n 1. Parametros Iniciales: \n - Impedancia interna del transistor: 1570 / -89.9 grados \n - Equivalente paralelo: Rp = 900 kOhms, Cp = 0.69 pF \n - Resistencia de carga (Load Line) impuesta por diseño: 1000 ohms \n  \n 2. Diseño de Red Tipo L (Absorbiendo parásitos): \n - Factor de Calidad (Q) = raiz(1000 / 50 - 1) = 4.36 \n  \n 3. Componentes Finales: \n - Capacitor Serie (Colector a Carga): Xc = 50 * 4.36 = 218 ohms. \n   Valor C16 = 5.0 pF \n - Inductor Paralelo (Colector a VCC):  \n   Reactancia ideal = 1000 / 4.36 = 229.4 ohms. \n   Compensando los 0.69 pF internos, la reactancia baja a 200.1 ohms. \n   Valor L3 = 218 nH \n =========================================
+Text -1355 -1019 16 #000000 0 ========================================= \n CALCULO DE ADAPTACION DE ENTRADA (146 MHz) \n ========================================= \n Objetivo: Adaptar fuente de 50 ohms a la entrada del primer cascode. \n  \n 1. Parametros Iniciales: \n - Impedancia medida (S11): 196 / -43.9 grados \n - Equivalente rectangular: Zin = 141.2 - j135.9 ohms \n - Equivalente paralelo: R_paralelo = 272 ohms, X_paralelo = -283 ohms (Capacitancia parásita) \n  \n 2. Diseño de Red Tipo L: \n - Factor de Calidad (Q) = raiz(272 / 50 - 1) = 2.1 \n  \n 3. Componentes Finales: \n - Inductor Paralelo (Base a Masa): Debe cancelar la reactancia parásita y adaptar. \n   Valor L = 96.5 nH \n - Capacitor Serie (Fuente a Base): Bloquea DC y completa adaptación. Xc = 105 ohms. \n   Valor C = 10.4 pF \n  \n ========================================= \n CALCULO DE ADAPTACION DE SALIDA (146 MHz) \n ========================================= \n Objetivo: Adaptar la salida de alta impedancia a 50 ohms. \n  \n 1. Parametros Iniciales: \n - Impedancia interna del transistor: 1570 / -89.9 grados \n - Equivalente paralelo: Rp = 900 kOhms, Cp = 0.69 pF \n - Resistencia de carga (Load Line) impuesta por diseño: 1000 ohms \n  \n 2. Diseño de Red Tipo L (Absorbiendo parásitos): \n - Factor de Calidad (Q) = raiz(1000 / 50 - 1) = 4.36 \n  \n 3. Componentes Finales: \n - Capacitor Serie (Colector a Carga): Xc = 50 * 4.36 = 218 ohms. \n   Valor C16 = 5.0 pF \n - Inductor Paralelo (Colector a VCC):  \n   Reactancia ideal = 1000 / 4.36 = 229.4 ohms. \n   Compensando los 0.69 pF internos, la reactancia baja a 200.1 ohms. \n   Valor L3 = 218 nH \n =========================================
+Text -1356 -439 16 #000000 0 Atenuador de 3 dB \n Resistencias a masa (Shunt): 300 ohmios \n Resistencia en serie (Series): 18 ohmios \n  \n Atenuador de 6 dB \n Resistencias a masa (Shunt): 150 ohmios \n Resistencia en serie (Series): 39 ohmios \n  \n Atenuador de 12 dB \n Resistencias a masa (Shunt): 82 ohmios \n Resistencia en serie (Series): 91 ohmios
 </Paintings>

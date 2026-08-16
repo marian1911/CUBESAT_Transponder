@@ -20,22 +20,33 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Ganancia/Figura de ruido vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)}}{30}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces IP3/Aislación inversa vs frecuencia (Fuente: Hoja de datos PSA-5454+ Minicircuit)}}{30}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC}}{30}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Ganancia f=146MHz}}{31}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Aislación inversa f=146MHz}}{31}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Reflexiones directa e inversa f=146MHz}}{31}{}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Impedancia de entrada y salida}}{32}{}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado}}{35}{}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Ganancia con filtro sintonizado}}{36}{}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Aislación inversa f=146MHz}}{36}{}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Reflexiones directa e inversa a f=146MHz}}{36}{}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Adaptación de impedancia a f=146MHz}}{37}{}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Propuesta para el amplificador Cascode}}{38}{}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Impedancias de entrada y salida con ICQ=10mA.}}{40}{}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Circuito Cascode con redes de adaptación}}{42}{}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Impedancias de entrada y salida}}{42}{}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Ganancia de la etapa Cascode adaptada a 50 ohm}}{43}{}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Aislación inversa de la etapa Cascode adaptada a 50 ohm}}{43}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC (Fuente: Hoja de datos PSA-5454+ Minicircuit)}}{30}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces PSA-5454+: Ganancia f=146MHz (Fuente: Propia)}}{31}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces PSA-5454+: Aislación inversa f=146MHz (Fuente: propia)}}{31}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces PSA-5454+: Reflexiones directa e inversa f=146MHz (Fuente: Propia)}}{31}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces PSA-5454+: Impedancia de entrada y salida sin adaptar (Fuente: Propia)}}{32}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado (Fuente: Propia)}}{35}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces PSA-5454+: Ganancia con filtro sintonizado (Fuente: Propia)}}{36}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces PSA-5454+: Aislación inversa f=146MHz (Fuente: Propia)}}{36}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces PSA-5454+: Reflexiones directa e inversa a f=146MHz (Fuente: Propia)}}{36}{}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces PSA-5454+: Adaptación de impedancia a f=146MHz (Fuente: Propia)}}{37}{}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Propuesta para el amplificador Cascode (Fuente: Propia)}}{38}{}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Impedancias de entrada y salida con ICQ=10mA. (Fuente: Propia)}}{40}{}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Circuito Cascode 2SC3356 con redes de adaptación (Fuente: Propia)}}{42}{}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Cascode 2SC3356: Impedancias de entrada y salida f=146MHz (Fuente: Propia)}}{42}{}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Cascode 2SC3356: Ganancia de la etapa adaptada f=146MHz (Fuente: Propia)}}{43}{}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Cascode 2SC3356: Aislación inversa de la etapa Cascode adaptada f=146MHz (Fuente: Propia)}}{43}{}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Etapa de amplificación completa (Fuente: Propia)}}{44}{}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Etapa de amplificación: Reflexiones directas en inversas (Fuente: Propia)}}{45}{}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Etapa de amplificación: Ganancia de potencia (Fuente: Propia)}}{45}{}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Etapa de amplificación: Aislación inversa (Fuente: Propia)}}{45}{}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Etapa de amplificación: Adaptación de impedancias (Fuente: Propia)}}{46}{}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Etapa de amplificación: Estabilidad absoluta (Fuente: Propia)}}{46}{}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces ADE-5+: perdidas de conversión vs IF (Fuente: Hoja de datos ADE-5+)}}{47}{}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces ADE-5+: IP3/P1dB vs IF (Fuente hojas de datos ADE-5+)}}{48}{}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces ADE-5+: Aislación entre puertos RF-LO-IF (Fuente Hoja de datos ADE-5+)}}{48}{}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces ADE-5+: Relación de onda estacionaria (VSWR) (Fuente Hoja de datos ADE-5+)}}{49}{}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces ADF4351: Diagrama de bloques (Fuente Hoja de datos AD4351 Analog Device)}}{52}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

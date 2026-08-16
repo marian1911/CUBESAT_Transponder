@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.11)  12 AUG 2026 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.11)  15 AUG 2026 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,7 +420,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 [10] (Informe.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+Overfull \hbox (5.89078pt too wide) in paragraph at lines 12--12
+ [][] []\T1/ptm/m/n/10.95 Especificaciones eléc-tri-cas y va-lo-res má-xi-mos a
+b-so-lu-tos del mez-cla-dor ADE-5+ (Fuen- 
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+5.
+(D:\Latex\Programa latex\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+))
 \tf@lot=\write4
 \openout4 = `Informe.lot'.
 
@@ -430,14 +440,15 @@ LaTeX Info: Redefining \% on input line 1.
 ] (Informe.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@lof=\write5
-\openout5 = `Informe.lof'.
-
  [12
 
 
-] [13] [14
+])
+\tf@lof=\write5
+\openout5 = `Informe.lof'.
+
+
+[13] [14
 
 
 ]
@@ -447,7 +458,7 @@ Cap\'{\i }tulo 1.
 
 
 ]
-<imagenes/placa_kicad_3d.png, id=56, 1068.99374pt x 1011.78pt>
+<imagenes/placa_kicad_3d.png, id=57, 1068.99374pt x 1011.78pt>
 File: imagenes/placa_kicad_3d.png Graphic file (type png)
 <use imagenes/placa_kicad_3d.png>
 Package pdftex.def Info: imagenes/placa_kicad_3d.png  used on input line 231.
@@ -459,7 +470,7 @@ Underfull \vbox (badness 5847) has occurred while \output is active []
 
 ]
 Cap\'{\i }tulo 2.
-<imagenes/cubesat.png, id=72, 671.50874pt x 374.39874pt>
+<imagenes/cubesat.png, id=73, 671.50874pt x 374.39874pt>
 File: imagenes/cubesat.png Graphic file (type png)
 <use imagenes/cubesat.png>
 Package pdftex.def Info: imagenes/cubesat.png  used on input line 305.
@@ -467,7 +478,7 @@ Package pdftex.def Info: imagenes/cubesat.png  used on input line 305.
 [6
 
  <./imagenes/cubesat.png>]
-<imagenes/xyz_cubesat.png, id=77, 595.47469pt x 380.92313pt>
+<imagenes/xyz_cubesat.png, id=78, 595.47469pt x 380.92313pt>
 File: imagenes/xyz_cubesat.png Graphic file (type png)
 <use imagenes/xyz_cubesat.png>
 Package pdftex.def Info: imagenes/xyz_cubesat.png  used on input line 345.
@@ -477,7 +488,7 @@ Package pdftex.def Info: imagenes/xyz_cubesat.png  used on input line 345.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7] [8 <./imagenes/xyz_cubesat.png>]
-<imagenes/size_cubesat.png, id=86, 702.37407pt x 463.7325pt>
+<imagenes/size_cubesat.png, id=87, 702.37407pt x 463.7325pt>
 File: imagenes/size_cubesat.png Graphic file (type png)
 <use imagenes/size_cubesat.png>
 Package pdftex.def Info: imagenes/size_cubesat.png  used on input line 397.
@@ -489,13 +500,13 @@ en la va-rie-dad de sub-sis-te-mas co-mo C&DH,
  []
 
 [10] [11] [12]
-<imagenes/mec_pc104p.png, id=101, 524.71031pt x 481.04718pt>
+<imagenes/mec_pc104p.png, id=102, 524.71031pt x 481.04718pt>
 File: imagenes/mec_pc104p.png Graphic file (type png)
 <use imagenes/mec_pc104p.png>
 Package pdftex.def Info: imagenes/mec_pc104p.png  used on input line 531.
 (pdftex.def)             Requested size: 352.81552pt x 323.46703pt.
  [13 <./imagenes/mec_pc104p.png>]
-<imagenes/stack_pc104_p.png, id=106, 372.64218pt x 306.39468pt>
+<imagenes/stack_pc104_p.png, id=107, 372.64218pt x 306.39468pt>
 File: imagenes/stack_pc104_p.png Graphic file (type png)
 <use imagenes/stack_pc104_p.png>
 Package pdftex.def Info: imagenes/stack_pc104_p.png  used on input line 538.
@@ -511,17 +522,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 548--549
  []
 
 [14 <./imagenes/stack_pc104_p.png>]
-<imagenes/tranponder_1.png, id=111, 618.05907pt x 398.23781pt>
+<imagenes/tranponder_1.png, id=112, 618.05907pt x 398.23781pt>
 File: imagenes/tranponder_1.png Graphic file (type png)
 <use imagenes/tranponder_1.png>
 Package pdftex.def Info: imagenes/tranponder_1.png  used on input line 554.
 (pdftex.def)             Requested size: 286.65883pt x 184.71075pt.
-<imagenes/transponder_2.png, id=112, 837.1275pt x 190.46156pt>
+<imagenes/transponder_2.png, id=113, 837.1275pt x 190.46156pt>
 File: imagenes/transponder_2.png Graphic file (type png)
 <use imagenes/transponder_2.png>
 Package pdftex.def Info: imagenes/transponder_2.png  used on input line 563.
 (pdftex.def)             Requested size: 441.01773pt x 100.33673pt.
-<imagenes/transponder_3.png, id=113, 671.50874pt x 481.04718pt>
+<imagenes/transponder_3.png, id=114, 671.50874pt x 481.04718pt>
 File: imagenes/transponder_3.png Graphic file (type png)
 <use imagenes/transponder_3.png>
 Package pdftex.def Info: imagenes/transponder_3.png  used on input line 573.
@@ -536,7 +547,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 577--578
  []
 
 [15 <./imagenes/tranponder_1.png> <./imagenes/transponder_2.png>]
-<imagenes/transponder_4.png, id=119, 517.935pt x 430.60875pt>
+<imagenes/transponder_4.png, id=120, 517.935pt x 430.60875pt>
 File: imagenes/transponder_4.png Graphic file (type png)
 <use imagenes/transponder_4.png>
 Package pdftex.def Info: imagenes/transponder_4.png  used on input line 585.
@@ -553,13 +564,13 @@ Overfull \hbox (1.7885pt too wide) in paragraph at lines 699--700
 95 I[]$\T1/ptm/m/n/10.95 ,
  []
 
-<imagenes/mixer.png, id=138, 587.19376pt x 490.08093pt>
+<imagenes/mixer.png, id=139, 587.19376pt x 490.08093pt>
 File: imagenes/mixer.png Graphic file (type png)
 <use imagenes/mixer.png>
 Package pdftex.def Info: imagenes/mixer.png  used on input line 729.
 (pdftex.def)             Requested size: 352.81552pt x 294.46213pt.
 [20] [21 <./imagenes/mixer.png>]
-<imagenes/pll_1.png, id=146, 620.3175pt x 380.42125pt>
+<imagenes/pll_1.png, id=147, 620.3175pt x 380.42125pt>
 File: imagenes/pll_1.png Graphic file (type png)
 <use imagenes/pll_1.png>
 Package pdftex.def Info: imagenes/pll_1.png  used on input line 785.
@@ -571,7 +582,7 @@ com-pues-to por un de-tec-tor de fa-se/frecuencia
  []
 
 [22 <./imagenes/pll_1.png>]
-<imagenes/pll_2.png, id=151, 797.98125pt x 460.72125pt>
+<imagenes/pll_2.png, id=152, 797.98125pt x 460.72125pt>
 File: imagenes/pll_2.png Graphic file (type png)
 <use imagenes/pll_2.png>
 Package pdftex.def Info: imagenes/pll_2.png  used on input line 802.
@@ -594,7 +605,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 813--814
 
  []
 
-<imagenes/pll_3.png, id=157, 797.98125pt x 460.72125pt>
+<imagenes/pll_3.png, id=158, 797.98125pt x 460.72125pt>
 File: imagenes/pll_3.png Graphic file (type png)
 <use imagenes/pll_3.png>
 Package pdftex.def Info: imagenes/pll_3.png  used on input line 817.
@@ -606,7 +617,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 2922) has occurred while \output is active []
 
  [24]
-<imagenes/pll_4.png, id=161, 598.48593pt x 326.72063pt>
+<imagenes/pll_4.png, id=162, 598.48593pt x 326.72063pt>
 File: imagenes/pll_4.png Graphic file (type png)
 <use imagenes/pll_4.png>
 Package pdftex.def Info: imagenes/pll_4.png  used on input line 828.
@@ -621,180 +632,414 @@ Cap\'{\i }tulo 3.
 ] [28]
 Cap\'{\i }tulo 4.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
-05.
+07.
 (C:\Users\maria\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [29
 
 ]
-<imagenes/p_lna_1.png, id=181, 1078.0275pt x 337.26pt>
+<imagenes/p_lna_1.png, id=182, 1078.0275pt x 337.26pt>
 File: imagenes/p_lna_1.png Graphic file (type png)
 <use imagenes/p_lna_1.png>
-Package pdftex.def Info: imagenes/p_lna_1.png  used on input line 922.
+Package pdftex.def Info: imagenes/p_lna_1.png  used on input line 924.
 (pdftex.def)             Requested size: 441.01773pt x 137.97386pt.
-<imagenes/p_lna_2.png, id=182, 1038.88126pt x 303.38344pt>
+<imagenes/p_lna_2.png, id=183, 1038.88126pt x 303.38344pt>
 File: imagenes/p_lna_2.png Graphic file (type png)
 <use imagenes/p_lna_2.png>
-Package pdftex.def Info: imagenes/p_lna_2.png  used on input line 929.
+Package pdftex.def Info: imagenes/p_lna_2.png  used on input line 931.
 (pdftex.def)             Requested size: 441.01773pt x 128.7858pt.
-<imagenes/p_lna_3.png, id=183, 690.32906pt x 344.03531pt>
+<imagenes/p_lna_3.png, id=184, 690.32906pt x 344.03531pt>
 File: imagenes/p_lna_3.png Graphic file (type png)
 <use imagenes/p_lna_3.png>
-Package pdftex.def Info: imagenes/p_lna_3.png  used on input line 938.
+Package pdftex.def Info: imagenes/p_lna_3.png  used on input line 940.
 (pdftex.def)             Requested size: 352.81552pt x 175.83365pt.
-<imagenes/p_lna_4.png, id=184, 779.91376pt x 426.09187pt>
-File: imagenes/p_lna_4.png Graphic file (type png)
-<use imagenes/p_lna_4.png>
-Package pdftex.def Info: imagenes/p_lna_4.png  used on input line 946.
-(pdftex.def)             Requested size: 352.81552pt x 192.75381pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imagenes/p_lna_5.png, id=185, 778.40813pt x 393.72093pt>
-File: imagenes/p_lna_5.png Graphic file (type png)
-<use imagenes/p_lna_5.png>
-Package pdftex.def Info: imagenes/p_lna_5.png  used on input line 953.
-(pdftex.def)             Requested size: 352.81552pt x 178.45842pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imagenes/p_lna_7.png, id=186, 569.12625pt x 307.1475pt>
-File: imagenes/p_lna_7.png Graphic file (type png)
-<use imagenes/p_lna_7.png>
-Package pdftex.def Info: imagenes/p_lna_7.png  used on input line 960.
-(pdftex.def)             Requested size: 374.86775pt x 202.3196pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [30 <./imagenes/p_lna_1.png> <./imagenes/p_lna_2.png> <./imagenes/p_lna_3.png>]
-
-LaTeX Warning: Text page 31 contains only floats.
-
+<imagenes/p_lna_4.png, id=191, 779.91376pt x 426.09187pt>
+File: imagenes/p_lna_4.png Graphic file (type png)
+<use imagenes/p_lna_4.png>
+Package pdftex.def Info: imagenes/p_lna_4.png  used on input line 948.
+(pdftex.def)             Requested size: 308.71106pt x 168.65877pt.
+<imagenes/p_lna_5.png, id=192, 778.40813pt x 393.72093pt>
+File: imagenes/p_lna_5.png Graphic file (type png)
+<use imagenes/p_lna_5.png>
+Package pdftex.def Info: imagenes/p_lna_5.png  used on input line 955.
+(pdftex.def)             Requested size: 308.71106pt x 156.15187pt.
+<imagenes/p_lna_7.png, id=193, 569.12625pt x 307.1475pt>
+File: imagenes/p_lna_7.png Graphic file (type png)
+<use imagenes/p_lna_7.png>
+Package pdftex.def Info: imagenes/p_lna_7.png  used on input line 962.
+(pdftex.def)             Requested size: 326.35553pt x 176.13507pt.
 [31 <./imagenes/p_lna_4.png> <./imagenes/p_lna_5.png> <./imagenes/p_lna_7.png>]
-<imagenes/p_lna_6.png, id=199, 511.15968pt x 496.85625pt>
+<imagenes/p_lna_6.png, id=200, 511.15968pt x 496.85625pt>
 File: imagenes/p_lna_6.png Graphic file (type png)
 <use imagenes/p_lna_6.png>
-Package pdftex.def Info: imagenes/p_lna_6.png  used on input line 968.
+Package pdftex.def Info: imagenes/p_lna_6.png  used on input line 970.
 (pdftex.def)             Requested size: 308.71106pt x 300.07204pt.
-[32 <./imagenes/p_lna_6.png>]
-Underfull \vbox (badness 5245) has occurred while \output is active []
-
- [33]
-Underfull \vbox (badness 3439) has occurred while \output is active []
-
- [34]
-<imagenes/p_lna_12.png, id=210, 1038.88126pt x 412.54124pt>
+[32 <./imagenes/p_lna_6.png>] [33] [34]
+<imagenes/p_lna_12.png, id=211, 1038.88126pt x 412.54124pt>
 File: imagenes/p_lna_12.png Graphic file (type png)
 <use imagenes/p_lna_12.png>
-Package pdftex.def Info: imagenes/p_lna_12.png  used on input line 1130.
-(pdftex.def)             Requested size: 441.01773pt x 175.12312pt.
-<imagenes/p_lna_8.png, id=211, 607.51968pt x 315.42844pt>
+Package pdftex.def Info: imagenes/p_lna_12.png  used on input line 1132.
+(pdftex.def)             Requested size: 308.71106pt x 122.58618pt.
+<imagenes/p_lna_8.png, id=212, 607.51968pt x 315.42844pt>
 File: imagenes/p_lna_8.png Graphic file (type png)
 <use imagenes/p_lna_8.png>
-Package pdftex.def Info: imagenes/p_lna_8.png  used on input line 1137.
-(pdftex.def)             Requested size: 352.81552pt x 183.18927pt.
-<imagenes/p_lna_9.png, id=212, 604.50844pt x 319.1925pt>
+Package pdftex.def Info: imagenes/p_lna_8.png  used on input line 1141.
+(pdftex.def)             Requested size: 308.71106pt x 160.2888pt.
+<imagenes/p_lna_9.png, id=213, 604.50844pt x 319.1925pt>
 File: imagenes/p_lna_9.png Graphic file (type png)
 <use imagenes/p_lna_9.png>
-Package pdftex.def Info: imagenes/p_lna_9.png  used on input line 1144.
-(pdftex.def)             Requested size: 352.81552pt x 186.29094pt.
-<imagenes/p_lna_10.png, id=213, 614.295pt x 318.43968pt>
+Package pdftex.def Info: imagenes/p_lna_9.png  used on input line 1148.
+(pdftex.def)             Requested size: 308.71106pt x 163.00519pt.
+<imagenes/p_lna_10.png, id=214, 614.295pt x 318.43968pt>
 File: imagenes/p_lna_10.png Graphic file (type png)
 <use imagenes/p_lna_10.png>
-Package pdftex.def Info: imagenes/p_lna_10.png  used on input line 1151.
-(pdftex.def)             Requested size: 352.81552pt x 182.89246pt.
-
-[35 <./imagenes/p_lna_12.png>] [36 <./imagenes/p_lna_8.png> <./imagenes/p_lna_9
-.png> <./imagenes/p_lna_10.png>]
-<imagenes/p_lna_11.png, id=225, 511.15968pt x 483.30562pt>
+Package pdftex.def Info: imagenes/p_lna_10.png  used on input line 1155.
+(pdftex.def)             Requested size: 308.71106pt x 160.0309pt.
+ [35 <./imagenes/p_lna_12.png>] [36 <./imagenes/p_lna_8.png> <./imagenes/p_lna_
+9.png> <./imagenes/p_lna_10.png>]
+<imagenes/p_lna_11.png, id=226, 511.15968pt x 483.30562pt>
 File: imagenes/p_lna_11.png Graphic file (type png)
 <use imagenes/p_lna_11.png>
-Package pdftex.def Info: imagenes/p_lna_11.png  used on input line 1158.
+Package pdftex.def Info: imagenes/p_lna_11.png  used on input line 1162.
 (pdftex.def)             Requested size: 308.71106pt x 291.88826pt.
- [37 <./imagenes/p_lna_11.png>]
-<imagenes/cascode_1.png, id=230, 975.645pt x 701.62125pt>
+
+[37 <./imagenes/p_lna_11.png>]
+<imagenes/cascode_1.png, id=231, 975.645pt x 701.62125pt>
 File: imagenes/cascode_1.png Graphic file (type png)
 <use imagenes/cascode_1.png>
-Package pdftex.def Info: imagenes/cascode_1.png  used on input line 1209.
-(pdftex.def)             Requested size: 308.71106pt x 222.0075pt.
-
+Package pdftex.def Info: imagenes/cascode_1.png  used on input line 1213.
+(pdftex.def)             Requested size: 264.61333pt x 190.28603pt.
+ [38 <./imagenes/cascode_1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./imagenes/cascode_1.png>] [39]
-<imagenes/cascode_7.png, id=238, 452.4403pt x 400.49625pt>
+ [39]
+<imagenes/cascode_7.png, id=239, 452.4403pt x 400.49625pt>
 File: imagenes/cascode_7.png Graphic file (type png)
 <use imagenes/cascode_7.png>
-Package pdftex.def Info: imagenes/cascode_7.png  used on input line 1277.
+Package pdftex.def Info: imagenes/cascode_7.png  used on input line 1282.
 (pdftex.def)             Requested size: 308.71106pt x 273.26883pt.
- [40 <./imagenes/cascode_7.png>]
 
-LaTeX Warning: Command \' invalid in math mode on input line 1310.
+[40 <./imagenes/cascode_7.png>]
+
+LaTeX Warning: Command \' invalid in math mode on input line 1315.
 
 Missing character: There is no á in font zptmcm7t!
-<imagenes/cascode_2.png, id=243, 975.645pt x 696.35156pt>
+[41]
+<imagenes/cascode_2.png, id=248, 975.645pt x 696.35156pt>
 File: imagenes/cascode_2.png Graphic file (type png)
 <use imagenes/cascode_2.png>
-Package pdftex.def Info: imagenes/cascode_2.png  used on input line 1353.
-(pdftex.def)             Requested size: 308.71106pt x 220.34006pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imagenes/cascode_6.png, id=244, 540.51938pt x 460.72125pt>
+Package pdftex.def Info: imagenes/cascode_2.png  used on input line 1358.
+(pdftex.def)             Requested size: 264.61333pt x 188.85684pt.
+<imagenes/cascode_6.png, id=249, 540.51938pt x 460.72125pt>
 File: imagenes/cascode_6.png Graphic file (type png)
 <use imagenes/cascode_6.png>
-Package pdftex.def Info: imagenes/cascode_6.png  used on input line 1360.
+Package pdftex.def Info: imagenes/cascode_6.png  used on input line 1365.
 (pdftex.def)             Requested size: 330.76329pt x 281.93939pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imagenes/cascode_4.png, id=245, 566.86781pt x 299.61937pt>
+ [42 <./imagenes/cascode_2.png> <./imagenes/cascode_6.png>]
+<imagenes/cascode_4.png, id=255, 566.86781pt x 299.61937pt>
 File: imagenes/cascode_4.png Graphic file (type png)
 <use imagenes/cascode_4.png>
-Package pdftex.def Info: imagenes/cascode_4.png  used on input line 1367.
-(pdftex.def)             Requested size: 352.81552pt x 186.48444pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imagenes/cascode_5.png, id=246, 560.0925pt x 296.60812pt>
+Package pdftex.def Info: imagenes/cascode_4.png  used on input line 1372.
+(pdftex.def)             Requested size: 308.71106pt x 163.17273pt.
+<imagenes/cascode_5.png, id=256, 560.0925pt x 296.60812pt>
 File: imagenes/cascode_5.png Graphic file (type png)
 <use imagenes/cascode_5.png>
-Package pdftex.def Info: imagenes/cascode_5.png  used on input line 1374.
-(pdftex.def)             Requested size: 352.81552pt x 186.846pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+Package pdftex.def Info: imagenes/cascode_5.png  used on input line 1379.
+(pdftex.def)             Requested size: 308.71106pt x 163.48798pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-[42 <./imagenes/cascode_2.png> <./imagenes/cascode_6.png>] [43 <./imagenes/casc
-ode_4.png> <./imagenes/cascode_5.png>]
+ [43 <./imagenes/cascode_4.png> <./imagenes/cascode_5.png>]
+<imagenes/cascode_13.png, id=262, 1343.0175pt x 309.40594pt>
+File: imagenes/cascode_13.png Graphic file (type png)
+<use imagenes/cascode_13.png>
+Package pdftex.def Info: imagenes/cascode_13.png  used on input line 1433.
+(pdftex.def)             Requested size: 441.01773pt x 101.5991pt.
+ [44 <./imagenes/cascode_13.png>]
+<imagenes/cascode_8.png, id=267, 647.41875pt x 331.99031pt>
+File: imagenes/cascode_8.png Graphic file (type png)
+<use imagenes/cascode_8.png>
+Package pdftex.def Info: imagenes/cascode_8.png  used on input line 1442.
+(pdftex.def)             Requested size: 308.71106pt x 158.30492pt.
+<imagenes/cascode_9.png, id=268, 641.39626pt x 310.15875pt>
+File: imagenes/cascode_9.png Graphic file (type png)
+<use imagenes/cascode_9.png>
+Package pdftex.def Info: imagenes/cascode_9.png  used on input line 1449.
+(pdftex.def)             Requested size: 308.71106pt x 149.28624pt.
+<imagenes/cascode_10.png, id=269, 630.85687pt x 335.00156pt>
+File: imagenes/cascode_10.png Graphic file (type png)
+<use imagenes/cascode_10.png>
+Package pdftex.def Info: imagenes/cascode_10.png  used on input line 1456.
+(pdftex.def)             Requested size: 308.71106pt x 163.93239pt.
+ [45 <./imagenes/cascode_8.png> <./imagenes/cascode_9.png> <./imagenes/cascode_
+10.png>]
+<imagenes/cascode_12.png, id=276, 492.33937pt x 463.7325pt>
+File: imagenes/cascode_12.png Graphic file (type png)
+<use imagenes/cascode_12.png>
+Package pdftex.def Info: imagenes/cascode_12.png  used on input line 1465.
+(pdftex.def)             Requested size: 308.71106pt x 290.78734pt.
+<imagenes/cascode_11.png, id=277, 648.92438pt x 379.4175pt>
+File: imagenes/cascode_11.png Graphic file (type png)
+<use imagenes/cascode_11.png>
+Package pdftex.def Info: imagenes/cascode_11.png  used on input line 1472.
+(pdftex.def)             Requested size: 396.91325pt x 232.07538pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46 <./imagenes/cascode_12.png> <./imagenes/cascode_11.png>]
+<imagenes/mixer_1.png, id=283, 559.33969pt x 176.91093pt>
+File: imagenes/mixer_1.png Graphic file (type png)
+<use imagenes/mixer_1.png>
+Package pdftex.def Info: imagenes/mixer_1.png  used on input line 1510.
+(pdftex.def)             Requested size: 441.01773pt x 139.49355pt.
+ [47 <./imagenes/mixer_1.png>]
+<imagenes/mixer_2.png, id=289, 579.66562pt x 190.46156pt>
+File: imagenes/mixer_2.png Graphic file (type png)
+<use imagenes/mixer_2.png>
+Package pdftex.def Info: imagenes/mixer_2.png  used on input line 1521.
+(pdftex.def)             Requested size: 441.01773pt x 144.9063pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
+
+ []
+
+<imagenes/mixer_3.png, id=290, 560.8453pt x 347.79938pt>
+File: imagenes/mixer_3.png Graphic file (type png)
+<use imagenes/mixer_3.png>
+Package pdftex.def Info: imagenes/mixer_3.png  used on input line 1530.
+(pdftex.def)             Requested size: 441.01773pt x 273.49013pt.
+[48 <./imagenes/mixer_2.png> <./imagenes/mixer_3.png>]
+<imagenes/mixer_4.png, id=296, 564.60938pt x 346.29375pt>
+File: imagenes/mixer_4.png Graphic file (type png)
+<use imagenes/mixer_4.png>
+Package pdftex.def Info: imagenes/mixer_4.png  used on input line 1551.
+(pdftex.def)             Requested size: 441.01773pt x 270.49376pt.
+
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [49 <./imagenes/mixer_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1574--1575
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/b/n/10.95 Observaciones /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/m/n/10.95 Mediante VCO
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+\T1/ptm/m/n/10.95 fun-da-men-tal y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/m/n/10.95 Interpolador $\OT1/ztmcm/m/n/10.95 ^^F$\T1/ptm/m/n/10.95 -
+$\OT1/ztmcm/m/n/10.95 ^^A$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/m/n/10.95 Frecuencia del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+\T1/ptm/m/n/10.95 de-tec-tor de fa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/m/n/10.95 Configurable me-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+\T1/ptm/m/n/10.95 dian-te re-sis-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+[]|\T1/ptm/m/n/10.95 Entradas ló-gi-cas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1627
+\T1/ptm/m/n/10.95 com-pa-ti-bles con
+ []
+
+[51]
+<imagenes/p_pll_1.png, id=307, 780.66656pt x 418.56375pt>
+File: imagenes/p_pll_1.png Graphic file (type png)
+<use imagenes/p_pll_1.png>
+Package pdftex.def Info: imagenes/p_pll_1.png  used on input line 1664.
+(pdftex.def)             Requested size: 441.01773pt x 236.45702pt.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1675.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1675.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1675.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1675.
+
+Missing character: There is no Ö in font zptmcm7t!
+Missing character: There is no Ö in font zptmcm7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52 <./imagenes/p_pll_1.png>] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1749
+[]|\T1/ptm/m/n/10.95 Valor frac-cio-na-rio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1765--1765
+[]|\T1/ptm/m/n/10.95 Valor de ajus-te de fa-se
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1787--1787
+[]|\T1/ptm/m/n/10.95 Salida mul-ti-ple-xa-
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 1787--1787
+\T1/ptm/m/n/10.95 da a ma-sa di-gi-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1787--1787
+[]|\T1/ptm/m/n/10.95 Corriente má-xi-ma
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 1787--1787
+[]|\T1/ptm/m/n/10.95 Modos de apa-ga-do,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]|\T1/ptm/m/n/10.95 ABP = 1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+\T1/ptm/m/n/10.95 (An-cho de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+\T1/ptm/m/n/10.95 pul-so an-ti-
+ []
+
+
+Underfull \hbox (badness 3724) in paragraph at lines 1805--1805
+\T1/ptm/m/n/10.95 bac-klash de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]|\T1/ptm/m/n/10.95 Cycle Slip
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+\T1/ptm/m/n/10.95 Re-duc-tion
+ []
+
+
+Underfull \hbox (badness 4316) in paragraph at lines 1805--1805
+[]|\T1/ptm/m/n/10.95 Bit re-ser-va-
+ []
+
+
+Underfull \hbox (badness 3058) in paragraph at lines 1805--1805
+[]|\T1/ptm/m/n/10.95 Clock Di-vi-
+ []
+
+
+Underfull \hbox (badness 5119) in paragraph at lines 1805--1805
+\T1/ptm/m/n/10.95 der des-ac-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 Bits re-ser-va-dos
+ []
+
+
+Underfull \hbox (badness 6268) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 Señal de re-ali-
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 1826--1826
+\T1/ptm/m/n/10.95 de se-lec-ción de
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 VCO en-cen-di-do
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 Salida au-xi-liar
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 1826--1826
+\T1/ptm/m/n/10.95 des-ac-ti-va-da (Di-
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 Potencia de sa-
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 1826--1826
+[]|\T1/ptm/m/n/10.95 Bits de con-trol
+ []
+
+[54] [55] [56] [57]
 Cap\'{\i }tulo 5.
-[44
+[58
 
-] [45
+] [59
 
-] [46
+] [60
 
-] [47
+] [61
 
-] [48
+] [62
 
 
-] [49
+] [63
 
 ]
 Ap\'{e}ndice A.
-[50
+[64
 
 ]
 Ap\'{e}ndice B.
-[51
+[65
 
 ]
 Ap\'{e}ndice C.
-[52
+[66
 
 ] (Informe.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -806,24 +1051,25 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6397 strings out of 474486
- 110359 string characters out of 5753570
- 1945542 words of memory out of 5000000
- 28563 multiletter control sequences out of 15000+600000
- 642113 words of font info for 141 fonts, out of 8000000 for 9000
+ 6568 strings out of 474486
+ 114741 string characters out of 5753570
+ 1955542 words of memory out of 5000000
+ 28726 multiletter control sequences out of 15000+600000
+ 646079 words of font info for 147 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,1539b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/Latex/Programa latex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Latex/
-Programa latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Latex/Programa lat
-ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Latex/Programa latex/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><D:/Latex/Programa latex/fonts/type1/urw/symbol
-/usyr.pfb><D:/Latex/Programa latex/fonts/type1/urw/symbol/usyr.pfb><D:/Latex/Pr
-ograma latex/fonts/type1/urw/times/utmb8a.pfb><D:/Latex/Programa latex/fonts/ty
-pe1/urw/times/utmbi8a.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmr8a
-.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Informe.pdf (66 pages, 3177117 bytes).
+ <C:\Users\maria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+1095.pk><D:/Latex/Programa latex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/
+Latex/Programa latex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Latex/Progra
+ma latex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Latex/Programa latex/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><D:/Latex/Programa latex/fonts/type1/urw/
+symbol/usyr.pfb><D:/Latex/Programa latex/fonts/type1/urw/symbol/usyr.pfb><D:/La
+tex/Programa latex/fonts/type1/urw/times/utmb8a.pfb><D:/Latex/Programa latex/fo
+nts/type1/urw/times/utmbi8a.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/
+utmr8a.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Informe.pdf (80 pages, 3732389 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
+ 418 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 171 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

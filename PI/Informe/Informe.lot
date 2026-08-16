@@ -7,8 +7,17 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Requerimientos de la etapa de recepción.}}{27}{}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Especificaciones y valores máximos absolutos del amplificador PSA-5454+.}}{29}{}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Características eléctricas y valores máximos absolutos del transistor 2SC3356.}}{38}{}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Especificaciones y valores máximos absolutos del amplificador PSA-5454+. (Fuente: Hoja de datos PSA-5454+ Minicircuit)}}{29}{}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Características eléctricas y valores máximos absolutos del transistor 2SC3356. (Fuente Hoja de datos NEC BJT 2SC3356)}}{38}{}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Especificaciones eléctricas y valores máximos absolutos del mezclador ADE-5+ (Fuente: Hoja de datos minicircuit ADE-5+)}}{47}{}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Resumen de características principales del sintetizador ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}}{51}{}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Valores máximos absolutos del ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}}{52}{}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Desglose de bits del Registro 0 (\texttt {0x00740000}).}}{54}{}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Desglose de bits del Registro 1 (\texttt {0x00008011}).}}{54}{}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Desglose de bits del Registro 2 (\texttt {0x8005F42}).}}{55}{}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Desglose de bits del Registro 3 (\texttt {0x00400003}).}}{55}{}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Desglose de bits del Registro 4 (\texttt {0x00A5003C}).}}{56}{}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Desglose de bits del Registro 5 (\texttt {0x00580005}).}}{56}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

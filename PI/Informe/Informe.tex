@@ -865,25 +865,27 @@
     
     \item El estándar exige un mínimo de tres inhibidores independientes para evitar cualquier emisión involuntaria de radiofrecuencia. En el diseño de la placa, esto requiere implementar físicamente tres cortes independientes en la cadena de transmisión/RF. 
     
-    \item La PCB debe rutear la alimentación desde las líneas del bus central e integrar la protección adecuada contra sobrecorrientes antes de alimentar los bloques analógicos y de RF.
+    \item La PCB debe rutear la alimentación desde las líneas del bus central e integrar la protección adecuada contra sobrecorrientes antes de alimentar los bloques analógicos y digitales.
     
     \item Afecta la selección de materiales de fabricación de la PCB, la máscara de soldadura, la serigrafía y los recubrimientos conformados. Todos deben cumplir con $TML \le 1.0\%$ y $CVCM \le 0.1\%$.
     
     \item En el entorno espacial no existe la convección de aire. El trazado de la PCB debe incluir planos de masa continuos y vías térmicas bajo el LNA, mezcladores y reguladores para disipar el calor por conducción hacia la estructura.
     
-    \item Restringe la utilización de blindajes o inductores con núcleo ferromagnético a componentes que no excedan un campo de $0.5$ Gauss sobre el campo magnético terrestre.
+    \item Utilización de blindajes o inductores con núcleo ferromagnético blindados a componentes que  excedan un campo de $0.5$ Gauss sobre el campo magnético terrestre.
     
     \item La placa debe contar con circuitería o integrar señales de control desde el microcontrolador que garanticen que la RF no transmita antes de transcurrir los 45 minutos posteriores al despliegue.
     
-    \item Filtrado estricto en la etapa final de salida de RF (pasa-banda/pasa-bajo) para cumplir con las reglamentaciones de emisiones fuera de banda (ENACOM, IARU, FCC) y separación de planos de masa analógicos, digitales y de RF.
+    \item Filtrado estricto en la etapa final de salida de RF (pasa-banda/pasa-bajo) para cumplir con las reglamentaciones de emisiones dentro de la banda autorizada por el ente regulador pertinente (ENACOM, IARU, FCC).
 	\end{itemize}
 	
 	Cabe destacar que, al tratarse de un proyecto con fines académicos, no resulta indispensable satisfacer al 100\% las normativas. Cumplir con todos los requerimientos impuestos por la norma maximiza la posibilidad de oportunidades de lanzamiento con los proveedores. No obstante, las especificaciones analizadas en el marco teórico representan las condiciones más restrictivas de los estándares vigentes.
 	
+	En la bibliografía respecto al diseño de transponder a menudo se hace mención al concepto de sistemas redundantes, si bien es recomendable contar con este tipo de características por una cuestión de simplicidad y costos, este diseño contempla un sistema sin ningún tipo de respaldo, pero puede ser considerado en etapas posteriores de un diseño mas acabado.
+	
 	\chapter{Selección de componentes, diseño y simulación de los bloques funcionales} 
 	
 	\section{Amplificador de bajo ruido (LNA)}
-	Como se explico en el marco teórico, es necesario un amplificador de bajo ruido capaz de enmascarar la figura de ruido del transponder. Los criterios para seleccionar el componentes fueron: bajo consumo de corriente, baja figura de ruido, ancho de banda que comprenda las frecuencias VHF, amplitud térmica, costo, vida útil y disponibilidad. Con todo lo anteriormente mencionado, se selecciono en PSA-5454+ de minicircuit.
+	Como se explico en el marco teórico, es necesario un amplificador de bajo ruido capaz de enmascarar la figura de ruido del transponder. Los criterios para seleccionar el componentes fueron: bajo consumo de corriente, baja figura de ruido, ancho de banda que comprenda las frecuencias VHF, amplitud térmica, costo, vida útil y disponibilidad. Con todo lo anteriormente mencionado, se selecciono el PSA-5454+ de minicircuit.
 	\begin{table}[htbp]
 		\centering
 		\label{tab:psa5454_caracteristicas}
@@ -912,7 +914,7 @@
 			Potencia de entrada (CW) & +15 dBm \\
 			\hline
 		\end{tabular}
-		\caption{Especificaciones y valores máximos absolutos del amplificador PSA-5454+.}
+		\caption{Especificaciones y valores máximos absolutos del amplificador PSA-5454+. (Fuente: Hoja de datos PSA-5454+ Minicircuit)}
 	\end{table}
 	
 	Nota en la hoja de datos: La combinación de bajo ruido y un alto valor de OIP3 hace que este amplificador MMIC sea ideal para etapas de entrada de receptor (RFE) de bajo ruido, ya que ofrece ventajas en ambos extremos del rango dinámico: sensibilidad y rango dinámico libre de espúreas ante señales de dos tonos.\newpage
@@ -936,29 +938,29 @@
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_3}
-		\caption[Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC]{Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC}
+		\caption[Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC (Fuente: Hoja de datos PSA-5454+ Minicircuit)]{Ciruito recomendado TEST CONDITIONS: Vd = 5V, Rbias=7.5K ohms, Id=20 mA @ Temperature =25degC (Fuente: Hoja de datos PSA-5454+ Minicircuit)}
 		\label{fig:plna3}
-	\end{figure}
+	\end{figure}\newpage
 	
-	A continuación se muestran los resultados de la simulación, de los parámetros S a la frecuencia VHF deseada.
+	A continuación se muestran los resultados de la simulación en QUCS, de los parámetros S a la frecuencia VHF deseada.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_4}
-		\caption[Ganancia f=146MHz]{Ganancia f=146MHz}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_4}
+		\caption[PSA-5454+: Ganancia f=146MHz (Fuente: Propia)]{PSA-5454+: Ganancia f=146MH (Fuente: Propia)}
 		\label{fig:plna4}
 	\end{figure}
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_5}
-		\caption[Aislación inversa f=146MHz]{Aislación inversa f=146MHz}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_5}
+		\caption[PSA-5454+: Aislación inversa f=146MHz (Fuente: propia)]{PSA-5454+: Aislación inversa f=146MHz (Fuente: propia)}
 		\label{fig:plna5}
 	\end{figure}
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.85\linewidth]{imagenes/p_lna_7}
-		\caption[Reflexiones directa e inversa f=146MHz]{Reflexiones directa e inversa f=146MHz}
+		\includegraphics[width=0.74\linewidth]{imagenes/p_lna_7}
+		\caption[PSA-5454+: Reflexiones directa e inversa f=146MHz (Fuente: Propia)]{PSA-5454+: Reflexiones directa e inversa f=146MHz (Fuente: Propia)}
 		\label{fig:plna7}
 	\end{figure}\newpage
 	
@@ -966,7 +968,7 @@
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_6}
-		\caption[Impedancia de entrada y salida]{Impedancia de entrada y salida}
+		\caption[PSA-5454+: Impedancia de entrada y salida sin adaptar (Fuente: Propia)]{PSA-5454+: Impedancia de entrada y salida sin adaptar (Fuente: Propia)}
 		\label{fig:plna6}
 	\end{figure}
 	
@@ -978,7 +980,7 @@
 		\item $S_{12}$: $0.0356 \angle 27.9^\circ$
 	\end{itemize}
 	
-	Antes de intentar una adaptación simétrica conjugada, es obligatorio verificar si el dispositivo es incondicionalmente estable. Si no lo es, este método no se puede aplicar directamente porque ciertas impedancias harían oscilar el circuito. Calculamos el determinante ($\Delta$) y el factor de Rollett ($K$):
+	Antes de intentar una adaptación simétrica conjugada (debido al bajo S12), es obligatorio verificar si el dispositivo es incondicionalmente estable. Si no lo es, este método no se puede aplicar directamente porque ciertas impedancias harían oscilar el circuito. Se calcula el determinante ($\Delta$) y el factor de Rollett ($K$):
 	\begin{equation}
 		\Delta = S_{11}S_{22} - S_{12}S_{21}
 	\end{equation}
@@ -989,7 +991,7 @@
 		\Delta \approx 0.546 + j0.143 = 0.565 \angle 14.6^\circ
 	\end{equation}
 	
-	Como $\vert{}\Delta\vert{} = 0.565 < 1$, el primer criterio se cumple. Ahora calculamos $K$:
+	Como $\vert{}\Delta\vert{} = 0.565 < 1$, el primer criterio se cumple. Ahora se calcula $K$:
 	
 	\begin{equation}
 		K = \frac{1 - \vert{}S_{11}\vert{}^2 - \vert{}S_{22}\vert{}^2 + \vert{}\Delta\vert{}^2}{2 \vert{}S_{12} S_{21}\vert{}}
@@ -1001,7 +1003,7 @@
 		K = \frac{1 - 0.104 - 0.094 + 0.319}{1.004} \approx 1.116
 	\end{equation}
 	
-	Como $K > 1$ y $\vert{}\Delta\vert{} < 1$, el dispositivo es incondicionalmente estable a 146 MHz. Podemos proceder con la adaptación simultánea. Para encontrar los coeficientes de reflexión, se necesita calcular las variables intermedias $B_1$, $B_2$, $C_1$ y $C_2$:
+	Como $K > 1$ y $\vert{}\Delta\vert{} < 1$, el dispositivo es incondicionalmente estable a 146 MHz. Se puede proceder con la adaptación simultánea. Para encontrar los coeficientes de reflexión, se necesita calcular las variables intermedias $B_1$, $B_2$, $C_1$ y $C_2$:
 	
 	\begin{equation}
 		B_1 = 1 + \vert{}S_{11}\vert{}^2 - \vert{}S_{22}\vert{}^2 - \vert{}\Delta\vert{}^2 = 1 + 0.104 - 0.094 - 0.319 = 0.691
@@ -1053,7 +1055,7 @@
 		Z_L \approx 47.83 + j40.75\ \Omega
 	\end{equation}
 	
-	Para la adaptación a la entrada, se utilizó una red Pi (C-L-C) pasabajos a partir de una impedancia compleja,mediante el método de la resistencia virtual ($R_v$). Este método consiste en dividir conceptualmente la red Pi en dos secciones de tipo L acopladas. Para el filtro sintonizado usamos una resistencia virtual de $15 \Omega $, esto permite obtener un factor de calidad $ Q \approx 2.5$ que determina la selectividad del filtro. En primera sección adaptará los $50 \ \Omega$ de la fuente a los $15 \ \Omega$ de nuestra resistencia virtual mediante un capacitor en derivación ($C_{in}$) y un inductor en serie ($L_1$).
+	Para la adaptación a la entrada, se utilizó una red Pi (C-L-C) pasa-bajos a partir de una impedancia compleja,mediante el método de la resistencia virtual ($R_v$). Este método consiste en dividir conceptualmente la red Pi en dos secciones de tipo L acopladas. Para el filtro sintonizado se utilizó una resistencia virtual de $15 \Omega $, esto permite obtener un factor de calidad $ Q \approx 2.5$ que determina la selectividad del filtro. En la primera sección se adaptará los $50 \ \Omega$ de la fuente a los $15 \ \Omega$ de la resistencia virtual mediante un capacitor en derivación ($C_{in}$) y un inductor en serie ($L_1$).
 	
 	\begin{equation}
 		Q_1 = \sqrt{\frac{R_S}{R_v} - 1} = \sqrt{\frac{50}{15} - 1} \approx 1.5275
@@ -1066,7 +1068,7 @@
 	\begin{equation}
 		C_{in} = \frac{1}{\omega \cdot X_{Cin}} = \frac{1}{(917.34 \times 10^6) \cdot 32.73} \approx 33.3 pF
 	\end{equation}
-	Para el inductor en serie tenemos:
+	Para el inductor en serie se tiene:
 	\begin{equation}
 		X_{L1} = Q_1 \cdot R_v = 1.5275 \cdot 15 = 22.91 \ \Omega
 	\end{equation}
@@ -1090,10 +1092,10 @@
 		X_{L2} = Q_2 \cdot R_v = 2.5387 \cdot 15 = 38.08 \ \Omega
 	\end{equation}
 	
-	El nodo final está compuesto por la admitancia resultante de la red ($Y_{L2}$) en paralelo con la susceptancia de $C_{out}$ ($j\omega C_{out}$). La red proveniente de $L_2$ nos entrega la siguiente admitancia:
+	El nodo final está compuesto por la admitancia resultante de la red ($Y_{L2}$) en paralelo con la susceptancia de $C_{out}$ ($j\omega C_{out}$). La red proveniente de $L_2$ entrega la siguiente admitancia:
 	\begin{equation}
 		Y_{L2} = \frac{1}{R_v + jX_{L2}} = \frac{1}{15 + j38.08} = 0.008955 - j0.02273 \ S
-	\end{equation}
+	\end{equation}\newpage
 	
 	Para alcanzar el objetivo final $Y_{out}$, la suma de la susceptancia de $Y_{L2}$ y del capacitor $C_{out}$ debe ser igual a la susceptancia objetivo:
 	\begin{equation}
@@ -1127,50 +1129,52 @@
 	Lo siguiente es obtener los parámetros S del amplificador con las redes de adaptación para ver el resultado obtenido, ajustando el valor de los componentes pasivos a valores comercialmente disponibles.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{imagenes/p_lna_12}
-		\caption[Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado]{Amplificador PSA-5454+ con redes de adaptacion y filtro sintonizado}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_12}
+		\caption[Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado (Fuente: Propia)]{Amplificador PSA-5454+ con redes de adaptación y filtro sintonizado (Fuente: Propia)}
 		\label{fig:plna12}
 	\end{figure}
 	
+	Ademas de la adaptación a 50 $\Omega$ a la entrada y la salida que se observa en la carta de Smith,se tiene una caída mas abrupta de la ganancia (S21) a frecuencias mas altas (UHF) producto del filtro sintonizado a la entrada, indicando su buen funcionamiento. 
+	
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_8}
-		\caption[Ganancia con filtro sintonizado]{Ganancia con filtro sintonizado}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_8}
+		\caption[PSA-5454+: Ganancia con filtro sintonizado (Fuente: Propia)]{PSA-5454+: Ganancia con filtro sintonizado (Fuente: Propia)}
 		\label{fig:plna8}
 	\end{figure}
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_9}
-		\caption[Aislación inversa f=146MHz]{Aislación inversa f=146MHz}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_9}
+		\caption[PSA-5454+: Aislación inversa f=146MHz (Fuente: Propia)]{PSA-5454+: Aislación inversa f=146MHz (Fuente: Propia)}
 		\label{fig:plna9}
 	\end{figure}
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/p_lna_10}
-		\caption[Reflexiones directa e inversa a f=146MHz]{Reflexiones directa e inversa a f=146MHz}
+		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_10}
+		\caption[PSA-5454+: Reflexiones directa e inversa a f=146MHz (Fuente: Propia)]{PSA-5454+: Reflexiones directa e inversa a f=146MHz (Fuente: Propia)}
 		\label{fig:plna10}
 	\end{figure}\newpage
 	
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/p_lna_11}
-		\caption[Adaptación de impedancia a f=146MHz]{Adaptación de impedancia a f=146MHz}
+		\caption[PSA-5454+: Adaptación de impedancia a f=146MHz (Fuente: Propia)]{PSA-5454+: Adaptación de impedancia a f=146MHz (Fuente: Propia)}
 		\label{fig:plna11}
 	\end{figure}
 	
 	\section{Etapa de amplificación}
-	Para cumplir con la ganancia requerida, es necesario añadir etapas de amplificación adicionales, ya que existe un limite de la cantidad de ganancia que se puede conseguir en una sola etapa. La ganancia requerida es de 80dB, teniendo en cuenta el factor de forma reducido de la PCB da como resultado una densidad de ganancia importante 17.77dB/cm aproximadamente. Bajo estas condiciones cualquier capacidad parásita existente ya sea en la PCB o en los componentes puede causar una realimentación en fase provocando la auto-oscilación del circuito volviéndolo inútil. Para mitigar estos problemas se tuvieron en cuenta las siguientes consideraciones:
+	Para cumplir con la ganancia requerida, es necesario añadir etapas de amplificación adicionales, ya que existe un limite de la cantidad de ganancia que se puede conseguir en una sola etapa. La ganancia requerida es de 80dB, teniendo en cuenta el factor de forma reducido de la PCB da como resultado una densidad de ganancia importante 17.77dB/cm aproximadamente. Bajo estas condiciones cualquier capacidad parásita existente ya sea en la PCB o en los componentes puede causar una realimentación en fase provocando la auto-oscilación del circuito y volviéndolo inútil. Para mitigar estos problemas se tuvieron en cuenta las siguientes consideraciones:
 	
 	\begin{itemize}
-			\item En primer lugar para las etapas de amplificación se seleccionó una configuración Cascode. Esta topología tiene una serie de ventajas respecto a la configuración típica de emisor común. El primero es que cancela el efecto Miller y reduce la capacidad parásita colector-base, por otro lado aumenta la aislación inversa (S12) importante para que la señal en la ultima etapa presente mas dificultades para retornar a la primer etapa.
+			\item En primer lugar para las etapas de amplificación se seleccionó una topología Cascode. Esta topología tiene una serie de ventajas respecto a la configuración típica de emisor común. El primero es que cancela el efecto Miller y reduce la capacidad parásita colector-base, por otro lado aumenta la aislación inversa (S12) importante para que la señal en la ultima etapa presente mas dificultades para retornar a la primer etapa.
 			
-			\item Otro camino por el cual la señal amplificada se puede realimentar es por medio de VCC, por lo que cada etapa esta aislada entre si con atenuadores en la linea de alimentación.
+			\item Otro camino por el cual la señal amplificada se puede realimentar es por medio de VCC, por lo que cada etapa esta aislada entre si con filtro pasa-bajos de desacoplo de alimentación (VCC Decoupling Network).
 			
-			\item Finalmente el ultimo camino de realimentación es por medio del aire. Para solucionar esto se coloca un blindaje en forma tabicada separando cada una de las etapas amplificadoras.
+			\item Finalmente el ultimo camino de realimentación es por medio del aire. Para solucionar esto se coloca un blindaje en forma tabicada separando cada una de las etapas amplificadoras e impidiendo que se acoplen entre si.
 			
-			\item Si con todas las precauciones anteriormente mencionadas, existiera alguna capacidad parásita que haga oscilar el circuito se colocaron pads previstos para atenuadores entre etapas para bajar la ganancia hasta donde sea necesario para estabilizarlo, y no tener que descartar el diseño.
+			\item Si con todas las precauciones anteriormente mencionadas, existiera alguna capacidad parásita que haga oscilar el circuito se dejaron pads previstos para atenuadores entre etapas, esto baja la ganancia hasta donde sea necesario para estabilizarlo, y no tener que descartar el diseño.
 	\end{itemize}
 	
 	Para el diseño se utilizo un transistor proporcionado por la cátedra (BJT 2SC3356) con las siguientes características:
@@ -1200,14 +1204,14 @@
 			Temperatura de almacenamiento ($T_{stg}$) & -65 °C a +150 °C \\
 			\hline
 		\end{tabular}
-		\caption{Características eléctricas y valores máximos absolutos del transistor 2SC3356.}
+		\caption{Características eléctricas y valores máximos absolutos del transistor 2SC3356. (Fuente Hoja de datos NEC BJT 2SC3356)}
 	\end{table}
 	
-	Para el diseño del amplificador se eligió una polarización en cadena (Ladder Biasing), ademas de un punto Q con una corriente $ICQ=10mA$ para minimizar la figura de ruido.
+	Para el diseño del amplificador se eligió una polarización en cadena (Ladder Biasing), ademas de un punto Q con una corriente $ICQ=10mA$ para minimizar NF a 1.1dB aproximadamente.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/cascode_1}
-		\caption[Propuesta para el amplificador Cascode]{Propuesta para el amplificador Cascode}
+		\includegraphics[width=0.6\linewidth]{imagenes/cascode_1}
+		\caption[Propuesta para el amplificador Cascode (Fuente: Propia)]{Propuesta para el amplificador Cascode (Fuente: Propia)}
 		\label{fig:cascode1}
 	\end{figure}
 	
@@ -1215,6 +1219,7 @@
 	\begin{equation}
 		V_{E2} = 0.10 \cdot 5V = 0.5V
 	\end{equation}
+	
 	Sabiendo que la corriente de emisor es prácticamente la corriente objetivo ($I_E \approx I_{CQ} = 10 mA$), calculamos $R_5$:
 	\begin{equation}
 		R_5 = \frac{V_{E2}}{I_{CQ}} = \frac{0.5V}{10mA} = 50 \ \Omega
@@ -1225,7 +1230,7 @@
 		V_{B2} = V_{E2} + V_{BE} = 0.5V + 0.7V = 1.20V
 	\end{equation}
 	
-	Para calcular la base de T3 ($V_{B3}$),se debe decidir cómo repartir la tensión restante para asegurar que ambos transistores operen cómodamente en la región activa lineal (evitando la saturación). Se asignó al transistor inferior (T2) una tensión colector-emisor de aproximadamente $V_{CE2} = 1.5V$ para darle un margen dinámico amplio. Sabiendo que el colector de T2 está conectado directamente al emisor de T3:
+	Para calcular la base de T3 ($V_{B3}$),se debe decidir cómo repartir la tensión restante para asegurar que ambos transistores operen cómodamente en la región activa lineal (evitando la saturación). Se asignó al transistor inferior (T2) una tensión colector-emisor de aproximadamente $V_{CE2} = 1.5V$ para darle un rango dinámico amplio. Sabiendo que el colector de T2 está conectado directamente al emisor de T3:
 	\begin{equation}
 		V_{E3} = V_{E2} + V_{CE2} = 0.5V + 1.5V = 2.0V
 	\end{equation}
@@ -1275,11 +1280,11 @@
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/cascode_7}
-		\caption[Impedancias de entrada y salida con ICQ=10mA.]{Impedancias de entrada y salida con ICQ=10mA.}
+		\caption[Impedancias de entrada y salida con ICQ=10mA. (Fuente: Propia)]{Impedancias de entrada y salida con ICQ=10mA.(Fuente: Propia)}
 		\label{fig:cascode7}
 	\end{figure}
 	
-	Según la simulación, la impedancia de entrada bruta del amplificador (vista desde $C_2$) es $Z_{in} = 264 \angle -28.6^\circ \ \Omega$.Para diseñar una red L, se debe pasar esta impedancia a su equivalente en paralelo (una resistencia en paralelo con un capacitor).Pasando a forma rectangular:
+	Según la simulación, la impedancia de entrada del amplificador (vista desde $C_2$) es $Z_{in} = 264 \angle -28.6^\circ \ \Omega$.Para diseñar una red L, se debe pasar esta impedancia a su equivalente en paralelo (una resistencia en paralelo con un capacitor). Pasando a forma rectangular:
 	\begin{equation}
 		Z_{in} = 264 \cos(-28.6^\circ) + j 264 \sin(-28.6^\circ) \approx 231.8 - j126.3 \ \Omega
 	\end{equation}
@@ -1289,15 +1294,15 @@
 		Y_{in} = \frac{1}{231.8 - j126.3} = 3.32mS + j1.81mS
 	\end{equation}
 	
-	De aquí extraemos que el amplificador se comporta a la entrada como una resistencia $R_p$ en paralelo con un capacitor parásito $C_p$:
+	De aquí se extrae que el amplificador se comporta a la entrada como una resistencia $R_p$ en paralelo con un capacitor parásito $C_p$:
 	\begin{equation}
 		R_p = \frac{1}{3.32mS} \approx 301 \ \Omega
 	\end{equation}
 	\begin{equation}
 		C_p = \frac{1.81mS}{2 \pi \cdot 146 MHz} \approx 1.97 pF
-	\end{equation}
+	\end{equation}\newpage
 	
-	Usamos una red "L" con un elemento paralelo del lado de alta impedancia (el transistor) y un elemento serie del lado de $50 \ \Omega$.
+	Usamos una red L con un elemento paralelo del lado de alta impedancia (el transistor) y un elemento serie del lado de $50 \ \Omega$.
 	\begin{equation}
 		Q = \sqrt{\frac{R_p}{R_s} - 1} = \sqrt{\frac{301}{50} - 1} = \sqrt{5.02} \approx 2.24
 	\end{equation}
@@ -1324,7 +1329,7 @@
 		C3 = \frac{1}{2 \pi \cdot 146MHz \cdot 112 \ \Omega} \approx 9.7 pF
 	\end{equation}
 	
-	En el circuito sin adaptar, la Carta de Smith te arrojó $Z_{out} = 221 \angle 89.9^\circ \ \Omega$. Un ángulo de casi $90^\circ$ significa que el Cascode tiene una resistencia de salida colosal (decenas de kilo-ohms).Si se intentara adaptar una impedancia tan alta directamente a $50 \ \Omega$, el $Q$ sería altísimo, el ancho de banda sería microscópico y el amplificador sería inestable. Por esto el diseño adaptado añadiste $R_4 = 1k\Omega$ en paralelo. Esta resistencia es la clave: domina la impedancia de salida fijando intencionalmente $R_p = 1000 \ \Omega$ para controlar la ganancia y el ancho de banda.
+	En el circuito sin adaptar, la Carta de Smith arrojó $Z_{out} = 221 \angle 89.9^\circ \ \Omega$. Un ángulo de casi $90^\circ$ significa que el Cascode tiene una resistencia de salida grande (decenas de kilo-ohms). Si se intentara adaptar una impedancia tan alta directamente a $50 \ \Omega$, el $Q$ sería altísimo, el ancho de banda sería microscópico y el amplificador sería inestable. Por esto el diseño adaptado añadiste $R_4 = 1k\Omega$ en paralelo. Esta resistencia es la clave: domina la impedancia de salida fijando intencionalmente $R_p = 1000 \ \Omega$ para controlar la ganancia y el ancho de banda.
 	Cálculo del factor de calidad (Q) de la red:
 	\begin{equation}
 		Q = \sqrt{\frac{1000}{50} - 1} = \sqrt{19} \approx 4.36
@@ -1344,49 +1349,511 @@
 	\end{equation}
 	\begin{equation}
 		C4 = \frac{1}{2 \pi \cdot 146MHz \cdot 218 \ \Omega} \approx 5.0pF
-	\end{equation}
+	\end{equation}\newpage
 	
-	En las siguientes simulaciones se observa que tanto los puertos de entrada como de salida están perfectamente adaptados a $50 \Omega $ ademas de proporcionar una ganancia de 19dB, junto con una aislación inversa excelente de -64dB tal como se anticipo en un principio. Resta por concatenar tres etapas Cascode junto con los atenuadores en VCC y en la red de señal, para obtener la respuesta total de la cadena de RF.
+	En las siguientes simulaciones se observa que tanto los puertos de entrada como de salida están perfectamente adaptados a $50 \Omega $ ademas de proporcionar una ganancia de 19dB(Typ), junto con una aislación inversa excelente de -64dB tal como se anticipo en un principio. Resta por concatenar tres etapas Cascode con los atenuadores de RF y filtro pasa-bajos de desacoplo de alimentación (VCC Decoupling Network), para obtener la respuesta total de la cadena de RF.
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/cascode_2}
-		\caption[Circuito Cascode con redes de adaptación]{Circuito Cascode con redes de adaptación}
+		\includegraphics[width=0.6\linewidth]{imagenes/cascode_2}
+		\caption[Circuito Cascode 2SC3356 con redes de adaptación (Fuente: Propia)]{Circuito Cascode 2SC3356 con redes de adaptación (Fuente: Propia)}
 		\label{fig:cascode2}
 	\end{figure}
 	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.75\linewidth]{imagenes/cascode_6}
-		\caption[Impedancias de entrada y salida]{Impedancias de entrada y salida}
+		\caption[Cascode 2SC3356: Impedancias de entrada y salida f=146MHz (Fuente: Propia)]{Cascode 2SC3356: Impedancias de entrada y salida f=146MHz (Fuente: Propia)}
 		\label{fig:cascode6}
-	\end{figure}
+	\end{figure}\newpage
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/cascode_4}
-		\caption[Ganancia de la etapa Cascode adaptada a 50 ohm]{Ganancia de la etapa Cascode adaptada a 50 ohm}
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_4}
+		\caption[Cascode 2SC3356: Ganancia de la etapa adaptada f=146MHz (Fuente: Propia)]{Cascode 2SC3356: Ganancia de la etapa Cascode adaptada f=146MHz (Fuente: Propia)}
 		\label{fig:cascode4}
 	\end{figure}
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/cascode_5}
-		\caption[Aislación inversa de la etapa Cascode adaptada a 50 ohm]{Aislación inversa de la etapa Cascode adaptada a 50 ohm}
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_5}
+		\caption[Cascode 2SC3356: Aislación inversa de la etapa Cascode adaptada f=146MHz (Fuente: Propia)]{Cascode 2SC3356: Aislación inversa de la etapa adaptada f=146MHz (Fuente: Propia)}
 		\label{fig:cascode5}
 	\end{figure}
 	
+	Entre cada etapa se dejo previsto pads para colocar atenuadores de RF de forma preventiva, en el caso de que el circuito oscile con 80dB de ganancia. Dicho atenuadores están adaptados a 50 $\Omega$ para no provocar reflexiones y se pueden calcular para distintos niveles de atenuación según sea necesario. A continuación se calcula un atenuador de 12dB. $a$: Atenuación deseada en decibelios (dB). $K$: Factor de atenuación de tensión. $L$: Factor de atenuación de potencia ($L = K^2$). $A$: Factor auxiliar adimensional definido como:
+	\begin{equation}
+		A = \frac{L + 1}{L - 1}
+	\end{equation}
+	
+	Luego:
+	\begin{equation}
+		L = 10^{12/10} = 15.8489
+	\end{equation}
+	\begin{equation}
+		A = \frac{15.8489 + 1}{15.8489 - 1} = \frac{16.8489}{14.8489} \approx 1.13469
+	\end{equation}
+	\begin{equation}
+		R_{serie} = \frac{L - 1}{2} \sqrt{\frac{Z_{in} \cdot Z_{out}}{L}}
+	\end{equation}
+	\begin{equation}
+		R_{serie} = \frac{15.8489 - 1}{2} \sqrt{\frac{50 \cdot 50}{15.8489}} = 7.42445 \cdot \sqrt{157.7397} \approx 93.2471\ \Omega
+	\end{equation}
+	\begin{equation}
+		R_{shunt} = \frac{1}{\frac{A}{Z_{in}} - \frac{1}{R_2}} = \frac{1}{\frac{A}{Z_{out}} - \frac{1}{R_2}}
+	\end{equation}
+	\begin{equation}
+		R_{shunt} = \frac{1}{0.0119696} \approx 83.545\ \Omega
+	\end{equation}
+	
+	La red de desacoplo de VCC  es un filtro RC consta un capacitor de 10nF que es excelente para filtrar componentes de baja frecuencia o ruido de la fuente de alimentación, pero a $146MHz$ puede volverse inductivo. Colocar en paralelo un capacitor más pequeño de $100pF$ garantiza una Frecuencia de Autorresonancia (SRF) más elevada, asegurando que a $146MHz$ siga funcionando como un cortocircuito ideal hacia masa. La respuesta en frecuencia del filtro se puede calcular como:
+	\begin{equation}
+		C_{eq} = C_{1} + C_{2} = 10nF + 0.1nF = 10.1nF = 10.1 \times 10^{-9}F
+	\end{equation}
+	
+	A la frecuencia de operación $f = 146MHz$, la impedancia reactiva ($X_C$) que presentan los capacitores:
+	\begin{equation}
+		\omega = 2 \pi f = 2 \pi \cdot (146 \times 10^6Hz) \approx 9.173 \times 10^8rad/s
+	\end{equation}
+	\begin{equation}
+		X_C = \frac{1}{\omega C_{eq}} = \frac{1}{(9.173 \times 10^8) \cdot (10.1 \times 10^{-9}F)} \approx 0.1079 \ \Omega
+	\end{equation}
+	La señal de RF parásita  ve un divisor de tensión formado por la resistencia $R = 10 \ \Omega$ en serie y la reactancia capacitiva $X_C \approx 0.1079 \ \Omega$ en paralelo a masa:
+	\begin{equation}
+		\vert{}H(j\omega)\vert{} = \frac{X_C}{\sqrt{R^2 + X_C^2}} = \frac{0.1079}{\sqrt{10^2 + 0.1079^2}} \approx \frac{0.1079}{10} = 0.01079
+	\end{equation}
+	La atenuación resulta:
+	\begin{equation}
+		A(dB) = 20 \log_{10} (\vert{}H(j\omega)\vert{}) = 20 \log_{10}(0.01079) \approx -39.34dB
+	\end{equation}
+	
+	Los filtros pasabajo en la red VCC desplazan el punto Q ligeramente pero no afectan el rendimiento de las etapas. Finalmente la etapa de amplificación completa con el LNA (PSA-5454+) y las tres etapas Cascode (2SC3356) resulta:\newline
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/cascode_13}
+		\caption[Etapa de amplificación completa (Fuente: Propia)]{Etapa de amplificación completa (Fuente: Propia)}
+		\label{fig:cascode13}
+	\end{figure}\newpage
 	
 	
+	Finalmente, en los siguientes gráficos se puede observar los resultados obtenidos en cuanto al rendimiento del circuito, se llego a la ganancia objetivo de 80dB, los coeficientes de reflexión inversa y directa están por debajo de los -20dB, esto se traduce en una reflexión de potencia de menos del 1\%. Adicionalmente la aislación inversa obtenida en el simulador es de -189dB (en la realidad puede llegar a los -100dB) fundamentales para evitar la auto-oscilación del circuito con ganancias elevadas.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_8}
+		\caption[Etapa de amplificación: Reflexiones directas en inversas (Fuente: Propia)]{Etapa de amplificación: Reflexiones directas en inversas (Fuente: Propia)}
+		\label{fig:cascode8}
+	\end{figure}
 	
-	\section{Oscilador local (LO):}
-	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_9}
+		\caption[Etapa de amplificación: Ganancia de potencia (Fuente: Propia)]{Etapa de amplificación: Ganancia de potencia (Fuente: Propia)}
+		\label{fig:cascode9}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_10}
+		\caption[Etapa de amplificación: Aislación inversa (Fuente: Propia)]{Etapa de amplificación: Aislación inversa (Fuente: Propia)}
+		\label{fig:cascode10}
+	\end{figure}\newpage
+	
+	En cuanto a los atenuadores resistivos están diseñados para presentar una impedancia constante de $50\ \Omega$ tanto a su entrada como a su salida. Lejos de desadaptar el circuito, actúan como amortiguadores de RF: atenúan drásticamente las ondas reflejadas que intentan rebotar entre etapas y reducen la ganancia excesiva que provoca auto-oscilaciones. En la práctica, logran aislar las etapas de amplificación haciéndoles ver una carga estable de $50\ \Omega$, lo que garantiza la estabilidad del sistema sin degradar la adaptación de impedancias.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/cascode_12}
+		\caption[Etapa de amplificación: Adaptación de impedancias (Fuente: Propia)]{Etapa de amplificación: Adaptación de impedancias (Fuente: Propia)}
+		\label{fig:cascode12}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\linewidth]{imagenes/cascode_11}
+		\caption[Etapa de amplificación: Estabilidad absoluta (Fuente: Propia)]{Etapa de amplificación: Estabilidad absoluta (Fuente: Propia)}
+		\label{fig:cascode11}
+	\end{figure}
 	
 	\section{Etapa de mezclador (Mixer)}
-	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	Para la selección del mixer se tuvieron en cuenta las siguientes consideraciones: debe ser un mixer de tipo doblemente balanceado (Por los niveles requeridos de aislación entre puertos), el ancho de banda de RF,LO,IF tiene comprender la banda de VHF-UHF, baja figura de ruido, amplitud térmica, costo, nivel de potencia de LO. En base a lo anteriormente mencionado se optó por ADE-5+ .\newline
+	\begin{table}[htbp]
+		\centering
+		\label{tab:ade5_caracteristicas}
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Especificaciones Eléctricas / Desempeño}} \\
+			\hline
+			Rango de frecuencia LO / RF & 5 a 1500 MHz \\
+			Rango de frecuencia IF & DC a 1000 MHz \\
+			Pérdida de conversión (\textit{Conversion Loss}) & 6.6 dB (Típ.) / 7.5 dB (Máx. banda media) \\
+			Aislamiento LO-RF (\textit{LO-RF Isolation}) & 40 dB (Típ. en banda media) \\
+			Aislamiento LO-IF (\textit{LO-IF Isolation}) & 30 dB (Típ. en banda media) \\
+			Punto de intercepción de 3.er orden (IP3) & +15 dBm (Típ.) \\
+			Compresión a 1 dB ($P_{1dB}$) & +1 dBm (Típ.) \\
+			Lavable en agua (\textit{Aqueous Washable}) & Sí \\
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Valores Máximos Absolutos}} \\
+			\hline
+			Temperatura de operación & -40 °C a +85 °C \\
+			Temperatura de almacenamiento & -55 °C a +100 °C \\
+			Potencia de RF máxima & 50 mW \\
+			Corriente de IF máxima & 40 mA \\
+			\hline
+		\end{tabular}
+		\caption{Especificaciones eléctricas y valores máximos absolutos del mezclador ADE-5+ (Fuente: Hoja de datos minicircuit ADE-5+)}
+	\end{table}
+	
+	El contexto en el que opera el mixer es el siguiente: RF=146MHz, IF=434MHz y LO=580MHz. Respecto al oscilador local, como se explican en la sección posterior opera a una potencia de salida de +7dBm aproximadamente. Por tratarse de en elemento pasivo, podemos aproximar la figura de ruido a las perdidas de conversión.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/mixer_1}
+		\caption[ADE-5+: perdidas de conversión vs IF (Fuente: Hoja de datos ADE-5+)]{ADE-5+: perdidas de conversión vs IF (Fuente: Hoja de datos ADE-5+)}
+		\label{fig:mixer1}
+	\end{figure}
+	
+	Se puede calcular las perdidas de conversión tomando la RF mas cercana (10MHz), en el grafico es de aproximada mente 6.2dB, se podría sumar una corrección de 0.4dB/0.5dB para ser mas conservador, en lineas generales las perdidas de conversión tienden a la media 6.6dB.\newpage
+	
+	Respecto al producto de intermodulación de tercer orden (IP3), y el punto de compresión (P1dB) se puede decir lo siguiente. En la banda de VHF ($146MHz$), el mezclador ofrece su mejor desempeño (IP3 se ubica entre $+17dBm$ y $+18dBm$.) de linealidad. Esto significa que será muy resistente a generar intermodulación de tercer orden, incluso en presencia de señales fuertes cercanas. En la gráfica de la derecha, inyectando $+1dBm$ en la entrada a $146MHz$, la compresión de la señal es de apenas $\sim 0.4dB$. Si la potencia que le llega a la entrada de RF desde tu etapa de amplificación está en el rango de $-10dBm$ a $0dBm$, el mezclador trabajará en una zona totalmente lineal sin distorsionar.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/mixer_2}
+		\caption[ADE-5+: IP3/P1dB vs IF (Fuente hojas de datos ADE-5+)]{ADE-5+: IP3/P1dB vs IF (Fuente hojas de datos ADE-5+)}
+		\label{fig:mixer2}
+	\end{figure}
+	
+	Otro aspecto a tener en cuenta es el nivel de aislación entre puertos, el fabricante provee una serie de curvas útiles para este propósito. El aislamiento de los mezcladores pasivos cae drásticamente a medida que sube la frecuencia (debido a las capacitancias parásitas del encapsulado y los diodos). Dado que tus frecuencias de trabajo ($146MHz$ y $580MHz$) están en la zona baja/media del rango del componente ($5 - 1500 MHz$), estás aprovechando la zona de máximo aislamiento del dispositivo.\newline
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/mixer_3}
+		\caption[ADE-5+: Aislación entre puertos RF-LO-IF (Fuente Hoja de datos ADE-5+)]{ADE-5+: Aislación entre puertos RF-LO-IF (Fuente Hoja de datos ADE-5+)}
+		\label{fig:mixer3}
+	\end{figure}\newpage
+	
+	A $580MHz$ en la gráfica superior, el aislamiento entre el puerto de LO y el de RF es de aproximadamente $41.5dB$. Inyectando $+7 dBm$ en el puerto de LO, la señal del oscilador local que fuga hacia la entrada de RF es de solo:
+	\begin{equation}
+		P_{RF} \approx +7 dBm - 41.5 dB = \mathbf{-34.5 dBm}
+	\end{equation}
+	
+	A $580 MHz$ en la gráfica inferior izquierda, el aislamiento entre LO y FI es de aproximadamente $31.5 dB$. La potencia del LO que se fuga directamente al puerto de salida de FI será de:
+	\begin{equation}
+		P_{IF} \approx +7dBm - 31.5dB = \mathbf{-24.5dBm}
+	\end{equation}
+	
+	Evaluando la gráfica inferior derecha a tu frecuencia de entrada ($RF = 146MHz$), el aislamiento RF-IF ronda los $29dB$. Evita de forma efectiva que la señal directa de $146MHz$ pase limpia a la salida sin ser mezclada.
+	
+	Por ultimo interesa ver la adaptación de impedancia del Mixer en relación al resto del circuito. El fabricante provee una serie de graficas de la relacion de onda estacionara respecto de la frecuencia en los distintos puertos, esto nos permite calcular tanto la reflexión como la impedancia vista.Para un sistema con impedancia característica $Z_0 = 50\ \Omega$  se tiene:
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/mixer_4}
+		\caption[ADE-5+: Relación de onda estacionaria (VSWR) (Fuente Hoja de datos ADE-5+)]{ADE-5+: Relación de onda estacionaria (VSWR) (Fuente Hoja de datos ADE-5+)}
+		\label{fig:mixer4}
+	\end{figure}
+	
+	Magnitud del Coeficiente de Reflexión ($\vert{}\Gamma\vert{}$):
+	\begin{equation}
+		\vert{}\Gamma\vert{} = \frac{VSWR - 1}{VSWR + 1}
+	\end{equation}
+	
+	Pérdida de Retorno ($RL$ en dB):
+	\begin{equation}
+		RL (dB) = -20 \log_{10}(\vert{}\Gamma\vert{})
+	\end{equation}
+	
+	Potencia Reflejada ($\%$):
+	\begin{equation}
+		P(\%) = \vert{}\Gamma\vert{}^2 \times 100
+	\end{equation}
+	
+	Límites de Resistencia Real ($R_{\min}$ y $R_{\max}$):
+	\begin{equation}
+		R_{\min} = \frac{50}{VSWR} \qquad y \qquad R_{\max} = 50 \times VSWR
+	\end{equation}\newline
+	
+	Aplicando las formulas se puede calcular estos parámetros en cada puerto, obteniendo los siguientes resultados:
+	
+	Puerto de RF ($RF = 146MHz$) Lectura del gráfico (RF VSWR): $VSWR \approx 1.35$
+	\begin{itemize}
+		\item Coeficiente de reflexión: $\vert{}\Gamma\vert{} = \frac{1.35 - 1}{1.35 + 1} = \frac{0.35}{2.35} \approx \mathbf{0.149}$
+		\item Pérdida de retorno: $RL = -20 \log_{10}(0.149) \approx \mathbf{16.5dB}$
+		\item Potencia reflejada: $P = (0.149)^2 \times 100 \approx \mathbf{2.2\%}$
+		\item Rango de impedancia equivalente: De $37.0\ \Omega$ a $67.5\ \Omega$
+	\end{itemize}
+	
+	Puerto de LO ($LO= 580MHz$)Lectura del gráfico (LO VSWR): $VSWR \approx 2.0$
+	\begin{itemize}
+		\item Coeficiente de reflexión: $\vert{}\Gamma\vert{} = \frac{2.0 - 1}{2.0 + 1} = \frac{1}{3} \approx \mathbf{0.333}$
+		\item Pérdida de retorno: $RL = -20 \log_{10}(0.333) \approx \mathbf{9.5dB}$
+		\item Potencia reflejada: $P = (0.333)^2 \times 100 \approx \mathbf{11.1\%}$
+		\item Rango de impedancia equivalente: De $25.0\ \Omega$ a $100.0\ \Omega$
+	\end{itemize}
+	
+	Puerto de FI ($IF = 434MHz$)Lectura del gráfico (IF VSWR): $VSWR \approx 1.40$
+	\begin{itemize}
+		\item Coeficiente de reflexión: $\vert{}\Gamma\vert{} = \frac{1.40 - 1}{1.40 + 1} = \frac{0.4}{2.4} \approx \mathbf{0.167}$
+		\item Pérdida de retorno: $RL = -20 \log_{10}(0.167) \approx \mathbf{15.6dB}$
+		\item Potencia reflejada: $P = (0.167)^2 \times 100 \approx \mathbf{2.8\%}$
+		\item Rango de impedancia equivalente: De $35.7\ \Omega$ a $70.0\ \Omega$
+	\end{itemize}
+	
+	El puerto RF e IF están muy bien adaptados, pierden menos del $3\%$ de la potencia por desadaptación, lo que confirma que la señal de entrada fluirá sin problemas. El puerto LO tiene un VSWR más elevado ($\sim 2.0$),es un comportamiento completamente normal en mezcladores de diodos. Como el Oscilador Local conmuta los diodos internamente conduciendo corriente en una zona fuertemente no lineal, la impedancia de entrada del puerto LO decae. Por ello, refleja cerca del $11\%$ de la energía inyectada por el oscilador.\newpage
+	
+	\section{Oscilador local (LO):}
+	Para el oscilador local, existen varias tecnologías anteriormente mencionadas en el marco teórico. Para nuestro caso particular se tuvieron en cuenta las siguientes restricciones: Ancho de banda (debe comprender los 580MHz), bajo consumo de corriente, amplitud térmica, costo, disponibilidad, si bien no es critico el tiempo de establecimiento si es importante la pureza espectral, el ruido de fase y la generación de componentes espurias que puedan contaminar la mezcla. Ademas debido al tipo de Mixer seleccionado es necesaria que la potencia de salida sea de por lo menos +7dBm, si esto no se cumple las perdidas y por ende la figura de ruido aumentan considerablemente como se vio en la sección del mezclador. De lo anteriormente mencionado se concluye en utilizar un ADF4351 de Analog Device, que consiste con un PLL y un VCO integrado en un chip (reduce costos y cantidad de componentes) con las siguientes características:
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:adf4350_caracteristicas}
+		\begin{tabularx}{\textwidth}{l l l X}
+			\toprule
+			\textbf{Parámetro} & \textbf{Valor / Rango} & \textbf{Unidad} & \textbf{Observaciones / Condición} \\
+			\midrule
+			Rango de frecuencia de salida & 137.5 a 4400 & MHz & Mediante VCO fundamental y divisores \\
+			Rango del VCO fundamental & 2200 a 4400 & MHz & Integrado en chip \\
+			Divisores de salida RF & /1, /2, /4, /8, /16 & --- & Programables \\
+			Modo de síntesis & Fractional-N / Integer-N & --- & Interpolador $\Sigma$-$\Delta$ de 3.er orden (12-bit MOD) \\
+			Frecuencia máx. del PFD & 32 & MHz & Frecuencia del detector de fase/frecuencia \\
+			Corriente del Charge Pump ($I_{CP}$) & 0.312 a 5.0 & mA & Configurable mediante resistor $R_{SET}$ y registros \\
+			Ruido de fase del VCO (Open-Loop) & -114 / -110 & dBc/Hz & Offset a 100 kHz ($f = 2,2$ GHz / $f = 4,4$ GHz) \\
+			Piso de ruido normalizado ($PN_{SYNTH}$) & -220 & dBc/Hz & Ancho de banda de lazo = 500 kHz \\
+			Jitter RMS integrado & $< 0,5$ & ps rms & Típico \\
+			Potencia de salida RF & -4 a +5 & dBm & Programable en pasos de 3 dB \\
+			Tensión de alimentación & 3.0 a 3.6 (3.3 nominal) & V & $AV_{DD}$, $DV_{DD}$, $V_{VCO}$ independientes \\
+			Interfaz de control & SPI (3 hilos) & --- & Entradas lógicas compatibles con 1.8 V / 3 V \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Resumen de características principales del sintetizador ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}
+	\end{table}
+	
+	Nota: Si bien en la potencia RF de salida que se menciona es de maximo +5dBm, es importante mencionar cuanta con dos salidas y se puede usar una red LC balun para llegar hasta los +8dBm. \newpage 
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:adf4350_max_ratings}
+		\begin{tabularx}{\textwidth}{X l}
+			\toprule
+			\textbf{Parámetro} & \textbf{Valor / Rango} \\
+			\midrule
+			$AV_{DD}$ a $GND^1$ & -0.3 V a +3.9 V \\
+			$AV_{DD}$ a $DV_{DD}$ & -0.3 V a +0.3 V \\
+			$V_{VCO}$ a $GND$ & -0.3 V a +3.9 V \\
+			$V_{VCO}$ a $AV_{DD}$ & -0.3 V a +0.3 V \\
+			Tensión de entrada/salida digital a $GND$ & -0.3 V a $V_{DD} + 0.3$ V \\
+			Tensión de entrada/salida analógica a $GND$ & -0.3 V a $V_{DD} + 0.3$ V \\
+			$REF_{IN}$ a $GND$ & -0.3 V a $V_{DD} + 0.3$ V \\
+			Rango de temperatura de operación & -40 $^\circ$C a +85 $^\circ$C \\
+			Rango de temperatura de almacenamiento & -65 $^\circ$C a +125 $^\circ$C \\
+			Temperatura máxima de unión & 150 $^\circ$C \\
+			Impedancia térmica LFCSP $\theta_{JA}$ (paddle soldado) & 27.3 $^\circ$C/W \\
+			Soldadura por reflujo (temperatura pico) & 260 $^\circ$C \\
+			Soldadura por reflujo (tiempo en temperatura pico) & 40 s \\
+			\bottomrule
+		\end{tabularx}
+		\begin{minipage}{\textwidth}
+			\vspace{2pt}
+			\footnotesize $^1 GND = AGND = DGND = 0$ V
+		\end{minipage}
+		\caption{Valores máximos absolutos del ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}
+	\end{table}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/p_pll_1}
+		\caption[ADF4351: Diagrama de bloques (Fuente Hoja de datos AD4351 Analog Device)]{ADF4351: Diagrama de bloques (Fuente Hoja de datos AD4351 Analog Device)}
+		\label{fig:ppll1}
+	\end{figure}
+	
+	Para comenzar el diseño del oscilador local se definen los siguientes parámetros de trabajo: frecuencia de salida deseada $F_{out}=580MHz$, potencia de RF requerida $P=+7dBm$ y por ultimo referencia de entrada $f_{REFIN}=10MHz$ proporcionada por un TCXO.
+	
+	\textbf{Registros 0 y 1:}
+	
+	La configuración del PLL se realiza mediante interfaz SPI configurando una serie de registros internos, a continuación se especifican los valores de los registros 0 y 1 referidos a las configuraciones de RF: dado que el VCO fundamental opera en el rango de $2200$ MHz a $4400$ MHz, la frecuencia de $580$ MHz queda fuera de dicho rango directo. Se selecciona un divisor $D = 4$. Sin utilizar duplicador (D) y divisor (T), con contador $R = 1$, la frecuencia del PFD es:
+	\begin{equation}
+		f_{PFD} = f_{REFIN} × \left( \frac{(1 + D)}{(R × (1 + T))}\right) = 10MHz
+	\end{equation}
+	
+	Para calcular el divisores N se tiene:
+	\begin{equation}
+		N = \frac{f_{VCO}}{f_{PFD}} = \frac{2320}{10} = 232
+	\end{equation}
+	
+	Dado que $N$ da un número entero exacto, se trabaja en modo Integer-N ($INT = 232$, $FRAC = 0$, $MOD = 2$), lo cual maximiza la pureza espectral y minimiza las espurias (spurs). Con un prescaler de 4/5, realimentado la frecuencia fundamental $f_{VCO} = f_{OUT} \cdot D = 580 \cdot 4 = 2320MHz$ y no requiriéndose un ajuste de fase inicial, la frecuencia de salida resulta:
+	
+	\begin{equation}
+		f_{OUT}(MHz)= \left(INT + \frac{FRAC}{MOD}\right) \frac{PFD(MHz)}{4}
+	\end{equation}
+	
+	\begin{equation}
+		f_{OUT}(MHz)= \left( 232 + \frac{0}{2}\right)\frac{10MHz}{4} = 580MHz
+	\end{equation}
+	
+	\textbf{Registro 2:}
+	\begin{itemize}
+		\item \textbf{Low Noise/Spur Mode (Low noise mode):} Configura la bomba de carga para priorizar el mínimo piso de ruido de fase sobre la atenuación de espurias.
+		
+		\item \textbf{Muxout (DGND):} Fija la salida multiplexada a masa digital.
+		
+		\item \textbf{Charge Pump Current (5.00 mA):} Selecciona la corriente máxima del Charge Pump ($I_{CP} = 5mA$) para maximizar la ganancia del lazo, reducir el ruido de fase en la banda de paso y mantener el margen de fase diseñado en el filtro.
+		
+		\item \textbf{LDF \& LDP (INT-N / 10 ns):} Establece la función de detección de enganche para modo entero (Integer-N) con un pulso de precisión de 10 ns.
+		
+		\item \textbf{PD Polarity (Positive):} Establece la polaridad positiva del detector de fase/frecuencia (PFD), requerida para filtros de lazo pasivos estándar cuando la pendiente del VCO es $K_V > 0$.
+		
+		\item \textbf{Powerdown / CP 3-state / Counter Reset (Disabled):} Mantiene todos los bloques contadores y la bomba de carga activos para la operación continua de la síntesis.
+	\end{itemize}
+	
+	\textbf{Registro 3:}
+	\begin{itemize}
+		\item \textbf{ABP - Anti-backlash Pulse Width (3 ns):} Selecciona el ancho de pulso antibacklash de 3 ns, específico para el modo entero (INT-N). Evita la "zona muerta" en el PFD y minimiza el ruido de fase cercano a la portadora.
+		
+		\item \textbf{Band Select Clock Mode (Low):} Configura el reloj de calibración del VCO en modo de velocidad estándar.
+		
+		\item \textbf{CLK Div Mode \& Value (Off / 0):} Desactiva el divisor de reloj auxiliar al no requerirse funciones de re-sincronización de fase (Phase Resynchronization) ni retraso de enganche.
+		
+		\item \textbf{Charge Cancellation \& CSR (Disabled):} Desactiva la cancelación de carga y la reducción de deslizamiento de ciclo (Cycle Slip Reduction), innecesarias en configuraciones de canal único a 580 MHz.
+	\end{itemize}
+	
+	\textbf{Registro 4:}
+	\begin{itemize}
+		\item \textbf{RF Output Power (+5 dBm):} Ajusta la potencia de salida del amplificador interno al nivel máximo (+5 dBm). Esto permite compensar las pérdidas de inserción de la red balun LC diferencial a single-ended y asegurar que la señal llegue con los +7 dBm requeridos al mezclador.
+		
+		\item \textbf{RF Output Enable (Enabled):} Activa físicamente el driver de salida del canal principal de RF.
+		
+		\item \textbf{Aux Output (Disabled / Divided / -4 dBm):} Desactiva la salida auxiliar para reducir el consumo de corriente total y eliminar posibles acoplamientos radiados indeseados.
+		
+		\item \textbf{Band Select Clock (Auto set / Divider = 80):} Divide la frecuencia de referencia ($10MHz / 80 = 125kHz$) para la lógica interna de auto-selección de banda del VCO, manteniéndose en el límite máximo recomendado de 125 kHz para una calibración rápida.
+		
+		\item \textbf{VCO Powerdown \& MTLD (Disabled):} Mantiene el VCO encendido continuamente y desactiva la función de silenciamiento (Mute Till Lock Detect), entregando señal de RF desde el arranque del lazo.
+	\end{itemize}
+	
+	\textbf{Registro 5:}
+	\begin{itemize}
+		\item \textbf{LD Pin Mode (Digital Lock Detect - bits DB[23:22]):} Configura la patilla física LD (Lock Detect) para entregar un nivel lógico alto (3.3 V) en cuanto el PLL logra el enganche en frecuencia y fase, sirviendo como señal de monitoreo directo para el microcontrolador.
+	\end{itemize}
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:adf4350_reg0}
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Reservado & DB31 & \texttt{0} & 0 & Bit reservado (debe ser 0) \\
+			INT & DB[30:15] & \texttt{0000 0000 1110 1000} & 232 & Valor entero del divisor $N$ ($INT = 232$) \\
+			FRAC & DB[14:3] & \texttt{0000 0000 0000} & 0 & Valor fraccionario ($FRAC = 0$) \\
+			Control Bits & DB[2:0] & \texttt{000} & 000 & Bits de control para Registro 0 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 0 (\texttt{0x00740000}).}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Reservado & DB[31:28] & \texttt{0000} & 0 & Bits reservados (deben ser 0) \\
+			Prescaler & DB27 & \texttt{0} & 0 & Selecciona prescaler 4/5 \\
+			PHASE & DB[26:15] & \texttt{0000 0000 0001} & 1 & Valor de ajuste de fase ($PHASE = 1$) \\
+			MOD & DB[14:3] & \texttt{0000 0000 0010} & 2 & Módulo fraccionario ($MOD = 2$) \\
+			Control Bits & DB[2:0] & \texttt{001} & 001 & Bits de control para Registro 1 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 1 (\texttt{0x00008011}).}
+		\label{tab:adf4350_reg1}
+	\end{table}
+
+	\begin{table}[htbp]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Low Noise / Spur Mode & DB[30:29] & \texttt{00} & 0 & Modo de bajo ruido (Low noise mode) \\
+			MUXOUT & DB[28:26] & \texttt{000} & 0 & Salida multiplexada a masa digital (DGND) \\
+			Ref. Doubler / RDIV2 & DB[25:24] & \texttt{00} & 0 & Duplicador y divisor /2 desactivados \\
+			10-Bit R Counter & DB[23:14] & \texttt{00 0000 0001} & 1 & Contador divisor de referencia ($R = 1$) \\
+			Double Buff & DB13 & \texttt{0} & 0 & Doble búfer desactivado \\
+			Charge Pump Current & DB[12:9] & \texttt{1111} & 15 / \texttt{0xF} & Corriente máxima ($I_{CP} = 5,00$ mA) \\
+			LDF \& LDP & DB[8:7] & \texttt{10} & --- & Detección de enganche (INT-N, 10 ns) \\
+			PD Polarity & DB6 & \texttt{1} & 1 & Polaridad del detector de fase positiva \\
+			Powerdown / CP / Reset & DB[5:3] & \texttt{000} & 0 & Modos de apagado, tri-state y reset desactivados \\
+			Control Bits & DB[2:0] & \texttt{010} & 010 & Bits de control para Registro 2 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 2 (\texttt{0x8005F42}).}
+		\label{tab:adf4350_reg2}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Reservado / ABP & DB[31:19] & \texttt{0000 0000 1000 0} & --- & ABP = 1 (Ancho de pulso antibacklash de 3 ns) \\
+			CSR & DB18 & \texttt{0} & 0 & Cycle Slip Reduction desactivado \\
+			Reservado & DB17 & \texttt{0} & 0 & Bit reservado (debe ser 0) \\
+			CLK DIV Mode & DB[16:15] & \texttt{00} & 0 & Clock Divider desactivado (Off) \\
+			12-Bit Clock Divider Value & DB[14:3] & \texttt{0000 0000 0000} & 0 & Valor del divisor de reloj ($0$) \\
+			Control Bits & DB[2:0] & \texttt{011} & 011 & Bits de control para Registro 3 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 3 (\texttt{0x00400003}).}
+		\label{tab:adf4350_reg3}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Reservado & DB[31:24] & \texttt{0000 0000} & 0 & Bits reservados (deben ser 0) \\
+			Feedback Select & DB23 & \texttt{1} & 1 & Señal de realimentación fundamental \\
+			Divider Select & DB[22:20] & \texttt{010} & 2 & Divisor de salida RF ($D = 4$) \\
+			Band Select Clock Divider & DB[19:12] & \texttt{0101 0000} & 80 / \texttt{0x50} & Divisor del reloj de selección de banda ($80$) \\
+			VCO Power Down \& MTLD & DB[11:10] & \texttt{00} & 0 & VCO encendido y MTLD desactivado \\
+			Aux Output Control & DB[9:6] & \texttt{0000} & 0 & Salida auxiliar desactivada (Divided, -4 dBm) \\
+			RF Output Enable & DB5 & \texttt{1} & 1 & Salida RF principal activada \\
+			Output Power & DB[4:3] & \texttt{11} & 3 & Potencia de salida RF máxima (+5 dBm) \\
+			Control Bits & DB[2:0] & \texttt{100} & 100 & Bits de control para Registro 4 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 4 (\texttt{0x00A5003C}).}
+		\label{tab:adf4350_reg4}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c c X}
+			\toprule
+			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
+			\midrule
+			Reservado & DB[31:24] & \texttt{0000 0000} & 0 & Bits reservados (deben ser 0) \\
+			LD Pin Mode & DB[23:22] & \texttt{01} & 1 & Configura el pin LD como Digital Lock Detect \\
+			Reservado & DB21 & \texttt{0} & 0 & Bit reservado (debe ser 0) \\
+			Reservado & DB[20:19] & \texttt{11} & 3 / \texttt{0x3} & Bits reservados (deben fijarse en 11) \\
+			Reservado & DB[18:3] & \texttt{0000 0000 0000 000} & 0 & Bits reservados (deben ser 0) \\
+			Control Bits & DB[2:0] & \texttt{101} & 101 & Bits de control para Registro 5 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Desglose de bits del Registro 5 (\texttt{0x00580005}).}
+		\label{tab:adf4350_reg5}
+	\end{table}
+	
+	La secuencia de inicialización del sintetizador ADF4350/ADF4351 requiere escribir sus registros internos en orden descendente, desde el Registro 5 hasta el Registro 0 ($R5 \rightarrow R4 \rightarrow R3 \rightarrow R2 \rightarrow R1 \rightarrow R0$). Este procedimiento garantiza que los parámetros de operación, los divisores, las corrientes de la bomba de carga y la habilitación de salidas estén plenamente definidos antes de iniciar la sintonía. La carga final del Registro 0 es determinante, ya que actúa como disparador de la calibración automática de banda del VCO y del enganche en frecuencia del lazo. La transferencia de datos se gestiona mediante una interfaz SPI de 3 hilos compuesta por las señales DATA (entrada de datos serie cargados con el bit más significativo MSB primero), CLK (reloj de desplazamiento que ingresa la información en cada flanco ascendente) y LE (Latch Enable, cuya transición a nivel alto al completar cada palabra de 32 bits transfiere la información al registro destino según los bits de control DB[2:0]).
+	
+	
 	
 	\section{Filtro de salida}
 	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	
+	\section{Microcontrolador y reguladores de voltaje LDO}
 	
 	\chapter{Diseño e implementación de la placa}
 	
