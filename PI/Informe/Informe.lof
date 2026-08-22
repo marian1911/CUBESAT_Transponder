@@ -47,7 +47,32 @@
 \contentsline {figure}{\numberline {4.27}{\ignorespaces ADE-5+: Aislación entre puertos RF-LO-IF (Fuente Hoja de datos ADE-5+)}}{48}{}%
 \contentsline {figure}{\numberline {4.28}{\ignorespaces ADE-5+: Relación de onda estacionaria (VSWR) (Fuente Hoja de datos ADE-5+)}}{49}{}%
 \contentsline {figure}{\numberline {4.29}{\ignorespaces ADF4351: Diagrama de bloques (Fuente Hoja de datos AD4351 Analog Device)}}{52}{}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces ADF4351: Densidad espectral de ruido de fase a 580MHz (Fuente ADIsimPLL)}}{59}{}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces ADF4351: Respuesta a lazo cerrado y abierto (Fuente ADIsimPLL)}}{59}{}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces ADF4351: Tiempo de establecimiento y error de fase (Fuente ADIsimPLL)}}{60}{}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces ADF4351: Pulsos de corriente (mA) a la salida de la bomba de carga (Fuente ADIsimPLL)}}{60}{}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces ADF431: Error absoluto de frecuencia (Fuente ADIsimPLL)}}{60}{}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces ADF4351: Valores de R y C del filtro (Fuentes ADIsimPLL)}}{61}{}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces ADF4351: Etapa de salida del PLL (Fuente Hoja de datos ADF4351 Analog Device)}}{62}{}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces ADF4351: Red LC balun (Fuente ADF4351 Analog Device)}}{62}{}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Filtro Chebyshev pasa-bajo de orden N=5, fc=450MHZ (Fuente propia)}}{63}{}%
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Respuesta en frecuencia del filtro (Fuente propia)}}{63}{}%
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Espectro de salida resultante (Fuente propia)}}{65}{}%
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Seeeduino XIAO (ATSAMD21G18): Pinout}}{66}{}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Caracterización del sustrato utilizado (Fuente Propia)}}{70}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}}{70}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Restricciones de diseño impuestas por el fabricante (Fuente Propia)}}{73}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Calculo de lagrimas para la red de RF (Fuente propia)}}{73}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Capa TOP (Fuente Propia)}}{73}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Etapa de amplificación capa TOP (Fuente propia)}}{74}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Oscilador Local capa TOP (Fuente Propia)}}{74}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Etapa de filtrado capa TOP (Fuente Propia)}}{74}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Microcontrolador capa TOP (Fuente Propia)}}{75}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Capa BOTTOM (Fuente Propia)}}{75}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Capa GND (Fuente Propia}}{76}{}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Capa VCC (Fuente Propia}}{76}{}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Diseño completo de la placa (Fuente Propia)}}{77}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

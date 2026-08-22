@@ -8,11 +8,11 @@ F_SIG = 146.0
 BW_SIG = 0.1       
 F_LO = 580.0       
 
-PWR_IN = -11.8           
-LO_DRIVE = 8.0         
+PWR_IN = -30.0           
+LO_DRIVE = 7.0         
 CONV_LOSS = 6.6        
-ISOLATION_LR = 40.0    
-ISOLATION_IF_RF = 35.0 
+ISOLATION_LR = 41.5    
+ISOLATION_IF_RF = 31.5 
 
 PWR_LO_LEAK = LO_DRIVE - ISOLATION_LR         
 PWR_LSB = PWR_IN - CONV_LOSS                  

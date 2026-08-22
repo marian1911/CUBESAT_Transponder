@@ -12,13 +12,25 @@
 \contentsline {table}{\numberline {4.3}{\ignorespaces Especificaciones eléctricas y valores máximos absolutos del mezclador ADE-5+ (Fuente: Hoja de datos minicircuit ADE-5+)}}{47}{}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces Resumen de características principales del sintetizador ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}}{51}{}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces Valores máximos absolutos del ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}}{52}{}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Desglose de bits del Registro 0 (\texttt {0x00740000}).}}{54}{}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Desglose de bits del Registro 1 (\texttt {0x00008011}).}}{54}{}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Desglose de bits del Registro 2 (\texttt {0x8005F42}).}}{55}{}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Desglose de bits del Registro 3 (\texttt {0x00400003}).}}{55}{}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Desglose de bits del Registro 4 (\texttt {0x00A5003C}).}}{56}{}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Desglose de bits del Registro 5 (\texttt {0x00580005}).}}{56}{}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Características del oscilador TCXO de referencia (Fuente Hoja de datos ECS)}}{52}{}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Desglose de bits del Registro 0 (\texttt {0x00740000}).}}{53}{}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Desglose de bits del Registro 1 (\texttt {0x00008011}).}}{53}{}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Desglose de bits del Registro 2 (\texttt {0x8005F42}).}}{54}{}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Desglose de bits del Registro 3 (\texttt {0x00400003}).}}{55}{}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Desglose de bits del Registro 4 (\texttt {0x00A5003C}).}}{56}{}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Desglose de bits del Registro 5 (\texttt {0x00580005}).}}{57}{}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Cuadro resumen con los resultados cuantitativos del reporte de simulación de ADIsimPLL.}}{61}{}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Valores recomendados para la red LC balun (Fuente Hoja de datos ADF4351 Analog Device)}}{62}{}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Resumen de señales de interés}}{63}{}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Conversión de Parámetros de la Cadena de RF a Escala Lineal (Fuente propia)}}{64}{}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Especificaciones principales del microcontrolador Seeeduino XIAO (ATSAMD21G18).}}{66}{}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Especificaciones del regulador LDO de 5.0 V (ADP7118-5.0) (Fuente Hoja de datos ADP71118-5)}}{69}{}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Especificaciones del regulador LDO de 3.3 V (ADP150-3.3) (Fuente Hoja de datos ADP150-3.3)}}{69}{}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Lista de Materiales (BOM) - Capacitores.}}{71}{}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Lista de Materiales (BOM) - Resistores.}}{72}{}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Lista de Materiales (BOM) - Inductores.}}{72}{}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Lista de Materiales (BOM) - Circuitos Integrados, Semiconductores y Varios.}}{77}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

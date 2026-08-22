@@ -1,0 +1,45 @@
+<QucsStudio Schematic 5.8>
+<Properties>
+View=-333.103,-230.001,1165.44,1030.27,1.40853,110,485
+Grid=10,10,0
+DataSet=*.dat
+DataDisplay=*.sch
+OpenDisplay=1
+showFrame=0
+FrameText0=Title \n @PATH@@FILE@
+FrameText1=Drawn By:
+FrameText2=Date: @DATE@
+FrameText3=Revision:
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+<Smith 549 237 427 427 31 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 4 1 -1 -1 -1 "" "" "">
+	<Legend 10 -100 0>
+	<"S[1,1]" "" #0000ff 1 3 0 0 0 0 "">
+	<"S[2,2]" "" #ff0000 2 3 0 0 0 0 "">
+	  <Mkr 2.29277e+08 201 -327 3 1 0 0 1 50>
+</Smith>
+<Rect -80 550 548 251 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -51.9449 20 4.72226 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 30 -50 1>
+	<"dB(S[2,1])" "" #0000ff 2 3 0 0 0 1 "Gain (Power Gain)">
+	  <Mkr 4.33148e+08 60 -200 3 1 0 0 0 50>
+	  <Mkr 5.83131e+08 350 -230 3 1 0 0 0 50>
+</Rect>
+<Rect -70 206 538 306 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -64.9014 20 5.90004 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 10 -100 0>
+	<"dB(S[1,1])" "" #0000ff 2 3 0 0 0 0 "">
+	  <Mkr 4.33148e+08 300 -166 3 1 0 0 0 50>
+	  <Mkr 5.79112e+08 300 -216 3 1 0 0 0 50>
+</Rect>
+<Rect -80 930 552 270 31 #c0c0c0 1 00 1 0 1e+08 1e+09 1 -51.9449 20 4.72226 1 -1 0.5 1 -1 -1 -1 "" "" "">
+	<Legend 10 -100 0>
+	<"dB(S[1,2])" "" #0000ff 2 3 0 0 0 0 "">
+</Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

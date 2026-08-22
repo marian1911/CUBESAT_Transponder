@@ -1,8 +1,8 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\'{I}ndice general}{\es@scroman {ix}}{}%
 \contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xi}}{}%
-\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xii}}{}%
-\contentsline {chapter}{Lista de Símbolos y Convenciones}{\es@scroman {xiv}}{}%
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xiii}}{}%
+\contentsline {chapter}{Lista de Símbolos y Convenciones}{\es@scroman {xv}}{}%
 \contentsline {chapter}{\numberline {1}INTRODUCCIÓN}{1}{}%
 \contentsline {section}{\numberline {1.1}Antecedentes del problema}{2}{}%
 \contentsline {section}{\numberline {1.2}Relevancia del trabajo}{2}{}%
@@ -33,17 +33,23 @@
 \contentsline {section}{\numberline {4.2}Etapa de amplificación}{37}{}%
 \contentsline {section}{\numberline {4.3}Etapa de mezclador (Mixer)}{47}{}%
 \contentsline {section}{\numberline {4.4}Oscilador local (LO):}{51}{}%
-\contentsline {section}{\numberline {4.5}Filtro de salida}{57}{}%
-\contentsline {section}{\numberline {4.6}Microcontrolador y reguladores de voltaje LDO}{57}{}%
-\contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{58}{}%
-\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{58}{}%
-\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{58}{}%
-\contentsline {section}{\numberline {5.3}Implementación del circuito}{58}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{59}{}%
-\contentsline {chapter}{Resultados}{60}{}%
-\contentsline {chapter}{Conclusiones}{61}{}%
-\contentsline {chapter}{Bibliografía}{62}{}%
-\contentsline {chapter}{Referencias}{63}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{64}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{65}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{66}{}%
+\contentsline {subsubsection}{Registros 0 y 1}{53}{}%
+\contentsline {subsubsection}{Registro 2}{54}{}%
+\contentsline {subsubsection}{Registro 3}{55}{}%
+\contentsline {subsubsection}{Registro 4}{56}{}%
+\contentsline {subsubsection}{Registro 5}{57}{}%
+\contentsline {subsubsection}{Calculo del filtro de lazo y simulación de respuesta}{57}{}%
+\contentsline {section}{\numberline {4.5}Filtro de salida}{63}{}%
+\contentsline {section}{\numberline {4.6}Microcontrolador y reguladores de voltaje LDO}{66}{}%
+\contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{70}{}%
+\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{70}{}%
+\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{70}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{70}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{78}{}%
+\contentsline {chapter}{Resultados}{79}{}%
+\contentsline {chapter}{Conclusiones}{80}{}%
+\contentsline {chapter}{Bibliografía}{81}{}%
+\contentsline {chapter}{Referencias}{82}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{83}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{84}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{85}{}%

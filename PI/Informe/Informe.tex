@@ -2,6 +2,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-tabla]{babel} % es-tabla para que diga "Tabla" en lugar de "Cuadro"
+% Gráficos, flotantes y código
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{enumitem}
 
 % Márgenes según manual: Superior, Inferior y Derecho 2.5 cm; Izquierdo 3 cm
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
@@ -53,6 +62,38 @@
 \usepackage{tabularx} % Tablas ajustables al ancho de página (columna tipo X)
 \usepackage{array} % Modificadores de alineación en columnas (>{\raggedright\arraybackslash})
 \usepackage{ragged2e} % Permite auto-ajuste de texto con guiones dentro de tablas
+
+\lstdefinestyle{arduino}{
+	language=C++,
+	backgroundcolor=\color{white}, 
+	basicstyle=\fontfamily{phv}\selectfont\scriptsize, % Tipografia Arial (Helvetica) reducida
+	keywordstyle=\color[HTML]{00979C}\bfseries,
+	commentstyle=\color[HTML]{7F8C8D}\itshape,
+	stringstyle=\color[HTML]{005C5F},
+	numberstyle=\tiny\color{gray},
+	numbers=left,
+	numbersep=4pt,
+	frame=single,
+	rulecolor=\color{black!40},
+	breaklines=true,
+	breakatwhitespace=true,
+	postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+	tabsize=2,
+	showspaces=false,
+	showstringspaces=false,
+	morekeywords={setup, loop, pinMode, digitalWrite, digitalRead, analogRead, 
+		analogWrite, delay, delayMicroseconds, millis, micros, 
+		HIGH, LOW, INPUT, OUTPUT, INPUT_PULLUP, true, false, uint32_t, uint8_t},
+	emph={Serial, SPI, Wire, String, WDT},
+	emphstyle=\color[HTML]{D35400}\bfseries,
+	xleftmargin=14pt,
+	xrightmargin=5pt,
+	framexleftmargin=8pt,
+	% --- Compactacion de espacio vertical ---
+	aboveskip=3pt,                                 % Reduce margen previo al bloque
+	belowskip=3pt,                                 % Reduce margen posterior al bloque
+	lineskip= 1  pt                                % Reduce el interlineado entre lineas de codigo
+}
 
 \begin{document}
 	
@@ -197,7 +238,99 @@
 	\clearpage
 	\chapter*{Lista de Símbolos y Convenciones}
 	\addcontentsline{toc}{chapter}{Lista de Símbolos y Convenciones}
-	(Listado de símbolos aquí)
+	
+	\footnotesize
+	\begin{multicols}{2}
+		\begin{description}[itemsep=0pt, parsep=0pt, labelsep=5pt, leftmargin=1.6cm]
+			\item[VHF] Very High Frequency
+			\item[UHF] Ultra High Frequency
+			\item[RF] Radio Frequency
+			\item[LNA] Low Noise Amplifier
+			\item[NF] Noise Figure
+			\item[IF] Intermediate Frequency
+			\item[LO] Local Oscillator
+			\item[PLL] Phase-Locked Loop
+			\item[VCO] Voltage Controlled Oscillator
+			\item[PFD] Phase/Frequency Detector
+			\item[TCXO] Temperature Compensated Crystal Oscillator
+			\item[DDS] Direct Digital Synthesis
+			\item[YIG] Yttrium Iron Garnet
+			\item[SNR] Signal to Noise Ratio
+			\item[SMD] Sensibilidad Mínima Discernible
+			\item[IP3] Third Order Intercept Point
+			\item[OIP3] Output Third Order Intercept Point
+			\item[IIP3] Input Third Order Intercept Point
+			\item[P1dB] 1 dB Compression Point
+			\item[IMD] Intermodulation Distortion
+			\item[IMD3] Third Order Intermodulation Distortion
+			\item[IMR] Intermodulation Ratio
+			\item[SFDR] Spurious Free Dynamic Range
+			\item[VSWR] Voltage Standing Wave Ratio
+			\item[RL] Return Loss
+			\item[Gc] Conversion Gain
+			\item[Lc] Conversion Loss
+			\item[LcSSB] Single Side Band Conversion Loss
+			\item[LcDSB] Double Side Band Conversion Loss
+			\item[LSB] Lower Side Band
+			\item[USB] Upper Side Band
+			\item[C/N] Carrier to Noise Ratio
+			\item[C/N0] Carrier to Noise Density Ratio
+			\item[G/T] Figura de Mérito del Receptor
+			\item[EIRP] Equivalent Isotropically Radiated Power
+			\item[FSPL] Free Space Path Loss
+			\item[Tsys] Temperatura del Sistema
+			\item[Tant] Temperatura de Antena
+			\item[Te] Temperatura Equivalente de Ruido
+			\item[T0] Temperatura de Referencia Estándar
+			\item[F] Factor de Ruido
+			\item[OBP] On-Board Processing
+			\item[IMUX] Input Multiplexer
+			\item[OMUX] Output Multiplexer
+			\item[HPA] High Power Amplifier
+			\item[D/C] Down-Converter
+			\item[U/C] Up-Converter
+			\item[BJT] Bipolar Junction Transistor
+			\item[SOT] Small Outline Transistor
+			\item[MMIC] Monolithic Microwave Integrated Circuit
+			\item[ICQ] Corriente de Colector en el Punto Q
+			\item[VCC] Tensión de Alimentación de Colector
+			\item[VCE] Tensión Colector-Emisor
+			\item[VBE] Tensión Base-Emisor
+			\item[VCBO] Tensión Colector-Base en Circuito Abierto
+			\item[VCEO] Tensión Colector-Emisor en Circuito Abierto
+			\item[VEBO] Tensión Emisor-Base en Circuito Abierto
+			\item[ICBO] Corriente de Corte de Colector
+			\item[IEBO] Corriente de Corte de Emisor
+			\item[hFE] Ganancia de Corriente en DC
+			\item[fT] Producto Ganancia-Ancho de Banda
+			\item[Cre] Capacidad de Realimentación
+			\item[SPI] Serial Peripheral Interface
+			\item[MSB] Most Significant Bit
+			\item[LE] Latch Enable
+			\item[CLK] Clock
+			\item[ABP] Anti-Backlash Pulse Width
+			\item[CSR] Cycle Slip Reduction
+			\item[LDF] Lock Detect Function
+			\item[LDP] Lock Detect Precision
+			\item[CP] Charge Pump
+			\item[RMS] Root Mean Square
+			\item[PCB] Printed Circuit Board
+			\item[CDS] CubeSat Design Specification
+			\item[CIFP] CubeSat Inspection and Fit-check Procedure
+			\item[RBF] Remove Before Flight
+			\item[RTC] Real Time Clock
+			\item[TML] Total Mass Loss
+			\item[IARU] International Amateur Radio Union
+			\item[UIT] Unión Internacional de Telecomunicaciones
+			\item[ENACOM] Ente Nacional de Comunicaciones (Argentina)
+			\item[LEO] Low Earth Orbit
+			\item[ISA] Industry Standard Architecture
+			\item[PCI] Peripheral Component Interconnect
+			\item[PCIe] PCI Express
+		\end{description}
+	\end{multicols}
+	\normalsize
+	
 	\clearpage
 	
 	% ==========================================
@@ -535,7 +668,7 @@
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.75\linewidth]{imagenes/stack_pc104_p}
+		\includegraphics[width=0.7\linewidth]{imagenes/stack_pc104_p}
 		\caption[Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)]{Apilamientos de modulos de 8 y 16 bits (Fuente: PC-104 Specification)}
 		\label{fig:stackpc104}
 	\end{figure}
@@ -545,7 +678,7 @@
 	\subsection{Definición y principio de funcionamiento}
 	Un transpondedor (transponder, acrónimo de TRANSmitter + resPONDER) es el componente central de la carga útil (payload) de comunicaciones de un satélite. Su función principal es recibir la señal enviada desde una estación terrestre (enlace de subida o uplink), procesarla para acondicionarla y retransmitirla hacia la Tierra (enlace de bajada o downlink).Un transpondedor actúa como un puente de radiofrecuencia. Debido a que las señales sufren pérdidas extremas en su viaje por el espacio (pérdidas por trayectoria en espacio libre o Free Space Path Loss), la señal que llega al satélite es sumamente débil (del orden de los picowatts o nanowatts).\newline
 	
-	La conversión de frecuencia entre el enlace de subida (uplink) y de bajada (downlink) es indispensable para desacoplar la entrada y la salida del repetidor, evitando que la señal de alta potencia retransmitida se filtre o realimente en el receptor. Sin embargo, realizar esta conversión directamente al inicio mediante un mezclador (front-end mixer) degradaría inaceptablemente la temperatura de ruido global del sistema debido a la elevada figura de ruido que poseen los mezcladores. El LNA establece la temperatura efectiva de ruido del sistema a la frecuencia de subida y aporta una ganancia elevada (típicamente entre $20dB$ y $40dB$), la cual enmascara y minimiza la contribución de ruido del mezclador que se ubica justo después. Posterior al LNA, el mezclador junto al oscilador local realiza el cambio de frecuencia, posicionándose en un punto estratégico de la cadena donde el nivel de la señal sea lo suficientemente alto respecto al ruido, pero controlado para no activar efectos no lineales en el componente.\newline
+	La conversión de frecuencia entre el enlace de subida (uplink) y de bajada (downlink) es indispensable para desacoplar la entrada y la salida del repetidor, evitando que la señal de alta potencia retransmitida se filtre o realimente en el receptor. Sin embargo, realizar esta conversión directamente al inicio mediante un mezclador (front-end mixer) degradaría inaceptablemente la temperatura de ruido global del sistema debido a la elevada figura de ruido que poseen los mezcladores. El LNA establece la temperatura efectiva de ruido del sistema a la frecuencia de subida y aporta una ganancia elevada (típicamente entre $20dB$ y $40dB$), la cual enmascara y minimiza la contribución de ruido del mezclador que se ubica justo después. Posterior al LNA, el mezclador junto al oscilador local realiza el cambio de frecuencia, posicionándose en un punto estratégico de la cadena donde el nivel de la señal sea lo suficientemente alto respecto al ruido, pero controlado para no activar efectos no lineales en el componente.\newpage
 	
 	Tras la conversión de frecuencia, y teniendo en cuenta la ganancia del amplificador de bajo ruido y las pérdidas de conversión del mezclador, aún queda por proporcionar cierta cantidad de ganancia para obtener la ganancia total de potencia requerida. Dependiendo de las bandas de frecuencia involucradas, las consideraciones tecnológicas pueden dificultar la obtención de una alta ganancia de potencia a la frecuencia del enlace de bajada (downlink). En estos casos, se utiliza una doble conversión de frecuencia mediante una frecuencia intermedia (IF) de menor valor que la frecuencia de bajada. Las señales del enlace de subida (uplink) se convierten primero de forma descendente a la IF, donde se realiza la amplificación. Luego, un conversor ascendente traslada la frecuencia a la del enlace de bajada.
 	
@@ -556,7 +689,7 @@
 		\label{fig:tranponder1}
 	\end{figure}
 	
-	Algunos sistemas incluyen demultiplexado e IMUX (Input Multiplexer), el ancho de banda total del satélite se divide mediante un banco de filtros en múltiples canales individuales, ademas de multiplexado de Salida (OMUX): Los canales ya amplificados se vuelven a combinar en un solo canal utilizando filtros de alta potencia.
+	Algunos sistemas incluyen demultiplexado de entrada IMUX (Input Multiplexer), el ancho de banda total del satélite se divide mediante un banco de filtros en múltiples canales individuales, ademas de multiplexado de salida (OMUX): Los canales ya amplificados se vuelven a combinar en un solo canal utilizando filtros de alta potencia.
 	
 	\begin{figure}[h!]
 		\centering
@@ -597,7 +730,7 @@
 		T_e = T_0 (F - 1)
 	\end{equation}
 	
-	donde $T_0 = 290K$ es la temperatura de referencia estándar.
+	Donde $T_0 = 290K$ es la temperatura de referencia estándar.
 	
 	Cuando varios dispositivos (LNA, mezclador, amplificadores intermedios) se conectan en cascada, la temperatura equivalente de ruido total del receptor ($T_e$) vista desde la entrada de la antena no es la simple suma de los ruidos individuales, sino que se rige por la Ecuación de Friis para temperaturas de ruido:
 	
@@ -693,7 +826,7 @@
 		
 		Donde:
 		\begin{equation}
-			SMD [dBm] = -174 + log (BHz) + NF
+			SMD [dBm] = -174dBc/Hz + log (BHz) + NF
 		\end{equation}
 		
 		\item \textbf{Aislamiento entre Puertos (Port Isolation)}: Pérdida de inserción directa entre puertos ($I_{LO-RF}$, $I_{LO-IF}$, $I_{RF-IF}$). Valores típicos oscilan entre 30 dB y 60 dB. 
@@ -731,7 +864,7 @@
 		\label{fig:mixer}
 	\end{figure}
 	
-	El Nivel de Mezclador ($Level N$) es la potencia en dBm requerida en el puerto del Oscilador Local (LO) especificada por el fabricante para garantizar la conmutación óptima de los diodos y lograr la mínima pérdida de conversión. 
+	El Nivel de Mezclador ($Level-N$) es la potencia en dBm requerida en el puerto del Oscilador Local (LO) especificada por el fabricante para garantizar la conmutación óptima de los diodos y lograr la mínima pérdida de conversión. 
 	
 	\begin{table}
 		\centering
@@ -810,7 +943,7 @@
 	
 	El elemento de retardo entre la salida de U3 y las entradas CLR de U1 y U2 garantiza que esto no suceda. Con el elemento de retardo, incluso cuando +IN y –IN están perfectamente alineadas en fase, se seguirá generando un pulso de corriente en la salida de la bomba de carga, como se muestra en la Figura C. La duración de este retardo es igual al retardo insertado en la salida de U3 y se conoce como el ancho de pulso anti-backlash.\newline
 	
-	El contador N, también conocido como divisor N, es el elemento programable que establece la relación entre las frecuencias de entrada y salida en el PLL. La complejidad del contador N ha aumentado con los años. Además de un contador N directo, ha evolucionado para incluir un prescaler (predivisor), el cual puede poseer un módulo doble (dual modulus). Esta estructura se desarrolló como solución a los problemas inherentes al uso de la estructura básica de división por N en el camino de realimentación hacia el detector de fase cuando se requieren frecuencias de salida muy altas. Para manejar este rango, resulta lógico anteponer al contador programable un elemento contador fijo para reducir la frecuencia de entrada alta a un rango en el que la tecnología CMOS estándar pueda trabajar. Este contador, denominado prescaler.\newline
+	El contador N, también conocido como divisor N, es el elemento programable que establece la relación entre las frecuencias de entrada y salida en el PLL. La complejidad del contador N ha aumentado con los años. Además de un contador N directo, ha evolucionado para incluir un prescaler (predivisor), el cual puede poseer un módulo doble (dual modulus). Esta estructura se desarrolló como solución a los problemas inherentes al uso de la estructura básica de división por N en el camino de realimentación hacia el detector de fase cuando se requieren frecuencias de salida muy altas. Para manejar este rango, resulta lógico anteponer al contador programable un elemento contador fijo para reducir la frecuencia de entrada alta a un rango en el que la tecnología CMOS estándar pueda trabajar.\newline
 	
 	\begin{figure}[h!]
 		\centering
@@ -819,7 +952,7 @@
 		\label{fig:pll3}
 	\end{figure}
 	
-	Existen múltiples especificaciones a considerar al diseñar un PLL. El rango de frecuencia RF de entrada y el espaciado de canales determinan los valores de los contadores R y N, así como los parámetros del prescaler.  El ancho de banda del lazo determina el tiempo de enganche en frecuencia y fase. Dado que el PLL es un sistema de control con realimentación negativa, se deben analizar el margen de fase y los criterios de estabilidad.  La pureza espectral de la salida del PLL se especifica mediante el ruido de fase y el nivel de las espurias relacionadas con la frecuencia de referencia.  Muchos de estos parámetros están interrelacionados; por ejemplo, anchos de banda de lazo más estrechos conducen a menores niveles de ruido de fase y espurias de referencia, pero a expensas de tiempos de enganche más lentos y un menor margen de fase.
+	Existen múltiples especificaciones a considerar al diseñar un PLL. El rango de frecuencia RF de entrada y el espaciado de canales determinan los valores de los contadores R y N, así como los parámetros del prescaler.  El ancho de banda del lazo determina el tiempo de enganche en frecuencia y fase. Dado que el PLL es un sistema de control con realimentación negativa, se deben analizar el margen de fase y los criterios de estabilidad.  La pureza espectral de la salida del PLL se especifica mediante el ruido de fase y el nivel de las espurias relacionadas con la frecuencia de referencia.  Muchos de estos parámetros están interrelacionados; por ejemplo, anchos de banda de lazo más estrechos conducen a menores niveles de ruido de fase y espurias de referencia, pero a expensas de tiempos de enganche más lentos y un menor margen de fase.\newpage
 	
 	Un PLL es un tipo de oscilador y, en el diseño de cualquier oscilador, la estabilidad de frecuencia es de importancia crítica. Nos interesan tanto la estabilidad a largo plazo como la estabilidad a corto plazo. La estabilidad de frecuencia a largo plazo se refiere a cómo varía la señal de salida durante un período prolongado (horas, días o meses). Por lo general, se especifica como la relación $\Delta f/f$ para un período de tiempo determinado, expresada como un porcentaje o en dB.Por otro lado, la estabilidad a corto plazo se enfoca en las variaciones que ocurren en un período de segundos o menos. Estas variaciones pueden ser aleatorias o periódicas. Se puede utilizar un analizador de espectro para examinar la estabilidad a corto plazo de una señal.
 	
@@ -1514,7 +1647,7 @@
 	
 	Se puede calcular las perdidas de conversión tomando la RF mas cercana (10MHz), en el grafico es de aproximada mente 6.2dB, se podría sumar una corrección de 0.4dB/0.5dB para ser mas conservador, en lineas generales las perdidas de conversión tienden a la media 6.6dB.\newpage
 	
-	Respecto al producto de intermodulación de tercer orden (IP3), y el punto de compresión (P1dB) se puede decir lo siguiente. En la banda de VHF ($146MHz$), el mezclador ofrece su mejor desempeño (IP3 se ubica entre $+17dBm$ y $+18dBm$.) de linealidad. Esto significa que será muy resistente a generar intermodulación de tercer orden, incluso en presencia de señales fuertes cercanas. En la gráfica de la derecha, inyectando $+1dBm$ en la entrada a $146MHz$, la compresión de la señal es de apenas $\sim 0.4dB$. Si la potencia que le llega a la entrada de RF desde tu etapa de amplificación está en el rango de $-10dBm$ a $0dBm$, el mezclador trabajará en una zona totalmente lineal sin distorsionar.
+	Respecto al producto de intermodulación de tercer orden (IP3), y el punto de compresión (P1dB) se puede decir lo siguiente. En la banda de VHF ($146MHz$), el mezclador ofrece su mejor desempeño (IP3 se ubica entre $+17dBm$ y $+18dBm$.) de linealidad. Esto significa que será muy resistente a generar intermodulación de tercer orden, incluso en presencia de señales fuertes cercanas. En la gráfica de la derecha, inyectando $+1dBm$ en la entrada a $146MHz$, la compresión de la señal es de apenas $\sim 0.4dB$. Si la potencia que le llega a la entrada de RF desde la etapa de amplificación está en el rango de $-10dBm$ a $0dBm$, el mezclador trabajará en una zona totalmente lineal sin distorsionar.
 	
 	\begin{figure}[h!]
 		\centering
@@ -1523,7 +1656,7 @@
 		\label{fig:mixer2}
 	\end{figure}
 	
-	Otro aspecto a tener en cuenta es el nivel de aislación entre puertos, el fabricante provee una serie de curvas útiles para este propósito. El aislamiento de los mezcladores pasivos cae drásticamente a medida que sube la frecuencia (debido a las capacitancias parásitas del encapsulado y los diodos). Dado que tus frecuencias de trabajo ($146MHz$ y $580MHz$) están en la zona baja/media del rango del componente ($5 - 1500 MHz$), estás aprovechando la zona de máximo aislamiento del dispositivo.\newline
+	Otro aspecto a tener en cuenta es el nivel de aislación entre puertos, el fabricante provee una serie de curvas útiles para este propósito. El aislamiento de los mezcladores pasivos cae drásticamente a medida que sube la frecuencia (debido a las capacitancias parásitas del encapsulado y los diodos). Dado que las frecuencias de trabajo ($146MHz$ y $580MHz$) están en la zona baja/media del rango del componente ($5 - 1500 MHz$), se esta aprovechando la zona de máximo aislamiento del dispositivo.\newline
 	
 	\begin{figure}[h!]
 		\centering
@@ -1542,9 +1675,9 @@
 		P_{IF} \approx +7dBm - 31.5dB = \mathbf{-24.5dBm}
 	\end{equation}
 	
-	Evaluando la gráfica inferior derecha a tu frecuencia de entrada ($RF = 146MHz$), el aislamiento RF-IF ronda los $29dB$. Evita de forma efectiva que la señal directa de $146MHz$ pase limpia a la salida sin ser mezclada.
+	Evaluando la gráfica inferior derecha a la frecuencia de entrada ($RF = 146MHz$), el aislamiento RF-IF ronda los $29dB$. Evita de forma efectiva que la señal directa de $146MHz$ pase limpia a la salida sin ser mezclada.
 	
-	Por ultimo interesa ver la adaptación de impedancia del Mixer en relación al resto del circuito. El fabricante provee una serie de graficas de la relacion de onda estacionara respecto de la frecuencia en los distintos puertos, esto nos permite calcular tanto la reflexión como la impedancia vista.Para un sistema con impedancia característica $Z_0 = 50\ \Omega$  se tiene:
+	Por ultimo interesa ver la adaptación de impedancia del Mixer en relación al resto del circuito. El fabricante provee una serie de graficas de la relación de onda estacionara respecto de la frecuencia en los distintos puertos, esto nos permite calcular tanto la reflexión como la impedancia vista. Para un sistema con impedancia característica $Z_0 = 50\ \Omega$  se tiene:
 	
 	\begin{figure}[h!]
 		\centering
@@ -1599,7 +1732,7 @@
 		\item Rango de impedancia equivalente: De $35.7\ \Omega$ a $70.0\ \Omega$
 	\end{itemize}
 	
-	El puerto RF e IF están muy bien adaptados, pierden menos del $3\%$ de la potencia por desadaptación, lo que confirma que la señal de entrada fluirá sin problemas. El puerto LO tiene un VSWR más elevado ($\sim 2.0$),es un comportamiento completamente normal en mezcladores de diodos. Como el Oscilador Local conmuta los diodos internamente conduciendo corriente en una zona fuertemente no lineal, la impedancia de entrada del puerto LO decae. Por ello, refleja cerca del $11\%$ de la energía inyectada por el oscilador.\newpage
+	El puerto RF e IF están muy bien adaptados, pierden menos del $3\%$ de la potencia por desadaptación, lo que confirma que la señal de entrada fluirá sin problemas. El puerto LO tiene un VSWR más elevado ($\sim 2.0$), es un comportamiento completamente normal en mezcladores de diodos. Como el Oscilador Local conmuta los diodos internamente conduciendo corriente en una zona fuertemente no lineal, la impedancia de entrada del puerto LO decae. Por ello, refleja cerca del $11\%$ de la energía inyectada por el oscilador.\newpage
 	
 	\section{Oscilador local (LO):}
 	Para el oscilador local, existen varias tecnologías anteriormente mencionadas en el marco teórico. Para nuestro caso particular se tuvieron en cuenta las siguientes restricciones: Ancho de banda (debe comprender los 580MHz), bajo consumo de corriente, amplitud térmica, costo, disponibilidad, si bien no es critico el tiempo de establecimiento si es importante la pureza espectral, el ruido de fase y la generación de componentes espurias que puedan contaminar la mezcla. Ademas debido al tipo de Mixer seleccionado es necesaria que la potencia de salida sea de por lo menos +7dBm, si esto no se cumple las perdidas y por ende la figura de ruido aumentan considerablemente como se vio en la sección del mezclador. De lo anteriormente mencionado se concluye en utilizar un ADF4351 de Analog Device, que consiste con un PLL y un VCO integrado en un chip (reduce costos y cantidad de componentes) con las siguientes características:
@@ -1628,7 +1761,7 @@
 		\caption{Resumen de características principales del sintetizador ADF4350 (Fuente Hoja de datos ADF4351 Analog Device)}
 	\end{table}
 	
-	Nota: Si bien en la potencia RF de salida que se menciona es de maximo +5dBm, es importante mencionar cuanta con dos salidas y se puede usar una red LC balun para llegar hasta los +8dBm. \newpage 
+	Nota: Si bien en la potencia RF de salida que se menciona es de maximo +5dBm, es importante mencionar cuanta con salidas en modo diferencial en contra fase y se puede usar una red LC balun para llegar hasta los +8dBm necesarios para polarizar los diodos del mixer. \newpage 
 	
 	\begin{table}[htbp]
 		\centering
@@ -1668,71 +1801,43 @@
 	
 	Para comenzar el diseño del oscilador local se definen los siguientes parámetros de trabajo: frecuencia de salida deseada $F_{out}=580MHz$, potencia de RF requerida $P=+7dBm$ y por ultimo referencia de entrada $f_{REFIN}=10MHz$ proporcionada por un TCXO.
 	
-	\textbf{Registros 0 y 1:}
+	\begin{table}[h!]
+		\centering
+		\begin{tabularx}{\textwidth}{l l c X}
+			\toprule
+			\textbf{Campo / Código} & \textbf{Sección PN} & \textbf{Valor / Opción} & \textbf{Descripción / Especificación} \\
+			\midrule
+			Serie & TXO-2520MV & TCXO & Oscilador compensado en temperatura  \\
+			Frecuencia & 100 & 10,000 MHz & Frecuencia nominal de referencia \\
+			Tolerancia de Estabilidad & A & $\pm 2,5$ ppm & Tolerancia de estabilidad  \\
+			Rango de Temperatura & Y & -30 $^\circ$C a +85 $^\circ$C & Rango de temperatura \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Características del oscilador TCXO de referencia (Fuente Hoja de datos ECS)}
+		\label{tab:tcxo_caracteristicas}
+	\end{table}\newpage
 	
-	La configuración del PLL se realiza mediante interfaz SPI configurando una serie de registros internos, a continuación se especifican los valores de los registros 0 y 1 referidos a las configuraciones de RF: dado que el VCO fundamental opera en el rango de $2200$ MHz a $4400$ MHz, la frecuencia de $580$ MHz queda fuera de dicho rango directo. Se selecciona un divisor $D = 4$. Sin utilizar duplicador (D) y divisor (T), con contador $R = 1$, la frecuencia del PFD es:
+	\subsubsection{Registros 0 y 1}
+	
+	La configuración del PLL se realiza mediante interfaz SPI configurando una serie de registros internos, a continuación se especifican los valores de los registros 0 y 1 referidos a las configuraciones de RF: dado que el VCO fundamental opera en el rango de $2200$ MHz a $4400$ MHz, la frecuencia de $580$ MHz queda fuera de dicho rango directo. Se divide la salida del $VCO$ por 4. Sin utilizar duplicador (D) y divisor (T) a la entrada, con contador $R = 1$, la frecuencia del PFD es:
 	\begin{equation}
 		f_{PFD} = f_{REFIN} × \left( \frac{(1 + D)}{(R × (1 + T))}\right) = 10MHz
 	\end{equation}
 	
 	Para calcular el divisores N se tiene:
 	\begin{equation}
-		N = \frac{f_{VCO}}{f_{PFD}} = \frac{2320}{10} = 232
+		N = \frac{f_{VCO}}{f_{PFD}} = \frac{4 \times 580}{10} = 232
 	\end{equation}
 	
-	Dado que $N$ da un número entero exacto, se trabaja en modo Integer-N ($INT = 232$, $FRAC = 0$, $MOD = 2$), lo cual maximiza la pureza espectral y minimiza las espurias (spurs). Con un prescaler de 4/5, realimentado la frecuencia fundamental $f_{VCO} = f_{OUT} \cdot D = 580 \cdot 4 = 2320MHz$ y no requiriéndose un ajuste de fase inicial, la frecuencia de salida resulta:
+	Dado que $N$ da un número entero exacto, se trabaja en modo Integer-N ($INT = 232$, $FRAC = 0$, $MOD = 2$), lo cual maximiza la pureza espectral y minimiza las componentes espurias. Con un prescaler de 4/5, realimentado la frecuencia fundamental $f_{VCO} = f_{OUT} \cdot D = 580 \cdot 4 = 2320MHz$ y no requiriéndose un ajuste de fase inicial, la frecuencia de salida resulta:
 	
 	\begin{equation}
-		f_{OUT}(MHz)= \left(INT + \frac{FRAC}{MOD}\right) \frac{PFD(MHz)}{4}
+		f_{OUT}= \left(INT + \frac{FRAC}{MOD}\right) \frac{PFD(MHz)}{4}
 	\end{equation}
 	
 	\begin{equation}
-		f_{OUT}(MHz)= \left( 232 + \frac{0}{2}\right)\frac{10MHz}{4} = 580MHz
+		f_{OUT}= \left( 232 + \frac{0}{2}\right)\frac{10MHz}{4} = 580MHz
 	\end{equation}
-	
-	\textbf{Registro 2:}
-	\begin{itemize}
-		\item \textbf{Low Noise/Spur Mode (Low noise mode):} Configura la bomba de carga para priorizar el mínimo piso de ruido de fase sobre la atenuación de espurias.
-		
-		\item \textbf{Muxout (DGND):} Fija la salida multiplexada a masa digital.
-		
-		\item \textbf{Charge Pump Current (5.00 mA):} Selecciona la corriente máxima del Charge Pump ($I_{CP} = 5mA$) para maximizar la ganancia del lazo, reducir el ruido de fase en la banda de paso y mantener el margen de fase diseñado en el filtro.
-		
-		\item \textbf{LDF \& LDP (INT-N / 10 ns):} Establece la función de detección de enganche para modo entero (Integer-N) con un pulso de precisión de 10 ns.
-		
-		\item \textbf{PD Polarity (Positive):} Establece la polaridad positiva del detector de fase/frecuencia (PFD), requerida para filtros de lazo pasivos estándar cuando la pendiente del VCO es $K_V > 0$.
-		
-		\item \textbf{Powerdown / CP 3-state / Counter Reset (Disabled):} Mantiene todos los bloques contadores y la bomba de carga activos para la operación continua de la síntesis.
-	\end{itemize}
-	
-	\textbf{Registro 3:}
-	\begin{itemize}
-		\item \textbf{ABP - Anti-backlash Pulse Width (3 ns):} Selecciona el ancho de pulso antibacklash de 3 ns, específico para el modo entero (INT-N). Evita la "zona muerta" en el PFD y minimiza el ruido de fase cercano a la portadora.
-		
-		\item \textbf{Band Select Clock Mode (Low):} Configura el reloj de calibración del VCO en modo de velocidad estándar.
-		
-		\item \textbf{CLK Div Mode \& Value (Off / 0):} Desactiva el divisor de reloj auxiliar al no requerirse funciones de re-sincronización de fase (Phase Resynchronization) ni retraso de enganche.
-		
-		\item \textbf{Charge Cancellation \& CSR (Disabled):} Desactiva la cancelación de carga y la reducción de deslizamiento de ciclo (Cycle Slip Reduction), innecesarias en configuraciones de canal único a 580 MHz.
-	\end{itemize}
-	
-	\textbf{Registro 4:}
-	\begin{itemize}
-		\item \textbf{RF Output Power (+5 dBm):} Ajusta la potencia de salida del amplificador interno al nivel máximo (+5 dBm). Esto permite compensar las pérdidas de inserción de la red balun LC diferencial a single-ended y asegurar que la señal llegue con los +7 dBm requeridos al mezclador.
-		
-		\item \textbf{RF Output Enable (Enabled):} Activa físicamente el driver de salida del canal principal de RF.
-		
-		\item \textbf{Aux Output (Disabled / Divided / -4 dBm):} Desactiva la salida auxiliar para reducir el consumo de corriente total y eliminar posibles acoplamientos radiados indeseados.
-		
-		\item \textbf{Band Select Clock (Auto set / Divider = 80):} Divide la frecuencia de referencia ($10MHz / 80 = 125kHz$) para la lógica interna de auto-selección de banda del VCO, manteniéndose en el límite máximo recomendado de 125 kHz para una calibración rápida.
-		
-		\item \textbf{VCO Powerdown \& MTLD (Disabled):} Mantiene el VCO encendido continuamente y desactiva la función de silenciamiento (Mute Till Lock Detect), entregando señal de RF desde el arranque del lazo.
-	\end{itemize}
-	
-	\textbf{Registro 5:}
-	\begin{itemize}
-		\item \textbf{LD Pin Mode (Digital Lock Detect - bits DB[23:22]):} Configura la patilla física LD (Lock Detect) para entregar un nivel lógico alto (3.3 V) en cuanto el PLL logra el enganche en frecuencia y fase, sirviendo como señal de monitoreo directo para el microcontrolador.
-	\end{itemize}
 	
 	\begin{table}[htbp]
 		\centering
@@ -1765,8 +1870,24 @@
 		\end{tabularx}
 		\caption{Desglose de bits del Registro 1 (\texttt{0x00008011}).}
 		\label{tab:adf4350_reg1}
-	\end{table}
-
+	\end{table}\newpage
+	
+	
+	\subsubsection{Registro 2}
+	\begin{itemize}
+		\item \textbf{Low Noise/Spur Mode (Low noise mode):} Dado que no se requiere un tiempo de enganche rápido, el modo Low Noise optimiza la zona de trabajo de la bomba de carga (Charge Pump) y desactiva el dither, ofreciendo la mejor pureza espectral y el menor piso de ruido de fase posible.
+		
+		\item \textbf{Muxout (DGND):} Fija la salida multiplexada a masa digital.
+		
+		\item \textbf{Charge Pump Current (5.00 mA):} Selecciona la corriente máxima del Charge Pump ($I_{CP} = 5mA$) para maximizar la ganancia del lazo, reducir el ruido de fase en la banda de paso y mantener el margen de fase diseñado en el filtro.
+		
+		\item \textbf{LDF \& LDP (INT-N / 10 ns):} Establece la función de detección de enganche para modo entero (Integer-N) con un pulso de precisión de 10 ns.
+		
+		\item \textbf{PD Polarity (Positive):} Establece la polaridad positiva del detector de fase/frecuencia (PFD), requerida para filtros de lazo pasivos estándar cuando la pendiente del VCO es $K_V > 0$.
+		
+		\item \textbf{Powerdown / CP 3-state / Counter Reset (Disabled):} Mantiene todos los bloques contadores y la bomba de carga activos para la operación continua de la síntesis.
+	\end{itemize}
+	
 	\begin{table}[htbp]
 		\centering
 		\begin{tabularx}{\textwidth}{l l c c X}
@@ -1787,7 +1908,19 @@
 		\end{tabularx}
 		\caption{Desglose de bits del Registro 2 (\texttt{0x8005F42}).}
 		\label{tab:adf4350_reg2}
-	\end{table}
+	\end{table}\newpage
+	
+	
+	\subsubsection{Registro 3}
+	\begin{itemize}
+		\item \textbf{ABP - Anti-backlash Pulse Width (3 ns):} Selecciona el ancho de pulso antibacklash de 3 ns, específico para el modo entero (INT-N). Evita la zona muerta en el PFD y minimiza el ruido de fase cercano a la portadora.
+		
+		\item \textbf{Band Select Clock Mode (Low):} Configura el reloj de calibración del VCO en modo de velocidad estándar.
+		
+		\item \textbf{CLK Div Mode \& Value (Off / 0):} Desactiva el divisor de reloj auxiliar al no requerirse funciones de re-sincronización de fase (Phase Resynchronization) ni retraso de enganche.
+		
+		\item \textbf{Charge Cancellation \& CSR (Disabled):} Desactiva la cancelación de carga y la reducción de deslizamiento de ciclo (Cycle Slip Reduction), innecesarias en configuraciones de canal único a 580 MHz.
+	\end{itemize}
 	
 	\begin{table}[htbp]
 		\centering
@@ -1795,7 +1928,7 @@
 			\toprule
 			\textbf{Campo} & \textbf{Bits} & \textbf{Valor Binario} & \textbf{Decimal / Hex} & \textbf{Descripción} \\
 			\midrule
-			Reservado / ABP & DB[31:19] & \texttt{0000 0000 1000 0} & --- & ABP = 1 (Ancho de pulso antibacklash de 3 ns) \\
+			Reservado / ABP & DB[31:19] & \texttt{0000 0000 1000 0} & --- & ABP=1 (Ancho de pulso antibacklash 3ns) \\
 			CSR & DB18 & \texttt{0} & 0 & Cycle Slip Reduction desactivado \\
 			Reservado & DB17 & \texttt{0} & 0 & Bit reservado (debe ser 0) \\
 			CLK DIV Mode & DB[16:15] & \texttt{00} & 0 & Clock Divider desactivado (Off) \\
@@ -1805,7 +1938,21 @@
 		\end{tabularx}
 		\caption{Desglose de bits del Registro 3 (\texttt{0x00400003}).}
 		\label{tab:adf4350_reg3}
-	\end{table}
+	\end{table}\newpage
+	
+	
+	\subsubsection{Registro 4}
+	\begin{itemize}
+		\item \textbf{RF Output Power (+5 dBm):} Ajusta la potencia de salida del amplificador interno al nivel máximo (+5 dBm). Esto permite compensar las pérdidas de inserción de la red balun LC diferencial a single-ended y asegurar que la señal llegue con los +7 dBm requeridos al mezclador.
+		
+		\item \textbf{RF Output Enable (Enabled):} Activa físicamente el driver de salida del canal principal de RF.
+		
+		\item \textbf{Aux Output (Disabled / Divided / -4 dBm):} Desactiva la salida auxiliar para reducir el consumo de corriente total y eliminar posibles acoplamientos radiados indeseados.
+		
+		\item \textbf{Band Select Clock (Auto set / Divider = 80):} Divide la frecuencia de referencia ($10MHz / 80 = 125kHz$) para la lógica interna de auto-selección de banda del VCO, manteniéndose en el límite máximo recomendado de 125 kHz para una calibración rápida.
+		
+		\item \textbf{VCO Powerdown \& MTLD (Disabled):} Mantiene el VCO encendido continuamente y desactiva la función de silenciamiento (Mute Till Lock Detect), entregando señal de RF desde el arranque del lazo.
+	\end{itemize}
 	
 	\begin{table}[htbp]
 		\centering
@@ -1826,7 +1973,12 @@
 		\end{tabularx}
 		\caption{Desglose de bits del Registro 4 (\texttt{0x00A5003C}).}
 		\label{tab:adf4350_reg4}
-	\end{table}
+	\end{table}\newpage
+	
+	\subsubsection{Registro 5}
+	\begin{itemize}
+		\item \textbf{LD Pin Mode (Digital Lock Detect):} Configura el pin físico LD (Lock Detect) para entregar un nivel lógico alto (3.3 V) en cuanto el PLL logra el enganche en frecuencia y fase, sirviendo como señal de monitoreo directo para el microcontrolador.
+	\end{itemize}
 	
 	\begin{table}[htbp]
 		\centering
@@ -1846,20 +1998,709 @@
 		\label{tab:adf4350_reg5}
 	\end{table}
 	
-	La secuencia de inicialización del sintetizador ADF4350/ADF4351 requiere escribir sus registros internos en orden descendente, desde el Registro 5 hasta el Registro 0 ($R5 \rightarrow R4 \rightarrow R3 \rightarrow R2 \rightarrow R1 \rightarrow R0$). Este procedimiento garantiza que los parámetros de operación, los divisores, las corrientes de la bomba de carga y la habilitación de salidas estén plenamente definidos antes de iniciar la sintonía. La carga final del Registro 0 es determinante, ya que actúa como disparador de la calibración automática de banda del VCO y del enganche en frecuencia del lazo. La transferencia de datos se gestiona mediante una interfaz SPI de 3 hilos compuesta por las señales DATA (entrada de datos serie cargados con el bit más significativo MSB primero), CLK (reloj de desplazamiento que ingresa la información en cada flanco ascendente) y LE (Latch Enable, cuya transición a nivel alto al completar cada palabra de 32 bits transfiere la información al registro destino según los bits de control DB[2:0]).
+	La secuencia de inicialización del sintetizador ADF4350/ADF4351 requiere escribir sus registros internos en orden descendente, desde el Registro 5 hasta el Registro 0. Este procedimiento garantiza que los parámetros de operación, los divisores, las corrientes de la bomba de carga y la habilitación de salidas estén plenamente definidos antes de iniciar la sintonía. La carga final del Registro 0 es determinante, ya que actúa como disparador de la calibración automática de banda del VCO y del enganche en frecuencia del lazo. 
 	
+	La transferencia de datos se gestiona mediante una interfaz SPI de 3 hilos compuesta por las señales DATA (entrada de datos serie cargados con el bit más significativo MSB primero), CLK (reloj de desplazamiento que ingresa la información en cada flanco ascendente) y LE (Latch Enable, cuya transición a nivel alto al completar cada palabra de 32 bits transfiere la información al registro destino según los bits de control DB[2:0]).
 	
+	\subsubsection{Calculo del filtro de lazo y simulación de respuesta}
+	
+	El filtro de realimentación del bucle determina la respuesta transitoria del PLL. Analog Device cuanta con una herramienta especifica para el diseño y simulación de PLLs, se utilizo ADIsimPLL para el calculo del filtro de realimentación, junto con las simulaciones en el dominio del tiempo y frecuencia para ver su desempeño. 
+	
+	Se seleccionó un filtro pasivo de 3er orden. La relación entre la corriente de salida de la bomba de carga $I_{CP}(s)$ y la tensión de sintonía $V_{tune}(s)$ viene dada por:
+	\begin{equation}
+		Z(s) = \frac{1 + s T_2}{s (C_1 + C_2 + C_3) (1 + s T_1) (1 + s T_3)}
+	\end{equation}\newpage
+	
+	Donde las constantes de tiempo del filtro corresponden a:
+	\begin{itemize}
+		\item $T_2 = R_1 \cdot C_2$ (Cero principal que provee el adelanto de fase).
+		\item $T_1 \approx R_1 \cdot \frac{C_1 \cdot C_2}{C_1 + C_2}$ (Primer polo de alta frecuencia).
+		\item $T_3 = R_2 \cdot C_3$ (Segundo polo de alta frecuencia para atenuación de espurias).
+	\end{itemize}
+	
+	Para determinar el valor de los componentes R y C es necesario imponer dos restricciones de diseño. Por un lado el margen de fase, el criterio elegido es el $\phi_m$ que minimiza el jitter. El jitter RMS en el dominio del tiempo está directamente relacionado con la integral de la densidad espectral de potencia del ruido de fase $S_\phi(f)$ en el dominio de la frecuencia:
+	\begin{equation}
+		Jitter_{RMS} = \frac{1}{2\pi f_{OUT}} \sqrt{2 \int_{f_1}^{f_2} 10^{\frac{S_\phi(f)}{10}} df}
+	\end{equation} 
+	
+	Un margen de fase $\phi_m = 60^\circ$ es el punto óptimo de compromiso por los siguientes motivos. La eliminación del peaking en la función de transferencia ($H(s)$): Con $\phi_m < 45^\circ$, la respuesta en frecuencia en lazo cerrado presenta una sobreelevación (peaking) cerca de $f_c$. Esta amplificación actúa sobre el ruido de fase propio del PLL y de la referencia, aumentando drásticamente la potencia integrada y por ende el jitter. La respuesta de amortiguamiento óptima ($\zeta \approx 0{,}707 - 1{,}0$) otorga una respuesta plana máxima en la banda de paso de lazo cerrado.
+	
+	El margen de fase por sí solo no alcanza para calcular los componentes pasivos: este define la estabilidad y la forma de la respuesta, pero se necesita un segundo parámetro que fije la frecuencia de trabajo o ancho de banda $f_c$. La herramienta calcula el punto exacto de cruce entre las dos fuentes dominantes de ruido de fase del sistema:
+	\begin{itemize}
+		\item Ruido en banda: Proviene de la referencia (TCXO de 10 MHz), el detector de fase (PFD) y el divisor $N=232$. Este ruido se multiplica por $N^2$ y domina a bajas frecuencias.
+		\item Ruido fuera de banda: Proviene del VCO interno a $2,32GHz$, el cual presenta un piso elevado a bajas frecuencias pero cae a razón de $-20dB/década$ al alejarse de la portadora.
+	\end{itemize}
+	
+	ADIsimPLL calcula la curva de ruido de fase total para distintas frecuencias y halla el punto de intersección donde el área integrada bajo la curva (el jitter RMS) es matemáticamente mínima, ese óptimo de intersección ocurre exactamente a $f_c = 45.7kHz$. A partir de estos dos parámetros y la topología seleccionada del filtro se calculan de forma automática los valores de los componentes pasivos.
+	
+	El siguiente gráfico representa la densidad espectral de ruido de fase de la señal de $580MHz$ en función de la frecuencia de separación (offset) respecto a la portadora. El eje horizontal muestra qué tan lejos esta de los $580MHz$ (desde $10Hz$ hasta $100MHz$), mientras que el eje vertical indica el nivel de ruido en $dBc/Hz$ (cuanto más abajo y negativo esté el valor, más pura es la señal).
+	
+	El área debajo de la curva roja representa la energía total de ruido que se traduce en jitter. Al haber ubicado la frecuencia de corte exactamente en el punto donde se cruzan el ruido del chip y del VCO ($45.7kHz$), se obtiene la menor superficie posible bajo la curva roja, demostrando gráficamente que el filtro minimiza el jitter al máximo.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_pll_7}
+		\caption[ADF4351: Densidad espectral de ruido de fase a 580MHz (Fuente ADIsimPLL)]{ADF4351: Densidad espectral de ruido de fase a 580MHz (Fuente ADIsimPLL))}
+		\label{fig:ppll7}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.85\linewidth]{imagenes/p_pll_6}
+		\caption[ADF4351: Respuesta a lazo cerrado y abierto (Fuente ADIsimPLL)]{ADF4351: Respuesta a lazo cerrado y abierto (Fuente ADIsimPLL)}
+		\label{fig:ppll6}
+	\end{figure}\newpage
+	
+	Respecto a las simulaciones en el dominio de tiempo se tiene lo siguiente: Las variaciones abruptas al inicio de la simulación corresponden al proceso de calibración automática de banda del VCO (Band Select Logic) antes de que el lazo cerrado tome el control del sintonizado.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.99\linewidth]{imagenes/p_pll_3}
+		\caption[ADF4351: Tiempo de establecimiento y error de fase (Fuente ADIsimPLL)]{ADF4351: Tiempo de establecimiento y error de fase (Fuente ADIsimPLL}
+		\label{fig:ppll3}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{imagenes/p_pll_5}
+		\caption[ADF4351: Pulsos de corriente (mA) a la salida de la bomba de carga (Fuente ADIsimPLL)]{ADF4351: Pulsos de corriente (mA) a la salida de la bomba de carga (Fuente ADIsimPLL)}
+		\label{fig:ppll5}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/p_pll_4}
+		\caption[ADF431: Error absoluto de frecuencia (Fuente ADIsimPLL)]{ADF431: Error absoluto de frecuencia (Fuente ADIsimPLL)}
+		\label{fig:ppll4}
+	\end{figure}\newpage
+	
+	\begin{table}
+		\centering
+		\begin{tabularx}{\textwidth}{l c X}
+			\toprule
+			\textbf{Parámetro / Especificación} & \textbf{Valor de Simulación} & \textbf{Condición / Observaciones} \\
+			\midrule
+			\multicolumn{3}{l}{\textbf{Punto de Operación y Tensión}} \\
+			Frecuencia de Salida ($f_{OUT}$) & 580 MHz & Divisor de salida $D = 4$ ($f_{VCO} = 2,32$ GHz) \\
+			Tensión de Sintonía ($V_{tune}$) & 2,1058 V & Zona lineal centrada (0,5 V a 4,5 V) \\
+			\midrule
+			\multicolumn{3}{l}{\textbf{Perfil de Ruido de Fase}} \\
+			Offset @ 100 Hz & -102,4 dBc/Hz & Dominado por el piso del chip ADF4351 \\
+			Offset @ 1 kHz & -109,5 dBc/Hz & Ruido integrado en la banda de paso \\
+			Offset @ 10 kHz & -109,5 dBc/Hz & Ruido integrado en la banda de paso \\
+			Offset @ 100 kHz & -118,5 dBc/Hz & Caída tras la frecuencia de corte ($f_c$) \\
+			Offset @ 1 MHz & -145,3 dBc/Hz & Piso de ruido propio del VCO \\
+			\midrule
+			\multicolumn{3}{l}{\textbf{Pureza Espectral y Jitter}} \\
+			Jitter Integrado de Fase (RMS) & 326 fs & Banda de integración: 1 kHz a 20 MHz \\
+			Potencia Canal Adyacente (ACP) & -68,0 dBc & Canal centrado a 25 kHz, ancho 15 kHz \\
+			Espurias de Referencia (10 MHz) & $<-300$ dBc & Nivel de atenuación de las primeras 10 espurias \\
+			\midrule
+			\multicolumn{3}{l}{\textbf{Dinámica Transitoria (Tiempos de Enganche)}} \\
+			Tiempo de Enganche ($\Delta f \le 1$ kHz) & 120 $\mu$s & Adquisición rápida de frecuencia \\
+			Tiempo de Enganche ($\Delta f \le 10$ Hz) & 171 $\mu$s & Enganche final de alta precisión \\
+			Tiempo de Enganche ($\Delta \phi \le 10^\circ$) & 110 $\mu$s & Alineación inicial de fase \\
+			Tiempo de Enganche ($\Delta \phi \le 1,0^\circ$) & 136 $\mu$s & Alineación final de fase \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Cuadro resumen con los resultados cuantitativos del reporte de simulación de ADIsimPLL.}
+		\label{tab:pll_resultados_simulacion}
+	\end{table}
+	
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=0.75\linewidth]{imagenes/p_pll_2}
+		\caption[ADF4351: Valores de R y C del filtro (Fuentes ADIsimPLL)]{ADF4351: Valores de R y C del filtro (Fuentes ADIsimPLL)}
+		\label{fig:ppll2}
+	\end{figure}\newpage
+	
+	En cuanto a la etapa da salida consiste en un par diferencial NPN excitado por las salidas con búfer del VCO. Se pueden configurar cuatro niveles de corriente. Estos niveles proporcionan potencias de salida de $-4dBm$, $-1dBm$, $+2dBm$ y $+5dBm$, respectivamente, utilizando una resistencia de 50 $\Omega$ conectada a AVDD y acoplamiento de CA (AC coupling) hacia una carga de 50 $\Omega$. Alternativamente, ambas salidas se pueden combinar mediante un transformador 1:1. La salida complementaria no utilizada debe terminarse con un circuito similar al de la salida utilizada. Existe una etapa de salida auxiliar en los pines RFOUTB+ y RFOUTB- que proporciona un segundo conjunto de salidas diferenciales, las cuales pueden excitar otro circuito o apagarse si no se usan.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\linewidth]{imagenes/p_pll_8}
+		\caption[ADF4351: Etapa de salida del PLL (Fuente Hoja de datos ADF4351 Analog Device)]{ADF4351: Etapa de salida del PLL (Fuente Hoja de datos ADF4351 Analog Device)}
+		\label{fig:ppll8}
+	\end{figure}
+	
+	Para llegar a los niveles de potencia requeridos se utiliza una red LC balun para sumar la potencia de estas dos señales en modo diferencial, el circuito recomendado asi como los valores para la red de adaptación son proporcionados por el fabricante.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\linewidth]{imagenes/p_pll_9}
+		\caption[ADF4351: Red LC balun (Fuente ADF4351 Analog Device)]{ADF4351: Red LC balun (Fuente Hoja de datos ADF4351 Analog Device)}
+		\label{fig:ppll9}
+	\end{figure}
+	
+	\begin{table}[h!]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|l|l|l|l|l|l|}
+				\hline
+				\textbf{\shortstack[l]{Frequency\\Range (MHz)}} & 
+				\textbf{Inductor L1 (nH)} & 
+				\textbf{Capacitor C1 (pF)} & 
+				\textbf{\shortstack[l]{RF Choke\\Inductor (nH)}} & 
+				\textbf{\shortstack[l]{DC Blocking\\Capacitor (pF)}} & 
+				\textbf{\shortstack[l]{Measured Output\\Power (dBm)}} \\ \hline
+				137 to 300   & 100 & 10  & 390 & 1000 & 9  \\
+				300 to 460   & 51  & 5.6 & 180 & 120  & 10 \\
+				400 to 600   & 30  & 5.6 & 120 & 120  & 10 \\
+				600 to 900   & 18  & 4   & 68  & 120  & 10 \\
+				860 to 1240  & 12  & 2.2 & 39  & 10   & 9  \\
+				1200 to 1600 & 5.6 & 1.2 & 15  & 10   & 9  \\
+				1600 to 3600 & 3.3 & 0.7 & 10  & 10   & 8  \\
+				2800 to 3800 & 2.2 & 0.5 & 10  & 10   & 8  \\ \hline
+			\end{tabular}
+		}
+		\caption{Valores recomendados para la red LC balun (Fuente Hoja de datos ADF4351 Analog Device)}
+	\end{table}
 	
 	\section{Filtro de salida}
-	Se describe el modelo terminado, funcionalidad, manual, mediciones, etc.
+	Para la etapa de filtrado a la salida del mixer, se opto por un filtro pasa-bajo (Chebyshev) de orden N=5, y una frecuencia de corte de $fc=450MHz$ aproximadamente. Su función es simplemente atenuar las fugas por del oscilador local y la banda lateral superior, no pretende realizar el filtro definitivo de la señal ya que el diseño contempla solo la etapa de recepción y puede ser filtrada en etapas posteriores. Se tuvieron en cuenta otras alternativas como: Filtros Elipticos/Cauer (descartado por su alta sensibilidad) , Filtros de Chebyshev de ordenes mayores (N=7, sin mejoras significativas) y filtros de tipo SAW, descartados por su poca flexibilidad y ancho de banda reducido. 
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.65\linewidth]{imagenes/p_filtro_1}
+		\caption[Filtro Chebyshev pasa-bajo de orden N=5, fc=450MHZ (Fuente propia)]{Filtro Chebyshev pasa-bajo de orden N=5, fc=450MHZ (Fuente propia)}
+		\label{fig:pfiltro1}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/p_filtro_2}
+		\caption[Respuesta en frecuencia del filtro (Fuente propia)]{Respuesta en frecuencia del filtro (Fuente propia)}
+		\label{fig:pfiltro2}
+	\end{figure}
+	
+	\begin{table}[h!]
+		\centering
+		\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{Frecuencia / Componente} & \textbf{Parámetro en el Filtro} & \textbf{Atenuación / Reflexión} \\ \hline
+			\textbf{Banda Inferior (LSB @ 434 MHz)} & Transmisión ($S_{21}$) & 2.5 dB de pérdida de inserción \\ \hline
+			\textbf{Desadaptación (LSB @ 434 MHz)} & Reflexión ($S_{11}$) & 27.1\% de potencia reflejada $-5.67dB$ \\ \hline
+			\textbf{Fuga del LO (LO @ 580 MHz)} & Atenuación ($S_{21}$) & 19.0 dB de atenuación \\ \hline
+			\textbf{Banda Superior (USB @ 726 MHz)} & Atenuación ($S_{21}$) & 31.0 dB de atenuación \\ \hline
+		\end{tabular}
+	}
+		\caption{Resumen de señales de interés}
+	\end{table}\newpage
+	
+	Con el desarrollo de todos los bloques funcionales del receptor, se puede calcular la figura de ruido total del sistema. Este parámetro es importante porque permite calcular la señal minima discernible y verificar la sensibilidad que se pide como requerimiento funcional.
+	Para calcular la Figura de Ruido total ($NF_{total}$) mediante la Fórmula de Friis, es obligatorio convertir primero los valores de Figura de Ruido ($NF$) a Factor de Ruido lineal ($F$) y las Ganancias ($G$) a Ganancia de potencia lineal ($g$). Para una cadena de $N$ bloques en cascada, el Factor de Ruido total $F_{total}$ se define como:
+	\begin{equation}
+		F_{total} = F_1 + \frac{F_2 - 1}{g_1} + \frac{F_3 - 1}{g_1 \cdot g_2} + \frac{F_4 - 1}{g_1 \cdot g_2 \cdot g_3} + \dots + \frac{F_N - 1}{\prod_{i=1}^{N-1} g_i}
+	\end{equation}
+	
+	Las conversiones a escala lineal se realizan mediante:
+	\begin{equation}
+		F_i = 10^{\frac{NF_i}{10}}, \qquad g_i = 10^{\frac{G_i}{10}}
+	\end{equation}
+	
+	Considerando la cadena completa previa de $80dB$ de ganancia en RF (LNA + 3 etapas de amplificación cascode) seguida del mezclador y el filtro de FI:
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			\textbf{Etapa} & \textbf{Ganancia $G$ (dB)} & \textbf{Ganancia Lineal ($g$)} & \textbf{NF (dB)} & \textbf{Factor de Ruido ($F$)} \\ \hline
+			\textbf{1. LNA} & 23.0 & $g_1 = 10^{2.3} \approx 199.53$ & 0.8 & $F_1 = 10^{0.08} \approx 1.2023$ \\ \hline
+			\textbf{2. Cascode 1} & 19.0 & $g_2 = 10^{1.9} \approx 79.43$ & 1.1 & $F_2 = 10^{0.11} \approx 1.2883$ \\ \hline
+			\textbf{3. Cascode 2} & 19.0 & $g_3 = 10^{1.9} \approx 79.43$ & 1.1 & $F_3 = 10^{0.11} \approx 1.2883$ \\ \hline
+			\textbf{4. Cascode 3} & 19.0 & $g_4 = 10^{1.9} \approx 79.43$ & 1.1 & $F_4 = 10^{0.11} \approx 1.2883$ \\ \hline
+			\textbf{5. Mezclador} & -6.6 & $g_5 = 10^{-0.66} \approx 0.2188$ & 6.6 & $F_5 = 10^{0.66} \approx 4.5709$ \\ \hline
+			\textbf{6. Filtro FI} & -2.5 & $g_6 = 10^{-0.25} \approx 0.5623$ & 2.5 & $F_6 = 10^{0.25} \approx 1.7783$ \\ \hline
+		\end{tabular}
+			\caption{Conversión de Parámetros de la Cadena de RF a Escala Lineal (Fuente propia)}
+	\end{table}
+	
+	Contribución del LNA:
+	\begin{equation}
+		F_{LNA} = F_1 = \mathbf{1.202264}
+	\end{equation}
+	
+	Contribución del Cascode 1:
+	\begin{equation}
+		\frac{F_2 - 1}{g_1} = \frac{1.2883 - 1}{199.53} = \frac{0.2883}{199.53} = \mathbf{0.001445}
+	\end{equation}
+	
+	Contribución del Cascode 2:
+	\begin{equation}
+		\frac{F_3 - 1}{g_1 \cdot g_2} = \frac{0.2883}{199.53 \times 79.43} = \frac{0.2883}{15848.9} = \mathbf{0.000018}
+	\end{equation}
+	
+	Contribución del Cascode 3:
+	\begin{equation}
+		\frac{F_4 - 1}{g_1 \cdot g_2 \cdot g_3} = \frac{0.2883}{15848.9 \times 79.43} = \mathbf{0.0000002}
+	\end{equation}
+	
+	Contribución del Mezclador:
+	\begin{equation}
+		\frac{F_{mix} - 1}{g_{total}} = \frac{4.5709 - 1}{10^8} = \frac{3.5709}{100,000,000} = \mathbf{0.0000000357}
+	\end{equation}
+	
+	Contribución del Filtro LC:
+	\begin{equation}
+		\frac{F_{fil} - 1}{g_{total} \cdot g_{mix}} = \frac{1.7783 - 1}{10^8 \times 0.2188} = \mathbf{0.0000000356}
+	\end{equation}
+	
+	Sumando las contribuciones individuales:
+	\begin{equation}
+		F_{total} = 1.202264 + 0.001445 + 0.000018 + 0.0000002 + \dots \approx \mathbf{1.203728}
+	\end{equation}
+	
+	Convertimos el resultado de vuelta a unidades decibelios ($NF_{total}$):
+	\begin{equation}
+		NF_{total} = 10 \cdot \log_{10}(F_{total}) = 10 \cdot \log_{10}(1.203728) \approx \mathbf{0.805dB}
+	\end{equation}
+	
+	La mínima señal discernible por el sistema para un ancho de banda de $100kHZ$ (Requerimiento funcional) se calcula como:
+	\begin{equation}
+		SMD = -174 dBm/Hz + 10 \times  log_{10}(100kHz) + 0.805dB = -123.2dBm
+	\end{equation}
+	
+	La sensibilidad real del receptor ($S$) es la potencia mínima a la entrada necesaria para que la señal cumpla con una relación señal a ruido mínima ($SNR_{min}$) requerida por el tipo de modulación o demodulador empleado. Incluso considerando el caso exigente que requiera una $SNR_{min} = 10dB$ se tiene:
+	\begin{equation}
+		S = -123.2dBm + 10dB = \mathbf{-113.2dBm}
+	\end{equation}
+	Como $-113.2dBm \ll -110dBm$, el receptor tiene una sensibilidad mejor que el requerimiento funcional, lo que garantiza el cumplimiento.
+	
+	Por último se realizó una simulación para una señal de entrada centrada en 146MHz, con una potencia de -110dBm y un ancho de banda de $100kHz$ mezclada con un tono puro de 580MHz, para ver la mezcla resultante. Se tiene en cuenta las ganancias de los amplificadores, las perdías de inserción del mixer y filtro, así como también las aislación entre puertos del mixer.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\linewidth]{imagenes/python}
+		\caption[Espectro de salida resultante (Fuente propia)]{Espectro de salida resultante (Fuente propia)}
+		\label{fig:python}
+	\end{figure}
 	
 	\section{Microcontrolador y reguladores de voltaje LDO}
+	El microcontrolador solo esta a los fines de brindar la configuración inicial del PLL y habilitar los reguladores LDO para las etapas de RF y poder realizar las pruebas, pero no forma parte del diseño definitivo. El Seeeduino XIAO (ATSAMD21G18) actúa como la unidad de secuencia, control y supervisión del frontal de RF. Durante la etapa de arranque, ejecuta una rutina de encendido ordenado: habilita el sintetizador de frecuencia ADF4351, envía secuencialmente sus seis registros de 32 bits mediante la interfaz SPI para sintonizar el Oscilador Local (LO) en 580 MHz y, tras un tiempo de espera que garantiza el enganche de fase (PLL lock), conmuta la alimentación del Amplificador de Bajo Ruido (LNA). Durante la operación continua, el microcontrolador monitorea la salud del firmware a través de un Watchdog Timer (WDT), conmuta los indicadores LED de estado (LNA activo, PLL programado y latido de vida) y previene estados indeterminados en los bloques de alta frecuencia. Las especificaciones del microcontrolador son las siguientes:
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:specs_seeeduino_xiao}
+		\begin{tabular}{ll}
+			\hline
+			\textbf{Parámetro} & \textbf{Especificación} \\ \hline
+			Arquitectura & ARM Cortex-M0+ de 32 bits \\
+			Microcontrolador base & Microchip ATSAMD21G18A-MUT \\
+			Frecuencia de reloj & 48 MHz \\
+			Memoria Flash & 256 KB \\
+			Memoria SRAM & 32 KB \\
+			Tensión de operación & 3.3 V (E/S tolerante a 3.3 V) \\
+			Tensión de alimentación (VIN) & 5 V (mediante LDO ADP7118 en PCB) \\
+			Periféricos de comunicación & 1x SPI, 1x I2C, 1x UART, USB 2.0 Nativo \\
+			Temporizador de seguridad & Hardware Watchdog Timer (WDT) nativo \\
+			Factor de forma & 20 x 17.5 mm (montaje superficial SMD) \\ \hline
+		\end{tabular}
+		\caption{Especificaciones principales del microcontrolador Seeeduino XIAO (ATSAMD21G18).}
+	\end{table}
+	
+	El Seeeduino XIAO opera como un módulo autocontenido plug-and-play eliminando la necesidad de depuradores o programadores de hardware externos (como sondas SWD/JTAG o conversores USB-UART dedicados), ya que su arquitectura cuenta con USB 2.0 nativo y un bootloader integrado para la carga de firmware y depuración directa mediante el puerto USB-C.\newline
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/seeeduino_xiao}
+		\caption[Seeeduino XIAO (ATSAMD21G18): Pinout]{Seeeduino XIAO (ATSAMD21G18): Pinout }
+		\label{fig:seeeduinoxiao}
+	\end{figure}\newpage
+	
+	\begin{lstlisting}[style=arduino, caption={Codigo main.c del microcontrolador}]
+		#include <SPI.h>
+		
+		// ==========================================
+		// DEFINICION DE PINES 
+		// ==========================================
+		// D8 (SCK) y D10 (MOSI) los maneja SPI.begin() automaticamente -> CLK y DATA
+		// D9 (MISO) NO se usa como MISO real (el ADF4351 no responde por SPI),
+		// pero el core SAMD21 lo reconfigura como periferico SPI al llamar SPI.begin().
+		// Por eso PIN_LNA_ENABLE (=D9) se reclama como GPIO DESPUES de SPI.begin(),
+		// nunca antes, o SPI.begin() le pisa la configuracion de salida.
+		//
+		// Pines LIBRES (no usados): D1, D3, D5
+		
+		const int PIN_LED_LIFE = 0;  // D0 - LED parpadeante (prueba de vida)
+		const int PIN_LED_LNA  = 2;  // D2 - LED indicador LNA_EN
+		const int PIN_LED_PLL  = 4;  // D4 - LED indicador PLL_EN
+		
+		const int PIN_PLL_ENABLE = 6;  // D6 - Enable PLL, activo alto
+		const int PIN_ADF_LE     = 7;  // D7 - Latch Enable del ADF4351 (pin 3 del ADF4351)
+		const int PIN_LNA_ENABLE = 9;  // D9 (MISO) - Enable LNA, activo alto
+		
+		// ==========================================
+		// REGISTROS ADF4351 PARA 580 MHz (Ref: 10MHz)
+		// ==========================================
+		// Generados con el software oficial ADF435x de Analog Devices y verificados
+		// bit a bit: INT=232, FRAC=0, MOD=2, R=1, fPFD=10MHz, divisor de salida=4
+		// -> VCO=2320MHz, RFout=580.000 MHz exactos.
+		const uint32_t registers[6] = {
+			0x00580005, // Registro 5
+			0x00A5003C, // Registro 4
+			0x00400003, // Registro 3
+			0x08005F42, // Registro 2
+			0x00008011, // Registro 1
+			0x00740000  // Registro 0 - Este activa todo al final
+		};
+		
+		// Variables para el LED de vida
+		unsigned long previousMillis = 0;
+		const long blinkInterval = 500;
+		
+		// Funcion para enviar 32 bits por SPI
+		void writeADF4351(uint32_t data) {
+			digitalWrite(PIN_ADF_LE, LOW);
+			
+			SPI.transfer((data >> 24) & 0xFF);
+			SPI.transfer((data >> 16) & 0xFF);
+			SPI.transfer((data >> 8) & 0xFF);
+			SPI.transfer(data & 0xFF);
+			
+			digitalWrite(PIN_ADF_LE, HIGH);
+			delayMicroseconds(1);
+			digitalWrite(PIN_ADF_LE, LOW);
+		}
+		
+		// =========================================================================
+		// CONFIGURACION DEL WATCHDOG (WDT) NATIVO PARA ARM SAMD21 (XIAO)
+		// =========================================================================
+		void setupWDT() {
+			WDT->CTRL.reg &= ~WDT_CTRL_ENABLE;
+			while (WDT->STATUS.bit.SYNCBUSY);
+			
+			WDT->CONFIG.reg = 0x8; // ~2048 ciclos (~2 segundos)
+			
+			WDT->CTRL.reg |= WDT_CTRL_ENABLE;
+			while (WDT->STATUS.bit.SYNCBUSY);
+		}
+		void feedWDT() {
+			if (!WDT->STATUS.bit.SYNCBUSY) {
+				WDT->CLEAR.reg = 0xA5;
+			}
+		}
+		void setup() {
+			// 1. Pines que NO comparten funcion con el SPI: configurar ya de entrada
+			pinMode(PIN_LED_LNA, OUTPUT);
+			pinMode(PIN_LED_PLL, OUTPUT);
+			pinMode(PIN_LED_LIFE, OUTPUT);
+			pinMode(PIN_PLL_ENABLE, OUTPUT);
+			pinMode(PIN_ADF_LE, OUTPUT);
+			
+			digitalWrite(PIN_LED_LNA, LOW);
+			digitalWrite(PIN_LED_PLL, LOW);
+			digitalWrite(PIN_LED_LIFE, LOW);
+			digitalWrite(PIN_PLL_ENABLE, LOW);
+			digitalWrite(PIN_ADF_LE, LOW);
+			
+			// 2. Iniciar SPI PRIMERO (esto toma D8/SCK, D9/MISO, D10/MOSI como periferico)
+			SPI.begin();
+			SPI.beginTransaction(SPISettings(500000, MSBFIRST, SPI_MODE0));
+			
+			// 3. Recien ACA reclamamos D9 como GPIO de salida para LNA_ENABLE,
+			//    despues de SPI.begin(), para que no nos pise la configuracion.
+			pinMode(PIN_LNA_ENABLE, OUTPUT);
+			digitalWrite(PIN_LNA_ENABLE, LOW);
+			
+			// 4. Temporizacion de espera inicial
+			delay(2000);
+			
+			// 5. Habilitar el ADF4351 (LNA sigue apagado)
+			digitalWrite(PIN_PLL_ENABLE, HIGH);
+			delay(10);
+			
+			// 6. Enviar secuencia de registros (R5 a R0)
+			for (int i = 0; i < 6; i++) {
+				writeADF4351(registers[i]);
+				delay(1);
+			}
+			
+			// 7. LED que indica que el PLL fue programado por SPI
+			digitalWrite(PIN_LED_PLL, HIGH);
+			
+			// 8. Espera de seguridad para el enganche fisico de fase
+			delay(150);
+			
+			// 9. Encender LDO/LNA y su LED indicador
+			digitalWrite(PIN_LNA_ENABLE, HIGH);
+			digitalWrite(PIN_LED_LNA, HIGH);
+			
+			SPI.endTransaction();
+			
+			// 10. Watchdog al final del setup
+			setupWDT();
+		}
+		
+		void loop() {
+			feedWDT();
+			
+			unsigned long currentMillis = millis();
+			if (currentMillis - previousMillis >= blinkInterval) {
+				previousMillis = currentMillis;
+				digitalWrite(PIN_LED_LIFE, !digitalRead(PIN_LED_LIFE));
+			}
+		}
+	\end{lstlisting}\newpage
+	
+	Para la potencia del sistema,la cadena analógica de RF es alimentada por un regulador LDO (ADP7118) de 5 V totalmente dedicado, mientras que la sección digital emplea un segundo LDO de 5 V protegido mediante un diodo Schottky en serie para evitar daños por corriente inversa al conectar la interfaz USB-C y filtrado con un banco de $10\,\mu\mathrm{F} + 100\,\mathrm{nF}$ que alimenta, a su vez, a un tercer LDO (ADP150-3.3) en cascada de 3.3 V exclusivo para el sintetizador PLL. Esta topología destaca por aislar el ruido de conmutación digital del microcontrolador fuera del LNA para preservar la Figura de Ruido ($NF$), ofrecer una doble etapa de regulación de baja frecuencia que reduce el ruido de fase en el Oscilador Local, proteger la circuitería durante la depuración por USB y distribuir adecuadamente la disipación térmica en la PCB (evita un solo punto caliente); sin embargo, presenta como desventajas una menor eficiencia energética debido a las pérdidas por caída de tensión en la regulación en cascada ($P_{\mathrm{loss}} = \Delta V \cdot I$), un incremento en la tensión de entrada mínima requerida (\textit{dropout}) por la caída directa del diodo ($V_F$), un mayor costo y área consumida en placa, y la necesidad de mantener un filtrado pasivo estricto para compensar la caída natural del rechazo a la fuente (PSRR) que sufren los LDO en altas frecuencias frente al ruido del reloj digital.\newline
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:specs_adp7118_5v}
+		\begin{tabular}{ll}
+			\hline
+			\textbf{Parámetro} & \textbf{Especificación} \\ \hline
+			Tensión de entrada ($V_{\mathrm{IN}}$) & 2.7 V a 20 V \\
+			Tensión de salida ($V_{\mathrm{OUT}}$) & 5.0 V \\
+			Corriente máxima de salida ($I_{\mathrm{OUT}}$) & 200 mA \\
+			Tensión de caída (\textit{Dropout Voltage}) & 200 mV (típico a 200 mA) \\
+			Ruido de salida & 11 $\mu\mathrm{V_{rms}}$ (10 Hz a 100 kHz) \\
+			Rechazo a la fuente (PSRR) & 88 dB @ 10 kHz / 50 dB @ 1 MHz \\
+			Corriente de reposo ($I_Q$) & 50 $\mu\mathrm{A}$ (sin carga) / 180 $\mu\mathrm{A}$ (a 200 mA) \\
+			Precisión inicial & $\pm 0.8\%$ \\
+			Encapsulado & TSOT-23-5 / LFCSP-6 \\ \hline
+		\end{tabular}
+		\caption{Especificaciones del regulador LDO de 5.0 V (ADP7118-5.0) (Fuente Hoja de datos ADP71118-5)}
+		\end{table}
+			
+	\begin{table}[htbp]
+		\centering
+		\label{tab:specs_adp150_3v3}
+		\begin{tabular}{ll}
+			\hline
+			\textbf{Parámetro} & \textbf{Especificación} \\ \hline
+			Tensión de entrada ($V_{\mathrm{IN}}$) & 2.3 V a 5.5 V (alimentado desde carril de 5 V) \\
+			Tensión de salida ($V_{\mathrm{OUT}}$) & 3.3 V \\
+			Corriente máxima de salida ($I_{\mathrm{OUT}}$) & 150 mA \\
+			Tensión de caída (\textit{Dropout Voltage}) & 105 mV (típico a 150 mA) \\
+			Ruido de salida & 9 $\mu\mathrm{V_{rms}}$ (10 Hz a 100 kHz) \\
+			Rechazo a la fuente (PSRR) & 70 dB @ 10 kHz / 50 dB @ 100 kHz \\
+			Corriente de reposo ($I_Q$) & 10 $\mu\mathrm{A}$ (sin carga) / 160 $\mu\mathrm{A}$ (a 150 mA) \\
+			Precisión inicial & $\pm 1\%$ \\
+			Encapsulado & TSOT-5 / WLCSP-4 \\ \hline
+		\end{tabular}
+		\caption{Especificaciones del regulador LDO de 3.3 V (ADP150-3.3) (Fuente Hoja de datos ADP150-3.3)}
+	\end{table}
+	
+	
+	
+	
 	
 	\chapter{Diseño e implementación de la placa}
 	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_10}
+		\caption[Caracterización del sustrato utilizado (Fuente Propia)]{Caracterización del sustrato utilizado (Fuente Propia)}
+		\label{fig:diseno10}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_13}
+		\caption[Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)]{Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}
+		\label{fig:diseno13}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_11}
+		\caption[Restricciones de diseño impuestas por el fabricante (Fuente Propia)]{Restricciones de diseño impuestas por el fabricante (Fuente Propia)}
+		\label{fig:diseno11}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_12}
+		\caption[Calculo de lagrimas para la red de RF (Fuente propia)]{Calculo de lagrimas para la red de RF (Fuente propia)}
+		\label{fig:diseno12}
+	\end{figure}
+	
 	\section{Consideraciones de la placa para el diseño en RF}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_1}
+		\caption[Capa TOP (Fuente Propia)]{Capa TOP (Fuente Propia)}
+		\label{fig:diseno1}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_9}
+		\caption[Etapa de amplificación capa TOP (Fuente propia)]{Etapa de amplificación capa TOP (Fuente propia)}
+		\label{fig:diseno9}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_7}
+		\caption[Oscilador Local capa TOP (Fuente Propia)]{Oscilador Local capa TOP (Fuente Propia)}
+		\label{fig:diseno7}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_8}
+		\caption[Etapa de filtrado capa TOP (Fuente Propia)]{Etapa de filtrado capa TOP (Fuente Propia)}
+		\label{fig:diseno8}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_6}
+		\caption[Microcontrolador capa TOP (Fuente Propia)]{Microcontrolador capa TOP (Fuente Propia)}
+		\label{fig:diseno6}
+	\end{figure}
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_2}
+		\caption[Capa BOTTOM (Fuente Propia)]{Capa BOTTOM (Fuente Propia)}
+		\label{fig:diseno2}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_3}
+		\caption[Capa GND (Fuente Propia]{Capa GND (Fuente Propia)}
+		\label{fig:diseno3}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_4}
+		\caption[Capa VCC (Fuente Propia]{Capa VCC (Fuente Propia)}
+		\label{fig:diseno4}
+	\end{figure}
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_5}
+		\caption[Diseño completo de la placa (Fuente Propia)]{Diseño completo de la placa (Fuente Propia)}
+		\label{fig:diseno5}
+	\end{figure}
+	
+	
 	\section{Consideraciones de la placa para integridad de señal}
 	\section{Implementación del circuito}
+	
+	% ==========================================
+	% TABLA 1: CAPACITORES
+	% ==========================================
+	\begin{table}[htbp]
+		\centering
+		\small
+		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
+			\toprule
+			\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+			\midrule
+			12 & C3, C30, C31, C37, C38, C48, C50, C51, C56, C59, C61, C62 & 1nF & 0603 & 1000 pF, 50 VDC, 5\%, 0603 \\
+			12 & C7, C12, C17, C26, C27, C29, C33, C34, C36, C41, C49, C52 & 10pF & 0402 & MLCC SMD 10 pF, 50 VDC, 1\%, 0402 C0G (NP0) \\
+			11 & C5, C6, C10, C11, C15, C16, C18, C35, C43, C45, C54 & 0.1uF & 0402 & 0.1 uF, 0402, 16 V, X7R \\
+			4 & C2, C4, C8, C24 & 2.2uF & 0603 & MLCC SMD 2.2 uF, 25 VDC, 10\%, 0603 X5R \\
+			3 & C1, C9, C19 & 1uF & 0603 & MLCC SMD 1 uF, 10 VDC, 10\%, 0603 X5R \\
+			3 & C25, C44, C46 & 100pF & 0402 & MLCC SMD 100 pF, 50 VDC, 5\%, 0402 C0G (NP0) \\
+			3 & C39, C47, C58 & 5.1pF & 0402 & MLCC SMD 5.1 pF, 16 VDC, 01005 C0G (NP0) \\
+			2 & C13, C20 & 5.6pF & 0402 & SMD 5.6 pF, 50 VDC, 0402 C0G (NP0) \\
+			2 & C22, C42 & 180pF & 0603 & SMD 180 pF, 50 VDC, 5\%, 0603 C0G (NP0) AEC-Q200 \\
+			1 & C14 & 120pF & 0402 & SMD 120 pF, 50 VDC, 5\%, 0402 C0G (NP0) \\
+			1 & C21 & 1.1nF & 0603 & SMD 1100 pF, 50 VDC, 5\%, 0603 C0G (NP0) AEC-Q200 \\
+			1 & C23 & 33nF & 0805 & SMD 0805, 100 VDC, 0.033 uF, 2\%, C0G AEC-Q200 \\
+			1 & C28 & 16pF & 0402 & MLCC SMD 16 pF, 50 VDC, 1\%, 0402 C0G (NP0) \\
+			1 & C32 & 1.5nF & 0603 & MLCC SMD 1500 pF, 50 VDC, 5\%, 0603 C0G (NP0) \\
+			1 & C40 & 4.7pF & 0402 & MLCC SMD 7.5 pF, 25 VDC, 01005 C0G (NP0) \\
+			1 & C53 & 10uF & 0805 & MLCC SMD 2012, 10 uF, 10\%, X5R, 25 VDC \\
+			1 & C55 & 20pF & 0402 & MLCC SMD 20 pF, 50 VDC, 1\%, 0402 C0G (NP0) AEC-Q200 \\
+			1 & C57 & 33pF & 0402 & MLCC SMD 33 pF, 50 VDC, 1\%, 0402 C0G (NP0) AEC-Q200 \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Lista de Materiales (BOM) - Capacitores.}
+		\label{tab:bom_capacitores}
+	\end{table}
+	
+	% ==========================================
+	% TABLA 2: RESISTORES
+	% ==========================================
+	\begin{table}[htbp]
+		\centering
+		\small
+		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
+			\toprule
+			\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+			\midrule
+			10 & R1, R2, R3, R16, R20, R21, R36, R37, R46, R47 & 49.9 & 0603 & SMD 49.9 Ohm, 1\%, 25 PPM, 1/8 W \\
+			7 & R4, R5, R11, R12, R23, R30, R40 & 1k & 0603 & 1 kOhm, 0603 \\
+			5 & R6, R7, R8, R9, R18 & 10k & 0603 & 10 kOhm, 0603 \\
+			3 & R10, R34, R44 & 750 & 0603 & Película fina SMD MCT 0603-25, 0.1\%, 750 Ohm \\
+			3 & R19, R35, R45 & 620 & 0603 & Película gruesa SMD 1/20 W, 620 Ohm, 1\% \\
+			3 & R22, R29, R39 & 1.2k & 0603 & Película fina SMD 1.2 kOhm, 0.1\%, 25 PPM \\
+			3 & R24, R25, R26 & 0 & 0402 & Película gruesa SMD Zero Ohm \\
+			2 & R27, R28 & 10 & 0603 & Película fina SMD 0.1 W, 10 Ohm, 1\%, 0603 \\
+			2 & R31, R33 & 82 & 0402 & Película gruesa SMD CRCW0402 82 Ohm, 1\% \\
+			2 & R38, R42 & 150 & 0402 & Película gruesa SMD 1/10 W, 150 Ohm, 1\% \\
+			1 & R13 & 2.94k & 0603 & SMD 0603, 2.94 kOhm, 1\%, 1/10 W \\
+			1 & R14 & 5.1k & 0603 & 5.1 kOhm, 0603 \\
+			1 & R15 & 464 & 0603 & SMD 0603, 464 Ohm, 1\%, 1/10 W \\
+			1 & R17 & 7.5k & 0603 & SMD MCT 0603-25, 0.1\%, 7.5 kOhm \\
+			1 & R32 & 91 & 0402 & Película gruesa SMD 1/10 W, 91 Ohm, 1\% \\
+			1 & R41 & 39 & 0402 & Película gruesa SMD 1/10 W, 39 Ohm, 1\% \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Lista de Materiales (BOM) - Resistores.}
+		\label{tab:bom_resistores}
+		\end{table}
+			
+			% ==========================================
+			% TABLA 3: INDUCTORES
+			% ==========================================
+			\begin{table}[htbp]
+				\centering
+				\small
+				\begin{tabularx}{\textwidth}{c p{5cm} l c X}
+					\toprule
+					\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+					\midrule
+					4 & L3, L8, L10, L14 & 120nH & 0402 & RF SMD 120 nH, 2\% \\
+					3 & L2, L9, L13 & 220nH & 0402 & Inductor RF SMD 0.22 uH, 2\% \\
+					2 & L4, L5 & 30nH & 0402 & RF SMD 30 nH, 2\% \\
+					2 & L6, L7 & 27nH & 0402 & RF SMD 27 nH, 2\% \\
+					1 & L1 & 180nH & 0402 & SMD Fijo 180 nH, 260 mA \\
+					1 & L11 & 68nH & 0402 & SMD Fijo 68 nH, 140 mA \\
+					1 & L12 & 56nH & 0402 & Inductor RF SMD 56 nH, 2\% \\
+					1 & L15 & 1uH & 0805 & Inductor RF SMD 0805, 1 uH, 20\%, 700 mA \\
+					\bottomrule
+				\end{tabularx}
+				\caption{Lista de Materiales (BOM) - Inductores.}
+				\label{tab:bom_inductores}
+			\end{table}
+			
+			% ==========================================
+			% TABLA 4: CI, SEMICONDUCTORES Y VARIOS
+			% ==========================================
+			\begin{table}[htbp]
+				\centering
+				\small
+				\begin{tabularx}{\textwidth}{c p{4.2cm} l p{2.5cm} X}
+					\toprule
+					\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+					\midrule
+					4 & D1, D2, D3, D4 & LED & LED\_0603 & LED unicolor verde 569 nm \\
+					1 & D5 & SS14 & D\_SMA & Diodo Schottky 40 V 1 A, SMA \\
+					1 & U1 & ADF4351 & LFCSP-32 & Fractional-N PLL 35-4400 MHz \\
+					1 & U3 & XIAO-SAMD21 & XIAO-SAMD21-SMD & Módulo ARM Seeed Studio XIAO SAMD21 \\
+					1 & Y1 & ECS-TXO-2520MV & ECSTXO2520MV & TCXO 10 MHz CMOS MultiVolt +-2.5ppm \\
+					2 & IC1, IC2 & ADP7118AUJZ-5.0 & SOT95P280X100-5N & LDO lineal de bajo ruido 20 V, 200 mA \\
+					1 & IC3 & ADE-5+ & ADE5 & Mezclador balanceado doble RF \\
+					1 & IC5 & ADP150AUJZ-3.3 & SOT95P280X100-5N & Regulador LDO CMOS ultra bajo ruido, 150 mA \\
+					1 & IC6 & PSA-5454+ & SOT65P215X100-6N & Amplificador MMIC RF \\
+					4 & J5, J6, J7, J8 & RFShield\_OnePiece & Laird\_BMI-S-102 & Blindaje RF 16.5x16.5 mm \\
+					2 & J3, J4 & Conn\_Coaxial\_Small & SMA\_EdgeMount & Conector coaxial SMA Edge Mount \\
+					\bottomrule
+				\end{tabularx}
+				\caption{Lista de Materiales (BOM) - Circuitos Integrados, Semiconductores y Varios.}
+				\label{tab:bom_semiconductores_varios}
+			\end{table}
+	
 	
 	% ==========================================
 	% RESULTADOS Y CONCLUSIONES
