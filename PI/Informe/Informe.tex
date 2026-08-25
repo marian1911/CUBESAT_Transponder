@@ -2484,24 +2484,36 @@
 	
 	
 	\chapter{Diseño e implementación de la placa}
-	
+	Antes de comenzar con el diseño de la PCB lo primero es definir el tipo de sustrato que se va a utilizar, esto va a definir una serie de características importantes que van a condicionar el diseño. Para nuestro propósito el sustrato seleccionado es el estándar JLC04161H-7628 de 4 capas del fabricante JLCPCB (RF, GND, VCC, Digital). Los motivos son los siguientes:
+	\begin{itemize}
+		\item 	\textbf{Adaptación a componentes SMD}: En una placa típica  de 2 capas y 1.6 mm de grosor, la distancia al plano de masa inferior es de ~1.5 mm. Para obtener una línea microstrip de 50 ohms, se requeriría un ancho de pista de aprox. 2.8 mm a 3.0 mm. Este ancho tan excesivo genera saltos de impedancia bruscos al soldar componentes SMD de encapsulado 0603/0402 o al conectarse a los pines de CIs de RF (como el ADF4351 o el LNA).Con la capa GND ubicada a solo 0.2 mm de la capa TOP (RF) (gracias al Prepreg 7628 con $\varepsilon_r \approx 4.4$), el ancho de pista necesario para 50 ohms se reduce a aproximadamente 0.36 mm - 0.38 mm. Este ancho coincide con los pads de los componentes de RF, minimizando las discontinuidades de impedancia y las pérdidas por retorno (return loss).
+		
+		\item \textbf{Plano de masa ininterrumpido en GND}: En placas de 2 capas, el ruteo obliga a "cortar" constantemente la capa de masa para pasar pistas digitales o de alimentación, creando grandes bucles de retorno. En el apilado de 4 capas, GND se dedica al 100\% como plano GND continuo, garantizando que la corriente de retorno de RF viaje exactamente por debajo de la pista superior.
+		
+		\item \textbf{Reducción del área de bucle}: Al reducir la distancia dieléctrica de 1.5 mm a 0.2 mm, el área del bucle formado por la pista de señal y su retorno de masa disminuye significativamente. Esto reduce drásticamente la inductancia parásita, la radiación electromagnética no deseada y la susceptibilidad a interferencias externas en las bandas VHF/UHF.
+		
+		\item \textbf{Blindaje entre RF y Digital}: La presencia del plano de masa interno en GND actúa como una pantalla de blindaje natural entre las señales de RF de alta frecuencia en la capa TOP y el ruido de conmutación digital (bus SPI, líneas de control del microcontrolador) ruteado en la capa BOTTOM.
+		
+		\item \textbf{Integridad de Potencia (PDN)}: Dedicar un plano de alimentación (VCC) permite formar una capacitancia interplano de alta frecuencia con GND, lo que ayuda a desacoplar el ruido del sistema antes de que llegue a los componentes analógicos sensibles.
+	\end{itemize}
+	 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_10}
-		\caption[Caracterización del sustrato utilizado (Fuente Propia)]{Caracterización del sustrato utilizado (Fuente Propia)}
+		\includegraphics[width=0.8\linewidth]{imagenes/diseño_10}
+		\caption[Stack-up 1.6mm (TOP=RF, In1=GND, In2=VCC, BOTTOM=Digital) JLC04161H-7628 (Fuente Propia)]{Stack-up 1.6mm (TOP=RF, In1=GND, In2=VCC, BOTTOM=Digital) JLC04161H-7628 (Fuente Propia)}
 		\label{fig:diseno10}
 	\end{figure}
 	
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_13}
+		\includegraphics[width=0.8\linewidth]{imagenes/diseño_13}
 		\caption[Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)]{Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}
 		\label{fig:diseno13}
 	\end{figure}
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_11}
+		\includegraphics[width=0.8\linewidth]{imagenes/diseño_11}
 		\caption[Restricciones de diseño impuestas por el fabricante (Fuente Propia)]{Restricciones de diseño impuestas por el fabricante (Fuente Propia)}
 		\label{fig:diseno11}
 	\end{figure}

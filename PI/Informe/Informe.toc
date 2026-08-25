@@ -42,14 +42,14 @@
 \contentsline {section}{\numberline {4.5}Filtro de salida}{63}{}%
 \contentsline {section}{\numberline {4.6}Microcontrolador y reguladores de voltaje LDO}{66}{}%
 \contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{70}{}%
-\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{70}{}%
-\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{70}{}%
-\contentsline {section}{\numberline {5.3}Implementación del circuito}{70}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{78}{}%
-\contentsline {chapter}{Resultados}{79}{}%
-\contentsline {chapter}{Conclusiones}{80}{}%
-\contentsline {chapter}{Bibliografía}{81}{}%
-\contentsline {chapter}{Referencias}{82}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{83}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{84}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{85}{}%
+\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{72}{}%
+\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{72}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{72}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{79}{}%
+\contentsline {chapter}{Resultados}{80}{}%
+\contentsline {chapter}{Conclusiones}{81}{}%
+\contentsline {chapter}{Bibliografía}{82}{}%
+\contentsline {chapter}{Referencias}{83}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{84}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{85}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{86}{}%
