@@ -2486,16 +2486,16 @@
 	\chapter{Diseño e implementación de la placa}
 	Antes de comenzar con el diseño de la PCB lo primero es definir el tipo de sustrato que se va a utilizar, esto va a definir una serie de características importantes que van a condicionar el diseño. Para nuestro propósito el sustrato seleccionado es el estándar JLC04161H-7628 de 4 capas del fabricante JLCPCB (RF, GND, VCC, Digital). Los motivos son los siguientes:
 	\begin{itemize}
-		\item 	\textbf{Adaptación a componentes SMD}: En una placa típica  de 2 capas y 1.6 mm de grosor, la distancia al plano de masa inferior es de ~1.5 mm. Para obtener una línea microstrip de 50 ohms, se requeriría un ancho de pista de aprox. 2.8 mm a 3.0 mm. Este ancho tan excesivo genera saltos de impedancia bruscos al soldar componentes SMD de encapsulado 0603/0402 o al conectarse a los pines de CIs de RF (como el ADF4351 o el LNA).Con la capa GND ubicada a solo 0.2 mm de la capa TOP (RF) (gracias al Prepreg 7628 con $\varepsilon_r \approx 4.4$), el ancho de pista necesario para 50 ohms se reduce a aproximadamente 0.36 mm - 0.38 mm. Este ancho coincide con los pads de los componentes de RF, minimizando las discontinuidades de impedancia y las pérdidas por retorno (return loss).
+		\item 	\textbf{Adaptación a componentes SMD}: En una placa típica  de 2 capas y 1.6 mm de grosor, la distancia al plano de masa inferior es de ~1.5 mm. Para obtener una línea microstrip de 50 ohms, se requeriría un ancho de pista de aprox. 2.8 mm a 3.0 mm. Este ancho tan excesivo genera saltos de impedancia bruscos al soldar componentes SMD y dificultades a la hora de rutear los componentes. Con la capa GND ubicada a solo 0.2 mm de la capa TOP el ancho de pista necesario se reduce a aproximadamente 0.36 mm - 0.38 mm.
 		
-		\item \textbf{Plano de masa ininterrumpido en GND}: En placas de 2 capas, el ruteo obliga a "cortar" constantemente la capa de masa para pasar pistas digitales o de alimentación, creando grandes bucles de retorno. En el apilado de 4 capas, GND se dedica al 100\% como plano GND continuo, garantizando que la corriente de retorno de RF viaje exactamente por debajo de la pista superior.
+		\item \textbf{Plano de masa ininterrumpido en GND}: En placas de 2 capas, el ruteo obliga a cortar constantemente la capa de masa para pasar pistas digitales o de alimentación, creando grandes bucles de retorno. En el apilado de 4 capas, GND se dedica al 100\% como plano GND continuo, garantizando que la corriente de retorno de RF viaje exactamente por debajo de la pista superior.
 		
 		\item \textbf{Reducción del área de bucle}: Al reducir la distancia dieléctrica de 1.5 mm a 0.2 mm, el área del bucle formado por la pista de señal y su retorno de masa disminuye significativamente. Esto reduce drásticamente la inductancia parásita, la radiación electromagnética no deseada y la susceptibilidad a interferencias externas en las bandas VHF/UHF.
 		
 		\item \textbf{Blindaje entre RF y Digital}: La presencia del plano de masa interno en GND actúa como una pantalla de blindaje natural entre las señales de RF de alta frecuencia en la capa TOP y el ruido de conmutación digital (bus SPI, líneas de control del microcontrolador) ruteado en la capa BOTTOM.
 		
 		\item \textbf{Integridad de Potencia (PDN)}: Dedicar un plano de alimentación (VCC) permite formar una capacitancia interplano de alta frecuencia con GND, lo que ayuda a desacoplar el ruido del sistema antes de que llegue a los componentes analógicos sensibles.
-	\end{itemize}
+	\end{itemize}\newpage
 	 
 	\begin{figure}[h!]
 		\centering
@@ -2504,39 +2504,187 @@
 		\label{fig:diseno10}
 	\end{figure}
 	
-	\begin{figure}
+	Para garantizar la fabricabilidad de la PCB y prevenir errores en producción, las reglas de diseño (DRC, Design Rules Check) del entorno ECAD se configuraron respetando los límites y capacidades técnicas del fabricante (JLCPCB). Esta parametrización en la interfaz de KiCad permite que el motor de comprobación del software valide automáticamente que la geometría del ruteo cumpla de forma estricta con las tolerancias de manufactura antes de la exportación de los archivos Gerber.\newline
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/diseño_11}
+		\caption[Capacidades del fabricante y restricciones de diseño (DCR) (Fuente Propia)]{Capacidades del fabricante y restricciones de diseño (DCR) (Fuente Propia)}
+		\label{fig:diseno11}
+	\end{figure}
+	
+	
+	\section{Consideraciones de la placa para el diseño en RF}
+	En las bandas VHF (145 MHz) y UHF (435–580 MHz), el espesor dieléctrico del Prepreg 7628 ($h = 0.2mm$) es despreciable frente a la longitud de onda guiada ($\lambda_g > 280mm$ ver tabla 5.1). Bajo esta condición ($h \ll \lambda_g$), los campos eléctrico y magnético se comportan de manera prácticamente transversal (modo quasi-TEM). La dispersión del material a estas frecuencias es insignificante, lo que significa que el ancho de pista para $50\ \Omega$ es exactamente el mismo para VHF y UHF, dependiendo exclusivamente de la geometría y las propiedades del dieléctrico.
+	
+	\subsubsection{Modelo Matemático de Microstrip (Hammerstad \& Jensen)}
+	La impedancia característica ($Z_0$) de una línea microstrip en la capa superior referenciada al plano continuo GND se determina mediante el modelo de Hammerstad y Jensen, el cual relaciona la constante dieléctrica del sustrato ($\varepsilon_r$), la altura del dieléctrico ($h$) y el ancho de la pista ($w$).
+	
+	Para determinar la geometría exacta que garantiza una impedancia objetivo de $Z_0 = 50\ \Omega$, se resuelve en primer lugar la ecuación de síntesis mediante el parámetro auxiliar $A$:
+	
+	\begin{equation}
+		A = \frac{Z_0}{60} \sqrt{\frac{\varepsilon_r + 1}{2}} + \frac{\varepsilon_r - 1}{\varepsilon_r + 1} \left( 0.23 + \frac{0.11}{\varepsilon_r} \right)
+	\end{equation}
+	
+	Sustituyendo los parámetros del sustrato Prepreg 7628 ($\varepsilon_r = 4.4$) e impedancia de $Z_0 = 50\ \Omega$:
+	
+	\begin{equation}
+		A = \frac{50}{60} \sqrt{\frac{4.4 + 1}{2}} + \frac{4.4 - 1}{4.4 + 1} \left( 0.23 + \frac{0.11}{4.4} \right) \approx 1.369 + 0.160 = 1.529
+	\end{equation}
+	
+	A partir de $A$, se calcula la relación adimensional entre el ancho de pista y la altura del dieléctrico ($w/h$):
+	
+	\begin{equation}
+		\frac{w}{h} = \frac{8 e^A}{e^{2A} - 2} = \frac{8 e^{1.529}}{e^{2(1.529)} - 2} \approx \frac{36.92}{19.26} \approx 1.85
+	\end{equation}
+	
+	Para la capa superior con un espesor de dieléctrico de $h = 0.2\,\mathrm{mm}$, esta relación establece un ancho de pista teórico (sin considerar el espesor de cobre) de $w \approx 0.370\,\mathrm{mm}$. Con este valor de $w/h$, se calcula la permitividad dieléctrica efectiva ($\varepsilon_{\mathrm{eff}}$) que experimenta la onda electromagnética:
+	
+	\begin{equation}
+		\varepsilon_{\mathrm{eff}} = \frac{\varepsilon_r + 1}{2} + \frac{\varepsilon_r - 1}{2} \left( 1 + 12 \frac{h}{w} \right)^{-1/2}
+	\end{equation}
+	
+	\begin{equation}
+		\varepsilon_{\mathrm{eff}} = \frac{4.4 + 1}{2} + \frac{4.4 - 1}{2} \left( 1 + 12 \left( \frac{1}{1.85} \right) \right)^{-1/2} \approx 2.7 + 1.7 (7.486)^{-1/2} \approx 3.32
+	\end{equation}
+	
+	Sustituyendo $\varepsilon_{\mathrm{eff}} = 3.32$ en la ecuación de análisis directo se verifica que la impedancia resultante corresponde a $50\ \Omega$:
+	
+	\begin{equation}
+		Z_0 = \frac{120 \pi}{\sqrt{\varepsilon_{\mathrm{eff}}} \left[ \frac{w}{h} + 1.393 + 0.667 \ln \left( \frac{w}{h} + 1.444 \right) \right]}
+	\end{equation}
+	
+	\begin{equation}
+		Z_0 = \frac{376.99}{\sqrt{3.32} \left[ 1.85 + 1.393 + 0.667 \ln \left( 1.85 + 1.444 \right) \right]} \approx 50.0\ \Omega
+	\end{equation}
+	
+	Finalmente, debido a que el cobre exterior de 1 oz posee un espesor de $t = 0.035\,\mathrm{mm}$, las líneas de campo se concentran en los bordes laterales. La corrección por dispersión lateral ($\Delta w$) se obtiene mediante:
+	
+	\begin{equation}
+		\Delta w = \frac{t}{\pi} \ln \left( \frac{4 e}{\sqrt{\left( \frac{t}{h} \right)^2 + \left( \frac{t}{\pi w + 1.1 \pi t} \right)^2}} \right)
+	\end{equation}\newpage
+	
+	Para $t = 0.035\,\mathrm{mm}$ y $h = 0.2\,\mathrm{mm}$, la corrección resulta en $\Delta w \approx 0.008\,\mathrm{mm}$. Por lo tanto, el ancho físico final ($w_{\mathrm{físico}}$) que debe configurarse en el entorno de diseño ECAD (KiCad) restando la expansión del cobre es:
+	
+	\begin{equation}
+		w_{\mathrm{físico}} = w - \Delta w = 0.370\,\mathrm{mm} - 0.008\,\mathrm{mm} = 0.362\,\mathrm{mm} \approx 0.36\,\mathrm{mm}
+	\end{equation}
+	
+	Este resultado analítico se contrastó con la calculadora de líneas de transmisión integrada en KiCad, obteniendo una coincidencia exacta para la impedancia objetivo de $50\ \Omega$.
+	
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.8\linewidth]{imagenes/diseño_13}
 		\caption[Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)]{Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}
 		\label{fig:diseno13}
 	\end{figure}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.8\linewidth]{imagenes/diseño_11}
-		\caption[Restricciones de diseño impuestas por el fabricante (Fuente Propia)]{Restricciones de diseño impuestas por el fabricante (Fuente Propia)}
-		\label{fig:diseno11}
-	\end{figure}
+	Para determinar cuándo una pista en tu PCB se comporta como un elemento agrupado (lumped element, reflexiones despreciables) o como una línea de transmisión distribuida (distributed line, reflexiones críticas), se calcula la velocidad de propagación y la longitud de onda guiada ($\lambda_g$) sobre el sustrato JLCPCB JLC04161H-7628.La velocidad de propagación de la señal en la capa TOP es:
+	\begin{equation}
+		v_p = \frac{c}{\sqrt{\varepsilon_{\mathrm{eff}}}} \approx \frac{3 \cdot 10^8\ \mathrm{m/s}}{\sqrt{3.32}} \approx 1.646 \cdot 10^8\ \mathrm{m/s} = 164.6\ \mathrm{mm/ns}
+	\end{equation}
 	
+	En RF, los efectos de desadaptación de impedancia y reflexiones se pueden despreciar si la longitud física de la pista ($l$) es sustancialmente menor que la longitud de onda guiada ($\lambda_g = v_p / f$).\newline
+	
+	\begin{table}[htbp]
+		\centering
+		\label{tab:longitud_critica}
+		\begin{tabular}{llll}
+			\hline
+			\textbf{Banda / Frecuencia} & $\lambda_g$ \textbf{(en sustrato)} & $l_{\mathrm{crit}}$ ($\lambda_g / 10$) & $l_{\mathrm{crit}}$ ($\lambda_g / 16$) \\ \hline
+			\textbf{VHF (145 MHz)} & 1135 mm & 113.5 mm & 70.9 mm \\
+			\textbf{UHF (435 MHz)} & 378 mm & 37.8 mm & 23.6 mm \\
+			\textbf{LO / ADF4351 (580 MHz)} & 284 mm & 28.4 mm & 17.7 mm \\ \hline
+		\end{tabular}
+		\caption{Longitud crítica por banda de frecuencia para el sustrato JLC04161H-7628.}
+	\end{table}
+	
+	Operar por debajo de la longitud crítica ($l \ll \lambda_g/10$) permite trabajar en el régimen de parámetros concentrados, donde el desfase de la señal a lo largo de la pista es despreciable y el trazo actúa como una simple interconexión equipotencial con mínimas parásitas asociadas. Esta condición otorga una gran flexibilidad en el ruteo, permitiendo modificar puntualmente el ancho de pista para adaptarse a los pads de componentes SMD de escala reducida (0402/0603) o pines de CIs sin introducir desadaptaciones apreciables en la pérdida por retorno ($S_{11}$), además de tolerar cambios de dirección a 90° sin pérdidas por reflexión ni radiación significativas, dado que el exceso de capacitancia en la esquina es insignificante frente a la longitud de onda guiada ($\lambda_g$) en las bandas VHF y UHF.
+	
+	La esquina exterior añade un área triangular de cobre adicional. La capacitancia parásita equivalente se aproxima mediante:
+	\begin{equation}
+		\Delta C \approx \frac{\varepsilon_0 \varepsilon_{\mathrm{eff}} w^2}{2 h}
+	\end{equation}
+	\begin{equation}
+		\Delta C \approx \frac{(8.854 \cdot 10^{-12}) \cdot 3.32 \cdot (0.37 \cdot 10^{-3})^2}{2 \cdot (0.2 \cdot 10^{-3})} \approx 0.01\ \mathrm{pF}
+	\end{equation}
+	
+	Al actuar como un componente shunt en paralelo sobre una línea de impedancia característica $Z_0$, el módulo del coeficiente de reflexión ($\vert{}S_{11}\vert{}$) para desadaptaciones pequeñas a la frecuencia de trabajo ($f$) se calcula como:
+	\begin{equation}
+		\vert{}S_{11}\vert{} \approx \frac{\omega \Delta C Z_0}{2} = \pi f \Delta C Z_0
+	\end{equation}
+	\begin{equation}
+		\vert{}S_{11}\vert{} \approx \pi \cdot (580 \cdot 10^6) \cdot (10 \cdot 10^{-15}) \cdot 50 \approx 0.00091
+	\end{equation}
+	
+	La pérdida por retorno (Return Loss) expresada en decibeles resulta:
+	\begin{equation}
+		\mathrm{RL} = -20 \log_{10} \vert{}S_{11}\vert{}
+	\end{equation}
+	\begin{equation}
+		\mathrm{RL} = -20 \log_{10}(0.00091) \approx 60.8\ \mathrm{dB}
+	\end{equation}
+	
+	Un nivel de $S_{11} \approx -60.8\ \mathrm{dB}$ significa que solo el $0.000083\%$ de la potencia transmitida se refleja en la esquina, lo que demuestra matemáticamente por qué los giros a 90° no causan degradación apreciable en VHF/UHF.\newline
+	
+	KiCad ofrece una herramienta que permite colocar lagrimas en los pads y trazas de RF, esto hace que el cambio de impedancia característico no sea tan brusco y minimiza las reflexiones, si bien no tiene una gran incidencia por lo visto anteriormente se colocaron de igual forma.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_12}
+		\includegraphics[width=0.8\linewidth]{imagenes/diseño_12}
 		\caption[Calculo de lagrimas para la red de RF (Fuente propia)]{Calculo de lagrimas para la red de RF (Fuente propia)}
 		\label{fig:diseno12}
-	\end{figure}
+	\end{figure}\newpage
 	
-	\section{Consideraciones de la placa para el diseño en RF}
-	
+	\subsubsection{Capa TOP}
+	Respecto al organización de los componentes en la capa superior, la disposición de la placa se estructuró mediante una segmentación por bloques funcionales. La cadena analógica de RF ocupa la región superior, delimitada por huellas para marcos de blindaje metálico y un denso entramado de vías de masa (via stitching). Dentro de esta distribución, el mezclador (mixer) y el sintetizador PLL se ubicaron lo mas próximos posibles para acortar la traza del Oscilador Local (LO) y minimizar las pérdidas, mientras que el microcontrolador se posicionó en la región inferior, lo más alejado posible de la sección sensible de RF, garantizando un aislamiento efectivo entre los dominios analógico y digital. Finalmente, alojar la totalidad de los componentes SMD, conectores y módulos exclusivamente sobre la cara TOP responde a una decisión para abaratar los costos de manufactura y ensamblado (single-sided SMT assembly).
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_1}
+		\includegraphics[width=0.75\linewidth]{imagenes/diseño_1}
 		\caption[Capa TOP (Fuente Propia)]{Capa TOP (Fuente Propia)}
 		\label{fig:diseno1}
 	\end{figure}
 	
+	\subsubsection{Capa GND}
+	La capa interna In1 se diseñó como un plano de masa sólido e ininterrumpido para evitar cortes que degraden las rutas de retorno, permitiendo que mientras las corrientes de baja frecuencia y DC retornen por el camino de mínima resistencia, las señales de alta velocidad en VHF/UHF lo hagan por la ruta de mínima inductancia, circulando concentradas justo debajo de la pista de la capa Top a tan solo $0.2\,\mathrm{mm}$ de distancia. Esta drástica reducción en el área de bucle minimiza la emisión radiada y la susceptibilidad electromagnética (EMI/EMC), al tiempo que el plano actúa como un blindaje inter-capa que aísla electromagnéticamente la sección de RF frente al plano de alimentación (In2) y las líneas de control digital (Bottom).\newpage
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_9}
+		\includegraphics[width=0.75\linewidth]{imagenes/diseño_3}
+		\caption[Capa In1=GND (Fuente Propia)]{Capa In1=GND (Fuente Propia)]}
+		\label{fig:diseno3}
+	\end{figure}
+	
+	\subsubsection{Capa VCC y BOTTOM}
+	La capa interna In2 se estructuró mediante planos de alimentación divididos en lugar de trazas individuales de cobre en forma de estrella, esto reduce drásicamente la inductancia parásita ($L$) de la red de distribución de potencia (PDN) y suprime las caídas de tensión transitorias ($\Delta V = L \cdot di/dt$) provocadas por variaciones rápidas de corriente, criticas en el ADF4351. La amplia área de estos polígonos de VCC, sumada a su estrecha proximidad con el plano continuo de masa (In1), genera una capacitancia interplano efectiva que actúa como un filtro natural de desacople en alta frecuencia. Además, esta segmentación física en la capa In2 permite alimentar cada bloque funcional mediante reguladores LDO independientes y aislados (separando la sección analógica de RF, el sintetizador PLL y la lógica digital del microcontrolador), lo que previene que el ruido de conmutación digital y las fluctuaciones de carga se propaguen a través del riel de alimentación hacia las etapas sensibles, preservando la pureza espectral y la figura de ruido del sistema.
+	
+	La capa inferior se reservó de manera exclusiva para el ruteo de conexiones secundarias de baja frecuencia, asegurando que no interfieran con la integridad de las líneas de RF en la capa superior. En este plano se conducen únicamente trazas digitales de baja velocidad para el bus de control, las señales de habilitación (ENABLE) de los distintos circuitos integrados, las trazas de polarización en corriente continua (DC) para la cadena de RF y la línea de realimentación del sintetizador PLL. Esta disposición estratégica confina la baja velocidad en la cara inferior, permitiendo que el plano sólido de masa de la capa In1 funcione como una pantalla que aísla por completo estos dominios de control respecto a las pistas de RF en la capa TOP.\newpage
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.75\linewidth]{imagenes/diseño_4}
+		\caption[Capa In2=VCC (Fuente Propia)]{Capa In2=VCC (Fuente Propia)}
+		\label{fig:diseno4}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.75\linewidth]{imagenes/diseño_2}
+		\caption[Capa BOTTOM (Fuente Propia)]{Capa BOTTOM (Fuente Propia)}
+		\label{fig:diseno2}
+	\end{figure}\newpage
+	
+	
+	\section{Consideraciones de la placa para integridad de señal}
+	Para mitigar la tendencia a la auto-oscilación inherente a una cadena de amplificación de alta ganancia de $80dB$, el diseño implementa una estrategia de aislamiento modular donde la etapa LNA inicial y cada una de las tres etapas cascode subsecuentes ($20dB aprox$)se alojan en compartimentos independientes delimitados por blindajes metálicos dedicados. Esta segmentación física se complementa con un denso entramado de vías de masa (via stitching) dispuestas en el contorno de cada bloque, cuya función es cortocircuitar el plano de masa superior con el plano interno a distancias muy inferiores a $\lambda_g/10$. Esta matriz de vías actúa como un muro de aislamiento electromagnético de baja inductancia que confina la energía RF dentro de cada cavidad, impidiendo que la potencia de salida se acople de regreso hacia la entrada sensible del LNA a través del sustrato o el aire, garantizando así la estabilidad incondicional de la cadena de amplificación.\newline
+	
+	Fuera de los recintos de blindaje, la matriz de vías de masa (via stitching) distribuida en la capa TOP resulta fundamental para la integridad de señal y la compatibilidad electromagnética (EMC).
+	\begin{itemize}
+		\item \textbf{Minimización de la inductancia de masa}: Al interconectar el cobre superior con el plano de referencia In1 mediante decenas de vías en paralelo, la inductancia parásita equivalente del plano se reduce de forma drástica ($L_{\mathrm{eq}} \approx L / N$).
+		
+		\item \textbf{Prevención de parches resonantes}: Si un plano de cobre de gran superficie carece de suficientes puntos de conexión a masa, pequeñas variaciones de corriente pueden generar gradientes de tensión en sus extremos, transformando al vertido de cobre en una antena parche no deseada que absorbe o re-irradia energía electromagnética.La matriz de vías garantiza que todo el plano sea rigurosamente equipotencial a 0V en RF.
+	\end{itemize}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.75\linewidth]{imagenes/diseño_9}
 		\caption[Etapa de amplificación capa TOP (Fuente propia)]{Etapa de amplificación capa TOP (Fuente propia)}
 		\label{fig:diseno9}
 	\end{figure}
@@ -2562,29 +2710,6 @@
 		\label{fig:diseno6}
 	\end{figure}
 	
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_2}
-		\caption[Capa BOTTOM (Fuente Propia)]{Capa BOTTOM (Fuente Propia)}
-		\label{fig:diseno2}
-	\end{figure}
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_3}
-		\caption[Capa GND (Fuente Propia]{Capa GND (Fuente Propia)}
-		\label{fig:diseno3}
-	\end{figure}
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagenes/diseño_4}
-		\caption[Capa VCC (Fuente Propia]{Capa VCC (Fuente Propia)}
-		\label{fig:diseno4}
-	\end{figure}
-	
-	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/diseño_5}
@@ -2593,7 +2718,7 @@
 	\end{figure}
 	
 	
-	\section{Consideraciones de la placa para integridad de señal}
+	\newpage
 	\section{Implementación del circuito}
 	
 	% ==========================================

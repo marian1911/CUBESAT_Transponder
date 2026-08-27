@@ -61,18 +61,18 @@
 \contentsline {figure}{\numberline {4.41}{\ignorespaces Seeeduino XIAO (ATSAMD21G18): Pinout}}{66}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Stack-up 1.6mm (TOP=RF, In1=GND, In2=VCC, BOTTOM=Digital) JLC04161H-7628 (Fuente Propia)}}{71}{}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}}{71}{}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Restricciones de diseño impuestas por el fabricante (Fuente Propia)}}{71}{}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Calculo de lagrimas para la red de RF (Fuente propia)}}{72}{}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Capa TOP (Fuente Propia)}}{72}{}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Etapa de amplificación capa TOP (Fuente propia)}}{75}{}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Oscilador Local capa TOP (Fuente Propia)}}{75}{}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Etapa de filtrado capa TOP (Fuente Propia)}}{75}{}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Microcontrolador capa TOP (Fuente Propia)}}{76}{}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Capa BOTTOM (Fuente Propia)}}{76}{}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Capa GND (Fuente Propia}}{77}{}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Capa VCC (Fuente Propia}}{77}{}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Diseño completo de la placa (Fuente Propia)}}{78}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Capacidades del fabricante y restricciones de diseño (DCR) (Fuente Propia)}}{71}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Calculo de lineas de transmisión para impedancias controladas (Fuente Propia)}}{73}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Calculo de lagrimas para la red de RF (Fuente propia)}}{74}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Capa TOP (Fuente Propia)}}{75}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Capa In1=GND (Fuente Propia)}}{76}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Capa In2=VCC (Fuente Propia)}}{77}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Capa BOTTOM (Fuente Propia)}}{77}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Etapa de amplificación capa TOP (Fuente propia)}}{78}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Oscilador Local capa TOP (Fuente Propia)}}{79}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Etapa de filtrado capa TOP (Fuente Propia)}}{79}{}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Microcontrolador capa TOP (Fuente Propia)}}{79}{}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Diseño completo de la placa (Fuente Propia)}}{82}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

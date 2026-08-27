@@ -42,14 +42,18 @@
 \contentsline {section}{\numberline {4.5}Filtro de salida}{63}{}%
 \contentsline {section}{\numberline {4.6}Microcontrolador y reguladores de voltaje LDO}{66}{}%
 \contentsline {chapter}{\numberline {5}Diseño e implementación de la placa}{70}{}%
-\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{72}{}%
-\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{72}{}%
-\contentsline {section}{\numberline {5.3}Implementación del circuito}{72}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{79}{}%
-\contentsline {chapter}{Resultados}{80}{}%
-\contentsline {chapter}{Conclusiones}{81}{}%
-\contentsline {chapter}{Bibliografía}{82}{}%
-\contentsline {chapter}{Referencias}{83}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{84}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{85}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{86}{}%
+\contentsline {section}{\numberline {5.1}Consideraciones de la placa para el diseño en RF}{71}{}%
+\contentsline {subsubsection}{Modelo Matemático de Microstrip (Hammerstad \& Jensen)}{72}{}%
+\contentsline {subsubsection}{Capa TOP}{75}{}%
+\contentsline {subsubsection}{Capa GND}{75}{}%
+\contentsline {subsubsection}{Capa VCC y BOTTOM}{76}{}%
+\contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{78}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{79}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{83}{}%
+\contentsline {chapter}{Resultados}{84}{}%
+\contentsline {chapter}{Conclusiones}{85}{}%
+\contentsline {chapter}{Bibliografía}{86}{}%
+\contentsline {chapter}{Referencias}{87}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{88}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{89}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{90}{}%
