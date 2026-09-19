@@ -1,0 +1,28 @@
+<QucsStudio Schematic 5.8>
+<Properties>
+View=-77,-73.5,1536,1016.5,0.857143,0,0
+Grid=10,10,0
+DataSet=*.dat
+DataDisplay=*.sch
+OpenDisplay=1
+showFrame=0
+FrameText0=Title \n @PATH@@FILE@
+FrameText1=Drawn By:
+FrameText2=Date: @DATE@
+FrameText3=Revision:
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+<Rect 250 720 980 560 31 #c0c0c0 1 00 1 0 5e+08 4e+09 1 5 5 47.4822 1 -1 0.2 1 -1 -1 -1 "" "" "">
+	<Legend 140 -50 1>
+	<"dB(Z_in.v)" "" #0000ff 2 3 0 0 0 1 "Perfil de impedancia PDN (Power delivery network)">
+	  <Mkr 2.31832e+09 550 -320 3 1 0 0 0 50>
+</Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

@@ -2,7 +2,7 @@
 \contentsline {chapter}{\'{I}ndice general}{\es@scroman {ix}}{}%
 \contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xi}}{}%
 \contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xiii}}{}%
-\contentsline {chapter}{Lista de Símbolos y Convenciones}{\es@scroman {xv}}{}%
+\contentsline {chapter}{Lista de Símbolos y Convenciones}{\es@scroman {xvi}}{}%
 \contentsline {chapter}{\numberline {1}INTRODUCCIÓN}{1}{}%
 \contentsline {section}{\numberline {1.1}Antecedentes del problema}{2}{}%
 \contentsline {section}{\numberline {1.2}Relevancia del trabajo}{2}{}%
@@ -48,12 +48,12 @@
 \contentsline {subsubsection}{Capa GND}{75}{}%
 \contentsline {subsubsection}{Capa VCC y BOTTOM}{76}{}%
 \contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{78}{}%
-\contentsline {section}{\numberline {5.3}Implementación del circuito}{79}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{83}{}%
-\contentsline {chapter}{Resultados}{84}{}%
-\contentsline {chapter}{Conclusiones}{85}{}%
-\contentsline {chapter}{Bibliografía}{86}{}%
-\contentsline {chapter}{Referencias}{87}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{88}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{89}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{90}{}%
+\contentsline {section}{\numberline {5.3}Implementación del circuito}{83}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{88}{}%
+\contentsline {chapter}{Resultados}{89}{}%
+\contentsline {chapter}{Conclusiones}{90}{}%
+\contentsline {chapter}{Bibliografía}{91}{}%
+\contentsline {chapter}{Referencias}{92}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{93}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{94}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{95}{}%

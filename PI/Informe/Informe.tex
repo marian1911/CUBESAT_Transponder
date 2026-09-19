@@ -2599,7 +2599,7 @@
 		\caption{Longitud crítica por banda de frecuencia para el sustrato JLC04161H-7628.}
 	\end{table}
 	
-	Operar por debajo de la longitud crítica ($l \ll \lambda_g/10$) permite trabajar en el régimen de parámetros concentrados, donde el desfase de la señal a lo largo de la pista es despreciable y el trazo actúa como una simple interconexión equipotencial con mínimas parásitas asociadas. Esta condición otorga una gran flexibilidad en el ruteo, permitiendo modificar puntualmente el ancho de pista para adaptarse a los pads de componentes SMD de escala reducida (0402/0603) o pines de CIs sin introducir desadaptaciones apreciables en la pérdida por retorno ($S_{11}$), además de tolerar cambios de dirección a 90° sin pérdidas por reflexión ni radiación significativas, dado que el exceso de capacitancia en la esquina es insignificante frente a la longitud de onda guiada ($\lambda_g$) en las bandas VHF y UHF.
+	Operar por debajo de la longitud crítica ($l \ll \lambda_g/10$) permite trabajar en el régimen de parámetros concentrados, donde el desfase de la señal a lo largo de la pista es despreciable y el trazo actúa como una simple interconexión equipotencial. Esta condición otorga una gran flexibilidad en el ruteo, permitiendo modificar puntualmente el ancho de pista para adaptarse a los pads de componentes SMD de escala reducida (0402/0603) o pines de CIs sin introducir desadaptaciones apreciables en la pérdida por retorno ($S_{11}$), además de tolerar cambios de dirección a 90° sin pérdidas por reflexión ni radiación significativas, dado que el exceso de capacitancia en la esquina es insignificante frente a la longitud de onda guiada ($\lambda_g$) en las bandas VHF y UHF.
 	
 	La esquina exterior añade un área triangular de cobre adicional. La capacitancia parásita equivalente se aproxima mediante:
 	\begin{equation}
@@ -2645,7 +2645,7 @@
 	\end{figure}
 	
 	\subsubsection{Capa GND}
-	La capa interna In1 se diseñó como un plano de masa sólido e ininterrumpido para evitar cortes que degraden las rutas de retorno, permitiendo que mientras las corrientes de baja frecuencia y DC retornen por el camino de mínima resistencia, las señales de alta velocidad en VHF/UHF lo hagan por la ruta de mínima inductancia, circulando concentradas justo debajo de la pista de la capa Top a tan solo $0.2\,\mathrm{mm}$ de distancia. Esta drástica reducción en el área de bucle minimiza la emisión radiada y la susceptibilidad electromagnética (EMI/EMC), al tiempo que el plano actúa como un blindaje inter-capa que aísla electromagnéticamente la sección de RF frente al plano de alimentación (In2) y las líneas de control digital (Bottom).\newpage
+	La capa interna In1 se diseñó como un plano de masa sólido e ininterrumpido para evitar cortes que degraden las rutas de retorno, permitiendo que mientras las corrientes de baja frecuencia y DC retornen por el camino de mínima resistencia, las señales de alta velocidad en VHF/UHF lo hagan por la ruta de mínima impedancia, circulando concentradas justo debajo de la pista de la capa Top a tan solo $0.2\,\mathrm{mm}$ de distancia. Esta drástica reducción en el área de bucle minimiza la emisión radiada y la susceptibilidad electromagnética (EMI/EMC), al tiempo que el plano actúa como un blindaje inter-capa que aísla electromagnéticamente la sección de RF frente al plano de alimentación (In2) y las líneas de control digital (Bottom).\newpage
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.75\linewidth]{imagenes/diseño_3}
@@ -2673,21 +2673,23 @@
 	
 	
 	\section{Consideraciones de la placa para integridad de señal}
-	Para mitigar la tendencia a la auto-oscilación inherente a una cadena de amplificación de alta ganancia de $80dB$, el diseño implementa una estrategia de aislamiento modular donde la etapa LNA inicial y cada una de las tres etapas cascode subsecuentes ($20dB aprox$)se alojan en compartimentos independientes delimitados por blindajes metálicos dedicados. Esta segmentación física se complementa con un denso entramado de vías de masa (via stitching) dispuestas en el contorno de cada bloque, cuya función es cortocircuitar el plano de masa superior con el plano interno a distancias muy inferiores a $\lambda_g/10$. Esta matriz de vías actúa como un muro de aislamiento electromagnético de baja inductancia que confina la energía RF dentro de cada cavidad, impidiendo que la potencia de salida se acople de regreso hacia la entrada sensible del LNA a través del sustrato o el aire, garantizando así la estabilidad incondicional de la cadena de amplificación.\newline
+	Para mitigar la tendencia a la auto-oscilación inherente a una cadena de amplificación de alta ganancia de $80dB$, el diseño implementa una estrategia de aislamiento modular donde la etapa LNA inicial y cada una de las tres etapas cascode subsecuentes se alojan en compartimentos independientes delimitados por blindajes metálicos dedicados. Esta segmentación física se complementa con un denso entramado de vías de masa (via stitching) dispuestas en el contorno de cada bloque, cuya función es cortocircuitar el plano de masa superior con el plano interno a distancias muy inferiores a $\lambda_g/10$. Esta matriz de vías actúa como un muro de aislamiento electromagnético de baja inductancia que confina la energía RF dentro de cada cavidad, impidiendo que la potencia de salida se acople de regreso hacia la entrada sensible del LNA a través del sustrato o el aire, garantizando así la estabilidad incondicional de la cadena de amplificación.\newline
 	
 	Fuera de los recintos de blindaje, la matriz de vías de masa (via stitching) distribuida en la capa TOP resulta fundamental para la integridad de señal y la compatibilidad electromagnética (EMC).
 	\begin{itemize}
-		\item \textbf{Minimización de la inductancia de masa}: Al interconectar el cobre superior con el plano de referencia In1 mediante decenas de vías en paralelo, la inductancia parásita equivalente del plano se reduce de forma drástica ($L_{\mathrm{eq}} \approx L / N$).
+		\item \textbf{Minimización de la inductancia}: Al interconectar el cobre superior con el plano de referencia In1 mediante decenas de vías en paralelo, la inductancia parásita equivalente del plano se reduce de forma drástica ($L_{\mathrm{eq}} \approx L / N$).
 		
 		\item \textbf{Prevención de parches resonantes}: Si un plano de cobre de gran superficie carece de suficientes puntos de conexión a masa, pequeñas variaciones de corriente pueden generar gradientes de tensión en sus extremos, transformando al vertido de cobre en una antena parche no deseada que absorbe o re-irradia energía electromagnética.La matriz de vías garantiza que todo el plano sea rigurosamente equipotencial a 0V en RF.
 	\end{itemize}
 	
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.75\linewidth]{imagenes/diseño_9}
+		\includegraphics[width=0.7\linewidth]{imagenes/diseño_9}
 		\caption[Etapa de amplificación capa TOP (Fuente propia)]{Etapa de amplificación capa TOP (Fuente propia)}
 		\label{fig:diseno9}
-	\end{figure}
+	\end{figure}\newpage
+	
+	En la zona del oscilador local la caracterización del perfil de impedancia $Z(f)$ de los capacitores de desacople resulta determinante para minimizar el ruido de fase y la aparición picos de conmutación sobre la bomba de carga y el VCO.\newline
 	
 	\begin{figure}[h!]
 		\centering
@@ -2696,12 +2698,77 @@
 		\label{fig:diseno7}
 	\end{figure}
 	
+	El circuito equivalente de la red de distribución de potencia (PDN) se modela jerárquicamente mediante la interconexión en cascada de los elementos parásitos presentes desde la fuente hasta el integrado: el regulador de tensión (LDO) se representa como una fuente ideal, las trazas y planos de la PCB se discretizan con inductancias y resistencias distribuidas, cada capacitor de desacople se modela mediante su red RLC serie correspondiente a la capacitancia nominal ($C$), la resistencia serie equivalente (ESR) y la inductancia serie equivalente (ESL) y una resistencia de fuga. Se polariza una fuente de corriente transitoria $I(t)$ que representa la conmutación del PLL y el VCO.\newline
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/pdn_cir}
+		\caption[Circuito equivalente PDN (Fuente propia)]{Circuito equivalente PDN (Fuente propia)}
+		\label{fig:pdncir}
+	\end{figure}\newpage
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/pdn_z}
+		\caption[Perfil de impedancia de la PDN (Fuente propia)]{Perfil de impedancia de la PDN (Fuente propia)}
+		\label{fig:pdnz}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagenes/pdn_tim}
+		\caption[Simulación de conmutación del ADF4351 (Fuente propia)]{Simulación de conmutación del ADF4351 (Fuente propia)}
+		\label{fig:pdntim}
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Banda del VCO ($2.20GHz$ a $4.40GHz$):} La muesca de mínima impedancia ($3.46\ \Omega$) generada por la resonancia serie (SRF) del capacitor de $10pF$ cae a $2.20GHz$. A $2.32GHz$, la impedancia se mantiene baja ($4.12\ \Omega$). Esto confirma que el capacitor de $10pF$ está cumpliendo su función de derivar la energía de RF del VCO a tierra antes de que contamine el plano.\newpage
+		
+		\item \textbf{Pico Antirresonante ($1.85GHz$):} El pico de $149.6\ \Omega$ cae fuera de la banda fundamental del VCO ($2.32GHz$) y por encima de las armónicas de conmutación del detector de fase/prescalador. Al no haber ninguna frecuencia de conmutación activa en $1.85GHz$, este pico no degrada el funcionamiento del integrado.
+		
+		\item \textbf{Frecuencia del Detector de Fase (PFD) y Modulador $\Sigma\Delta$ ($10 MHz$ a $250MHz$):} A $148MHz$ (frecuencia típica del prescalador/divisor interno), la impedancia es de $3.09\ \Omega$. El límite inferior a esta frecuencia está impuesto por la reactancia de la inductancia parásita de la vía.
+	\end{itemize}
+	
+	La especificación del ADF4351 tolera variaciones de alimentación de hasta $\pm 5\%$ ($\pm 165mV$). Al registrar una variación máxima de apenas $\pm 18mV$ ($< 1\%$), la combinación de tu layout de vías y la red $100nF \parallel 10pF$ garantiza un margen de inmunidad al ruido sumamente robusto para el funcionamiento del sintetizador.\newline
+	
+	Otro aspecto a tener en cuenta es la simetría en la red LC balun, es indispensable porque introduce inductancias parásitas disímiles en las pistas de la PCB, provocando retardos de grupo y desfasajes angulares desiguales entre ambas ramas. La función del balun es transformar la señal monofilada (single-ended) en dos señales diferenciales con una relación de fase de exactamente 180° ($\Delta \phi = 180^\circ$). Sin embargo, si una línea de transmisión presenta variaciones en su longitud, ancho o proximidad al plano de masa respecto de la otra, la inductancia distribuida adicional altera la constante de fase, sumando un desplazamiento angular no simétrico que destruye el balance del par diferencial.\newline
+	
+	La inclusión de una matriz de vías en el pad expuesto central (EPAD) del sintetizador ADF4351 responde a requerimientos críticos tanto de gestión térmica como de integridad de señal en radiofrecuencia:
+	\begin{itemize}
+		\item \textbf{Evacuación Térmica por Conducción Directa:} La operación simultánea del VCO interno, la bomba de carga y los divisores de alta frecuencia genera una densidad de potencia localizada en el silicio.
+		\item \textbf{Masa de RF de Ultra-Baja Inductancia:} A frecuencias de gigahertz, la inductancia parásita a masa introducida por un camino de retorno largo degrada severamente el rendimiento del integrado.
+	\end{itemize}
+
+	En la etapa de salida, para garantizar que la traza de radiofrecuencia mantenga su impedancia característica de $Z_0 = 50\ \Omega$ como línea Microstrip pura y no pase a comportarse como una guía de onda coplanar con plano de masa (Grounded Coplanar Waveguide - GCPW), la separación lateral $g$ (gap) entre el borde de la pista y el vertido de cobre de masa superior debe cumplir con:
+	\begin{equation}
+		g \ge 3h
+	\end{equation}
+	
+	Donde $h$ es el espesor del sustrato dieléctrico entre la capa superior y el plano de retorno de masa interior.\newpage
+	
+	Las hileras paralelas de vías situadas a lo largo de los bordes del plano de masa cumplen el rol de apantallamiento. Paso entre Vías ($p$) la distancia de separación entre centros de vías adyacentes debe mantenerse sensiblemente menor a la longitud de onda de la máxima frecuencia de interés:
+	\begin{equation}
+			p \le \frac{\lambda_{g}}{10}
+	\end{equation}
+
+	\begin{itemize}
+		\item \textbf{Supresión de Modos de Radiación y Ruido:} Al mantener este espaciamiento, la estructura actúa como una jaula de Faraday en el sustrato, confinando el campo electromagnético en el canal de propagación, evitando la radiación lateral de RF hacia otros bloques del circuito impreso y blindando la línea de transmisión contra interferencias externas (EMI).
+		\item \textbf{Camino de Retorno de baja Inductancia:} Conectan el plano de masa superior con el plano de retorno interno continuo, minimizando la inductancia de la vía y conteniendo la circulación de corrientes de retorno directamente debajo de la traza de RF.
+	\end{itemize}
+	
+	En el diseño del filtro paso bajo de constantes distribuidas/concentradas, el posicionamiento físico de las bobinas es crítico para evitar el acoplamiento magnético mutuo ($M$). Este acoplamiento por inductancia mutua crea un camino de paso alternativo (RF bypass) para las altas frecuencias, degradando severamente la atenuación en la banda de rechazo y alterando la frecuencia de corte respecto al diseño teórico.\newline
+	
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/diseño_8}
 		\caption[Etapa de filtrado capa TOP (Fuente Propia)]{Etapa de filtrado capa TOP (Fuente Propia)}
 		\label{fig:diseno8}
 	\end{figure}
+	
+	
+	Para preservar la pureza espectral en la sección de RF y mitigar la interferencia electromagnética, las líneas de comunicación digital del bus SPI (CLK, DATA, LE) del microcontrolador (XIAO-SAMD21) incorporan resistencias de amortiguamiento en serie ubicadas en la proximidad inmediata de los pines de salida. Estas resistencias forman un filtro RC de primer orden con la capacitancia parásita distribuida y la capacitancia de entrada del integrado receptor. Al limitar la velocidad de transición de flanco ($dV/dt$), se atenúa el contenido armónico de alta frecuencia de las señales cuadradas.
+	
+	En el entorno del microcontrolador se aplicó una supresión de islas de cobre flotantes. El cobre no conectado a masa actúa como una antena parásita que acumula ruido de conmutación, su eliminación asegura la continuidad del plano de masa de referencia y evita la degradación del aislamiento electromagnético entre la sección digital y la cadena de radiofrecuencia.\newpage
 	
 	\begin{figure}[h!]
 		\centering
@@ -2717,14 +2784,21 @@
 		\label{fig:diseno5}
 	\end{figure}
 	
-	
-	\newpage
 	\section{Implementación del circuito}
+	
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/sat3}
+		\caption[asd]{asd}
+		\label{fig:sat3}
+	\end{figure}
+	
 	
 	% ==========================================
 	% TABLA 1: CAPACITORES
 	% ==========================================
-	\begin{table}[htbp]
+	\begin{table}[h]
 		\centering
 		\small
 		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
@@ -2758,7 +2832,7 @@
 	% ==========================================
 	% TABLA 2: RESISTORES
 	% ==========================================
-	\begin{table}[htbp]
+	\begin{table}[h]
 		\centering
 		\small
 		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
@@ -2790,7 +2864,7 @@
 			% ==========================================
 			% TABLA 3: INDUCTORES
 			% ==========================================
-			\begin{table}[htbp]
+			\begin{table}[h]
 				\centering
 				\small
 				\begin{tabularx}{\textwidth}{c p{5cm} l c X}
@@ -2814,7 +2888,7 @@
 			% ==========================================
 			% TABLA 4: CI, SEMICONDUCTORES Y VARIOS
 			% ==========================================
-			\begin{table}[htbp]
+			\begin{table}[h]
 				\centering
 				\small
 				\begin{tabularx}{\textwidth}{c p{4.2cm} l p{2.5cm} X}
