@@ -15460,7 +15460,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 20 pF 50 VDC 1% 0402 C0G (NP0) AEC-Q200"
+		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 20 pF 50 VDC 1% 0402 C0G (NP0)"
 			(at 81.28 175.26 0)
 			(effects
 				(font
@@ -15469,7 +15469,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GRT1555C1H200FA02D"
+		(property "Manufacturer_Part_Number" "GJM1555C1H200FB01D"
 			(at 81.28 175.26 0)
 			(effects
 				(font
@@ -15478,7 +15478,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GRT1555C1H200FA2D"
+		(property "Mouser Part Number" "81-GJM1555C1H200FB1D"
 			(at 81.28 175.26 0)
 			(effects
 				(font
@@ -19660,7 +19660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ADF4351BCPZ"
+		(property "Manufacturer_Part_Number" "ADF4351BCPZ-RL7"
 			(at 177.8 240.03 0)
 			(effects
 				(font
@@ -19669,7 +19669,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "584-ADF4351BCPZ"
+		(property "Mouser Part Number" "584-ADF4351BCPZ-R7"
 			(at 177.8 240.03 0)
 			(effects
 				(font
@@ -23421,7 +23421,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GRM1555C1H101JA01D"
+		(property "Manufacturer_Part_Number" "GCM1555C1H101FA16J"
 			(at 313.69 121.92 0)
 			(effects
 				(font
@@ -23430,7 +23430,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GRM1555C1H101JA1D"
+		(property "Mouser Part Number" "81-GCM1555C1H101FA6J"
 			(at 313.69 121.92 0)
 			(effects
 				(font
@@ -24488,7 +24488,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GRM1555C1H101JA01D"
+		(property "Manufacturer_Part_Number" "GCM1555C1H101FA16J"
 			(at 58.42 265.43 0)
 			(effects
 				(font
@@ -24497,7 +24497,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GRM1555C1H101JA1D"
+		(property "Mouser Part Number" "81-GCM1555C1H101FA6J"
 			(at 58.42 265.43 0)
 			(effects
 				(font
@@ -25583,7 +25583,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GRM1555C1H101JA01D"
+		(property "Manufacturer_Part_Number" "GCM1555C1H101FA16J"
 			(at 250.19 121.92 0)
 			(effects
 				(font
@@ -25592,7 +25592,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GRM1555C1H101JA1D"
+		(property "Mouser Part Number" "81-GCM1555C1H101FA6J"
 			(at 250.19 121.92 0)
 			(effects
 				(font

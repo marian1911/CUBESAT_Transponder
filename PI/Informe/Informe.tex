@@ -2785,14 +2785,22 @@
 	\end{figure}
 	
 	\section{Implementación del circuito}
-	
+	Con el diseño de la placa terminado, lo único restante es mandar a manufacturar la placa y soldar los componentes. La forma de ensamblar la placa es mediante pasta de soldadura colocada con el stencil y soldada con la estación de aire. 
 	
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.8\linewidth]{imagenes/sat3}
-		\caption[asd]{asd}
+		\caption[Diseño vs placa fabricada (Fuente propia)]{Diseño vs placa fabricada (Fuente propia)}
 		\label{fig:sat3}
 	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imagenes/stencil}
+		\caption[Stencil de la placa (Fuente Propia)]{Stencil de la placa (Fuente Propia)}
+		\label{fig:stencil}
+	\end{figure}
+	
 	
 	
 	% ==========================================
@@ -2830,9 +2838,33 @@
 	\end{table}
 	
 	% ==========================================
-	% TABLA 2: RESISTORES
+	% TABLA: INDUCTORES
 	% ==========================================
-	\begin{table}[h]
+	\begin{table}
+		\centering
+		\small
+		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
+			\toprule
+			\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+			\midrule
+			4 & L3, L8, L10, L14 & 120nH & 0402 & RF SMD 120 nH, 2\% \\
+			3 & L2, L9, L13 & 220nH & 0402 & Inductor RF SMD 0.22 uH, 2\% \\
+			2 & L4, L5 & 30nH & 0402 & RF SMD 30 nH, 2\% \\
+			2 & L6, L7 & 27nH & 0402 & RF SMD 27 nH, 2\% \\
+			1 & L1 & 180nH & 0402 & SMD Fijo 180 nH, 260 mA \\
+			1 & L11 & 68nH & 0402 & SMD Fijo 68 nH, 140 mA \\
+			1 & L12 & 56nH & 0402 & Inductor RF SMD 56 nH, 2\% \\
+			1 & L15 & 1uH & 0805 & Inductor RF SMD 0805, 1 uH, 20\%, 700 mA \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Lista de Materiales (BOM) - Inductores.}
+		\label{tab:bom_inductores}
+	\end{table}
+	
+	% ==========================================
+	% TABLA: RESISTORES
+	% ==========================================
+	\begin{table}
 		\centering
 		\small
 		\begin{tabularx}{\textwidth}{c p{5cm} l c X}
@@ -2861,58 +2893,35 @@
 		\label{tab:bom_resistores}
 		\end{table}
 			
-			% ==========================================
-			% TABLA 3: INDUCTORES
-			% ==========================================
-			\begin{table}[h]
-				\centering
-				\small
-				\begin{tabularx}{\textwidth}{c p{5cm} l c X}
-					\toprule
-					\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
-					\midrule
-					4 & L3, L8, L10, L14 & 120nH & 0402 & RF SMD 120 nH, 2\% \\
-					3 & L2, L9, L13 & 220nH & 0402 & Inductor RF SMD 0.22 uH, 2\% \\
-					2 & L4, L5 & 30nH & 0402 & RF SMD 30 nH, 2\% \\
-					2 & L6, L7 & 27nH & 0402 & RF SMD 27 nH, 2\% \\
-					1 & L1 & 180nH & 0402 & SMD Fijo 180 nH, 260 mA \\
-					1 & L11 & 68nH & 0402 & SMD Fijo 68 nH, 140 mA \\
-					1 & L12 & 56nH & 0402 & Inductor RF SMD 56 nH, 2\% \\
-					1 & L15 & 1uH & 0805 & Inductor RF SMD 0805, 1 uH, 20\%, 700 mA \\
-					\bottomrule
-				\end{tabularx}
-				\caption{Lista de Materiales (BOM) - Inductores.}
-				\label{tab:bom_inductores}
-			\end{table}
 			
-			% ==========================================
-			% TABLA 4: CI, SEMICONDUCTORES Y VARIOS
-			% ==========================================
-			\begin{table}[h]
-				\centering
-				\small
-				\begin{tabularx}{\textwidth}{c p{4.2cm} l p{2.5cm} X}
-					\toprule
-					\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
-					\midrule
-					4 & D1, D2, D3, D4 & LED & LED\_0603 & LED unicolor verde 569 nm \\
-					1 & D5 & SS14 & D\_SMA & Diodo Schottky 40 V 1 A, SMA \\
-					1 & U1 & ADF4351 & LFCSP-32 & Fractional-N PLL 35-4400 MHz \\
-					1 & U3 & XIAO-SAMD21 & XIAO-SAMD21-SMD & Módulo ARM Seeed Studio XIAO SAMD21 \\
-					1 & Y1 & ECS-TXO-2520MV & ECSTXO2520MV & TCXO 10 MHz CMOS MultiVolt +-2.5ppm \\
-					2 & IC1, IC2 & ADP7118AUJZ-5.0 & SOT95P280X100-5N & LDO lineal de bajo ruido 20 V, 200 mA \\
-					1 & IC3 & ADE-5+ & ADE5 & Mezclador balanceado doble RF \\
-					1 & IC5 & ADP150AUJZ-3.3 & SOT95P280X100-5N & Regulador LDO CMOS ultra bajo ruido, 150 mA \\
-					1 & IC6 & PSA-5454+ & SOT65P215X100-6N & Amplificador MMIC RF \\
-					4 & J5, J6, J7, J8 & RFShield\_OnePiece & Laird\_BMI-S-102 & Blindaje RF 16.5x16.5 mm \\
-					2 & J3, J4 & Conn\_Coaxial\_Small & SMA\_EdgeMount & Conector coaxial SMA Edge Mount \\
-					\bottomrule
-				\end{tabularx}
-				\caption{Lista de Materiales (BOM) - Circuitos Integrados, Semiconductores y Varios.}
-				\label{tab:bom_semiconductores_varios}
-			\end{table}
-	
-	
+			
+	% ==========================================
+	% TABLA: CI, SEMICONDUCTORES Y VARIOS
+	% ==========================================
+	\begin{table}
+		\centering
+		\small
+		\begin{tabularx}{\textwidth}{c p{4.2cm} l p{2.5cm} X}
+			\toprule
+			\textbf{Cant.} & \textbf{Referencias} & \textbf{Valor} & \textbf{Huella} & \textbf{Descripción} \\
+			\midrule
+			4 & D1, D2, D3, D4 & LED & LED\_0603 & LED verde 569 nm \\
+			1 & D5 & SS14 & D\_SMA & Diodo Schottky 40 V 1 A, SMA \\
+			1 & U1 & ADF4351 & LFCSP-32 & Fractional-N PLL 35-4400 MHz \\
+			1 & U3 & XIAO-SAMD21 & XIAO-SAMD21-SMD & Módulo ARM XIAO SAMD21 \\
+			1 & Y1 & ECS-TXO-2520MV & ECSTXO2520MV & TCXO 10 MHz CMOS MultiVolt +-2.5ppm \\
+			2 & IC1, IC2 & ADP7118AUJZ-5.0 & SOT95P280X100-5N & LDO lineal 20 V, 200 mA \\
+			1 & IC3 & ADE-5+ & ADE5 & Mezclador balanceado doble RF \\
+			1 & IC5 & ADP150AUJZ-3.3 & SOT95P280X100-5N & Regulador LDO CMOS, 150 mA \\
+			1 & IC6 & PSA-5454+ & SOT65P215X100-6N & Amplificador MMIC RF \\
+			4 & J5, J6, J7, J8 & RFShield\_OnePiece & Laird\_BMI-S-102 & Blindaje RF 16.5x16.5 mm \\
+			2 & J3, J4 & Conn\_Coaxial\_Small & SMA\_EdgeMount & Conector coaxial SMA Edge Mount \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Lista de Materiales (BOM) - Circuitos Integrados, Semiconductores y Varios.}
+		\label{tab:bom_semiconductores_varios}
+	\end{table}
+		
 	% ==========================================
 	% RESULTADOS Y CONCLUSIONES
 	% ==========================================

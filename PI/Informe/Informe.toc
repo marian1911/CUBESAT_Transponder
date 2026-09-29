@@ -49,11 +49,11 @@
 \contentsline {subsubsection}{Capa VCC y BOTTOM}{76}{}%
 \contentsline {section}{\numberline {5.2}Consideraciones de la placa para integridad de señal}{78}{}%
 \contentsline {section}{\numberline {5.3}Implementación del circuito}{83}{}%
-\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{88}{}%
-\contentsline {chapter}{Resultados}{89}{}%
-\contentsline {chapter}{Conclusiones}{90}{}%
-\contentsline {chapter}{Bibliografía}{91}{}%
-\contentsline {chapter}{Referencias}{92}{}%
-\contentsline {chapter}{\numberline {A}Título del Anexo I}{93}{}%
-\contentsline {chapter}{\numberline {B}Título del Anexo II}{94}{}%
-\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{95}{}%
+\contentsline {part}{III\hspace {1em}RESULTADOS Y CONCLUSIONES}{87}{}%
+\contentsline {chapter}{Resultados}{88}{}%
+\contentsline {chapter}{Conclusiones}{89}{}%
+\contentsline {chapter}{Bibliografía}{90}{}%
+\contentsline {chapter}{Referencias}{91}{}%
+\contentsline {chapter}{\numberline {A}Título del Anexo I}{92}{}%
+\contentsline {chapter}{\numberline {B}Título del Anexo II}{93}{}%
+\contentsline {chapter}{\numberline {C}Anexo del Proyecto Integrador}{94}{}%

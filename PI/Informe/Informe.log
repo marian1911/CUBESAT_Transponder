@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.11)  20 SEP 2026 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.11)  23 SEP 2026 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1662,132 +1662,128 @@ File: imagenes/sat3.jpeg Graphic file (type jpg)
 <use imagenes/sat3.jpeg>
 Package pdftex.def Info: imagenes/sat3.jpeg  used on input line 2792.
 (pdftex.def)             Requested size: 352.81552pt x 264.60118pt.
+<imagenes/stencil.jpeg, id=475, 938.00438pt x 542.025pt>
+File: imagenes/stencil.jpeg Graphic file (type jpg)
+<use imagenes/stencil.jpeg>
+Package pdftex.def Info: imagenes/stencil.jpeg  used on input line 2799.
+(pdftex.def)             Requested size: 352.81552pt x 203.8709pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2859--2859
+Underfull \hbox (badness 1226) in paragraph at lines 2891--2891
 []|\T1/ptm/m/n/10 Película grue-sa SMD CRCW0402 82
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Fractional-N PLL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 XIAO-SAMD21-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Módulo ARM
  []
 
 
-Overfull \hbox (3.86775pt too wide) in paragraph at lines 2910--2910
+Overfull \hbox (3.86775pt too wide) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 ECSTXO2520MV| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 TCXO 10 MHz
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 \T1/ptm/m/n/10 CMOS Mul-ti-Volt
  []
 
 
-Overfull \hbox (3.46796pt too wide) in paragraph at lines 2910--2910
+Overfull \hbox (3.46796pt too wide) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 SOT95P280X100-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 1874) in paragraph at lines 2920--2920
+[]|\T1/ptm/m/n/10 LDO li-neal 20 V,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Mezclador ba-lan-
  []
 
 
-Overfull \hbox (3.46796pt too wide) in paragraph at lines 2910--2910
+Overfull \hbox (3.46796pt too wide) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 SOT95P280X100-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Regulador LDO
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 2910--2910
-\T1/ptm/m/n/10 CMOS ul-tra ba-jo
- []
-
-
-Overfull \hbox (3.46796pt too wide) in paragraph at lines 2910--2910
+Overfull \hbox (3.46796pt too wide) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 SOT65P215X100-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Amplificador
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Laird_BMI-S-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Blindaje RF
  []
 
 
-Overfull \hbox (2.75763pt too wide) in paragraph at lines 2910--2910
+Overfull \hbox (2.75763pt too wide) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 SMA_EdgeMount| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2910--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2920
 []|\T1/ptm/m/n/10 Conector coa-xial
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [83 <./imagenes/diseÃ±o_6.png> <./imagenes/diseÃ±o_5.png>] [84 <./imagenes/sat3
-.jpeg>] [85] [86] [87] [88
+.jpeg> <./imagenes/stencil.jpeg>] [85] [86] [87
+
+] [88
 
 ] [89
 
 ] [90
 
+
 ] [91
-
-
-] [92
 
 ]
 Ap\'{e}ndice A.
-[93
+[92
 
 ]
 Ap\'{e}ndice B.
-[94
+[93
 
 ]
 Ap\'{e}ndice C.
-[95
+[94
 
 ] (Informe.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -1799,10 +1795,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20074 strings out of 474486
- 386436 string characters out of 5753570
+ 20092 strings out of 474486
+ 386896 string characters out of 5753570
  2223542 words of memory out of 5000000
- 41974 multiletter control sequences out of 15000+600000
+ 41992 multiletter control sequences out of 15000+600000
  669704 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,87p,1539b,1867s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1818,9 +1814,9 @@ urw/symbol/usyr.pfb><D:/Latex/Programa latex/fonts/type1/urw/times/utmb8a.pfb><
 D:/Latex/Programa latex/fonts/type1/urw/times/utmbi8a.pfb><D:/Latex/Programa la
 tex/fonts/type1/urw/times/utmr8a.pfb><D:/Latex/Programa latex/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on Informe.pdf (111 pages, 6099950 bytes).
+Output written on Informe.pdf (110 pages, 6236082 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
+ 590 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 383 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 388 words of extra memory for PDF output out of 10000 (max. 10000000)
 
