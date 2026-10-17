@@ -348,15 +348,15 @@
 	\begin{itemize}
 		\item \textbf{Filtro sintonizador de entrada:} Encargado del filtrado suave previo de RF para delimitar la banda de interés y mitigar interferencias fuera de banda.
 		
-		\item \textbf{Amplificador de bajo ruido (LNA):} Destinado a amplificar las débiles señales captadas con una baja figura de ruido, que evita la degradación de la relación señal-ruido (SNR).
+		\item \textbf{Amplificador de bajo ruido:} Destinado a amplificar las débiles señales captadas con una baja figura de ruido, que evita la degradación de la relación señal-ruido (SNR).
 		
-		\item \textbf{Etapa de amplificación en configuración \textit{cascode}:} Implementada para maximizar la ganancia de la etapa de RF, mejorar el aislamiento entre la entrada y la salida, y optimizar el ancho de banda.
+		\item \textbf{Etapa de amplificación en configuración \textit{cascode}:} Implementada para maximizar la ganancia de la etapa de RF (80dB), mejorar el aislamiento entre la entrada y la salida, y optimizar el ancho de banda.
 		
-		\item \textbf{Mezclador (\textit{Mixer}):} Bloque encargando de efectuar la conversión de frecuencia al combinar la señal de RF recibida con la señal del oscilador local.
+		\item \textbf{Mezclador:} Bloque encargando de efectuar la conversión de frecuencia al combinar la señal de RF recibida con la señal del oscilador local.
 		
 		\item \textbf{Filtro pasa bajo:} Ubicado a la salida del mezclador para seleccionar el producto de mezcla deseado y atenuar componentes armónicas y espurias de alta frecuencia.
 		
-		\item \textbf{Oscilador local sintetizado con PLL:} Encargado de generar la señal de referencia (tono puro) con alta potencia y bajo ruido de fase, para su posterior mezcla.
+		\item \textbf{Oscilador local sintetizado con PLL:} Encargado de generar la señal de referencia con alta potencia y bajo ruido de fase, para su posterior mezcla.
 	\end{itemize}\newpage
 	
 	\begin{figure}[h!]
@@ -397,7 +397,7 @@
 		
 		\item Definir la arquitectura de RF del receptor, identificar y describir los bloques funcionales principales del transponder y su rol en la cadena de comunicación.
 		
-		\item Seleccionar componentes electrónicos adecuados considerando costo, disponibilidad, vida útil, tolerancias y desempeño en RF. Buscar distribuidores con disponibilidad de componentes y fabricantes de PCB (nacionales o internacionales) con la capacidad de fabricar en 4 capas a un bajo costo.
+		\item Seleccionar componentes adecuados considerando costo, disponibilidad, vida útil, tolerancias y desempeño en RF. Buscar distribuidores con disponibilidad de componentes y fabricantes de PCB (nacionales o internacionales) con la capacidad de fabricar en 4 capas a un bajo costo.
 		
 		\item Diseñar el esquema eléctrico y la placa de circuito impreso (PCB) aplicando buenas prácticas de integridad de señal y criterios de diseño en RF.
 		
@@ -968,7 +968,7 @@
 	% ==========================================
 	\part{MARCO METODOLÓGICO}
 	\chapter{Requerimientos funcionales y especificaciones}
-	Los requerimientos funcionales impuestos por la cátedra son los siguientes:
+	Los requerimientos funcionales que debe contemplar el diseño del transponder y que son impuestos por la cátedra son los siguientes:
 	
 	\begin{table}[htbp]
 		\centering
@@ -1030,9 +1030,9 @@
 			Punto de intercepción de 3.er orden de salida (OIP3) & +25.3 dBm (Típ.) \\
 			Ganancia & 18 dB (Típ.) \\
 			Potencia de salida a 1 dB de compresión (Output P1dB) & +15 dBm (Típ.) \\
-			Tensión de alimentación & +5 V (Alimentación única positiva) \\
+			Tensión de alimentación & +5 V  \\
 			Corriente de operación ($I_D$) & 20 mA \\
-			Encapsulado & SOT-363 (Tamaño microminiatura) \\
+			Encapsulado & SOT-363  \\
 			Lavable en agua (\textit{Aqueous Washable}) & Sí \\
 			\hline
 			\multicolumn{2}{|c|}{\textbf{Valores Máximos Absolutos}} \\
@@ -1303,11 +1303,11 @@
 	\begin{itemize}
 			\item En primer lugar para las etapas de amplificación se seleccionó una topología Cascode. Esta topología tiene una serie de ventajas respecto a la configuración típica de emisor común. El primero es que cancela el efecto Miller y reduce la capacidad parásita colector-base, por otro lado aumenta la aislación inversa (S12) importante para que la señal en la ultima etapa presente mas dificultades para retornar a la primer etapa.
 			
-			\item Otro camino por el cual la señal amplificada se puede realimentar es por medio de VCC, por lo que cada etapa esta aislada entre si con filtro pasa-bajos de desacoplo de alimentación (VCC Decoupling Network).
+			\item Otro camino por el cual la señal amplificada se puede realimentar es por medio de VCC, por lo que cada etapa esta aislada entre si con filtro pasa-bajos de desacoplo de alimentación.
 			
 			\item Finalmente el ultimo camino de realimentación es por medio del aire. Para solucionar esto se coloca un blindaje en forma tabicada separando cada una de las etapas amplificadoras e impidiendo que se acoplen entre si.
 			
-			\item Si con todas las precauciones anteriormente mencionadas, existiera alguna capacidad parásita que haga oscilar el circuito se dejaron pads previstos para atenuadores entre etapas, esto baja la ganancia hasta donde sea necesario para estabilizarlo, y no tener que descartar el diseño.
+			\item Si con todas las precauciones anteriormente mencionadas, existiera alguna capacidad parásita que haga oscilar el circuito, se dejaron pads previstos para atenuadores entre etapas, esto permite bajar la ganancia hasta donde sea necesario para estabilizarlo, y no tener que descartar el diseño.
 	\end{itemize}
 	
 	Para el diseño se utilizo un transistor proporcionado por la cátedra (BJT 2SC3356) con las siguientes características:
@@ -1462,7 +1462,7 @@
 		C3 = \frac{1}{2 \pi \cdot 146MHz \cdot 112 \ \Omega} \approx 9.7 pF
 	\end{equation}
 	
-	En el circuito sin adaptar, la Carta de Smith arrojó $Z_{out} = 221 \angle 89.9^\circ \ \Omega$. Un ángulo de casi $90^\circ$ significa que el Cascode tiene una resistencia de salida grande (decenas de kilo-ohms). Si se intentara adaptar una impedancia tan alta directamente a $50 \ \Omega$, el $Q$ sería altísimo, el ancho de banda sería microscópico y el amplificador sería inestable. Por esto el diseño adaptado añadiste $R_4 = 1k\Omega$ en paralelo. Esta resistencia es la clave: domina la impedancia de salida fijando intencionalmente $R_p = 1000 \ \Omega$ para controlar la ganancia y el ancho de banda.
+	En el circuito sin adaptar, la Carta de Smith arrojó $Z_{out} = 221 \angle 89.9^\circ \ \Omega$. Un ángulo de casi $90^\circ$ significa que el Cascode tiene una resistencia de salida grande (decenas de kilo-ohms). Si se intentara adaptar una impedancia tan alta directamente a $50 \ \Omega$, el $Q$ sería altísimo, el ancho de banda sería microscópico y el amplificador sería inestable, por esto $R_4 = 1k\Omega$ en paralelo. Esta resistencia es la clave, domina la impedancia de salida fijando intencionalmente $R_p = 1000 \ \Omega$ para controlar la ganancia y el ancho de banda.
 	Cálculo del factor de calidad (Q) de la red:
 	\begin{equation}
 		Q = \sqrt{\frac{1000}{50} - 1} = \sqrt{19} \approx 4.36
@@ -1569,7 +1569,7 @@
 	\end{figure}\newpage
 	
 	
-	Finalmente, en los siguientes gráficos se puede observar los resultados obtenidos en cuanto al rendimiento del circuito, se llego a la ganancia objetivo de 80dB, los coeficientes de reflexión inversa y directa están por debajo de los -20dB, esto se traduce en una reflexión de potencia de menos del 1\%. Adicionalmente la aislación inversa obtenida en el simulador es de -189dB (en la realidad puede llegar a los -100dB) fundamentales para evitar la auto-oscilación del circuito con ganancias elevadas.
+	Finalmente, en los siguientes gráficos se puede observar los resultados obtenidos en cuanto al rendimiento del circuito, se llego a la ganancia objetivo de 80dB, los coeficientes de reflexión inversa y directa están por debajo de los -20dB, esto se traduce en una reflexión de potencia de menos del 1\%. Adicionalmente la aislación inversa obtenida en el simulador es de -189dB (en la realidad puede llegar a los -100dB, debido a las capacidades parásitas del sustrato, no contempladas en la simulación) fundamentales para evitar la auto-oscilación del circuito con ganancias elevadas.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagenes/cascode_8}
@@ -1732,7 +1732,7 @@
 		\item Rango de impedancia equivalente: De $35.7\ \Omega$ a $70.0\ \Omega$
 	\end{itemize}
 	
-	El puerto RF e IF están muy bien adaptados, pierden menos del $3\%$ de la potencia por desadaptación, lo que confirma que la señal de entrada fluirá sin problemas. El puerto LO tiene un VSWR más elevado ($\sim 2.0$), es un comportamiento completamente normal en mezcladores de diodos. Como el Oscilador Local conmuta los diodos internamente conduciendo corriente en una zona fuertemente no lineal, la impedancia de entrada del puerto LO decae. Por ello, refleja cerca del $11\%$ de la energía inyectada por el oscilador.\newpage
+	El puerto RF e IF pierden menos del $3\%$ de la potencia por desadaptación, lo que confirma que la señal de entrada fluirá sin problemas. El puerto LO tiene un VSWR más elevado ($\sim 2.0$), es un comportamiento completamente normal en mezcladores de diodos. Como el Oscilador Local conmuta los diodos internamente conduciendo corriente en una zona fuertemente no lineal, la impedancia de entrada del puerto LO decae. Por ello, refleja cerca del $11\%$ de la energía inyectada por el oscilador.\newpage
 	
 	\section{Oscilador local (LO):}
 	Para el oscilador local, existen varias tecnologías anteriormente mencionadas en el marco teórico. Para nuestro caso particular se tuvieron en cuenta las siguientes restricciones: Ancho de banda (debe comprender los 580MHz), bajo consumo de corriente, amplitud térmica, costo, disponibilidad, si bien no es critico el tiempo de establecimiento si es importante la pureza espectral, el ruido de fase y la generación de componentes espurias que puedan contaminar la mezcla. Ademas debido al tipo de Mixer seleccionado es necesaria que la potencia de salida sea de por lo menos +7dBm, si esto no se cumple las perdidas y por ende la figura de ruido aumentan considerablemente como se vio en la sección del mezclador. De lo anteriormente mencionado se concluye en utilizar un ADF4351 de Analog Device, que consiste con un PLL y un VCO integrado en un chip (reduce costos y cantidad de componentes) con las siguientes características:

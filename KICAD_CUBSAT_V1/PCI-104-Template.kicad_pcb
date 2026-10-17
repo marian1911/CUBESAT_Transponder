@@ -6115,7 +6115,7 @@
 			(uuid "60742508-6e45-461d-8453-40412b093050")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/analog-device/ADP150/ADP150AUJZ-2.65-R7/3D/ADP150AUJZ-2.65-R7.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/analog-device/ADP150/ADP150AUJZ-2.65-R7/3D/ADP150AUJZ-2.65-R7.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10400,7 +10400,7 @@
 			(uuid "df660f23-1bd9-4c6b-81c4-b7d219cb4502")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/Laird/bmi-s-102-stp-file.STP"
+		(model "D:/CUBESAT_Transponder/Librerias/Laird/bmi-s-102-stp-file.STP"
 			(offset
 				(xyz 0 0 1.5)
 			)
@@ -10995,7 +10995,7 @@
 			(uuid "efb9f1b0-bad1-4fb4-ad31-30ef895c8849")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/ECS/ECS-TXO-2520MV-120-AY-TR/3D/ECS-TXO-2520MV-120-AY-TR.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/ECS/ECS-TXO-2520MV-120-AY-TR/3D/ECS-TXO-2520MV-120-AY-TR.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13446,7 +13446,7 @@
 			(uuid "0204f0f4-1eee-4ac5-a3b9-236ada39bf88")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/analog-device/ADF4351BCPZ/ADF4350BCPZ-RL7/3D/ADF4350BCPZ-RL7.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/analog-device/ADF4351BCPZ/ADF4350BCPZ-RL7/3D/ADF4350BCPZ-RL7.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13804,7 +13804,7 @@
 			(uuid "eeca0c6b-e264-4fa3-a816-7e29920e82c0")
 		)
 		(embedded_fonts no)
-		(model "ADP150AUJZ-2.65-R7.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/analog-device/ADP150/ADP150AUJZ-2.65-R7/3D/ADP150AUJZ-2.65-R7.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -21941,7 +21941,7 @@
 			(uuid "7330b3f2-b34f-4538-acc6-3d9257893ff3")
 		)
 		(embedded_fonts no)
-		(model "ADP150AUJZ-2.65-R7.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/analog-device/ADP150/ADP150AUJZ-2.65-R7/3D/ADP150AUJZ-2.65-R7.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -22531,8 +22531,7 @@
 			(uuid "91aa7b78-b26a-4c86-85ac-b77a30a3d5d2")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/Laird/bmi-s-102-stp-file.STP"
-			(hide yes)
+		(model "D:/CUBESAT_Transponder/Librerias/Laird/bmi-s-102-stp-file.STP"
 			(offset
 				(xyz 0 0 1.5)
 			)
@@ -25396,7 +25395,7 @@
 			(uuid "5b9438fb-ce37-4f9b-9f7a-e8bd5a0a5061")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/mini-circuit/ADE-5+/ADE-5+/3D/ADE-5+.stp"
+		(model "D:/CUBESAT_Transponder/Librerias/mini-circuit/ADE-5+/ADE-5+/3D/ADE-5+.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -31740,7 +31739,7 @@
 			(uuid "949335d3-cef4-473c-8913-fa7716595623")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/Laird/bmi-s-102-stp-file.STP"
+		(model "D:/CUBESAT_Transponder/Librerias/Laird/bmi-s-102-stp-file.STP"
 			(offset
 				(xyz 0 0 1.5)
 			)
@@ -32802,6 +32801,17 @@
 			(uuid "60377904-9619-4018-9a49-135cef378886")
 		)
 		(embedded_fonts no)
+		(model "D:/CUBESAT_Transponder/Librerias/Laird/bmi-s-102-stp-file.STP"
+			(offset
+				(xyz 0 0 2)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
@@ -35967,7 +35977,7 @@
 			(uuid "b18ae1f9-3bc8-45c8-9415-b8dc7b149126")
 		)
 		(embedded_fonts no)
-		(model "D:/Proyecto-CUBESAT-TRANSPODER-VHF-UHF/Librerias/Seed/Seeeduino XIAO SAMD21 v4.step"
+		(model "D:/CUBESAT_Transponder/Librerias/Seed/Seeeduino XIAO SAMD21 v4.step"
 			(offset
 				(xyz 9 10.5 0)
 			)
@@ -56065,46 +56075,6 @@
 		)
 	)
 	(zone
-		(net 164)
-		(net_name "/LO")
-		(layer "F.Cu")
-		(uuid "31368215-a1fa-44a0-a991-6d0fce362bc0")
-		(name "$teardrop_padvia$")
-		(hatch none 0.1)
-		(priority 30000)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 92.66 100.4001) (xy 92.66 100.7679) (xy 93.98 101.409) (xy 95.251 100.584) (xy 93.98 99.759)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 93.985536 99.762593) (xy 94.628656 100.18004) (xy 95.23588 100.574186) (xy 95.240954 100.581565)
-				(xy 95.239324 100.59037) (xy 95.23588 100.593814) (xy 93.985539 101.405404) (xy 93.976734 101.407034)
-				(xy 93.974059 101.406114) (xy 92.666587 100.771099) (xy 92.660644 100.764403) (xy 92.66 100.760576)
-				(xy 92.66 100.407423) (xy 92.663427 100.39915) (xy 92.666582 100.396903) (xy 93.97406 99.761884)
-				(xy 93.982996 99.761353)
-			)
-		)
-	)
-	(zone
 		(net 168)
 		(net_name "/IF")
 		(layer "F.Cu")
@@ -56393,45 +56363,6 @@
 		)
 	)
 	(zone
-		(net 205)
-		(net_name "/RF")
-		(layer "F.Cu")
-		(uuid "65eea55e-ed68-4da7-a53c-ba12af8c1f37")
-		(name "$teardrop_padvia$")
-		(hatch none 0.1)
-		(priority 30002)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 100.5139 93.359) (xy 100.1461 93.359) (xy 99.505 94.679) (xy 100.33 95.505) (xy 101.155 94.679)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 100.514849 93.362427) (xy 100.5171 93.365589) (xy 101.151362 94.671511) (xy 101.151894 94.680449)
-				(xy 101.149116 94.68489) (xy 100.338278 95.496711) (xy 100.330007 95.500143) (xy 100.321732 95.496721)
-				(xy 100.321722 95.496711) (xy 99.510883 94.68489) (xy 99.507461 94.676615) (xy 99.508637 94.671511)
-				(xy 100.1429 93.365587) (xy 100.149597 93.359644) (xy 100.153424 93.359) (xy 100.506576 93.359)
-			)
-		)
-	)
-	(zone
 		(net 0)
 		(net_name "")
 		(layer "F.Cu")
@@ -56570,6 +56501,42 @@
 		)
 	)
 	(zone
+		(net 205)
+		(net_name "/RF")
+		(layer "F.Cu")
+		(uuid "7c287298-d851-4f5d-9bf6-6bcbd02e3949")
+		(name "$teardrop_padvia$")
+		(hatch none 0.1)
+		(priority 30002)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 100.5139 93.359) (xy 100.1461 93.359) (xy 99.505 94.679) (xy 100.33 95.505) (xy 101.155 94.679)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 100.5139 93.359) (xy 100.1461 93.359) (xy 99.505 94.679) (xy 100.33 95.505) (xy 101.155 94.679)
+			)
+		)
+	)
+	(zone
 		(net 0)
 		(net_name "")
 		(layer "F.Cu")
@@ -56599,6 +56566,42 @@
 		(polygon
 			(pts
 				(xy 101.6 94.703905) (xy 101.6 84.848705) (xy 99.368 84.848705) (xy 99.368 94.703905)
+			)
+		)
+	)
+	(zone
+		(net 164)
+		(net_name "/LO")
+		(layer "F.Cu")
+		(uuid "826b6c39-100b-4840-a5e3-3a63986633ff")
+		(name "$teardrop_padvia$")
+		(hatch none 0.1)
+		(priority 30000)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 92.66 100.4001) (xy 92.66 100.7679) (xy 93.98 101.409) (xy 95.251 100.584) (xy 93.98 99.759)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 92.66 100.4001) (xy 92.66 100.7679) (xy 93.98 101.409) (xy 95.251 100.584) (xy 93.98 99.759)
 			)
 		)
 	)
@@ -56897,46 +56900,6 @@
 		)
 	)
 	(zone
-		(net 168)
-		(net_name "/IF")
-		(layer "F.Cu")
-		(uuid "a2e32742-99ef-46b4-9cf8-80ccff3909c5")
-		(name "$teardrop_padvia$")
-		(hatch none 0.1)
-		(priority 30001)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(filled_areas_thickness no)
-		(fill yes
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 1)
-			(island_area_min 10)
-		)
-		(polygon
-			(pts
-				(xy 102.92 98.2787) (xy 102.92 97.9109) (xy 101.6 97.243761) (xy 100.329 98.044) (xy 101.6 98.869)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 101.605905 97.246745) (xy 102.913578 97.907654) (xy 102.919415 97.914444) (xy 102.92 97.918096)
-				(xy 102.92 98.271115) (xy 102.916573 98.279388) (xy 102.913076 98.281796) (xy 101.605808 98.866402)
-				(xy 101.596857 98.866651) (xy 101.594662 98.865535) (xy 100.69058 98.2787) (xy 100.344349 98.053963)
-				(xy 100.339276 98.046585) (xy 100.340906 98.03778) (xy 100.344483 98.034251) (xy 101.594398 97.247287)
-				(xy 101.603224 97.24578)
-			)
-		)
-	)
-	(zone
 		(net 176)
 		(net_name "Net-(C28-Pad2)")
 		(layer "F.Cu")
@@ -57156,6 +57119,42 @@
 		(polygon
 			(pts
 				(xy 119.634 99.2616) (xy 145.542 99.2616) (xy 145.542 96.928) (xy 119.634 96.928)
+			)
+		)
+	)
+	(zone
+		(net 168)
+		(net_name "/IF")
+		(layer "F.Cu")
+		(uuid "c0936121-73b6-447c-bf5c-241c1a7ac139")
+		(name "$teardrop_padvia$")
+		(hatch none 0.1)
+		(priority 30001)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(filled_areas_thickness no)
+		(fill yes
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 1)
+			(island_area_min 10)
+		)
+		(polygon
+			(pts
+				(xy 102.92 98.2787) (xy 102.92 97.9109) (xy 101.6 97.243761) (xy 100.329 98.044) (xy 101.6 98.869)
+			)
+		)
+		(filled_polygon
+			(layer "F.Cu")
+			(pts
+				(xy 102.92 98.2787) (xy 102.92 97.9109) (xy 101.6 97.243761) (xy 100.329 98.044) (xy 101.6 98.869)
 			)
 		)
 	)
