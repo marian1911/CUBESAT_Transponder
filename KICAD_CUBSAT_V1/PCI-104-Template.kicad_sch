@@ -7974,12 +7974,6 @@
 		(uuid "26a7a0ef-87be-40fd-af9f-ecf78d76c408")
 	)
 	(junction
-		(at 229.87 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "26bae8a6-bc69-4ce8-9ef2-3aad9844e2c0")
-	)
-	(junction
 		(at 346.71 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8356,6 +8350,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9b63dd9-24c7-4cd3-82ad-fe90036b3563")
+	)
+	(junction
+		(at 229.87 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d9e53172-92d5-440b-b18b-a986c8b8c96b")
 	)
 	(junction
 		(at 358.14 146.05)
@@ -10369,16 +10369,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 157.48) (xy 229.87 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "823ea811-0286-47a6-85da-68901768da1e")
-	)
-	(wire
-		(pts
 			(xy 147.32 53.34) (xy 151.13 53.34)
 		)
 		(stroke
@@ -11136,6 +11126,16 @@
 			(type default)
 		)
 		(uuid "b6fe2a38-897c-46b3-a3cf-f4a55bd80c10")
+	)
+	(wire
+		(pts
+			(xy 229.87 146.05) (xy 229.87 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7588ab0-3cfb-4286-8d19-9cfad2dafad3")
 	)
 	(wire
 		(pts
@@ -13972,6 +13972,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 323.85 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "087f21f2-c8a9-420f-8224-60e47558a481")
+		(property "Reference" "R39"
+			(at 326.39 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1.2k"
+			(at 326.644 125.476 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 325.628 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 323.85 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 1/8 Watt 1.2Kohms 1%"
+			(at 323.85 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW06031K20FKEA"
+			(at 323.85 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0603-1.2K-E3"
+			(at 323.85 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9ef095f3-3643-4464-a433-d4d66b945edf")
+		)
+		(pin "2"
+			(uuid "573b4c9e-fc0c-4a73-b985-bdad568dbe18")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 264.16 60.96 0)
 		(unit 1)
@@ -14535,93 +14622,6 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 323.85 168.91 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1257f881-5779-42a9-b19a-24a45f95dbfe")
-		(property "Reference" "R45"
-			(at 326.39 167.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "620"
-			(at 326.644 169.926 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 325.628 168.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 323.85 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thick Film Resistors - SMD 1/20watt 620ohms 1% 100ppm"
-			(at 323.85 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CRCW0201620RFKED"
-			(at 323.85 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CRCW0201620RFKED"
-			(at 323.85 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f2506e60-4fc2-40b5-b27c-8e82e7c223c5")
-		)
-		(pin "2"
-			(uuid "778de399-7800-435c-b11b-0d3a05439156")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R45")
 					(unit 1)
 				)
 			)
@@ -17174,93 +17174,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 259.08 124.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2ecee02d-c025-453e-94a7-1c4301aea4cf")
-		(property "Reference" "R29"
-			(at 261.62 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1.2k"
-			(at 261.874 125.476 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 260.858 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 259.08 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thin Film Resistors - SMD 1.2Kohms .1% 25ppm"
-			(at 259.08 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "TNPW02011K20BEED"
-			(at 259.08 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-TNPW02011K20BEED"
-			(at 259.08 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "90ceca05-641f-4f9c-a242-30c303629c33")
-		)
-		(pin "2"
-			(uuid "39e66867-cc5b-4c37-a005-8b2f02adbcf0")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R29")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 118.11 243.84 0)
 		(unit 1)
@@ -18715,93 +18628,6 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 323.85 124.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "43974d31-5972-444a-9fa8-93d8034638e1")
-		(property "Reference" "R39"
-			(at 326.39 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1.2k"
-			(at 326.644 125.476 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 325.628 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 323.85 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thin Film Resistors - SMD 1.2Kohms .1% 25ppm"
-			(at 323.85 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "TNPW02011K20BEED"
-			(at 323.85 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-TNPW02011K20BEED"
-			(at 323.85 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1ef325f3-f27d-4afb-9ba5-931b22e074be")
-		)
-		(pin "2"
-			(uuid "39c4deca-f33b-4553-869f-440d1533a15b")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R39")
 					(unit 1)
 				)
 			)
@@ -20384,7 +20210,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 7.5 pF 25 VDC 0.1 pF 01005 C0G (NP0)"
+		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 0402 100VDC 4.7pF Tol 0.1pF C0G AEC-Q200"
 			(at 161.29 163.83 0)
 			(effects
 				(font
@@ -20393,7 +20219,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GJM0225C1E4R7BB01L"
+		(property "Manufacturer_Part_Number" "GCM1555C2A4R7BE02D"
 			(at 161.29 163.83 0)
 			(effects
 				(font
@@ -20402,7 +20228,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GJM0225C1E4R7BB1L"
+		(property "Mouser Part Number" "81-GCM1555C2A4R7BE2D"
 			(at 161.29 163.83 0)
 			(effects
 				(font
@@ -21512,7 +21338,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Thick Film Resistors - SMD 1/20watt 620ohms 1% 100ppm"
+		(property "Description" "Resistores de película gruesa - SMD 1/10Watt 620ohms 1% Commercial Use"
 			(at 195.58 168.91 0)
 			(effects
 				(font
@@ -21521,7 +21347,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CRCW0201620RFKED"
+		(property "Manufacturer_Part_Number" "CRCW0603620RFKEAC"
 			(at 195.58 168.91 0)
 			(effects
 				(font
@@ -21530,7 +21356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "71-CRCW0201620RFKED"
+		(property "Mouser Part Number" "71-CRCW0603620RFKEAC"
 			(at 195.58 168.91 0)
 			(effects
 				(font
@@ -22728,6 +22554,93 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "R38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 288.29 133.35 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69696e82-a42d-4674-b858-27d1f526fddb")
+		(property "Reference" "C47"
+			(at 286.004 131.572 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1pF"
+			(at 290.83 132.334 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 284.48 134.3152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 288.29 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 5.1 pF 50 VDC 1% 0402 C0G (NP0) AEC-Q200"
+			(at 288.29 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "GCM1555C1H5R1FA16D"
+			(at 288.29 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "81-GCM1555C1H5R1FA6D"
+			(at 288.29 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b46ab8d8-a400-4c1d-b6eb-ec0ac97c5211")
+		)
+		(pin "1"
+			(uuid "ec564e28-86f2-4e32-b91e-7dad35533bc6")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "C47")
 					(unit 1)
 				)
 			)
@@ -25225,7 +25138,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 5.1 pF 16 VDC 0.1 pF 01005 C0G (NP0)"
+		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 5.1 pF 50 VDC 1% 0402 C0G (NP0) AEC-Q200"
 			(at 224.79 133.35 0)
 			(effects
 				(font
@@ -25234,7 +25147,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "GJM0225C1C5R1BB01L"
+		(property "Manufacturer_Part_Number" "GCM1555C1H5R1FA16D"
 			(at 224.79 133.35 0)
 			(effects
 				(font
@@ -25243,7 +25156,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "81-GJM0225C1C5R1BB1L"
+		(property "Mouser Part Number" "81-GCM1555C1H5R1FA6D"
 			(at 224.79 133.35 0)
 			(effects
 				(font
@@ -25661,7 +25574,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Thick Film Resistors - SMD 0.031watts ZeroOhm"
+		(property "Description" "Resistores de película gruesa - SMD 0.2watt ZEROohms"
 			(at 233.68 133.35 0)
 			(effects
 				(font
@@ -25670,7 +25583,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CRCW01000000Z0EL"
+		(property "Manufacturer_Part_Number" "RCS04020000Z0ED"
 			(at 233.68 133.35 0)
 			(effects
 				(font
@@ -25679,7 +25592,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "71-CRCW01000000Z0EL"
+		(property "Mouser Part Number" "71-RCS04020000Z0ED"
 			(at 233.68 133.35 0)
 			(effects
 				(font
@@ -26481,93 +26394,6 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "L13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 288.29 133.35 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a57992c5-314f-4a15-9dcc-5507b92a9591")
-		(property "Reference" "C47"
-			(at 286.004 131.572 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "5.1pF"
-			(at 290.83 132.334 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 284.48 134.3152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 288.29 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 5.1 pF 16 VDC 0.1 pF 01005 C0G (NP0)"
-			(at 288.29 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "GJM0225C1C5R1BB01L"
-			(at 288.29 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "81-GJM0225C1C5R1BB1L"
-			(at 288.29 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8679c6a9-a2bf-4d62-9636-35eba3aa0f06")
-		)
-		(pin "1"
-			(uuid "559939d6-04b6-4314-b5f7-4f295933fd7d")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "C47")
 					(unit 1)
 				)
 			)
@@ -27480,6 +27306,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 323.85 168.91 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b027b1ae-f4c3-4e4b-a8c7-7f942cc64ead")
+		(property "Reference" "R43"
+			(at 326.39 167.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "620"
+			(at 326.644 169.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 325.628 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 323.85 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 1/10Watt 620ohms 1% Commercial Use"
+			(at 323.85 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW0603620RFKEAC"
+			(at 323.85 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0603620RFKEAC"
+			(at 323.85 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87d4560d-b16a-4d29-8fae-4ec558c68f65")
+		)
+		(pin "2"
+			(uuid "c79d8d7a-145a-417e-8d4b-9e7cc06158dc")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 31.75 133.35 0)
 		(unit 1)
@@ -27540,6 +27453,93 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 259.08 168.91 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b466aee4-1355-4136-8c1f-1ccae5432474")
+		(property "Reference" "R35"
+			(at 261.62 167.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "620"
+			(at 261.874 169.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 260.858 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 259.08 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 1/10Watt 620ohms 1% Commercial Use"
+			(at 259.08 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW0603620RFKEAC"
+			(at 259.08 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0603620RFKEAC"
+			(at 259.08 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "490f52ec-f99a-4dbc-920f-e2ec66685f0b")
+		)
+		(pin "2"
+			(uuid "65c7ae43-3c09-4805-99e7-a523b6e3d6a2")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R35")
 					(unit 1)
 				)
 			)
@@ -27626,6 +27626,93 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "L11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 259.08 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b5bf7884-37d9-40b7-a30b-5d888401b623")
+		(property "Reference" "R29"
+			(at 261.62 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1.2k"
+			(at 261.874 125.476 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 260.858 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 259.08 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 1/8 Watt 1.2Kohms 1%"
+			(at 259.08 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CRCW06031K20FKEA"
+			(at 259.08 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CRCW0603-1.2K-E3"
+			(at 259.08 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6aba4f78-84a3-4377-a017-27c166d949e8")
+		)
+		(pin "2"
+			(uuid "fb4b7e5e-b684-4b44-8316-ad778008209a")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -28355,93 +28442,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 229.87 139.7 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "be993643-8894-470a-8ce0-460253825591")
-		(property "Reference" "R24"
-			(at 232.41 138.4299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 232.664 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 231.648 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 229.87 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thick Film Resistors - SMD 0.031watts ZeroOhm"
-			(at 229.87 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CRCW01000000Z0EL"
-			(at 229.87 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CRCW01000000Z0EL"
-			(at 229.87 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4b9b319c-f350-43b2-927e-3938f11b3760")
-		)
-		(pin "2"
-			(uuid "90501993-e231-4811-a1c1-7cacbda1daa3")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 58.42 270.51 0)
 		(unit 1)
@@ -28588,93 +28588,6 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 353.06 133.35 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c0221f73-c26c-4b13-9f13-7724386b83da")
-		(property "Reference" "C58"
-			(at 350.774 131.572 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "5.1pF"
-			(at 355.6 132.334 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 349.25 134.3152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 353.06 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Multilayer Ceramic Capacitors MLCC - SMD/SMT 5.1 pF 16 VDC 0.1 pF 01005 C0G (NP0)"
-			(at 353.06 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "GJM0225C1C5R1BB01L"
-			(at 353.06 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "81-GJM0225C1C5R1BB1L"
-			(at 353.06 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "35412419-4f7c-4b7d-afc8-2852b7ff34f5")
-		)
-		(pin "1"
-			(uuid "9be99a65-9987-4c22-9ae7-7f53ff422292")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "C58")
 					(unit 1)
 				)
 			)
@@ -28960,7 +28873,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Thin Film Resistors - SMD 1.2Kohms .1% 25ppm"
+		(property "Description" "Resistores de película gruesa - SMD 1/8 Watt 1.2Kohms 1%"
 			(at 195.58 124.46 0)
 			(effects
 				(font
@@ -28969,7 +28882,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "TNPW02011K20BEED"
+		(property "Manufacturer_Part_Number" "CRCW06031K20FKEA"
 			(at 195.58 124.46 0)
 			(effects
 				(font
@@ -28978,7 +28891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "71-TNPW02011K20BEED"
+		(property "Mouser Part Number" "71-CRCW0603-1.2K-E3"
 			(at 195.58 124.46 0)
 			(effects
 				(font
@@ -30758,6 +30671,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 353.06 133.35 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dd5a4837-fc4c-4ea8-b075-0585b8205c25")
+		(property "Reference" "C58"
+			(at 350.774 131.572 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1pF"
+			(at 355.6 132.334 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 349.25 134.3152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 353.06 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Capacitores cerámicos de capas múltiples (MLCC) - SMD/SMT 5.1 pF 50 VDC 1% 0402 C0G (NP0) AEC-Q200"
+			(at 353.06 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "GCM1555C1H5R1FA16D"
+			(at 353.06 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "81-GCM1555C1H5R1FA6D"
+			(at 353.06 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1c189d00-30f9-47b2-bdf7-34bbbbfd9b75")
+		)
+		(pin "1"
+			(uuid "51750154-aaab-4813-a23d-3a802e20c65b")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "C58")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 87.63 39.37 0)
 		(unit 1)
@@ -31673,6 +31673,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 229.87 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9e3306f-51a2-46b7-bf59-6585e987dd0d")
+		(property "Reference" "R26"
+			(at 227.33 140.9701 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0"
+			(at 227.076 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 228.092 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 0.2watt ZEROohms"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RCS04020000Z0ED"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-RCS04020000Z0ED"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d9792fe-fd4e-4374-8397-7ff5ac5150b7")
+		)
+		(pin "2"
+			(uuid "5d0602b4-476e-4f34-b165-a7c6c80d570b")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 116.84 144.78 180)
 		(unit 1)
@@ -32043,93 +32130,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 233.68 146.05 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f1892aef-cc21-49a2-a971-3dee093531b3")
-		(property "Reference" "R26"
-			(at 234.9501 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 232.664 148.844 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 233.68 147.828 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 233.68 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thick Film Resistors - SMD 0.031watts ZeroOhm"
-			(at 233.68 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CRCW01000000Z0EL"
-			(at 233.68 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CRCW01000000Z0EL"
-			(at 233.68 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7ec5ba7f-5590-4966-a682-062365336fa6")
-		)
-		(pin "2"
-			(uuid "711938b6-f2ae-4cfb-9d0d-473d477ff0ce")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 190.5 139.7 270)
 		(unit 1)
@@ -32403,6 +32403,93 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "R41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 233.68 146.05 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f40c3df7-90a2-42cc-833c-7a671cd9bd64")
+		(property "Reference" "R24"
+			(at 232.4099 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0"
+			(at 234.696 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 233.68 144.272 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistores de película gruesa - SMD 0.2watt ZEROohms"
+			(at 233.68 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RCS04020000Z0ED"
+			(at 233.68 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-RCS04020000Z0ED"
+			(at 233.68 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a67d411e-0520-4b3f-b2cf-6443e23ef078")
+		)
+		(pin "2"
+			(uuid "6232545f-5e6e-4dec-a8b9-965eced44662")
+		)
+		(instances
+			(project "PCI-104-Template"
+				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -33246,93 +33333,6 @@
 			(project "PCI-104-Template"
 				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 259.08 168.91 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fab958a8-4cfb-46e3-b898-8a9a7a643849")
-		(property "Reference" "R35"
-			(at 261.62 167.6399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "620"
-			(at 261.874 169.926 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 260.858 168.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 259.08 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Thick Film Resistors - SMD 1/20watt 620ohms 1% 100ppm"
-			(at 259.08 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CRCW0201620RFKED"
-			(at 259.08 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CRCW0201620RFKED"
-			(at 259.08 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4d26fb1c-51a6-4de1-9fc7-2ffb8429e5fb")
-		)
-		(pin "2"
-			(uuid "4b2fc172-00ca-45cd-91ae-655593daefd3")
-		)
-		(instances
-			(project "PCI-104-Template"
-				(path "/5c384f20-cda4-438f-85a2-a3fc55c6427a"
-					(reference "R35")
 					(unit 1)
 				)
 			)
